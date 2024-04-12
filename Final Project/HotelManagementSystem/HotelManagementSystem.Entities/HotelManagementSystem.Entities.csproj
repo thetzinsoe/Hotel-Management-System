@@ -41,15 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminEntity.cs" />
+    <Compile Include="Employee\EmployeeEntity.cs" />
+    <Compile Include="Guest\GuestEntity.cs" />
+    <Compile Include="Payment\PaymentEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation\ReservationEntity.cs" />
+    <Compile Include="Room\RoomEntity.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="Employee\" />
-    <Folder Include="Guest\" />
-    <Folder Include="Payment\" />
-    <Folder Include="Reservation\" />
-    <Folder Include="Room\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

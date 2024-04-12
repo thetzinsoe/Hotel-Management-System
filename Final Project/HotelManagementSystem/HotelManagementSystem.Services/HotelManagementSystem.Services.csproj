@@ -41,15 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminService.cs" />
+    <Compile Include="Employee\EmployeeService.cs" />
+    <Compile Include="Guest\GuestService.cs" />
+    <Compile Include="Payment\PaymentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservation\ReservationService.cs" />
+    <Compile Include="Room\RoomService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="Employee\" />
-    <Folder Include="Guest\" />
-    <Folder Include="Payment\" />
-    <Folder Include="Reservation\" />
-    <Folder Include="Room\" />
+    <ProjectReference Include="..\HotelManagementSystem.DAO\HotelManagementSystem.DAO.csproj">
+      <Project>{0004d889-1b99-4219-9d47-0d05fc375515}</Project>
+      <Name>HotelManagementSystem.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagementSystem.Entities\HotelManagementSystem.Entities.csproj">
+      <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
+      <Name>HotelManagementSystem.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

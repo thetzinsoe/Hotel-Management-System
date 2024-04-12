@@ -54,6 +54,51 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Admin\UCAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\UCAdmin.Designer.cs">
+      <DependentUpon>UCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\UCEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Employee\UCEmployee.Designer.cs">
+      <DependentUpon>UCEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Guest\UCGuestCRUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Guest\UCGuestCRUD.Designer.cs">
+      <DependentUpon>UCGuestCRUD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payment\UCPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Payment\UCPayment.Designer.cs">
+      <DependentUpon>UCPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reservation\UCReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Reservation\UCReservation.Designer.cs">
+      <DependentUpon>UCReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Room\UCRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Room\UCRoom.Designer.cs">
+      <DependentUpon>UCRoom.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Guest\UCGuestCRUD.resx">
+      <DependentUpon>UCGuestCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,14 +124,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Employee\" />
-    <Folder Include="Views\Guest\" />
-    <Folder Include="Views\Menu\" />
-    <Folder Include="Views\Payment\" />
-    <Folder Include="Views\Reservation\" />
-    <Folder Include="Views\Room\" />
+    <ProjectReference Include="..\HotelManagementSystem.Entities\HotelManagementSystem.Entities.csproj">
+      <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
+      <Name>HotelManagementSystem.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagementSystem.Services\HotelManagementSystem.Services.csproj">
+      <Project>{ab839509-93bf-47dc-ab4d-6fef875c0a67}</Project>
+      <Name>HotelManagementSystem.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
