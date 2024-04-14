@@ -1,25 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using HotelManagementSystem.Entities.Payment;
-using HotelManagementSystem.DAO.PaymentDAO;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Text;
+using System.Threading.Tasks;
+using HotelManagementSystem.DAO.CheckIn;
+using HotelManagementSystem.Entities.CheckIn;
 
-namespace HotelManagementSystem.Services.Payment
+namespace HotelManagementSystem.Services.CheckIn
 {
-    public class PaymentService
+    internal class CheckInService
     {
+
         /// <summary>
         /// Define product Dao..
         /// </summary>
-        private PaymentDao paymentDao = new PaymentDao();
-       
+        private CheckInDao checkInDao = new CheckInDao();
+
+
         #region==========Employee========== 
         /// <summary>
         /// Get All.
         /// </summary>
         public DataTable GetAll()
         {
-            DataTable dt = paymentDao.GetAll();
+            DataTable dt = checkInDao.GetAll();
             return dt;
         }
         #endregion
@@ -31,26 +37,26 @@ namespace HotelManagementSystem.Services.Payment
         /// <returns>.</returns>
         public DataTable Get(int id)
         {
-            DataTable dt = paymentDao.Get(id);
+            DataTable dt = checkInDao.Get(id);
             return dt;
         }
 
         /// <summary>
         /// Save Employee.
         /// </summary>
-        /// <param name="ReservationEntity">.</param>
-        public bool Insert(PaymentEntity paymentEntity)
+        /// <param name="ShopEntity">.</param>
+        public bool Insert(CheckInEntity checkInEntity)
         {
-            return paymentDao.Insert(paymentEntity);
+            return checkInDao.Insert(checkInEntity);
         }
 
         /// <summary>
         /// Update Employee.
         /// </summary>
         /// <param name="employeeEntity">.</param>
-        public bool Update(PaymentEntity paymentEntity)
+        public bool Update(CheckInEntity checkInEntity)
         {
-            return paymentDao.Update(paymentEntity);
+            return checkInDao.Update(checkInEntity);
         }
 
         /// <summary>
@@ -59,7 +65,7 @@ namespace HotelManagementSystem.Services.Payment
         /// <param name="id">.</param>
         public bool Delete(int id)
         {
-            return paymentDao.Delete(id);
+            return checkInDao.Delete(id);
         }
     }
 }

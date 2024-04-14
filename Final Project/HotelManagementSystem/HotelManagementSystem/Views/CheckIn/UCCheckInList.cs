@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem.Views.Payment
+namespace HotelManagementSystem.Views.CheckIn
 {
-    public partial class UCPayment : UserControl
+    public partial class UCCheckInList : UserControl
     {
-        public UCPayment()
+        public UCCheckInList()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

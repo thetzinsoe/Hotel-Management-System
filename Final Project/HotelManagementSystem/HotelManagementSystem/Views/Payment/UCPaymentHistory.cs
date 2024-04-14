@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem.Views.Reservation
+namespace HotelManagementSystem.Views.Payment
 {
-    public partial class UCReservation : UserControl
+    public partial class UCPaymentHistory : UserControl
     {
-        public UCReservation()
+        public UCPaymentHistory()
         {
             InitializeComponent();
+        }
+
+        private void pnTitle_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
