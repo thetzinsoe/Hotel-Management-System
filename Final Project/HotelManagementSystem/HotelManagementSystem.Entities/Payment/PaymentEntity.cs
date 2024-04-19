@@ -47,7 +47,7 @@ namespace HotelManagementSystem.Entities.Payment
         /// <summary>
         /// Gets or sets the designation.
         /// </summary>
-        public int payment_type { get; set; }
+        public string payment_type { get; set; }
 
         /// <summary>
         /// Gets or sets the joining date
@@ -85,7 +85,7 @@ namespace HotelManagementSystem.Entities.Payment
             this.description = string.Empty;
             this.discount = 0;
             this.total_fees = 0;
-            this.payment_type = 0;
+            this.payment_type = string.Empty;
             this.created_date = DateTime.Now;
             this.updated_date = DateTime.Now;
             this.is_deleted = 0;

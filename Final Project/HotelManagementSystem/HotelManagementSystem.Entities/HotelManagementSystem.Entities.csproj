@@ -41,9 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\HotelManagementSystem.DAO\Payment\PaymentDao.cs">
-      <Link>PaymentDao.cs</Link>
-    </Compile>
     <Compile Include="Admin\AdminEntity.cs" />
     <Compile Include="CheckIn\CheckInEntity.cs" />
     <Compile Include="Employee\EmployeeEntity.cs" />

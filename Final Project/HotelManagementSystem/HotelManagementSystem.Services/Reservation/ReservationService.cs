@@ -5,12 +5,13 @@ using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
+using HotelManagementSystem.DAO.CheckIn;
 using HotelManagementSystem.DAO.Reservation;
 using HotelManagementSystem.Entities.Reservation;
 
 namespace HotelManagementSystem.Services.Reservation
 {
-    internal class ReservationService
+    public class ReservationService
     {
         /// <summary>
         /// Define product Dao..
@@ -25,6 +26,17 @@ namespace HotelManagementSystem.Services.Reservation
         {
             DataTable dt = reservationDao.GetAll();
             return dt;
+        }
+        
+        public DataTable GetAllRoom()
+        {
+            DataTable dt = reservationDao.GetAllRoom();
+            return dt;
+        }
+
+        public bool RoomUpdate(int id, int is_occupied)
+        {
+            return reservationDao.RoomUpdate(id, is_occupied);
         }
         #endregion
 

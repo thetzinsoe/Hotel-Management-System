@@ -27,11 +27,6 @@ namespace HotelManagementSystem.Views.Menu
             pnMain.Controls.Add(uCDashboard);
         }
 
-        private void rESERVATIONToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void reservationListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UCReservationList uCReservationList = new UCReservationList();
@@ -46,18 +41,32 @@ namespace HotelManagementSystem.Views.Menu
             pnMain.Controls.Add(uCReservationAdd);
         }
 
-        private void cHECKINLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cHECKADDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCCheckInList uCCheckInList = new UCCheckInList();
+            UCCheckinAdd uCCheckInAdd = new UCCheckinAdd();
             pnMain.Controls.Clear();
-            pnMain.Controls.Add(uCCheckInList);
+            pnMain.Controls.Add(uCCheckInAdd);
         }
 
-        private void pAYMENTHISTORYToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pAYMENTLISTToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UCPaymentHistory uCPaymentHistory = new UCPaymentHistory();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCPaymentHistory);
+        }
+
+        private void pAYMENTADDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCPayNow uCPayNow = new UCPayNow();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCPayNow);
+        }
+
+        private void cHECKINLISTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UCCheckInList uCCheckInList = new UCCheckInList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCCheckInList);
         }
     }
 }

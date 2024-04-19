@@ -10,7 +10,7 @@ using HotelManagementSystem.Entities.CheckIn;
 
 namespace HotelManagementSystem.Services.CheckIn
 {
-    internal class CheckInService
+    public class CheckInService
     {
 
         /// <summary>
@@ -28,6 +28,13 @@ namespace HotelManagementSystem.Services.CheckIn
             DataTable dt = checkInDao.GetAll();
             return dt;
         }
+
+        public DataTable GetAllGuest()
+        {
+            DataTable dt = checkInDao.GetAllGuest();
+            return dt;
+        }
+        
         #endregion
 
         /// <summary>

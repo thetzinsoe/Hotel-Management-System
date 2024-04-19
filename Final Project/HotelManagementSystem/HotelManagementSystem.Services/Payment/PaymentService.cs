@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using HotelManagementSystem.Entities.Payment;
-using HotelManagementSystem.DAO.PaymentDAO;
+using HotelManagementSystem.DAO.Payment;
 
 namespace HotelManagementSystem.Services.Payment
 {

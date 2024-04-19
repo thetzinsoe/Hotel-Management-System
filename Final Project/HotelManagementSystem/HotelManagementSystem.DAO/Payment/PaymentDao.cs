@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using HotelManagementSystem.DAO.Common;
 using HotelManagementSystem.Entities.Payment;
 
-namespace HotelManagementSystem.DAO.PaymentDAO
+namespace HotelManagementSystem.DAO.Payment
 {
     public class PaymentDao
     {
@@ -51,8 +51,8 @@ namespace HotelManagementSystem.DAO.PaymentDAO
         /// <returns></returns>
         public DataTable Get(int id)
         {
-            strSql = "SELECT * FROM Payment " +
-                      "WHERE  payment_id= " + id;
+            strSql = "SELECT t1.*, t2.checkin_date, t2.checkout_date FROM Payment t1" +
+                      " JOIN Checkin t2 ON t1.checkin_id = t2.checkin_id WHERE  t1.payment_id= " + id;
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
