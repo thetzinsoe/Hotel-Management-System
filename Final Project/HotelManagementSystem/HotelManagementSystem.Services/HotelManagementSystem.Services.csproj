@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminService.cs" />
+    <Compile Include="CheckIn\CheckInService.cs" />
     <Compile Include="Employee\EmployeeService.cs" />
     <Compile Include="Guest\GuestService.cs" />
     <Compile Include="Payment\PaymentService.cs" />

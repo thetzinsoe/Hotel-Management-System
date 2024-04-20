@@ -96,7 +96,9 @@ namespace HotelManagementSystem.DAO.Common
                     sqlCmd.CommandType = TypeOfCommand;
                     sqlCmd.CommandTimeout = 200;
 
+                    // Creating a new SqlDataAdapter using 'conn' instead of 'sqlConn'
                     adapter = new SqlDataAdapter(CmdText, conn);
+
                     adapter.SelectCommand = sqlCmd;
                     dtSet.Reset();
                     adapter.Fill(dtSet);
@@ -111,7 +113,8 @@ namespace HotelManagementSystem.DAO.Common
                     sqlConn.Close();
                 }
             }
-            return dtSet.Tables[0];
+            return dtSet.Tables[0]; // This line might throw IndexOutOfRangeException
+
         }
 
         /// <summary>

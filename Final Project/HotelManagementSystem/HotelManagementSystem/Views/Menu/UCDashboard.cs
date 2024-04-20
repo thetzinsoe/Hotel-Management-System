@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem.Views.Payment
+namespace HotelManagementSystem.Views.Menu
 {
-    public partial class UCPayment : UserControl
+    public partial class UCDashboard : UserControl
     {
-        public UCPayment()
+        public UCDashboard()
         {
             InitializeComponent();
         }

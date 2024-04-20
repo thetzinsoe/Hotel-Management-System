@@ -67,29 +67,30 @@ namespace HotelManagementSystem.Views.Guest
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.Color.Black;
-            this.lblFullName.Location = new System.Drawing.Point(39, 120);
+            this.lblFullName.Location = new System.Drawing.Point(29, 98);
+            this.lblFullName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(91, 23);
+            this.lblFullName.Size = new System.Drawing.Size(73, 19);
             this.lblFullName.TabIndex = 0;
             this.lblFullName.Text = "Full Name:";
             // 
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(204, 112);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFullName.Location = new System.Drawing.Point(153, 91);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(500, 34);
+            this.txtFullName.Size = new System.Drawing.Size(376, 29);
             this.txtFullName.TabIndex = 1;
             this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(204, 462);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAddress.Location = new System.Drawing.Point(153, 375);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(500, 34);
+            this.txtAddress.Size = new System.Drawing.Size(376, 29);
             this.txtAddress.TabIndex = 8;
             this.txtAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress_KeyPress);
             // 
@@ -98,19 +99,20 @@ namespace HotelManagementSystem.Views.Guest
             this.lblNRCNumber.AutoSize = true;
             this.lblNRCNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNRCNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblNRCNumber.Location = new System.Drawing.Point(39, 400);
+            this.lblNRCNumber.Location = new System.Drawing.Point(29, 325);
+            this.lblNRCNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNRCNumber.Name = "lblNRCNumber";
-            this.lblNRCNumber.Size = new System.Drawing.Size(116, 23);
+            this.lblNRCNumber.Size = new System.Drawing.Size(93, 19);
             this.lblNRCNumber.TabIndex = 2;
             this.lblNRCNumber.Text = "NRC Number:";
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(204, 532);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(153, 432);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(376, 29);
             this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
@@ -119,19 +121,20 @@ namespace HotelManagementSystem.Views.Guest
             this.lblNationality.AutoSize = true;
             this.lblNationality.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationality.ForeColor = System.Drawing.Color.Black;
-            this.lblNationality.Location = new System.Drawing.Point(39, 330);
+            this.lblNationality.Location = new System.Drawing.Point(29, 268);
+            this.lblNationality.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNationality.Name = "lblNationality";
-            this.lblNationality.Size = new System.Drawing.Size(97, 23);
+            this.lblNationality.Size = new System.Drawing.Size(78, 19);
             this.lblNationality.TabIndex = 4;
             this.lblNationality.Text = "Nationality:";
             // 
             // txtNRCNumber
             // 
             this.txtNRCNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNRCNumber.Location = new System.Drawing.Point(204, 392);
-            this.txtNRCNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNRCNumber.Location = new System.Drawing.Point(153, 318);
+            this.txtNRCNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNRCNumber.Name = "txtNRCNumber";
-            this.txtNRCNumber.Size = new System.Drawing.Size(500, 34);
+            this.txtNRCNumber.Size = new System.Drawing.Size(376, 29);
             this.txtNRCNumber.TabIndex = 7;
             this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
             // 
@@ -140,19 +143,20 @@ namespace HotelManagementSystem.Views.Guest
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblAddress.Location = new System.Drawing.Point(39, 470);
+            this.lblAddress.Location = new System.Drawing.Point(29, 382);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(74, 23);
+            this.lblAddress.Size = new System.Drawing.Size(61, 19);
             this.lblAddress.TabIndex = 6;
             this.lblAddress.Text = "Address:";
             // 
             // txtNationality
             // 
             this.txtNationality.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNationality.Location = new System.Drawing.Point(204, 322);
-            this.txtNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNationality.Location = new System.Drawing.Point(153, 262);
+            this.txtNationality.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNationality.Name = "txtNationality";
-            this.txtNationality.Size = new System.Drawing.Size(500, 34);
+            this.txtNationality.Size = new System.Drawing.Size(376, 29);
             this.txtNationality.TabIndex = 6;
             this.txtNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationality_KeyPress);
             // 
@@ -161,9 +165,10 @@ namespace HotelManagementSystem.Views.Guest
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(39, 540);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(29, 439);
+            this.lblPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(131, 23);
+            this.lblPhoneNumber.Size = new System.Drawing.Size(105, 19);
             this.lblPhoneNumber.TabIndex = 8;
             this.lblPhoneNumber.Text = "Phone Number:";
             // 
@@ -244,10 +249,10 @@ namespace HotelManagementSystem.Views.Guest
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1200, 850);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(900, 691);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GUEST REGISTRATION";
@@ -276,10 +281,10 @@ namespace HotelManagementSystem.Views.Guest
             // txtGuestId
             // 
             this.txtGuestId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGuestId.Location = new System.Drawing.Point(204, 112);
-            this.txtGuestId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGuestId.Location = new System.Drawing.Point(153, 91);
+            this.txtGuestId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGuestId.Name = "txtGuestId";
-            this.txtGuestId.Size = new System.Drawing.Size(500, 34);
+            this.txtGuestId.Size = new System.Drawing.Size(376, 29);
             this.txtGuestId.TabIndex = 36;
             this.txtGuestId.Visible = false;
             // 
@@ -288,9 +293,10 @@ namespace HotelManagementSystem.Views.Guest
             this.lblDob.AutoSize = true;
             this.lblDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDob.ForeColor = System.Drawing.Color.Black;
-            this.lblDob.Location = new System.Drawing.Point(39, 260);
+            this.lblDob.Location = new System.Drawing.Point(29, 211);
+            this.lblDob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(111, 23);
+            this.lblDob.Size = new System.Drawing.Size(90, 19);
             this.lblDob.TabIndex = 35;
             this.lblDob.Text = "Date of Birth:";
             // 
@@ -308,9 +314,10 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(390, 186);
+            this.rdbFemale.Location = new System.Drawing.Point(292, 151);
+            this.rdbFemale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbFemale.Name = "rdbFemale";
-            this.rdbFemale.Size = new System.Drawing.Size(85, 27);
+            this.rdbFemale.Size = new System.Drawing.Size(70, 23);
             this.rdbFemale.TabIndex = 4;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
@@ -319,9 +326,10 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(300, 186);
+            this.rdbMale.Location = new System.Drawing.Point(225, 151);
+            this.rdbMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbMale.Name = "rdbMale";
-            this.rdbMale.Size = new System.Drawing.Size(68, 27);
+            this.rdbMale.Size = new System.Drawing.Size(57, 23);
             this.rdbMale.TabIndex = 32;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
@@ -331,9 +339,10 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbOther.AutoSize = true;
             this.rdbOther.Checked = true;
             this.rdbOther.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOther.Location = new System.Drawing.Point(204, 186);
+            this.rdbOther.Location = new System.Drawing.Point(153, 151);
+            this.rdbOther.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbOther.Name = "rdbOther";
-            this.rdbOther.Size = new System.Drawing.Size(75, 27);
+            this.rdbOther.Size = new System.Drawing.Size(63, 23);
             this.rdbOther.TabIndex = 2;
             this.rdbOther.TabStop = true;
             this.rdbOther.Text = "Other";
@@ -343,9 +352,10 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(39, 190);
+            this.lblGender.Location = new System.Drawing.Point(29, 154);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(70, 23);
+            this.lblGender.Size = new System.Drawing.Size(57, 19);
             this.lblGender.TabIndex = 30;
             this.lblGender.Text = "Gender:";
             // 
@@ -395,11 +405,11 @@ namespace HotelManagementSystem.Views.Guest
             // 
             // UCGuestCRUD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCGuestCRUD";
             this.Size = new System.Drawing.Size(1200, 850);
             this.Load += new System.EventHandler(this.UCGuestCRUD_Load_1);

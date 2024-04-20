@@ -6,17 +6,18 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagementSystem.DAO.CheckIn;
-using HotelManagementSystem.DAO.Reservation;
-using HotelManagementSystem.Entities.Reservation;
+using HotelManagementSystem.Entities.CheckIn;
 
-namespace HotelManagementSystem.Services.Reservation
+namespace HotelManagementSystem.Services.CheckIn
 {
-    public class ReservationService
+    public class CheckInService
     {
+
         /// <summary>
         /// Define product Dao..
         /// </summary>
-        private ReservationDao reservationDao = new ReservationDao();
+        private CheckInDao checkInDao = new CheckInDao();
+
 
         #region==========Employee========== 
         /// <summary>
@@ -24,20 +25,16 @@ namespace HotelManagementSystem.Services.Reservation
         /// </summary>
         public DataTable GetAll()
         {
-            DataTable dt = reservationDao.GetAll();
-            return dt;
-        }
-        
-        public DataTable GetAllRoom()
-        {
-            DataTable dt = reservationDao.GetAllRoom();
+            DataTable dt = checkInDao.GetAll();
             return dt;
         }
 
-        public bool RoomUpdate(int id, int is_occupied)
+        public DataTable GetAllGuest()
         {
-            return reservationDao.RoomUpdate(id, is_occupied);
+            DataTable dt = checkInDao.GetAllGuest();
+            return dt;
         }
+        
         #endregion
 
         /// <summary>
@@ -47,26 +44,26 @@ namespace HotelManagementSystem.Services.Reservation
         /// <returns>.</returns>
         public DataTable Get(int id)
         {
-            DataTable dt = reservationDao.Get(id);
+            DataTable dt = checkInDao.Get(id);
             return dt;
         }
 
         /// <summary>
         /// Save Employee.
         /// </summary>
-        /// <param name="ReservationEntity">.</param>
-        public bool Insert(ReservationEntity reservationEntity)
+        /// <param name="ShopEntity">.</param>
+        public bool Insert(CheckInEntity checkInEntity)
         {
-            return reservationDao.Insert(reservationEntity);
+            return checkInDao.Insert(checkInEntity);
         }
 
         /// <summary>
         /// Update Employee.
         /// </summary>
         /// <param name="employeeEntity">.</param>
-        public bool Update(ReservationEntity reservationEntity)
+        public bool Update(CheckInEntity checkInEntity)
         {
-            return reservationDao.Update(reservationEntity);
+            return checkInDao.Update(checkInEntity);
         }
 
         /// <summary>
@@ -75,7 +72,7 @@ namespace HotelManagementSystem.Services.Reservation
         /// <param name="id">.</param>
         public bool Delete(int id)
         {
-            return reservationDao.Delete(id);
+            return checkInDao.Delete(id);
         }
     }
 }
