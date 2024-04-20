@@ -55,8 +55,40 @@ namespace HotelManagementSystem.DAO.Guest
         public DataTable Get(int guestId)
         {
             strSql = "SELECT * FROM Guest " +
-                      "WHERE  guestId= " + guestId + "AND is_deleted = 0";
+                      "WHERE  guest_id= " + guestId + "AND is_deleted = 0";
 
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <param name="name">.</param>
+        /// <returns></returns>
+        public DataTable Search(string name)
+        {
+            strSql = "SELECT * FROM Guest " +
+             "WHERE full_name LIKE '%" + name + "%' AND is_deleted = 0";
+            return connection.ExecuteDataTable (CommandType.Text, strSql);
+        }
+
+        /// <summary>
+        /// GetRecord
+        /// </summary>
+        /// <param name="page">.</param>
+        /// <param name="pageSize">.</param>
+        /// <returns></returns>
+        public DataTable GetRecord(int page, int pageSize)
+        {
+            if (page == 1)
+            {
+                strSql = "Select TOP " + pageSize + " * from Guest WHERE is_deleted = 0 ORDER BY guest_id";
+            }
+            else
+            {
+                int offset = (page - 1) * pageSize;
+                strSql = $"SELECT TOP {pageSize} * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY guest_id) AS RowNum FROM Guest WHERE is_deleted = 0) AS T WHERE RowNum > {offset}";
+            }
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
@@ -113,13 +145,12 @@ namespace HotelManagementSystem.DAO.Guest
         /// Delete.
         /// </summary>
         /// <param name="guestId">.</param>
-        public bool Delete(int guestId, int userId)
+        public bool Delete(int guestId)
         {
-            strSql = "UPDATE Guest SET is_deleted = @IsDeleted, deleted_userId = @DeletedUserId WHERE guest_id =@GuestId";
+            strSql = "UPDATE Guest SET is_deleted = @IsDeleted WHERE guest_id =@GuestId";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@GuestId", guestId),
                                         new SqlParameter("@IsDeleted", 1),
-                                        new SqlParameter("@DeletedUserId", userId)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
             return success;

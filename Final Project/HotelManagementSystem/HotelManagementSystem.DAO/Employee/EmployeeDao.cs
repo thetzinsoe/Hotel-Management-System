@@ -61,6 +61,38 @@ namespace HotelManagementSystem.DAO.Employee
         }
 
         /// <summary>
+        /// Search
+        /// </summary>
+        /// <param name="name">.</param>
+        /// <returns></returns>
+        public DataTable Search(string name)
+        {
+            strSql = "SELECT * FROM Employee " +
+             "WHERE full_name LIKE '%" + name + "%' AND is_deleted = 0";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+        /// <summary>
+        /// GetRecord
+        /// </summary>
+        /// <param name="page">.</param>
+        /// <param name="pageSize">.</param>
+        /// <returns></returns>
+        public DataTable GetRecord(int page, int pageSize)
+        {
+            if (page == 1)
+            {
+                strSql = "Select TOP " + pageSize + " * from Employee WHERE is_deleted = 0 ORDER BY employee_id";
+            }
+            else
+            {
+                int offset = (page - 1) * pageSize;
+                strSql = $"SELECT TOP {pageSize} * FROM (SELECT *, ROW_NUMBER() OVER (ORDER BY employee_id) AS RowNum FROM Employee WHERE is_deleted = 0) AS T WHERE RowNum > {offset}";
+            }
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+        /// <summary>
         /// Create Employee
         /// </summary>
         /// <param name="employeeEntity">.</param>
@@ -76,11 +108,11 @@ namespace HotelManagementSystem.DAO.Employee
                                         new SqlParameter("@Position", employeeEntity.position),
                                         new SqlParameter("@NRCNumber", employeeEntity.nrcNumber),
                                         new SqlParameter("@Dob", employeeEntity.dob),
-                                        new SqlParameter("@Image", employeeEntity.gender),
-                                        new SqlParameter("@JoinedDate", employeeEntity.gender),
-                                        new SqlParameter("@Address", employeeEntity.gender),
-                                        new SqlParameter("@CreatedDate", employeeEntity.gender),
-                                        new SqlParameter("@UpdatedDate", employeeEntity.gender),
+                                        new SqlParameter("@Image", employeeEntity.image),
+                                        new SqlParameter("@JoinedDate", employeeEntity.joinedDate),
+                                        new SqlParameter("@Address", employeeEntity.address),
+                                        new SqlParameter("@CreatedDate", employeeEntity.createdDateTime),
+                                        new SqlParameter("@UpdatedDate", employeeEntity.updatedDateTime),
                                         new SqlParameter("@CreatedUserId", employeeEntity.createdUserId),
                                         new SqlParameter("@UpdatedUserId", employeeEntity.updatedUserId)
                                       };
@@ -105,10 +137,10 @@ namespace HotelManagementSystem.DAO.Employee
                                         new SqlParameter("@Position", employeeEntity.position),
                                         new SqlParameter("@NRCNumber", employeeEntity.nrcNumber),
                                         new SqlParameter("@Dob", employeeEntity.dob),
-                                        new SqlParameter("@Image", employeeEntity.gender),
-                                        new SqlParameter("@JoinedDate", employeeEntity.gender),
-                                        new SqlParameter("@Address", employeeEntity.gender),
-                                        new SqlParameter("@UpdatedDate", employeeEntity.gender),
+                                        new SqlParameter("@Image", employeeEntity.image),
+                                        new SqlParameter("@JoinedDate", employeeEntity.joinedDate),
+                                        new SqlParameter("@Address", employeeEntity.address),
+                                        new SqlParameter("@UpdatedDate", employeeEntity.updatedDateTime),
                                         new SqlParameter("@UpdatedUserId", employeeEntity.updatedUserId)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);

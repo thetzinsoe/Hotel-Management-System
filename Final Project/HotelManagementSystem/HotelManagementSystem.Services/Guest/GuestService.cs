@@ -43,6 +43,28 @@ namespace HotelManagementSystem.Services.Guest
         }
 
         /// <summary>
+        /// Search
+        /// </summary>
+        /// <param name="name">.</param>
+        /// <returns>.</returns>
+        public DataTable Search(string name)
+        {
+            DataTable dt = guestDao.Search(name);
+            return dt;
+        }
+
+        /// <summary>
+        /// GetRecord
+        /// </summary>
+        /// <param name="page">.</param>
+        /// <param name="pageSize"></param>
+        /// <returns>.</returns>
+        public DataTable GetRecord(int page, int pageSize)
+        {
+            DataTable dt = guestDao.GetRecord(page, pageSize);
+            return dt;
+        }
+        /// <summary>
         /// Save Guest.
         /// </summary>
         /// <param name="guestEntity">.</param>
@@ -65,9 +87,9 @@ namespace HotelManagementSystem.Services.Guest
         /// </summary>
         /// <param name="guestId">.</param>
         /// <param name="userId">.</param>
-        public bool Delete(int guestId, int userId)
+        public bool Delete(int guestId)
         {
-            return guestDao.Delete(guestId, userId);
+            return guestDao.Delete(guestId);
         }
         #endregion
     }

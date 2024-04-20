@@ -41,18 +41,25 @@ namespace HotelManagementSystem.Views.Guest
             this.lblAddress = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtGuestId = new System.Windows.Forms.TextBox();
             this.lblDob = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.rdbFemale = new System.Windows.Forms.RadioButton();
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.rdbOther = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFullName
@@ -75,6 +82,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(376, 29);
             this.txtFullName.TabIndex = 1;
+            this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             // 
             // txtAddress
             // 
@@ -84,6 +92,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(376, 29);
             this.txtAddress.TabIndex = 8;
+            this.txtAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress_KeyPress);
             // 
             // lblNRCNumber
             // 
@@ -105,6 +114,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(376, 29);
             this.txtPhoneNumber.TabIndex = 9;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblNationality
             // 
@@ -126,6 +136,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtNRCNumber.Name = "txtNRCNumber";
             this.txtNRCNumber.Size = new System.Drawing.Size(376, 29);
             this.txtNRCNumber.TabIndex = 7;
+            this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
             // 
             // lblAddress
             // 
@@ -147,6 +158,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(376, 29);
             this.txtNationality.TabIndex = 6;
+            this.txtNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationality_KeyPress);
             // 
             // lblPhoneNumber
             // 
@@ -160,64 +172,73 @@ namespace HotelManagementSystem.Views.Guest
             this.lblPhoneNumber.TabIndex = 8;
             this.lblPhoneNumber.Text = "Phone Number:";
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(32, 496);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "ADD";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.Location = new System.Drawing.Point(43, 611);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(453, 496);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "DELETE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.White;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(604, 611);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button3
+            // btnClear
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(240, 496);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "CLEAR";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(320, 611);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtGuestId);
             this.groupBox1.Controls.Add(this.lblDob);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpDob);
             this.groupBox1.Controls.Add(this.rdbFemale);
             this.groupBox1.Controls.Add(this.rdbMale);
             this.groupBox1.Controls.Add(this.rdbOther);
             this.groupBox1.Controls.Add(this.lblGender);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.lblFullName);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.txtFullName);
             this.groupBox1.Controls.Add(this.lblNRCNumber);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.lblNationality);
             this.groupBox1.Controls.Add(this.txtPhoneNumber);
@@ -234,7 +255,28 @@ namespace HotelManagementSystem.Views.Guest
             this.groupBox1.Size = new System.Drawing.Size(900, 691);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "GUEST REGISTER";
+            this.groupBox1.Text = "GUEST REGISTRATION";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(710, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(17, 23);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "*";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.guestCRUD;
+            this.pictureBox1.Location = new System.Drawing.Point(751, 112);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(443, 527);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
             // 
             // txtGuestId
             // 
@@ -258,16 +300,15 @@ namespace HotelManagementSystem.Views.Guest
             this.lblDob.TabIndex = 35;
             this.lblDob.Text = "Date of Birth:";
             // 
-            // dateTimePicker1
+            // dtpDob
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 206);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(376, 26);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
+            this.dtpDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDob.Location = new System.Drawing.Point(204, 254);
+            this.dtpDob.MaxDate = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
+            this.dtpDob.Name = "dtpDob";
+            this.dtpDob.Size = new System.Drawing.Size(500, 30);
+            this.dtpDob.TabIndex = 5;
+            this.dtpDob.Value = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
             // rdbFemale
             // 
@@ -318,6 +359,50 @@ namespace HotelManagementSystem.Views.Guest
             this.lblGender.TabIndex = 30;
             this.lblGender.Text = "Gender:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(710, 260);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(17, 23);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(710, 330);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(17, 23);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(710, 400);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(17, 23);
+            this.label4.TabIndex = 41;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(710, 540);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 23);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "*";
+            // 
             // UCGuestCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,9 +411,11 @@ namespace HotelManagementSystem.Views.Guest
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCGuestCRUD";
-            this.Size = new System.Drawing.Size(900, 691);
+            this.Size = new System.Drawing.Size(1200, 850);
+            this.Load += new System.EventHandler(this.UCGuestCRUD_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,16 +432,22 @@ namespace HotelManagementSystem.Views.Guest
         private Label lblAddress;
         private TextBox txtNationality;
         private Label lblPhoneNumber;
-        private Button button4;
-        private Button button2;
-        private Button button3;
+        private Button btnAdd;
+        private Button btnDelete;
+        private Button btnClear;
         private GroupBox groupBox1;
         private RadioButton rdbFemale;
         private RadioButton rdbMale;
         private RadioButton rdbOther;
         private Label lblGender;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpDob;
         private Label lblDob;
         private TextBox txtGuestId;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
     }
 }
