@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.EmployeeId = new System.Windows.Forms.DataGridViewLinkColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +54,7 @@
             this.btn3xPrevious = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnImport = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.pnTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -172,9 +173,9 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "Delete";
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "Delete";
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
             this.Delete.HeaderText = "Delete";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
@@ -235,7 +236,7 @@
             // btnDownload
             // 
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.Location = new System.Drawing.Point(1047, 165);
+            this.btnDownload.Location = new System.Drawing.Point(1047, 162);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(125, 35);
             this.btnDownload.TabIndex = 8;
@@ -314,7 +315,7 @@
             // btnImport
             // 
             this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(822, 165);
+            this.btnImport.Location = new System.Drawing.Point(779, 162);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(183, 35);
             this.btnImport.TabIndex = 16;
@@ -322,10 +323,22 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btnAddNew
+            // 
+            this.btnAddNew.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNew.Location = new System.Drawing.Point(29, 101);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(125, 35);
+            this.btnAddNew.TabIndex = 17;
+            this.btnAddNew.Text = "Add New";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
+            // 
             // UCEmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btn3xNext);
@@ -377,5 +390,6 @@
         private System.Windows.Forms.Button btn3xPrevious;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnAddNew;
     }
 }

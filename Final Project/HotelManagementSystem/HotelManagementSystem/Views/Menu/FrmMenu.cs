@@ -1,4 +1,6 @@
 ﻿using HotelManagementSystem.Views.Reservation;
+using HotelManagementSystem.Views.Guest;
+using HotelManagementSystem.Views.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,6 +69,20 @@ namespace HotelManagementSystem.Views.Menu
             UCCheckInList uCCheckInList = new UCCheckInList();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCCheckInList);
+        }
+
+        private void guestRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCGuestCRUD uCGuestCRUD = new UCGuestCRUD();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCGuestCRUD);
+        }
+
+        private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCGuestList uCGuestList = new UCGuestList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCGuestList);
         }
     }
 }

@@ -327,5 +327,12 @@ namespace HotelManagementSystem.Views.Employee
                 BindGrid();
             }           
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            UCEmployee uCEmployee = new UCEmployee();
+            this.Controls.Clear();
+            this.Controls.Add(uCEmployee);
+        }
     }
 }
