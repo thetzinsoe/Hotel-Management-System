@@ -6,7 +6,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace HotelManagementSystem.Services.Employee
 {
     /// <summary>
@@ -39,6 +38,28 @@ namespace HotelManagementSystem.Services.Employee
         public DataTable Get(int employeeId)
         {
             DataTable dt = employeeDao.Get(employeeId);
+            return dt;
+        }
+
+        /// <summary>
+        /// Search
+        /// </summary>
+        /// <param name="name">.</param>
+        /// <returns>.</returns>
+        public DataTable Search(string name)
+        {
+            DataTable dt = employeeDao.Search(name);
+            return dt;
+        }
+        /// <summary>
+        /// GetRecord
+        /// </summary>
+        /// <param name="page">.</param>
+        /// <param name="pageSize"></param>
+        /// <returns>.</returns>
+        public DataTable GetRecord(int page, int pageSize)
+        {
+            DataTable dt = employeeDao.GetRecord(page, pageSize);
             return dt;
         }
 

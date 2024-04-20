@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminDao.cs" />
+    <Compile Include="CheckIn\CheckInDao.cs" />
     <Compile Include="Common\DbConnection.cs" />
     <Compile Include="Employee\EmployeeDao.cs" />
     <Compile Include="Guest\GuestDao.cs" />
