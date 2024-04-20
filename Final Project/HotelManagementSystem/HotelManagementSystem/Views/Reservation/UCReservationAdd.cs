@@ -318,5 +318,10 @@ namespace HotelManagementSystem.Views.Reservation
         {
             return (c >= '\u1040' && c <= '\u1049');
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

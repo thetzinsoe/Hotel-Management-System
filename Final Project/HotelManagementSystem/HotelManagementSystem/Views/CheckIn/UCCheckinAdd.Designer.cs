@@ -32,7 +32,8 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.hdRoomId = new System.Windows.Forms.Label();
+            this.hdReservationId = new System.Windows.Forms.Label();
+            this.hdGuestNrc = new System.Windows.Forms.Label();
             this.hdCheckInId = new System.Windows.Forms.Label();
             this.lbGuestNrcValidation = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.cbGuestName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
-            this.hdReservationId = new System.Windows.Forms.Label();
             this.pnTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,7 +96,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.hdReservationId);
-            this.groupBox1.Controls.Add(this.hdRoomId);
+            this.groupBox1.Controls.Add(this.hdGuestNrc);
             this.groupBox1.Controls.Add(this.hdCheckInId);
             this.groupBox1.Controls.Add(this.lbGuestNrcValidation);
             this.groupBox1.Controls.Add(this.label12);
@@ -128,15 +128,23 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create New Checkin";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // hdRoomId
+            // hdReservationId
             // 
-            this.hdRoomId.AutoSize = true;
-            this.hdRoomId.Location = new System.Drawing.Point(753, 42);
-            this.hdRoomId.Name = "hdRoomId";
-            this.hdRoomId.Size = new System.Drawing.Size(0, 25);
-            this.hdRoomId.TabIndex = 150;
+            this.hdReservationId.AutoSize = true;
+            this.hdReservationId.Location = new System.Drawing.Point(574, 42);
+            this.hdReservationId.Name = "hdReservationId";
+            this.hdReservationId.Size = new System.Drawing.Size(0, 25);
+            this.hdReservationId.TabIndex = 151;
+            this.hdReservationId.Visible = false;
+            // 
+            // hdGuestNrc
+            // 
+            this.hdGuestNrc.AutoSize = true;
+            this.hdGuestNrc.Location = new System.Drawing.Point(753, 42);
+            this.hdGuestNrc.Name = "hdGuestNrc";
+            this.hdGuestNrc.Size = new System.Drawing.Size(0, 25);
+            this.hdGuestNrc.TabIndex = 150;
             // 
             // hdCheckInId
             // 
@@ -413,15 +421,6 @@
             this.lblGender.TabIndex = 113;
             this.lblGender.Text = "Room Number";
             // 
-            // hdReservationId
-            // 
-            this.hdReservationId.AutoSize = true;
-            this.hdReservationId.Location = new System.Drawing.Point(574, 42);
-            this.hdReservationId.Name = "hdReservationId";
-            this.hdReservationId.Size = new System.Drawing.Size(0, 25);
-            this.hdReservationId.TabIndex = 151;
-            this.hdReservationId.Visible = false;
-            // 
             // UCCheckinAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,7 +469,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label hdCheckInId;
-        private System.Windows.Forms.Label hdRoomId;
+        private System.Windows.Forms.Label hdGuestNrc;
         private System.Windows.Forms.Label hdReservationId;
     }
 }

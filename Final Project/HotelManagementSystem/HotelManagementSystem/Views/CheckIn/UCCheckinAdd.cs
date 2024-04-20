@@ -35,6 +35,13 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             set { hdReservationId.Text = value;}
         }
+
+        public string Nrc
+        {
+            set { hdGuestNrc.Text = value; }
+        }
+
+
         public UCCheckinAdd()
         {
             InitializeComponent();
@@ -149,15 +156,13 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
-                btnBack.Enabled = true;
                 btnCheckOut.Enabled = true;
                 btnCheckIn.Text = "Update";
             }
             else
             {
-                btnBack.Enabled = false;
                 btnCheckOut.Enabled = false;
-                btnCheckIn.Text = "Add";
+                btnCheckIn.Text = "CheckIn";
             }
         }
 
@@ -184,6 +189,7 @@ namespace HotelManagementSystem.Views.CheckIn
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
+                        cbGuestNrc.Text = hdGuestNrc.Text;
                         cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
@@ -350,11 +356,6 @@ namespace HotelManagementSystem.Views.CheckIn
                     this.Controls.Add(uCPayNow);
                 }
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -50,6 +50,8 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.gUESTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUESTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +149,9 @@ namespace HotelManagementSystem.Views.Menu
             // 
             // gUESTINFOMATIONToolStripMenuItem
             // 
+            this.gUESTINFOMATIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gUESTADDToolStripMenuItem,
+            this.gUESTLISTToolStripMenuItem});
             this.gUESTINFOMATIONToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.gUESTINFOMATIONToolStripMenuItem.Name = "gUESTINFOMATIONToolStripMenuItem";
             this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(184, 61);
@@ -216,6 +221,20 @@ namespace HotelManagementSystem.Views.Menu
             this.pnMain.Size = new System.Drawing.Size(1084, 697);
             this.pnMain.TabIndex = 16;
             // 
+            // gUESTADDToolStripMenuItem
+            // 
+            this.gUESTADDToolStripMenuItem.Name = "gUESTADDToolStripMenuItem";
+            this.gUESTADDToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.gUESTADDToolStripMenuItem.Text = "GUEST ADD";
+            this.gUESTADDToolStripMenuItem.Click += new System.EventHandler(this.gUESTADDToolStripMenuItem_Click);
+            // 
+            // gUESTLISTToolStripMenuItem
+            // 
+            this.gUESTLISTToolStripMenuItem.Name = "gUESTLISTToolStripMenuItem";
+            this.gUESTLISTToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.gUESTLISTToolStripMenuItem.Text = "GUEST LIST";
+            this.gUESTLISTToolStripMenuItem.Click += new System.EventHandler(this.gUESTLISTToolStripMenuItem_Click);
+            // 
             // FrmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -254,5 +273,7 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem cHECKINLISTToolStripMenuItem1;
         private ToolStripMenuItem pAYMENTLISTToolStripMenuItem;
         private ToolStripMenuItem pAYMENTADDToolStripMenuItem;
+        private ToolStripMenuItem gUESTADDToolStripMenuItem;
+        private ToolStripMenuItem gUESTLISTToolStripMenuItem;
     }
 }

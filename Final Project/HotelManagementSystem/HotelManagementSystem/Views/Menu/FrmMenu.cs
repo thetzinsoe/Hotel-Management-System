@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagementSystem.Views.Payment;
 using HotelManagementSystem.Views.CheckIn;
+using HotelManagementSystem.Views.Guest;
 
 namespace HotelManagementSystem.Views.Menu
 {
@@ -67,6 +68,20 @@ namespace HotelManagementSystem.Views.Menu
             UCCheckInList uCCheckInList = new UCCheckInList();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCCheckInList);
+        }
+
+        private void gUESTADDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCGuestCRUD uCGuesCRUD = new UCGuestCRUD();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCGuesCRUD);
+        }
+
+        private void gUESTLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCGuestList uCGuestList = new UCGuestList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCGuestList);
         }
     }
 }

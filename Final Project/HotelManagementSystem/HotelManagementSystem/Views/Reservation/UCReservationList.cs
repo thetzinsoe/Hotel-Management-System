@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Views.CheckIn;
+using HotelManagementSystem.Views.Guest;
 
 namespace HotelManagementSystem.Views.Reservation
 {
@@ -33,13 +34,28 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 if (e.ColumnIndex == dgvReservation.Columns["checkin"].Index && e.RowIndex >= 0)
                 {
-                    DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];
-                    int id = Convert.ToInt32(selectedRow.Cells["reservation_id"].Value);
-                    //MessageBox.Show("id : " + id);
-                    UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
-                    uCCheckinAdd.RvId = id.ToString();
-                    this.Controls.Clear();
-                    this.Controls.Add(uCCheckinAdd);
+                   DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];
+                        int id = Convert.ToInt32(selectedRow.Cells["reservation_id"].Value);
+                        DataTable dt = reservationService.Get(id);
+                        string name = string.Empty;
+                        string phone = string.Empty;
+                        if (dt != null)
+                        {
+                            foreach (DataRow row in dt.Rows)
+                            {
+                                name = row["customer_name"].ToString();
+                                phone = row["customer_phoneNo"].ToString();
+                            }
+                        }
+                        
+                        UCGuestList uCGuestList = new UCGuestList(name,phone);
+                        uCGuestList.ReservationID = id.ToString();
+                        this.Controls.Clear();
+                        this.Controls.Add(uCGuestList);
+                    }
                 }
 
                 int reservationId = Convert.ToInt32(dgvReservation.Rows[e.RowIndex].Cells["reservation_id"].Value);
