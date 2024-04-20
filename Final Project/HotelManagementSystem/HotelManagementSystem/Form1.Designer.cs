@@ -33,9 +33,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.reservationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestCRUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestListingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeCRUDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.employeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnUC = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +58,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservationToolStripMenuItem,
             this.guestInformationToolStripMenuItem,
-            this.roomInformationToolStripMenuItem});
+            this.roomInformationToolStripMenuItem,
+            this.employeeInformationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1182, 59);
@@ -77,30 +81,54 @@
             this.guestInformationToolStripMenuItem.Size = new System.Drawing.Size(193, 55);
             this.guestInformationToolStripMenuItem.Text = "Guest Information";
             // 
-            // roomInformationToolStripMenuItem
-            // 
-            this.roomInformationToolStripMenuItem.Name = "roomInformationToolStripMenuItem";
-            this.roomInformationToolStripMenuItem.Size = new System.Drawing.Size(193, 55);
-            this.roomInformationToolStripMenuItem.Text = "Room Information";
-            // 
             // guestCRUDToolStripMenuItem
             // 
             this.guestCRUDToolStripMenuItem.Name = "guestCRUDToolStripMenuItem";
-            this.guestCRUDToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.guestCRUDToolStripMenuItem.Size = new System.Drawing.Size(217, 32);
             this.guestCRUDToolStripMenuItem.Text = "Guest CRUD";
             this.guestCRUDToolStripMenuItem.Click += new System.EventHandler(this.guestCRUDToolStripMenuItem_Click);
             // 
             // guestListingToolStripMenuItem
             // 
             this.guestListingToolStripMenuItem.Name = "guestListingToolStripMenuItem";
-            this.guestListingToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.guestListingToolStripMenuItem.Size = new System.Drawing.Size(217, 32);
             this.guestListingToolStripMenuItem.Text = "Guest Listing";
+            this.guestListingToolStripMenuItem.Click += new System.EventHandler(this.guestListingToolStripMenuItem_Click);
+            // 
+            // roomInformationToolStripMenuItem
+            // 
+            this.roomInformationToolStripMenuItem.Name = "roomInformationToolStripMenuItem";
+            this.roomInformationToolStripMenuItem.Size = new System.Drawing.Size(193, 55);
+            this.roomInformationToolStripMenuItem.Text = "Room Information";
+            // 
+            // employeeInformationToolStripMenuItem
+            // 
+            this.employeeInformationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.employeeCRUDToolStripMenuItem,
+            this.employeeListToolStripMenuItem});
+            this.employeeInformationToolStripMenuItem.Name = "employeeInformationToolStripMenuItem";
+            this.employeeInformationToolStripMenuItem.Size = new System.Drawing.Size(229, 55);
+            this.employeeInformationToolStripMenuItem.Text = "Employee Information";
+            // 
+            // employeeCRUDToolStripMenuItem
+            // 
+            this.employeeCRUDToolStripMenuItem.Name = "employeeCRUDToolStripMenuItem";
+            this.employeeCRUDToolStripMenuItem.Size = new System.Drawing.Size(245, 32);
+            this.employeeCRUDToolStripMenuItem.Text = "Employee CRUD";
+            this.employeeCRUDToolStripMenuItem.Click += new System.EventHandler(this.employeeCRUDToolStripMenuItem_Click);
+            // 
+            // employeeListToolStripMenuItem
+            // 
+            this.employeeListToolStripMenuItem.Name = "employeeListToolStripMenuItem";
+            this.employeeListToolStripMenuItem.Size = new System.Drawing.Size(245, 32);
+            this.employeeListToolStripMenuItem.Text = "Employee List";
+            this.employeeListToolStripMenuItem.Click += new System.EventHandler(this.employeeListToolStripMenuItem_Click);
             // 
             // pnUC
             // 
-            this.pnUC.Location = new System.Drawing.Point(72, 103);
+            this.pnUC.Location = new System.Drawing.Point(0, 59);
             this.pnUC.Name = "pnUC";
-            this.pnUC.Size = new System.Drawing.Size(750, 700);
+            this.pnUC.Size = new System.Drawing.Size(1200, 840);
             this.pnUC.TabIndex = 2;
             // 
             // Form1
@@ -129,6 +157,9 @@
         private System.Windows.Forms.ToolStripMenuItem guestListingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomInformationToolStripMenuItem;
         private System.Windows.Forms.Panel pnUC;
+        private System.Windows.Forms.ToolStripMenuItem employeeInformationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeCRUDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem employeeListToolStripMenuItem;
     }
 }
 
