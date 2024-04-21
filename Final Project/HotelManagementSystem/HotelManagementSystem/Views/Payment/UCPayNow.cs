@@ -57,6 +57,10 @@ namespace HotelManagementSystem.Views.Payment
             {
                 btnConfirm.Enabled = false;
             }
+            else
+            {
+                btnPrint.Enabled = false;
+            }
             BindData();
         }
 
@@ -212,7 +216,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void txtDiscount_TextChanged_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDiscount.Text.ToString()))
+            if (!string.IsNullOrEmpty(txtDiscount.Text.ToString()))
             {
                 bool isDigit = txtDiscount.Text.Any(c => char.IsDigit(c));
                 if (isDigit)

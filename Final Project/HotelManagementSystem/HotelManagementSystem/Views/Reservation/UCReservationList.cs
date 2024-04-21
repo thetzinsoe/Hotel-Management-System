@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.Pdf.ContentGeneration.Interop;
+using HotelManagementSystem.Services.Payment;
 using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Views.CheckIn;
 using HotelManagementSystem.Views.Guest;
+using static DevExpress.Drawing.Printing.Internal.DXPageSizeInfo;
 
 namespace HotelManagementSystem.Views.Reservation
 {
     public partial class UCReservationList : UserControl
     {
+        int pageSize = 2;
+        int currentPageIndex = 1;
+        int totalPage = 0;
         ReservationService reservationService = new ReservationService();
         public UCReservationList()
         {
@@ -23,7 +29,21 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void UCReservation_Load(object sender, EventArgs e)
         {
-            DataTable dt = reservationService.GetAll();
+            LoadReservation();
+        }
+
+        private void LoadReservation()
+        {
+            int offset = (currentPageIndex - 1) * pageSize;
+            DataTable dt = reservationService.GetWithPagination(offset, pageSize);
+            DataTable dt1 = reservationService.GetAll();
+            int rowCount = dt1.Rows.Count;
+            totalPage = rowCount / pageSize;
+            if (rowCount % pageSize > 0)
+            {
+                totalPage += 1;
+            }
+            lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvReservation.AutoGenerateColumns = false;
             dgvReservation.DataSource = dt;
         }
@@ -67,6 +87,73 @@ namespace HotelManagementSystem.Views.Reservation
                     this.Controls.Add(uCReservationAdd);
                 }
             }  
+        }
+
+        private void btn3xPrevious_Click(object sender, EventArgs e)
+        {
+            int prevPageIndex = this.currentPageIndex - 3;
+            if (prevPageIndex > 1)
+            {
+                this.currentPageIndex = prevPageIndex;
+            }
+            else
+            {
+                this.currentPageIndex = 1;
+            }
+            LoadReservation();
+            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+
+        }
+
+        private void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (this.currentPageIndex > 1)
+            {
+                this.currentPageIndex--;
+                LoadReservation();
+                lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (this.currentPageIndex < totalPage)
+            {
+                this.currentPageIndex++;
+                LoadReservation();
+                lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+            }
+        }
+
+        private void btn3xNext_Click(object sender, EventArgs e)
+        {
+            int nextPageIndex = this.currentPageIndex + 3;
+            if (nextPageIndex < totalPage)
+            {
+                this.currentPageIndex = nextPageIndex;
+            }
+            else
+            {
+                this.currentPageIndex = totalPage;
+            }
+            LoadReservation();
+            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+        }
+
+        private void txtSearchValue_TextChanged(object sender, EventArgs e)
+        {
+            int offset = (currentPageIndex - 1) * pageSize;
+            DataTable dt = reservationService.GetWithPagination(offset, pageSize,txtSearchValue.Text.Trim());
+            DataTable dt1 = reservationService.GetAll();
+            int rowCount = dt1.Rows.Count;
+            totalPage = rowCount / pageSize;
+            if (rowCount % pageSize > 0)
+            {
+                totalPage += 1;
+            }
+            lblPageNo.Text = $"Page 1 of {totalPage}";
+            dgvReservation.AutoGenerateColumns = false;
+            dgvReservation.DataSource = dt;
         }
     }
 }

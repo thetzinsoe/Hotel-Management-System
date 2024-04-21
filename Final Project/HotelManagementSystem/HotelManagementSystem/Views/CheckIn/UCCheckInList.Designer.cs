@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn3xNext = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblPageNo = new System.Windows.Forms.Label();
+            this.btnPrev = new System.Windows.Forms.Button();
+            this.btn3xPrevious = new System.Windows.Forms.Button();
             this.dgvCheckIn = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewLinkColumn();
             this.guestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +46,8 @@
             this.checkInDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkOutDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkout = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbSearchType = new System.Windows.Forms.ComboBox();
+            this.txtSearchValue = new System.Windows.Forms.TextBox();
             this.pnTitle.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).BeginInit();
@@ -70,6 +77,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtSearchValue);
+            this.groupBox1.Controls.Add(this.cbSearchType);
+            this.groupBox1.Controls.Add(this.btn3xNext);
+            this.groupBox1.Controls.Add(this.btnNext);
+            this.groupBox1.Controls.Add(this.lblPageNo);
+            this.groupBox1.Controls.Add(this.btnPrev);
+            this.groupBox1.Controls.Add(this.btn3xPrevious);
             this.groupBox1.Controls.Add(this.dgvCheckIn);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 69);
@@ -78,6 +92,69 @@
             this.groupBox1.TabIndex = 80;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CheckIn List";
+            // 
+            // btn3xNext
+            // 
+            this.btn3xNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3xNext.Location = new System.Drawing.Point(739, 487);
+            this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3xNext.Name = "btn3xNext";
+            this.btn3xNext.Size = new System.Drawing.Size(45, 28);
+            this.btn3xNext.TabIndex = 90;
+            this.btn3xNext.Text = ">>";
+            this.btn3xNext.UseVisualStyleBackColor = true;
+            this.btn3xNext.Click += new System.EventHandler(this.btn3xNext_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(669, 487);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(45, 28);
+            this.btnNext.TabIndex = 89;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblPageNo
+            // 
+            this.lblPageNo.AutoSize = true;
+            this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageNo.Location = new System.Drawing.Point(524, 492);
+            this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPageNo.Name = "lblPageNo";
+            this.lblPageNo.Size = new System.Drawing.Size(37, 19);
+            this.lblPageNo.TabIndex = 88;
+            this.lblPageNo.Text = "label";
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.Location = new System.Drawing.Point(384, 487);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(45, 28);
+            this.btnPrev.TabIndex = 87;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btn3xPrevious
+            // 
+            this.btn3xPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn3xPrevious.Location = new System.Drawing.Point(310, 487);
+            this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3xPrevious.Name = "btn3xPrevious";
+            this.btn3xPrevious.Size = new System.Drawing.Size(45, 28);
+            this.btn3xPrevious.TabIndex = 86;
+            this.btn3xPrevious.Text = "<<";
+            this.btn3xPrevious.UseVisualStyleBackColor = true;
+            this.btn3xPrevious.Click += new System.EventHandler(this.btn3xPrevious_Click);
             // 
             // dgvCheckIn
             // 
@@ -92,18 +169,19 @@
             this.checkInDate,
             this.checkOutDate,
             this.checkout});
-            this.dgvCheckIn.Location = new System.Drawing.Point(7, 29);
+            this.dgvCheckIn.Location = new System.Drawing.Point(7, 65);
             this.dgvCheckIn.Name = "dgvCheckIn";
             this.dgvCheckIn.ReadOnly = true;
-            this.dgvCheckIn.Size = new System.Drawing.Size(1081, 543);
+            this.dgvCheckIn.RowTemplate.Height = 30;
+            this.dgvCheckIn.Size = new System.Drawing.Size(1081, 404);
             this.dgvCheckIn.TabIndex = 0;
             this.dgvCheckIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Id
             // 
             this.Id.DataPropertyName = "checkin_id";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -153,18 +231,39 @@
             // 
             // checkout
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.checkout.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.checkout.DefaultCellStyle = dataGridViewCellStyle2;
             this.checkout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.checkout.HeaderText = "Check Out";
             this.checkout.Name = "checkout";
             this.checkout.ReadOnly = true;
             this.checkout.Text = "Check Out";
             this.checkout.UseColumnTextForButtonValue = true;
+            // 
+            // cbSearchType
+            // 
+            this.cbSearchType.FormattingEnabled = true;
+            this.cbSearchType.Items.AddRange(new object[] {
+            "Name",
+            "Nrc Number"});
+            this.cbSearchType.Location = new System.Drawing.Point(923, 28);
+            this.cbSearchType.Name = "cbSearchType";
+            this.cbSearchType.Size = new System.Drawing.Size(165, 29);
+            this.cbSearchType.TabIndex = 93;
+            this.cbSearchType.Text = "Choose Search Type";
+            // 
+            // txtSearchValue
+            // 
+            this.txtSearchValue.Location = new System.Drawing.Point(603, 28);
+            this.txtSearchValue.MaxLength = 20;
+            this.txtSearchValue.Name = "txtSearchValue";
+            this.txtSearchValue.Size = new System.Drawing.Size(314, 29);
+            this.txtSearchValue.TabIndex = 94;
+            this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             // 
             // UCCheckInList
             // 
@@ -178,6 +277,7 @@
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckIn)).EndInit();
             this.ResumeLayout(false);
 
@@ -196,5 +296,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn checkInDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkOutDate;
         private System.Windows.Forms.DataGridViewButtonColumn checkout;
+        private System.Windows.Forms.Button btn3xNext;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblPageNo;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btn3xPrevious;
+        private System.Windows.Forms.ComboBox cbSearchType;
+        private System.Windows.Forms.TextBox txtSearchValue;
     }
 }

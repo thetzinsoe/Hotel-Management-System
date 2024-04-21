@@ -109,6 +109,14 @@ namespace HotelManagementSystem.Views.CheckIn
 
             if (String.IsNullOrEmpty(hdCheckInId.Text))
             {
+                if (!string.IsNullOrEmpty(hdReservationId.Text))
+                {
+                   bool resDel = reservationService.Delete(int.Parse(hdReservationId.Text.ToString()));
+                    if (!resDel)
+                    {
+                        MessageBox.Show("Cant remove reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 success = checkInService.Insert(checkInEntity);
                 bool roomOp = reservationService.RoomUpdate(selectedRoomId, 1);
                 if (success && roomOp)
@@ -168,8 +176,8 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void BindData()
         {
-            //try
-            //{
+            try
+            {
                 if (!String.IsNullOrEmpty(hdCheckInId.Text))
                 {
                     DataTable dt = checkInService.Get(Convert.ToInt32(hdCheckInId.Text.ToString()));
@@ -195,9 +203,11 @@ namespace HotelManagementSystem.Views.CheckIn
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                     }
                 }
-            //}catch(Exception err){
-            //    MessageBox.Show(err.Message);
-            //}
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)

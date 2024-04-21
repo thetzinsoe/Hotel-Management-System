@@ -43,6 +43,12 @@ namespace HotelManagementSystem.DAO.Payment
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public DataTable GetWithPagination(int offset,int pageSize)
+        {
+            strSql = $"SELECT * FROM Payment Where is_deleted=0 ORDER BY [payment_id] OFFSET {offset} ROWS FETCH NEXT {pageSize} ROWS ONLY;";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
 
         /// <summary>
         /// Get

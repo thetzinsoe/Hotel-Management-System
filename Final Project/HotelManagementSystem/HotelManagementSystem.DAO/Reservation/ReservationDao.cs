@@ -50,6 +50,19 @@ namespace HotelManagementSystem.DAO.Reservation
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public DataTable GetWithPagination(int offset, int pageSize, string searchValue = "")
+        {
+            string strSql = $"SELECT * FROM Reservation WHERE customer_name LIKE '%{searchValue}%' AND is_deleted = 0 " +
+                 $"ORDER BY [reservation_id] OFFSET {offset} ROWS FETCH NEXT {pageSize} ROWS ONLY;";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+            public DataTable GetRoomWithDate(DateTime checkinDate)
+        {
+            strSql = "SELECT t1.*, t2.checkout_date FROM Room t1 JOIN Checkin t2 ON t1.room_id = t2.room_id WHERE t1.is_deleted = 0 AND t2.checkout_date < '"+checkinDate+"' AND t2.is_deleted = 0";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
         public bool RoomUpdate(int id, int is_occupied)
         {
             strSql = "UPDATE Room SET is_occupied = @is_occupied WHERE room_id = @room_id";

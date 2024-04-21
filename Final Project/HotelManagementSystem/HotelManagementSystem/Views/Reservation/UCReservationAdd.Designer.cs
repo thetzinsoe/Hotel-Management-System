@@ -282,7 +282,7 @@
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.Location = new System.Drawing.Point(422, 210);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtPhoneNumber.MaxLength = 50;
+            this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(376, 29);
             this.txtPhoneNumber.TabIndex = 93;
@@ -371,7 +371,7 @@
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.Location = new System.Drawing.Point(422, 154);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFullName.MaxLength = 50;
+            this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(376, 29);
             this.txtFullName.TabIndex = 85;

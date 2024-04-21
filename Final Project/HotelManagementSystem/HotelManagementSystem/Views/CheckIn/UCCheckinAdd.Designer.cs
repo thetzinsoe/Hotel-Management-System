@@ -307,7 +307,7 @@
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(376, 26);
             this.dtpCheckInDate.TabIndex = 130;
-            this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 17, 0, 0, 0, 0);
+            this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 20, 0, 0, 0, 0);
             this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
             // btnBack

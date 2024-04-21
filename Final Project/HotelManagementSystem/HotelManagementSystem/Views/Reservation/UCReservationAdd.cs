@@ -70,6 +70,12 @@ namespace HotelManagementSystem.Views.Reservation
                 lbRoomNoValidation.Text = "Please Select Room!";
             }
 
+            if (dtpCheckInDate.Value.Date > dtpCheckOutDate.Value.Date)
+            {
+                validateInput = false;
+                lbCheckInDateValidation.Text = "Checkin date must earlier than Checkout date!";
+            }
+
 
             if (validateInput)
             {
@@ -153,9 +159,21 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
         {            
+            
+            BtnState();
+            BindData();
+        }
+
+        private void Load_room()
+        {
             try
             {
-                DataTable dt = reservationService.GetAllRoom();
+                DataTable dt = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date);
+                if (dt == null)
+                {
+                    validateInput = false;
+                    lbRoomNoValidation.Text = "Every rooms are not avilable!";
+                }
                 cbRoomNo.DataSource = dt;
                 cbRoomNo.DisplayMember = "room_no";
             }
@@ -163,8 +181,6 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 MessageBox.Show(exc.Message);
             }
-            BtnState();
-            BindData();
         }
 
         private void BindData()
@@ -232,6 +248,7 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 if(dtpCheckInDate.Value >= DateTime.Now.Date)
                 {
+                    Load_room();
                     validateInput = true;
                     lbCheckInDateValidation.Text = "";
                 }
@@ -273,7 +290,7 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void txtFullName_TextChanged(object sender, EventArgs e)
         {
-            bool containsDigit = txtFullName.Text.Any(c => !char.IsLetter(c) && !IsBurmeseCharacter(c));
+            bool containsDigit = txtFullName.Text.Any(c => !char.IsLetter(c) && !IsBurmeseCharacter(c) && c!=' ');
 
             if (containsDigit)
             {
@@ -288,7 +305,7 @@ namespace HotelManagementSystem.Views.Reservation
         }
         private bool IsBurmeseCharacter(char c)
         {
-            return (c >= '\u1000' && c <= '\u109F');
+            return (c >= '\u1000' && c <= '\u109F' || c==' ');
         }
 
         private void txtPhoneNumber_TextChanged(object sender, EventArgs e)
@@ -297,7 +314,7 @@ namespace HotelManagementSystem.Views.Reservation
 
             if (!string.IsNullOrEmpty(phoneNumber))
             {
-                bool isEnglishDigit = phoneNumber.All(c => char.IsDigit(c));
+                bool isEnglishDigit = phoneNumber.All(c => char.IsDigit(c) || c==' ');
                 bool isBurmeseDigit = phoneNumber.All(c => IsBurmeseDigit(c));
 
                 if (!(isEnglishDigit || isBurmeseDigit))
@@ -316,7 +333,7 @@ namespace HotelManagementSystem.Views.Reservation
         // Function to check if a character is a Burmese digit
         private bool IsBurmeseDigit(char c)
         {
-            return (c >= '\u1040' && c <= '\u1049');
+            return (c >= '\u1040' && c <= '\u1049' || c==' ');
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
