@@ -46,11 +46,11 @@ namespace HotelManagementSystem.Views.Guest
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtGuestId = new System.Windows.Forms.TextBox();
             this.lblDob = new System.Windows.Forms.Label();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +58,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.rdbOther = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,7 +189,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(571, 617);
+            this.btnDelete.Location = new System.Drawing.Point(389, 617);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(133, 34);
@@ -203,7 +204,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Location = new System.Drawing.Point(310, 617);
+            this.btnClear.Location = new System.Drawing.Point(215, 617);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(133, 34);
@@ -215,6 +216,7 @@ namespace HotelManagementSystem.Views.Guest
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label4);
@@ -264,6 +266,17 @@ namespace HotelManagementSystem.Views.Guest
             this.label5.TabIndex = 42;
             this.label5.Text = "*";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.guestCRUD;
+            this.pictureBox1.Location = new System.Drawing.Point(736, 112);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(457, 539);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -312,17 +325,6 @@ namespace HotelManagementSystem.Views.Guest
             this.label1.TabIndex = 38;
             this.label1.Text = "*";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.guestCRUD;
-            this.pictureBox1.Location = new System.Drawing.Point(736, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(457, 539);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtGuestId
             // 
             this.txtGuestId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,7 +350,7 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.dtpDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDob.Location = new System.Drawing.Point(204, 254);
-            this.dtpDob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDob.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDob.MaxDate = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(500, 30);
@@ -403,6 +405,22 @@ namespace HotelManagementSystem.Views.Guest
             this.lblGender.TabIndex = 30;
             this.lblGender.Text = "Gender:";
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(571, 617);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(133, 34);
+            this.btnBack.TabIndex = 43;
+            this.btnBack.Text = "BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // UCGuestCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,5 +467,6 @@ namespace HotelManagementSystem.Views.Guest
         private Label label4;
         private Label label3;
         private Label label2;
+        private Button btnBack;
     }
 }
