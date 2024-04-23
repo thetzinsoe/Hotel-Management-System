@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.CodeParser;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Views.Payment;
@@ -30,7 +29,7 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (e.ColumnIndex == dgvCheckIn.Columns["checkout"].Index && e.RowIndex >= 0)
             {
-                DialogResult result = MessageBox.Show("Are You Sure to Checkout", "Confirmation", MessageBoxButtons.OKCancel);
+                DialogResult result = MessageBox.Show("Are You Sure to Checkout?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
 
                 if (result == DialogResult.OK)
                 {

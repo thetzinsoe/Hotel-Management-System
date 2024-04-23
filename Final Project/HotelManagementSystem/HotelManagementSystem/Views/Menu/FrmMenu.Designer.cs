@@ -31,6 +31,7 @@ namespace HotelManagementSystem.Views.Menu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -42,6 +43,8 @@ namespace HotelManagementSystem.Views.Menu
             this.reservationListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gUESTINFOMATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUESTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUESTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOOMENTRYLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,8 +53,6 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.gUESTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUESTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@ namespace HotelManagementSystem.Views.Menu
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 65);
+            this.menuStrip1.Size = new System.Drawing.Size(1105, 65);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,16 +136,16 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.reservationListToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
             this.reservationListToolStripMenuItem.Name = "reservationListToolStripMenuItem";
-            this.reservationListToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.reservationListToolStripMenuItem.Text = "Reservation List";
+            this.reservationListToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.reservationListToolStripMenuItem.Text = "RESERVATION LIST";
             this.reservationListToolStripMenuItem.Click += new System.EventHandler(this.reservationListToolStripMenuItem_Click);
             // 
             // reservationAddToolStripMenuItem
             // 
             this.reservationAddToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
             this.reservationAddToolStripMenuItem.Name = "reservationAddToolStripMenuItem";
-            this.reservationAddToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.reservationAddToolStripMenuItem.Text = "Reservation Add";
+            this.reservationAddToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.reservationAddToolStripMenuItem.Text = "RESERVATION ADD";
             this.reservationAddToolStripMenuItem.Click += new System.EventHandler(this.reservationAddToolStripMenuItem_Click);
             // 
             // gUESTINFOMATIONToolStripMenuItem
@@ -156,6 +157,20 @@ namespace HotelManagementSystem.Views.Menu
             this.gUESTINFOMATIONToolStripMenuItem.Name = "gUESTINFOMATIONToolStripMenuItem";
             this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(184, 61);
             this.gUESTINFOMATIONToolStripMenuItem.Text = "GUEST INFORMATION";
+            // 
+            // gUESTADDToolStripMenuItem
+            // 
+            this.gUESTADDToolStripMenuItem.Name = "gUESTADDToolStripMenuItem";
+            this.gUESTADDToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.gUESTADDToolStripMenuItem.Text = "GUEST ADD";
+            this.gUESTADDToolStripMenuItem.Click += new System.EventHandler(this.gUESTADDToolStripMenuItem_Click);
+            // 
+            // gUESTLISTToolStripMenuItem
+            // 
+            this.gUESTLISTToolStripMenuItem.Name = "gUESTLISTToolStripMenuItem";
+            this.gUESTLISTToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.gUESTLISTToolStripMenuItem.Text = "GUEST LIST";
+            this.gUESTLISTToolStripMenuItem.Click += new System.EventHandler(this.gUESTLISTToolStripMenuItem_Click);
             // 
             // rOOMENTRYLISTToolStripMenuItem
             // 
@@ -214,35 +229,23 @@ namespace HotelManagementSystem.Views.Menu
             // 
             // pnMain
             // 
-            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnMain.BackColor = System.Drawing.Color.LightGray;
-            this.pnMain.Location = new System.Drawing.Point(0, 65);
+            this.pnMain.Location = new System.Drawing.Point(1, 65);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1084, 697);
+            this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
-            // 
-            // gUESTADDToolStripMenuItem
-            // 
-            this.gUESTADDToolStripMenuItem.Name = "gUESTADDToolStripMenuItem";
-            this.gUESTADDToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.gUESTADDToolStripMenuItem.Text = "GUEST ADD";
-            this.gUESTADDToolStripMenuItem.Click += new System.EventHandler(this.gUESTADDToolStripMenuItem_Click);
-            // 
-            // gUESTLISTToolStripMenuItem
-            // 
-            this.gUESTLISTToolStripMenuItem.Name = "gUESTLISTToolStripMenuItem";
-            this.gUESTLISTToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.gUESTLISTToolStripMenuItem.Text = "GUEST LIST";
-            this.gUESTLISTToolStripMenuItem.Click += new System.EventHandler(this.gUESTLISTToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1084, 749);
+            this.ClientSize = new System.Drawing.Size(1105, 775);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holtel Management System";

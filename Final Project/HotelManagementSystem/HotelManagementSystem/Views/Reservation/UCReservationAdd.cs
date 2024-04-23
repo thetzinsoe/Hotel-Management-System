@@ -39,41 +39,50 @@ namespace HotelManagementSystem.Views.Reservation
             if(string.IsNullOrEmpty(txtFullName.Text)) 
             {
                 validateInput = false;
-                lbFullNameValidation.Text = "Please fill Name!";
+                //lbFullNameValidation.Text = "Please fill Name!";
+                MessageBox.Show("Please fill Name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
                 validateInput = true;
-                lbFullNameValidation.Text = "";
+               // lbFullNameValidation.Text = "";
             }
 
 
             if (string.IsNullOrEmpty(txtPhoneNumber.Text))
             {
                 validateInput = false;
-                lbPhoneNumberValidation.Text = "Please fill PhoneNumber";
+                //lbPhoneNumberValidation.Text = "Please fill PhoneNumber";
+                MessageBox.Show("Please fill PhoneNumber", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
                 validateInput = true;
-                lbPhoneNumberValidation.Text = "";
+               // lbPhoneNumberValidation.Text = "";
+               
             }
 
             if (cbRoomNo.SelectedIndex>=0)
             {
                 validateInput = true;
-                lbRoomNoValidation.Text = "";
+               // lbRoomNoValidation.Text = "";
             }
             else
             {
                 validateInput = false;
-                lbRoomNoValidation.Text = "Please Select Room!";
+               // lbRoomNoValidation.Text = "Please Select Room!";
+                MessageBox.Show("Please Select Room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (dtpCheckInDate.Value.Date > dtpCheckOutDate.Value.Date)
             {
                 validateInput = false;
-                lbCheckInDateValidation.Text = "Checkin date must earlier than Checkout date!";
+               // lbCheckInDateValidation.Text = "Checkin date must earlier than Checkout date!";
+                MessageBox.Show("Checkin date must earlier than Checkout date!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
 
@@ -83,9 +92,8 @@ namespace HotelManagementSystem.Views.Reservation
             }
             else
             {
-                MessageBox.Show("Some error occour! Please check the input value");
+                MessageBox.Show("Some error occour! Please check the input value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //MessageBox.Show(selectedRoomId + "    " + selectedRoomNo+ "   "+cbRoomNo.Text.ToString());
         }
 
         private void AddorUpdate()
@@ -97,15 +105,16 @@ namespace HotelManagementSystem.Views.Reservation
             if (String.IsNullOrEmpty(hdReservationId.Text))
             {
                 success = reservationService.Insert(reservationEntity);
-                if (success)
+                bool roomUp = reservationService.RoomUpdate(selectedRoomId,1);
+                if (success && roomUp)
                 {
-                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(ucReservationList);
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Reservation Adding!");
+                    MessageBox.Show("Something Wrong in Reservation Adding!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -113,13 +122,13 @@ namespace HotelManagementSystem.Views.Reservation
                 success = reservationService.Update(reservationEntity);
                 if (success)
                 {
-                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(ucReservationList);
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Updating Reservation!");
+                    MessageBox.Show("Something Wrong in Updating Reservation!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
            
@@ -158,10 +167,10 @@ namespace HotelManagementSystem.Views.Reservation
         }
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
-        {            
-            
+        {      
             BtnState();
             BindData();
+            Load_room();
         }
 
         private void Load_room()
@@ -172,14 +181,15 @@ namespace HotelManagementSystem.Views.Reservation
                 if (dt == null)
                 {
                     validateInput = false;
-                    lbRoomNoValidation.Text = "Every rooms are not avilable!";
+                   // lbRoomNoValidation.Text = "Every rooms are not avilable!";
+                    MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 cbRoomNo.DataSource = dt;
                 cbRoomNo.DisplayMember = "room_no";
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -202,7 +212,7 @@ namespace HotelManagementSystem.Views.Reservation
                 }
             }catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -217,7 +227,7 @@ namespace HotelManagementSystem.Views.Reservation
             if (cbRoomNo.SelectedItem != null)
             {
                 validateInput = true;
-                lbRoomNoValidation.Text = "";
+                //lbRoomNoValidation.Text = "";
                 DataRowView selectedRow = (DataRowView)cbRoomNo.SelectedItem;
                 selectedRoomNo = selectedRow["room_no"].ToString();
                 selectedRoomId = int.Parse(selectedRow["room_id"].ToString());
@@ -231,13 +241,13 @@ namespace HotelManagementSystem.Views.Reservation
                 bool success = reservationService.Delete(int.Parse(hdReservationId.Text));
                 if (success)
                 {
-                    MessageBox.Show("Reservation Delete Success!");
+                    MessageBox.Show("Reservation Delete Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(ucReservationList);
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Deleting Reservation!");
+                    MessageBox.Show("Something Wrong in Deleting Reservation!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -250,12 +260,13 @@ namespace HotelManagementSystem.Views.Reservation
                 {
                     Load_room();
                     validateInput = true;
-                    lbCheckInDateValidation.Text = "";
+                    //lbCheckInDateValidation.Text = "";
                 }
                 else
                 {
                     validateInput = false;
-                    lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
+                   // lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
+                   MessageBox.Show("Wrong Date!Please Choose the Correct Date","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -265,12 +276,13 @@ namespace HotelManagementSystem.Views.Reservation
             if(dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
             {
                 validateInput = true;
-                lbCheckOutValidation.Text = "";
+                //lbCheckOutValidation.Text = "";
             }
             else
             {
                 validateInput = false;
-                lbCheckOutValidation.Text="Wrong Date! Please choose the correct date.";
+                //lbCheckOutValidation.Text="Wrong Date! Please choose the correct date.";
+                MessageBox.Show("Wrong Date! Please choose the correct date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -279,12 +291,13 @@ namespace HotelManagementSystem.Views.Reservation
             if (selectedRoomNo == cbRoomNo.Text.ToString())
             {
                 validateInput = true;
-                lbRoomNoValidation.Text = "";
+                //lbRoomNoValidation.Text = "";
             }
             else
             {
                 validateInput = false;
-                lbRoomNoValidation.Text = "Choose the correct room number form drop down!";
+                //lbRoomNoValidation.Text = "Choose the correct room number form drop down!";
+                MessageBox.Show("Choose the correct room number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -295,12 +308,13 @@ namespace HotelManagementSystem.Views.Reservation
             if (containsDigit)
             {
                 validateInput = false;
-                lbFullNameValidation.Text = "Please Enter valid Name!";
+                //lbFullNameValidation.Text = "Please Enter valid Name!";
+                MessageBox.Show("Please Enter valid Name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 validateInput = true;
-                lbFullNameValidation.Text = "";
+                //lbFullNameValidation.Text = "";
             }
         }
         private bool IsBurmeseCharacter(char c)
@@ -320,12 +334,13 @@ namespace HotelManagementSystem.Views.Reservation
                 if (!(isEnglishDigit || isBurmeseDigit))
                 {
                     validateInput = false;
-                    lbPhoneNumberValidation.Text = "Please enter valid phone number";
+                    //lbPhoneNumberValidation.Text = "Please enter valid phone number";
+                    MessageBox.Show("Please enter valid phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     validateInput = true;
-                    lbPhoneNumberValidation.Text = "";
+                    //lbPhoneNumberValidation.Text = "";
                 }
             }
         }
@@ -334,11 +349,6 @@ namespace HotelManagementSystem.Views.Reservation
         private bool IsBurmeseDigit(char c)
         {
             return (c >= '\u1040' && c <= '\u1049' || c==' ');
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

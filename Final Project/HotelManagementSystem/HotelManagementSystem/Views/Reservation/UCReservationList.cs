@@ -7,12 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.Pdf.ContentGeneration.Interop;
 using HotelManagementSystem.Services.Payment;
 using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Views.CheckIn;
 using HotelManagementSystem.Views.Guest;
-using static DevExpress.Drawing.Printing.Internal.DXPageSizeInfo;
 
 namespace HotelManagementSystem.Views.Reservation
 {
@@ -154,6 +152,12 @@ namespace HotelManagementSystem.Views.Reservation
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvReservation.AutoGenerateColumns = false;
             dgvReservation.DataSource = dt;
+        }
+
+        private void txtSearchValue_MouseClick(object sender, MouseEventArgs e)
+        {
+            currentPageIndex = 1;
+            LoadReservation();
         }
     }
 }

@@ -36,11 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
-      <HintPath>packages\ExcelDataReader.3.7.0-develop00385\lib\net462\ExcelDataReader.dll</HintPath>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
     </Reference>
-    <Reference Include="ExcelDataReader.DataSet, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
-      <HintPath>packages\ExcelDataReader.DataSet.3.7.0-develop00385\lib\net462\ExcelDataReader.DataSet.dll</HintPath>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -244,12 +244,6 @@
     <Compile Include="Views\Payment\UCPayNow.Designer.cs">
       <DependentUpon>UCPayNow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Reservation\FrmGetGuest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Reservation\FrmGetGuest.Designer.cs">
-      <DependentUpon>FrmGetGuest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Reservation\UCReservationAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -314,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Payment\UCPayNow.resx">
       <DependentUpon>UCPayNow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Reservation\FrmGetGuest.resx">
-      <DependentUpon>FrmGetGuest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Reservation\UCReservationAdd.resx">
       <DependentUpon>UCReservationAdd.cs</DependentUpon>

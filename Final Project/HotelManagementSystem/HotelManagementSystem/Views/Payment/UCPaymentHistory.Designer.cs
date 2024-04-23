@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -40,6 +42,7 @@
             this.btn3xPrevious = new System.Windows.Forms.Button();
             this.dgvPaymentHistory = new System.Windows.Forms.DataGridView();
             this.payment_id = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.payment_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkin_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.room_fees = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extra_fees = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +50,6 @@
             this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_fees = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.payment_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnTitle.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentHistory)).BeginInit();
@@ -55,12 +57,13 @@
             // 
             // pnTitle
             // 
+            this.pnTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnTitle.BackColor = System.Drawing.Color.Silver;
             this.pnTitle.Controls.Add(this.lbTitle);
-            this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1100, 62);
+            this.pnTitle.Size = new System.Drawing.Size(1100, 57);
             this.pnTitle.TabIndex = 78;
             // 
             // lbTitle
@@ -69,7 +72,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(470, 15);
+            this.lbTitle.Location = new System.Drawing.Point(470, 14);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(206, 30);
             this.lbTitle.TabIndex = 0;
@@ -83,10 +86,10 @@
             this.groupBox1.Controls.Add(this.btnPrev);
             this.groupBox1.Controls.Add(this.btn3xPrevious);
             this.groupBox1.Controls.Add(this.dgvPaymentHistory);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 69);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(4, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1093, 628);
+            this.groupBox1.Size = new System.Drawing.Size(1093, 580);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Payment History";
@@ -95,10 +98,10 @@
             // 
             this.btn3xNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xNext.Location = new System.Drawing.Point(738, 481);
+            this.btn3xNext.Location = new System.Drawing.Point(738, 444);
             this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xNext.Name = "btn3xNext";
-            this.btn3xNext.Size = new System.Drawing.Size(45, 28);
+            this.btn3xNext.Size = new System.Drawing.Size(64, 39);
             this.btn3xNext.TabIndex = 85;
             this.btn3xNext.Text = ">>";
             this.btn3xNext.UseVisualStyleBackColor = true;
@@ -108,10 +111,10 @@
             // 
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(668, 481);
+            this.btnNext.Location = new System.Drawing.Point(668, 444);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(45, 28);
+            this.btnNext.Size = new System.Drawing.Size(64, 39);
             this.btnNext.TabIndex = 84;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -120,11 +123,11 @@
             // lblPageNo
             // 
             this.lblPageNo.AutoSize = true;
-            this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(523, 486);
+            this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageNo.Location = new System.Drawing.Point(523, 454);
             this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(37, 19);
+            this.lblPageNo.Size = new System.Drawing.Size(43, 21);
             this.lblPageNo.TabIndex = 83;
             this.lblPageNo.Text = "label";
             // 
@@ -132,10 +135,10 @@
             // 
             this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.Location = new System.Drawing.Point(383, 481);
+            this.btnPrev.Location = new System.Drawing.Point(383, 444);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(45, 28);
+            this.btnPrev.Size = new System.Drawing.Size(64, 39);
             this.btnPrev.TabIndex = 82;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = true;
@@ -145,10 +148,10 @@
             // 
             this.btn3xPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xPrevious.Location = new System.Drawing.Point(309, 481);
+            this.btn3xPrevious.Location = new System.Drawing.Point(309, 444);
             this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xPrevious.Name = "btn3xPrevious";
-            this.btn3xPrevious.Size = new System.Drawing.Size(45, 28);
+            this.btn3xPrevious.Size = new System.Drawing.Size(64, 39);
             this.btn3xPrevious.TabIndex = 81;
             this.btn3xPrevious.Text = "<<";
             this.btn3xPrevious.UseVisualStyleBackColor = true;
@@ -160,30 +163,38 @@
             this.dgvPaymentHistory.AllowUserToDeleteRows = false;
             this.dgvPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPaymentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaymentHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.payment_id,
+            this.payment_date,
             this.checkin_id,
             this.room_fees,
             this.extra_fees,
             this.description,
             this.discount,
             this.total_fees,
-            this.payment_type,
-            this.payment_date});
-            this.dgvPaymentHistory.Location = new System.Drawing.Point(6, 28);
+            this.payment_type});
+            this.dgvPaymentHistory.Location = new System.Drawing.Point(6, 26);
             this.dgvPaymentHistory.Name = "dgvPaymentHistory";
             this.dgvPaymentHistory.ReadOnly = true;
             this.dgvPaymentHistory.RowTemplate.Height = 30;
-            this.dgvPaymentHistory.Size = new System.Drawing.Size(1081, 432);
+            this.dgvPaymentHistory.Size = new System.Drawing.Size(1081, 399);
             this.dgvPaymentHistory.TabIndex = 80;
             this.dgvPaymentHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentHistory_CellContentClick);
             // 
             // payment_id
             // 
             this.payment_id.DataPropertyName = "payment_id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.payment_id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.payment_id.DefaultCellStyle = dataGridViewCellStyle6;
             this.payment_id.HeaderText = "ID";
             this.payment_id.Name = "payment_id";
             this.payment_id.ReadOnly = true;
@@ -191,12 +202,22 @@
             this.payment_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.payment_id.Width = 50;
             // 
+            // payment_date
+            // 
+            this.payment_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.payment_date.DataPropertyName = "created_date";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.payment_date.DefaultCellStyle = dataGridViewCellStyle7;
+            this.payment_date.HeaderText = "Payment Date";
+            this.payment_date.Name = "payment_date";
+            this.payment_date.ReadOnly = true;
+            // 
             // checkin_id
             // 
             this.checkin_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkin_id.DataPropertyName = "checkin_id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.checkin_id.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.checkin_id.DefaultCellStyle = dataGridViewCellStyle8;
             this.checkin_id.HeaderText = "Checkin Id";
             this.checkin_id.Name = "checkin_id";
             this.checkin_id.ReadOnly = true;
@@ -249,22 +270,14 @@
             this.payment_type.Name = "payment_type";
             this.payment_type.ReadOnly = true;
             // 
-            // payment_date
-            // 
-            this.payment_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.payment_date.DataPropertyName = "created_date";
-            this.payment_date.HeaderText = "Payment Date";
-            this.payment_date.Name = "payment_date";
-            this.payment_date.ReadOnly = true;
-            // 
             // UCPaymentHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnTitle);
             this.Name = "UCPaymentHistory";
-            this.Size = new System.Drawing.Size(1100, 700);
+            this.Size = new System.Drawing.Size(1100, 646);
             this.Load += new System.EventHandler(this.UCPaymentHistory_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
@@ -281,7 +294,13 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvPaymentHistory;
+        private System.Windows.Forms.Button btn3xNext;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblPageNo;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Button btn3xPrevious;
         private System.Windows.Forms.DataGridViewLinkColumn payment_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payment_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkin_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn room_fees;
         private System.Windows.Forms.DataGridViewTextBoxColumn extra_fees;
@@ -289,11 +308,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_fees;
         private System.Windows.Forms.DataGridViewTextBoxColumn payment_type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn payment_date;
-        private System.Windows.Forms.Button btn3xNext;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Label lblPageNo;
-        private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.Button btn3xPrevious;
     }
 }
