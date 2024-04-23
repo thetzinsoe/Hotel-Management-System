@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagementSystem.DAO.CheckIn;
+using HotelManagementSystem.DAO.Payment;
 using HotelManagementSystem.Entities.CheckIn;
 
 namespace HotelManagementSystem.Services.CheckIn
@@ -45,6 +46,18 @@ namespace HotelManagementSystem.Services.CheckIn
         public DataTable Get(int id)
         {
             DataTable dt = checkInDao.Get(id);
+            return dt;
+        }
+
+        public DataTable GetWithPagination(int offset, int pageSize)
+        {
+            DataTable dt = checkInDao.GetWithPagination(offset, pageSize);
+            return dt;
+        }
+        
+        public DataTable Search(int searchType, string searchValue)
+        {
+            DataTable dt = checkInDao.Search(searchType, searchValue);
             return dt;
         }
 
