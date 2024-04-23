@@ -71,7 +71,7 @@ namespace HotelManagementSystem.DAO.Reservation
 
         public DataTable GetRoomWithDate(DateTime checkinDate)
         {
-            string strSql = "SELECT t1.*, t2.checkout_date " +
+            string strSql = "SELECT DISTINCT t1.*, t2.checkout_date " +
                             "FROM Room t1 " +
                             "LEFT JOIN Checkin t2 ON t1.room_id = t2.room_id " +
                             "LEFT JOIN Reservation t3 ON t3.room_id = t1.room_id " +

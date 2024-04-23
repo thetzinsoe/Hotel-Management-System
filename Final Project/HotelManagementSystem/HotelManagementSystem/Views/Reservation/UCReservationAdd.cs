@@ -288,17 +288,20 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void cbRoomNo_TextChanged(object sender, EventArgs e)
         {
-            if (selectedRoomNo == cbRoomNo.Text.ToString())
-            {
-                validateInput = true;
-                //lbRoomNoValidation.Text = "";
+            if (selectedRoomNo != string.Empty) {
+                if (selectedRoomNo == cbRoomNo.Text.ToString())
+                {
+                    validateInput = true;
+                    //lbRoomNoValidation.Text = "";
+                }
+                else
+                {
+                    validateInput = false;
+                    //lbRoomNoValidation.Text = "Choose the correct room number form drop down!";
+                    MessageBox.Show("Choose the correct room number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                validateInput = false;
-                //lbRoomNoValidation.Text = "Choose the correct room number form drop down!";
-                MessageBox.Show("Choose the correct room number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void txtFullName_TextChanged(object sender, EventArgs e)
