@@ -47,9 +47,9 @@ namespace HotelManagementSystem.Services.Guest
         /// </summary>
         /// <param name="name">.</param>
         /// <returns>.</returns>
-        public DataTable Search(string name)
+        public DataTable Search(int searchType, string name)
         {
-            DataTable dt = guestDao.Search(name);
+            DataTable dt = guestDao.Search(searchType, name);
             return dt;
         }
 

@@ -292,5 +292,10 @@ namespace HotelManagementSystem.Views.Guest
             this.Controls.Clear();
             this.Controls.Add(uCGuestList);
         }
+
+        private void txtGuestId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

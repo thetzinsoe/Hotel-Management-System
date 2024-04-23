@@ -65,10 +65,18 @@ namespace HotelManagementSystem.DAO.Employee
         /// </summary>
         /// <param name="name">.</param>
         /// <returns></returns>
-        public DataTable Search(string name)
+        public DataTable Search(int searchType, string name)
         {
-            strSql = "SELECT * FROM Employee " +
+            if (searchType == 0)
+            {
+                strSql = "SELECT * FROM Employee " +
              "WHERE full_name LIKE '%" + name + "%' AND is_deleted = 0";
+            }
+            else if (searchType == 1)
+            {
+                strSql = "SELECT * FROM Employee " +
+             "WHERE nrc_number LIKE '%" + name + "%' AND is_deleted = 0";
+            }
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

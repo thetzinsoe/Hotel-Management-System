@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGuestList = new System.Windows.Forms.DataGridView();
-            this.GuestId = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NRCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -52,6 +49,16 @@
             this.btn3xNext = new System.Windows.Forms.Button();
             this.btnDownload = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.GuestId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuestList)).BeginInit();
             this.pnTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -60,7 +67,15 @@
             // dgvGuestList
             // 
             this.dgvGuestList.AllowUserToAddRows = false;
-            this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGuestList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvGuestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGuestList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GuestId,
@@ -72,124 +87,39 @@
             this.Gender,
             this.Address,
             this.Delete});
-            this.dgvGuestList.Location = new System.Drawing.Point(38, 215);
+            this.dgvGuestList.Location = new System.Drawing.Point(29, 250);
             this.dgvGuestList.Name = "dgvGuestList";
+            this.dgvGuestList.RowHeadersVisible = false;
             this.dgvGuestList.RowHeadersWidth = 51;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvGuestList.RowTemplate.Height = 24;
-            this.dgvGuestList.Size = new System.Drawing.Size(1143, 463);
+            this.dgvGuestList.Size = new System.Drawing.Size(1143, 421);
             this.dgvGuestList.TabIndex = 0;
             this.dgvGuestList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGuestList_CellContentClick);
             this.dgvGuestList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGuestList_CellFormatting);
             // 
-            // GuestId
-            // 
-            this.GuestId.HeaderText = "Guest ID";
-            this.GuestId.MinimumWidth = 6;
-            this.GuestId.Name = "GuestId";
-            this.GuestId.ReadOnly = true;
-            this.GuestId.Width = 50;
-            // 
-            // FullName
-            // 
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FullName.Width = 125;
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.HeaderText = "Phone Number";
-            this.PhoneNumber.MinimumWidth = 6;
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.ReadOnly = true;
-            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PhoneNumber.Width = 125;
-            // 
-            // Nationality
-            // 
-            this.Nationality.HeaderText = "Nationality";
-            this.Nationality.MinimumWidth = 6;
-            this.Nationality.Name = "Nationality";
-            this.Nationality.ReadOnly = true;
-            this.Nationality.Width = 125;
-            // 
-            // NRCNumber
-            // 
-            this.NRCNumber.HeaderText = "NRC Number";
-            this.NRCNumber.MinimumWidth = 6;
-            this.NRCNumber.Name = "NRCNumber";
-            this.NRCNumber.ReadOnly = true;
-            this.NRCNumber.Width = 125;
-            // 
-            // Dob
-            // 
-            this.Dob.HeaderText = "Date of Birth";
-            this.Dob.MinimumWidth = 6;
-            this.Dob.Name = "Dob";
-            this.Dob.ReadOnly = true;
-            this.Dob.Width = 125;
-            // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.Width = 50;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Address";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "Delete";
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.Width = 75;
-            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(38, 139);
+            this.txtSearch.Location = new System.Drawing.Point(29, 180);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(518, 34);
+            this.txtSearch.Size = new System.Drawing.Size(864, 34);
             this.txtSearch.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(571, 139);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(132, 35);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Find Name";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnImport
             // 
+            this.btnImport.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImport.Location = new System.Drawing.Point(850, 138);
+            this.btnImport.ForeColor = System.Drawing.Color.White;
+            this.btnImport.Location = new System.Drawing.Point(500, 100);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(183, 35);
+            this.btnImport.Size = new System.Drawing.Size(210, 35);
             this.btnImport.TabIndex = 3;
-            this.btnImport.Text = "Import Excel Data";
-            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Text = "IMPORT EXCEL DATA";
+            this.btnImport.UseVisualStyleBackColor = false;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // pnTitle
@@ -205,7 +135,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.ico_guestlist;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 17);
+            this.pictureBox1.Location = new System.Drawing.Point(199, 17);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(46, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,39 +149,45 @@
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTitle.Location = new System.Drawing.Point(31, 17);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(141, 38);
+            this.lblTitle.Size = new System.Drawing.Size(162, 38);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Guest List";
+            this.lblTitle.Text = "GUEST LIST";
             // 
             // btn3xPrevious
             // 
+            this.btn3xPrevious.BackColor = System.Drawing.Color.SteelBlue;
             this.btn3xPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xPrevious.Location = new System.Drawing.Point(251, 703);
+            this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
+            this.btn3xPrevious.Location = new System.Drawing.Point(283, 720);
             this.btn3xPrevious.Name = "btn3xPrevious";
             this.btn3xPrevious.Size = new System.Drawing.Size(60, 35);
             this.btn3xPrevious.TabIndex = 5;
             this.btn3xPrevious.Text = "<<";
-            this.btn3xPrevious.UseVisualStyleBackColor = true;
+            this.btn3xPrevious.UseVisualStyleBackColor = false;
             this.btn3xPrevious.Click += new System.EventHandler(this.btn3xPrevious_Click);
             // 
             // btnPrev
             // 
+            this.btnPrev.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.Location = new System.Drawing.Point(349, 703);
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Location = new System.Drawing.Point(381, 720);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(60, 35);
             this.btnPrev.TabIndex = 6;
             this.btnPrev.Text = "<";
-            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // lblPageNo
             // 
             this.lblPageNo.AutoSize = true;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(536, 709);
+            this.lblPageNo.Location = new System.Drawing.Point(560, 725);
             this.lblPageNo.Name = "lblPageNo";
             this.lblPageNo.Size = new System.Drawing.Size(46, 23);
             this.lblPageNo.TabIndex = 7;
@@ -259,37 +195,46 @@
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(729, 703);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(761, 720);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(60, 35);
             this.btnNext.TabIndex = 8;
             this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btn3xNext
             // 
+            this.btn3xNext.BackColor = System.Drawing.Color.SteelBlue;
             this.btn3xNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xNext.Location = new System.Drawing.Point(823, 703);
+            this.btn3xNext.ForeColor = System.Drawing.Color.White;
+            this.btn3xNext.Location = new System.Drawing.Point(855, 720);
             this.btn3xNext.Name = "btn3xNext";
             this.btn3xNext.Size = new System.Drawing.Size(60, 35);
             this.btn3xNext.TabIndex = 9;
             this.btn3xNext.Text = ">>";
-            this.btn3xNext.UseVisualStyleBackColor = true;
+            this.btn3xNext.UseVisualStyleBackColor = false;
             this.btn3xNext.Click += new System.EventHandler(this.btn3xNext_Click);
             // 
             // btnDownload
             // 
+            this.btnDownload.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownload.Location = new System.Drawing.Point(1056, 139);
+            this.btnDownload.ForeColor = System.Drawing.Color.White;
+            this.btnDownload.Location = new System.Drawing.Point(1037, 100);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(125, 35);
+            this.btnDownload.Size = new System.Drawing.Size(135, 35);
             this.btnDownload.TabIndex = 10;
-            this.btnDownload.Text = "Download";
-            this.btnDownload.UseVisualStyleBackColor = true;
+            this.btnDownload.Text = "DOWNLOAD";
+            this.btnDownload.UseVisualStyleBackColor = false;
             this.btnDownload.Click += new System.EventHandler(this.btnDownload_Click);
             // 
             // reportViewer1
@@ -302,10 +247,127 @@
             this.reportViewer1.TabIndex = 11;
             this.reportViewer1.Visible = false;
             // 
+            // cbSearch
+            // 
+            this.cbSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Items.AddRange(new object[] {
+            "Name",
+            "NRC Number"});
+            this.cbSearch.Location = new System.Drawing.Point(939, 181);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(233, 31);
+            this.cbSearch.TabIndex = 12;
+            this.cbSearch.Text = "Search By";
+            // 
+            // GuestId
+            // 
+            this.GuestId.DataPropertyName = "guest_id";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GuestId.DefaultCellStyle = dataGridViewCellStyle10;
+            this.GuestId.HeaderText = "ID";
+            this.GuestId.MinimumWidth = 6;
+            this.GuestId.Name = "GuestId";
+            this.GuestId.ReadOnly = true;
+            this.GuestId.Width = 50;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "full_name";
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "phone_number";
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PhoneNumber.Width = 125;
+            // 
+            // Nationality
+            // 
+            this.Nationality.DataPropertyName = "nationality";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Nationality.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Nationality.HeaderText = "Nationality";
+            this.Nationality.MinimumWidth = 6;
+            this.Nationality.Name = "Nationality";
+            this.Nationality.ReadOnly = true;
+            // 
+            // NRCNumber
+            // 
+            this.NRCNumber.DataPropertyName = "nrc_number";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NRCNumber.DefaultCellStyle = dataGridViewCellStyle12;
+            this.NRCNumber.HeaderText = "NRC Number";
+            this.NRCNumber.MinimumWidth = 6;
+            this.NRCNumber.Name = "NRCNumber";
+            this.NRCNumber.ReadOnly = true;
+            this.NRCNumber.Width = 125;
+            // 
+            // Dob
+            // 
+            this.Dob.DataPropertyName = "dob";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dob.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Dob.HeaderText = "Date of Birth";
+            this.Dob.MinimumWidth = 6;
+            this.Dob.Name = "Dob";
+            this.Dob.ReadOnly = true;
+            this.Dob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dob.Width = 125;
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "gender";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Gender.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 75;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "address";
+            this.Address.HeaderText = "Address";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.NullValue = "Delete";
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.IndianRed;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle15;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.Width = 75;
+            // 
             // UCGuestList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.btn3xNext);
@@ -315,7 +377,6 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dgvGuestList);
             this.Name = "UCGuestList";
@@ -334,11 +395,18 @@
 
         private System.Windows.Forms.DataGridView dgvGuestList;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn3xPrevious;
+        private System.Windows.Forms.Button btnPrev;
+        private System.Windows.Forms.Label lblPageNo;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btn3xNext;
+        private System.Windows.Forms.Button btnDownload;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.ComboBox cbSearch;
         private System.Windows.Forms.DataGridViewLinkColumn GuestId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneNumber;
@@ -348,12 +416,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.Button btn3xPrevious;
-        private System.Windows.Forms.Button btnPrev;
-        private System.Windows.Forms.Label lblPageNo;
-        private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.Button btn3xNext;
-        private System.Windows.Forms.Button btnDownload;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
