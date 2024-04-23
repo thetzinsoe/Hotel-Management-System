@@ -20,7 +20,7 @@ namespace HotelManagementSystem.Views.Room
     {
         UCRoomList uCRoomList = new UCRoomList();
         public string ID
-        { set { txtRoomID.Text = value; } }
+        { set { roomID.Text = value; } }
         public UCRoomCRUD()
         {
             InitializeComponent();
@@ -90,7 +90,7 @@ namespace HotelManagementSystem.Views.Room
                     MessageBox.Show("Something Wrong in Updating Reservation!");
                 }
             }
-        }
+            }
 
         private RoomEntity CreateData()
         {

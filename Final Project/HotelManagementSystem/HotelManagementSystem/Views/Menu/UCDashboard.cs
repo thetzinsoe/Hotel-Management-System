@@ -21,7 +21,7 @@ namespace HotelManagementSystem.Views.Menu
 
         private void UCDashboard_Load(object sender, EventArgs e)
         {
-           
+            
         }
     }
 }

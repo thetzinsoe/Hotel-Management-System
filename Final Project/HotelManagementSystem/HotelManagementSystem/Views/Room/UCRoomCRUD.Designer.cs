@@ -53,7 +53,7 @@
             this.lblDob.AutoSize = true;
             this.lblDob.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDob.ForeColor = System.Drawing.Color.Black;
-            this.lblDob.Location = new System.Drawing.Point(53, 300);
+            this.lblDob.Location = new System.Drawing.Point(60, 250);
             this.lblDob.Name = "lblDob";
             this.lblDob.Size = new System.Drawing.Size(47, 23);
             this.lblDob.TabIndex = 40;
@@ -63,7 +63,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(53, 230);
+            this.lblGender.Location = new System.Drawing.Point(60, 180);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(45, 23);
             this.lblGender.TabIndex = 39;
@@ -74,7 +74,7 @@
             this.lblRoomNumber.AutoSize = true;
             this.lblRoomNumber.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoomNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblRoomNumber.Location = new System.Drawing.Point(53, 161);
+            this.lblRoomNumber.Location = new System.Drawing.Point(60, 111);
             this.lblRoomNumber.Name = "lblRoomNumber";
             this.lblRoomNumber.Size = new System.Drawing.Size(123, 23);
             this.lblRoomNumber.TabIndex = 36;
@@ -146,7 +146,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(714, 169);
+            this.label1.Location = new System.Drawing.Point(721, 119);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 23);
@@ -156,7 +156,7 @@
             // txtRoomNumber
             // 
             this.txtRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomNumber.Location = new System.Drawing.Point(207, 161);
+            this.txtRoomNumber.Location = new System.Drawing.Point(214, 111);
             this.txtRoomNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(500, 34);
@@ -166,7 +166,7 @@
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(207, 161);
+            this.txtFullName.Location = new System.Drawing.Point(214, 111);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(500, 34);
@@ -176,7 +176,7 @@
             // 
             this.cbType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(207, 222);
+            this.cbType.Location = new System.Drawing.Point(214, 172);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(500, 36);
             this.cbType.TabIndex = 51;
@@ -186,7 +186,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(714, 235);
+            this.label2.Location = new System.Drawing.Point(721, 185);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 23);
@@ -196,7 +196,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(207, 292);
+            this.txtPrice.Location = new System.Drawing.Point(214, 242);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(500, 34);
@@ -208,7 +208,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(714, 303);
+            this.label3.Location = new System.Drawing.Point(721, 253);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 23);
@@ -233,7 +233,7 @@
             this.gbRoom.Controls.Add(this.txtFullName);
             this.gbRoom.Controls.Add(this.btnBack);
             this.gbRoom.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbRoom.Location = new System.Drawing.Point(203, 42);
+            this.gbRoom.Location = new System.Drawing.Point(191, 109);
             this.gbRoom.Name = "gbRoom";
             this.gbRoom.Size = new System.Drawing.Size(800, 600);
             this.gbRoom.TabIndex = 56;
