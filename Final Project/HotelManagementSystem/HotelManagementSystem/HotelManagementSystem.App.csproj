@@ -265,11 +265,22 @@
     <Compile Include="Views\Reservation\UCReservationList.Designer.cs">
       <DependentUpon>UCReservationList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Room\UCRoom.cs">
+    <Compile Include="Views\Room\RoomDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Room\UCRoomList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Room\UCRoom.Designer.cs">
-      <DependentUpon>UCRoom.cs</DependentUpon>
+    <Compile Include="Views\Room\UCRoomList.Designer.cs">
+      <DependentUpon>UCRoomList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Room\UCRoomCRUD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Room\UCRoomCRUD.Designer.cs">
+      <DependentUpon>UCRoomCRUD.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -300,6 +311,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Guest\UCGuestList.resx">
       <DependentUpon>UCGuestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Room\UCRoomCRUD.resx">
+      <DependentUpon>UCRoomCRUD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Room\UCRoomList.resx">
+      <DependentUpon>UCRoomList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <EmbeddedResource Include="Views\Menu\FrmMenu.resx">
@@ -381,6 +398,17 @@
     </None>
     <None Include="Views\Payment\PaymentDataSet.xss">
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Views\Room\RoomDataSet.xsc">
+      <DependentUpon>RoomDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Views\Room\RoomDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RoomDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Room\RoomDataSet.xss">
+      <DependentUpon>RoomDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

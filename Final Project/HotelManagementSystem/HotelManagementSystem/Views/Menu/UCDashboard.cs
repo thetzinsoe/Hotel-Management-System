@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagementSystem.Views.Employee;
 
 namespace HotelManagementSystem.Views.Menu
 {
@@ -15,6 +16,11 @@ namespace HotelManagementSystem.Views.Menu
         public UCDashboard()
         {
             InitializeComponent();
+        }
+
+        private void UCDashboard_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
