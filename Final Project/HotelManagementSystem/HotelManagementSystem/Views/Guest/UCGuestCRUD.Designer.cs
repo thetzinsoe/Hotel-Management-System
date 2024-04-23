@@ -58,6 +58,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.rdbOther = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
+            this.hdReservationId = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -217,6 +218,7 @@ namespace HotelManagementSystem.Views.Guest
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.hdReservationId);
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -411,6 +413,15 @@ namespace HotelManagementSystem.Views.Guest
             this.lblGender.TabIndex = 30;
             this.lblGender.Text = "Gender:";
             // 
+            // hdReservationId
+            // 
+            this.hdReservationId.AutoSize = true;
+            this.hdReservationId.Location = new System.Drawing.Point(824, 114);
+            this.hdReservationId.Name = "hdReservationId";
+            this.hdReservationId.Size = new System.Drawing.Size(0, 38);
+            this.hdReservationId.TabIndex = 44;
+            this.hdReservationId.Visible = false;
+            // 
             // UCGuestCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -456,5 +467,6 @@ namespace HotelManagementSystem.Views.Guest
         private Label label3;
         private Label label2;
         private Button btnBack;
+        private Label hdReservationId;
     }
 }

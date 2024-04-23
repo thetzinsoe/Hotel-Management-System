@@ -28,15 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGuestList = new System.Windows.Forms.DataGridView();
+            this.GuestId = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.pnTitle = new System.Windows.Forms.Panel();
@@ -50,15 +59,9 @@
             this.btnDownload = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.GuestId = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NRCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnCreateGuest = new System.Windows.Forms.Button();
+            this.hdReservationId = new System.Windows.Forms.Label();
+            this.btnGoToCheckin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGuestList)).BeginInit();
             this.pnTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,14 +71,14 @@
             // 
             this.dgvGuestList.AllowUserToAddRows = false;
             this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGuestList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGuestList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.dgvGuestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGuestList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GuestId,
@@ -91,13 +94,117 @@
             this.dgvGuestList.Name = "dgvGuestList";
             this.dgvGuestList.RowHeadersVisible = false;
             this.dgvGuestList.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle48;
             this.dgvGuestList.RowTemplate.Height = 24;
             this.dgvGuestList.Size = new System.Drawing.Size(1143, 421);
             this.dgvGuestList.TabIndex = 0;
             this.dgvGuestList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGuestList_CellContentClick);
             this.dgvGuestList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGuestList_CellFormatting);
+            // 
+            // GuestId
+            // 
+            this.GuestId.DataPropertyName = "guest_id";
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GuestId.DefaultCellStyle = dataGridViewCellStyle42;
+            this.GuestId.HeaderText = "ID";
+            this.GuestId.MinimumWidth = 6;
+            this.GuestId.Name = "GuestId";
+            this.GuestId.ReadOnly = true;
+            this.GuestId.Width = 50;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "full_name";
+            this.FullName.HeaderText = "Full Name";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FullName.Width = 125;
+            // 
+            // PhoneNumber
+            // 
+            this.PhoneNumber.DataPropertyName = "phone_number";
+            this.PhoneNumber.HeaderText = "Phone Number";
+            this.PhoneNumber.MinimumWidth = 6;
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.ReadOnly = true;
+            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PhoneNumber.Width = 125;
+            // 
+            // Nationality
+            // 
+            this.Nationality.DataPropertyName = "nationality";
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Nationality.DefaultCellStyle = dataGridViewCellStyle43;
+            this.Nationality.HeaderText = "Nationality";
+            this.Nationality.MinimumWidth = 6;
+            this.Nationality.Name = "Nationality";
+            this.Nationality.ReadOnly = true;
+            this.Nationality.Width = 125;
+            // 
+            // NRCNumber
+            // 
+            this.NRCNumber.DataPropertyName = "nrc_number";
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NRCNumber.DefaultCellStyle = dataGridViewCellStyle44;
+            this.NRCNumber.HeaderText = "NRC Number";
+            this.NRCNumber.MinimumWidth = 6;
+            this.NRCNumber.Name = "NRCNumber";
+            this.NRCNumber.ReadOnly = true;
+            this.NRCNumber.Width = 125;
+            // 
+            // Dob
+            // 
+            this.Dob.DataPropertyName = "dob";
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dob.DefaultCellStyle = dataGridViewCellStyle45;
+            this.Dob.HeaderText = "Date of Birth";
+            this.Dob.MinimumWidth = 6;
+            this.Dob.Name = "Dob";
+            this.Dob.ReadOnly = true;
+            this.Dob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Dob.Width = 125;
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "gender";
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Gender.DefaultCellStyle = dataGridViewCellStyle46;
+            this.Gender.HeaderText = "Gender";
+            this.Gender.MinimumWidth = 6;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 75;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "address";
+            this.Address.HeaderText = "Address";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 125;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.NullValue = "Delete";
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.IndianRed;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle47;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.Width = 75;
             // 
             // txtSearch
             // 
@@ -114,7 +221,7 @@
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.ForeColor = System.Drawing.Color.White;
-            this.btnImport.Location = new System.Drawing.Point(500, 100);
+            this.btnImport.Location = new System.Drawing.Point(348, 100);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(210, 35);
             this.btnImport.TabIndex = 3;
@@ -229,9 +336,9 @@
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(1037, 100);
+            this.btnDownload.Location = new System.Drawing.Point(696, 100);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(135, 35);
+            this.btnDownload.Size = new System.Drawing.Size(150, 35);
             this.btnDownload.TabIndex = 10;
             this.btnDownload.Text = "DOWNLOAD";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -260,113 +367,53 @@
             this.cbSearch.TabIndex = 12;
             this.cbSearch.Text = "Search By";
             // 
-            // GuestId
+            // btnCreateGuest
             // 
-            this.GuestId.DataPropertyName = "guest_id";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GuestId.DefaultCellStyle = dataGridViewCellStyle10;
-            this.GuestId.HeaderText = "ID";
-            this.GuestId.MinimumWidth = 6;
-            this.GuestId.Name = "GuestId";
-            this.GuestId.ReadOnly = true;
-            this.GuestId.Width = 50;
+            this.btnCreateGuest.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCreateGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateGuest.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateGuest.ForeColor = System.Drawing.Color.White;
+            this.btnCreateGuest.Location = new System.Drawing.Point(29, 100);
+            this.btnCreateGuest.Name = "btnCreateGuest";
+            this.btnCreateGuest.Size = new System.Drawing.Size(200, 35);
+            this.btnCreateGuest.TabIndex = 13;
+            this.btnCreateGuest.Text = "CREATE GUEST";
+            this.btnCreateGuest.UseVisualStyleBackColor = false;
+            this.btnCreateGuest.Click += new System.EventHandler(this.btnCreateGuest_Click);
             // 
-            // FullName
+            // hdReservationId
             // 
-            this.FullName.DataPropertyName = "full_name";
-            this.FullName.HeaderText = "Full Name";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hdReservationId.AutoSize = true;
+            this.hdReservationId.Location = new System.Drawing.Point(753, 116);
+            this.hdReservationId.Name = "hdReservationId";
+            this.hdReservationId.Size = new System.Drawing.Size(0, 16);
+            this.hdReservationId.TabIndex = 14;
+            this.hdReservationId.Visible = false;
             // 
-            // PhoneNumber
+            // btnGoToCheckin
             // 
-            this.PhoneNumber.DataPropertyName = "phone_number";
-            this.PhoneNumber.HeaderText = "Phone Number";
-            this.PhoneNumber.MinimumWidth = 6;
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.ReadOnly = true;
-            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PhoneNumber.Width = 125;
-            // 
-            // Nationality
-            // 
-            this.Nationality.DataPropertyName = "nationality";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Nationality.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Nationality.HeaderText = "Nationality";
-            this.Nationality.MinimumWidth = 6;
-            this.Nationality.Name = "Nationality";
-            this.Nationality.ReadOnly = true;
-            // 
-            // NRCNumber
-            // 
-            this.NRCNumber.DataPropertyName = "nrc_number";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NRCNumber.DefaultCellStyle = dataGridViewCellStyle12;
-            this.NRCNumber.HeaderText = "NRC Number";
-            this.NRCNumber.MinimumWidth = 6;
-            this.NRCNumber.Name = "NRCNumber";
-            this.NRCNumber.ReadOnly = true;
-            this.NRCNumber.Width = 125;
-            // 
-            // Dob
-            // 
-            this.Dob.DataPropertyName = "dob";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Dob.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Dob.HeaderText = "Date of Birth";
-            this.Dob.MinimumWidth = 6;
-            this.Dob.Name = "Dob";
-            this.Dob.ReadOnly = true;
-            this.Dob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Dob.Width = 125;
-            // 
-            // Gender
-            // 
-            this.Gender.DataPropertyName = "gender";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Gender.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Gender.HeaderText = "Gender";
-            this.Gender.MinimumWidth = 6;
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            this.Gender.Width = 75;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "address";
-            this.Address.HeaderText = "Address";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 125;
-            // 
-            // Delete
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.NullValue = "Delete";
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.IndianRed;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.Width = 75;
+            this.btnGoToCheckin.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnGoToCheckin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnGoToCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGoToCheckin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGoToCheckin.ForeColor = System.Drawing.Color.White;
+            this.btnGoToCheckin.Location = new System.Drawing.Point(972, 100);
+            this.btnGoToCheckin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGoToCheckin.Name = "btnGoToCheckin";
+            this.btnGoToCheckin.Size = new System.Drawing.Size(200, 34);
+            this.btnGoToCheckin.TabIndex = 15;
+            this.btnGoToCheckin.Text = "GO TO CHECKIN";
+            this.btnGoToCheckin.UseVisualStyleBackColor = false;
+            this.btnGoToCheckin.Click += new System.EventHandler(this.btnGoToCheckin_Click);
             // 
             // UCGuestList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.btnGoToCheckin);
+            this.Controls.Add(this.hdReservationId);
+            this.Controls.Add(this.btnCreateGuest);
             this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnDownload);
@@ -416,5 +463,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Button btnCreateGuest;
+        private System.Windows.Forms.Label hdReservationId;
+        private System.Windows.Forms.Button btnGoToCheckin;
     }
 }
