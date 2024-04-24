@@ -92,6 +92,7 @@ namespace HotelManagementSystem.Views.Room
         private void UCRoomList_Load(object sender, EventArgs e)
         {
             DataTable dt = roomService.GetAllRooms();
+            dgvRoomList.AutoGenerateColumns = false;
             dgvRoomList.DataSource = dt;
         }
     }

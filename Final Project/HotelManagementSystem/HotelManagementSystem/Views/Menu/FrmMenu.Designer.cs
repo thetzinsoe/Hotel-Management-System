@@ -45,6 +45,9 @@ namespace HotelManagementSystem.Views.Menu
             this.gUESTINFOMATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEELISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOOMENTRYLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +56,8 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eMPLOYEELISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rOOMADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rOOMLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,10 +105,10 @@ namespace HotelManagementSystem.Views.Menu
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashBoardToolStripMenuItem,
+            this.rOOMENTRYLISTToolStripMenuItem,
             this.rESERVATIONToolStripMenuItem,
             this.gUESTINFOMATIONToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.rOOMENTRYLISTToolStripMenuItem,
             this.cHECKINLISTToolStripMenuItem,
             this.pAYMENTHISTORYToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -177,8 +179,34 @@ namespace HotelManagementSystem.Views.Menu
             this.guestListToolStripMenuItem.Text = "GUEST LIST";
             this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem,
+            this.eMPLOYEELISTToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 61);
+            this.toolStripMenuItem1.Text = "EMPLOYEE";
+            // 
+            // eMPLOYEEREGISTRATIONToolStripMenuItem
+            // 
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Name = "eMPLOYEEREGISTRATIONToolStripMenuItem";
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Text = "EMPLOYEE REGISTRATION";
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEREGISTRATIONToolStripMenuItem_Click);
+            // 
+            // eMPLOYEELISTToolStripMenuItem
+            // 
+            this.eMPLOYEELISTToolStripMenuItem.Name = "eMPLOYEELISTToolStripMenuItem";
+            this.eMPLOYEELISTToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
+            this.eMPLOYEELISTToolStripMenuItem.Text = "EMPLOYEE LIST";
+            this.eMPLOYEELISTToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEELISTToolStripMenuItem_Click);
+            // 
             // rOOMENTRYLISTToolStripMenuItem
             // 
+            this.rOOMENTRYLISTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rOOMADDToolStripMenuItem,
+            this.rOOMLISTToolStripMenuItem});
             this.rOOMENTRYLISTToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.rOOMENTRYLISTToolStripMenuItem.Name = "rOOMENTRYLISTToolStripMenuItem";
             this.rOOMENTRYLISTToolStripMenuItem.Size = new System.Drawing.Size(86, 61);
@@ -241,28 +269,19 @@ namespace HotelManagementSystem.Views.Menu
             this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
             // 
-            // toolStripMenuItem1
+            // rOOMADDToolStripMenuItem
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem,
-            this.eMPLOYEELISTToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 61);
-            this.toolStripMenuItem1.Text = "EMPLOYEE";
+            this.rOOMADDToolStripMenuItem.Name = "rOOMADDToolStripMenuItem";
+            this.rOOMADDToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.rOOMADDToolStripMenuItem.Text = "ROOM ADD";
+            this.rOOMADDToolStripMenuItem.Click += new System.EventHandler(this.rOOMADDToolStripMenuItem_Click);
             // 
-            // eMPLOYEEREGISTRATIONToolStripMenuItem
+            // rOOMLISTToolStripMenuItem
             // 
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Name = "eMPLOYEEREGISTRATIONToolStripMenuItem";
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Text = "EMPLOYEE REGISTRATION";
-            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEREGISTRATIONToolStripMenuItem_Click);
-            // 
-            // eMPLOYEELISTToolStripMenuItem
-            // 
-            this.eMPLOYEELISTToolStripMenuItem.Name = "eMPLOYEELISTToolStripMenuItem";
-            this.eMPLOYEELISTToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
-            this.eMPLOYEELISTToolStripMenuItem.Text = "EMPLOYEE LIST";
-            this.eMPLOYEELISTToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEELISTToolStripMenuItem_Click);
+            this.rOOMLISTToolStripMenuItem.Name = "rOOMLISTToolStripMenuItem";
+            this.rOOMLISTToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.rOOMLISTToolStripMenuItem.Text = "ROOM LIST";
+            this.rOOMLISTToolStripMenuItem.Click += new System.EventHandler(this.rOOMLISTToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -310,5 +329,7 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem eMPLOYEEREGISTRATIONToolStripMenuItem;
         private ToolStripMenuItem eMPLOYEELISTToolStripMenuItem;
+        private ToolStripMenuItem rOOMADDToolStripMenuItem;
+        private ToolStripMenuItem rOOMLISTToolStripMenuItem;
     }
 }

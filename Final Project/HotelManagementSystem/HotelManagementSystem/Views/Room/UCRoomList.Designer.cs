@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRoomList = new System.Windows.Forms.DataGridView();
-            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnLast = new System.Windows.Forms.Button();
@@ -40,12 +38,24 @@
             this.lblPageNo = new System.Windows.Forms.Label();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
+            this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRoomList
             // 
             this.dgvRoomList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRoomList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RoomID,
@@ -56,63 +66,37 @@
             this.dgvRoomList.Location = new System.Drawing.Point(231, 133);
             this.dgvRoomList.Name = "dgvRoomList";
             this.dgvRoomList.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvRoomList.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRoomList.RowTemplate.Height = 24;
             this.dgvRoomList.Size = new System.Drawing.Size(800, 400);
             this.dgvRoomList.TabIndex = 0;
             this.dgvRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomList_CellContentClick);
-            // 
-            // RoomID
-            // 
-            this.RoomID.HeaderText = "Room ID";
-            this.RoomID.MinimumWidth = 6;
-            this.RoomID.Name = "RoomID";
-            this.RoomID.Width = 125;
-            // 
-            // RoomNumber
-            // 
-            this.RoomNumber.HeaderText = "Room Number";
-            this.RoomNumber.MinimumWidth = 6;
-            this.RoomNumber.Name = "RoomNumber";
-            this.RoomNumber.Width = 125;
-            // 
-            // RoomType
-            // 
-            this.RoomType.HeaderText = "Type";
-            this.RoomType.MinimumWidth = 6;
-            this.RoomType.Name = "RoomType";
-            this.RoomType.Width = 125;
-            // 
-            // RoomPrice
-            // 
-            this.RoomPrice.HeaderText = "Price";
-            this.RoomPrice.MinimumWidth = 6;
-            this.RoomPrice.Name = "RoomPrice";
-            this.RoomPrice.Width = 125;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(757, 92);
+            this.btnSearch.Location = new System.Drawing.Point(931, 89);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 35);
             this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(231, 97);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(231, 90);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(500, 30);
+            this.txtSearch.Size = new System.Drawing.Size(694, 34);
             this.txtSearch.TabIndex = 2;
             // 
             // btnLast
             // 
-            this.btnLast.BackColor = System.Drawing.Color.White;
+            this.btnLast.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLast.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +111,7 @@
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,7 +136,7 @@
             // 
             // btnPrev
             // 
-            this.btnPrev.BackColor = System.Drawing.Color.White;
+            this.btnPrev.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,7 +151,7 @@
             // 
             // btnFirst
             // 
-            this.btnFirst.BackColor = System.Drawing.Color.White;
+            this.btnFirst.BackColor = System.Drawing.Color.SteelBlue;
             this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFirst.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +163,38 @@
             this.btnFirst.Text = "<<";
             this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
+            // RoomID
+            // 
+            this.RoomID.DataPropertyName = "room_id";
+            this.RoomID.HeaderText = "Room ID";
+            this.RoomID.MinimumWidth = 6;
+            this.RoomID.Name = "RoomID";
+            this.RoomID.Width = 125;
+            // 
+            // RoomNumber
+            // 
+            this.RoomNumber.DataPropertyName = "room_no";
+            this.RoomNumber.HeaderText = "Room Number";
+            this.RoomNumber.MinimumWidth = 6;
+            this.RoomNumber.Name = "RoomNumber";
+            this.RoomNumber.Width = 125;
+            // 
+            // RoomType
+            // 
+            this.RoomType.DataPropertyName = "room_type";
+            this.RoomType.HeaderText = "Type";
+            this.RoomType.MinimumWidth = 6;
+            this.RoomType.Name = "RoomType";
+            this.RoomType.Width = 125;
+            // 
+            // RoomPrice
+            // 
+            this.RoomPrice.DataPropertyName = "room_price";
+            this.RoomPrice.HeaderText = "Price";
+            this.RoomPrice.MinimumWidth = 6;
+            this.RoomPrice.Name = "RoomPrice";
+            this.RoomPrice.Width = 125;
             // 
             // UCRoomList
             // 
@@ -205,10 +221,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvRoomList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomPrice;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnLast;
@@ -216,5 +228,9 @@
         private System.Windows.Forms.Label lblPageNo;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnFirst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomPrice;
     }
 }
