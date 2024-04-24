@@ -139,5 +139,12 @@ namespace HotelManagementSystem.Views.Admin
                 btnShow.Text = "Show";
             }
         }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            UCAdmin uCAdmin = new UCAdmin();
+            this.Controls.Clear();
+            this.Controls.Add(uCAdmin);
+        }
     }
 }

@@ -69,5 +69,26 @@ namespace HotelManagementSystem.Views.Admin
             txtUsername.Text = string.Empty;
             txtPassword.Text = string.Empty;
         }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '*')
+            {
+                txtPassword.PasswordChar = '\0';
+                btnShow.Text = "Hide";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                btnShow.Text = "Show";
+            }
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            UCAdminSignUp uCAdminSignUp = new UCAdminSignUp();
+            this.Controls.Clear();
+            this.Controls.Add(uCAdminSignUp);
+        }
     }
 }

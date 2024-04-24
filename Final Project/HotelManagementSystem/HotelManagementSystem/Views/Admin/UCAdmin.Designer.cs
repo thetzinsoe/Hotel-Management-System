@@ -34,6 +34,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblusername = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSignUp = new System.Windows.Forms.Label();
+            this.btnShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblpass
@@ -57,7 +60,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(648, 339);
+            this.btnLogin.Location = new System.Drawing.Point(648, 388);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 35);
             this.btnLogin.TabIndex = 2;
@@ -86,7 +89,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(426, 339);
+            this.btnCancel.Location = new System.Drawing.Point(426, 388);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 5;
@@ -94,11 +97,48 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(480, 455);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Still not Admin?";
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.AutoSize = true;
+            this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUp.Location = new System.Drawing.Point(612, 448);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(89, 28);
+            this.btnSignUp.TabIndex = 7;
+            this.btnSignUp.Text = "Sign up ";
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.White;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.Location = new System.Drawing.Point(673, 310);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(75, 25);
+            this.btnShow.TabIndex = 9;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // UCAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.btnShow);
+            this.Controls.Add(this.btnSignUp);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblusername);
@@ -120,5 +160,8 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblusername;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label btnSignUp;
+        private System.Windows.Forms.Button btnShow;
     }
 }

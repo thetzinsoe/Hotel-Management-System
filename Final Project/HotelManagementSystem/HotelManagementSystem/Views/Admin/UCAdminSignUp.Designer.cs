@@ -40,6 +40,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtadminID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLogIn = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +142,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLogIn);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtadminID);
             this.groupBox1.Controls.Add(this.txtusername);
@@ -178,6 +182,27 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Admin -";
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.AutoSize = true;
+            this.btnLogIn.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.Location = new System.Drawing.Point(345, 439);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(70, 28);
+            this.btnLogIn.TabIndex = 12;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(192, 447);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Already an admin?";
+            // 
             // UCAdminSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,5 +231,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtadminID;
+        private System.Windows.Forms.Label btnLogIn;
+        private System.Windows.Forms.Label label2;
     }
 }
