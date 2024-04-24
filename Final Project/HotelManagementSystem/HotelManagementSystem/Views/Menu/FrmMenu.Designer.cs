@@ -31,6 +31,7 @@ namespace HotelManagementSystem.Views.Menu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -117,7 +118,7 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.dashBoardToolStripMenuItem.AutoToolTip = true;
             this.dashBoardToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.dashBoardToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.dashBoardToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
             this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(145, 46);
             this.dashBoardToolStripMenuItem.Text = "DASHBOARD";
@@ -128,25 +129,25 @@ namespace HotelManagementSystem.Views.Menu
             this.rESERVATIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reservationListToolStripMenuItem,
             this.reservationAddToolStripMenuItem});
-            this.rESERVATIONToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.rESERVATIONToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.rESERVATIONToolStripMenuItem.Name = "rESERVATIONToolStripMenuItem";
             this.rESERVATIONToolStripMenuItem.Size = new System.Drawing.Size(152, 46);
             this.rESERVATIONToolStripMenuItem.Text = "RESERVATION";
             // 
             // reservationListToolStripMenuItem
             // 
-            this.reservationListToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.reservationListToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.reservationListToolStripMenuItem.Name = "reservationListToolStripMenuItem";
-            this.reservationListToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
-            this.reservationListToolStripMenuItem.Text = "Reservation List";
+            this.reservationListToolStripMenuItem.Size = new System.Drawing.Size(271, 32);
+            this.reservationListToolStripMenuItem.Text = "RESERVATION LIST";
             this.reservationListToolStripMenuItem.Click += new System.EventHandler(this.reservationListToolStripMenuItem_Click);
             // 
             // reservationAddToolStripMenuItem
             // 
-            this.reservationAddToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.reservationAddToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.reservationAddToolStripMenuItem.Name = "reservationAddToolStripMenuItem";
-            this.reservationAddToolStripMenuItem.Size = new System.Drawing.Size(247, 32);
-            this.reservationAddToolStripMenuItem.Text = "Reservation Add";
+            this.reservationAddToolStripMenuItem.Size = new System.Drawing.Size(271, 32);
+            this.reservationAddToolStripMenuItem.Text = "RESERVATION ADD";
             this.reservationAddToolStripMenuItem.Click += new System.EventHandler(this.reservationAddToolStripMenuItem_Click);
             // 
             // gUESTINFOMATIONToolStripMenuItem
@@ -154,7 +155,7 @@ namespace HotelManagementSystem.Views.Menu
             this.gUESTINFOMATIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.guestRegistrationToolStripMenuItem,
             this.guestListToolStripMenuItem});
-            this.gUESTINFOMATIONToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.gUESTINFOMATIONToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gUESTINFOMATIONToolStripMenuItem.Name = "gUESTINFOMATIONToolStripMenuItem";
             this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(227, 46);
             this.gUESTINFOMATIONToolStripMenuItem.Text = "GUEST INFORMATION";
@@ -189,7 +190,7 @@ namespace HotelManagementSystem.Views.Menu
             this.cHECKINLISTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cHECKADDToolStripMenuItem,
             this.cHECKINLISTToolStripMenuItem1});
-            this.cHECKINLISTToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.cHECKINLISTToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.cHECKINLISTToolStripMenuItem.Name = "cHECKINLISTToolStripMenuItem";
             this.cHECKINLISTToolStripMenuItem.Size = new System.Drawing.Size(114, 46);
             this.cHECKINLISTToolStripMenuItem.Text = "CHECK IN";
@@ -213,7 +214,7 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTHISTORYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pAYMENTLISTToolStripMenuItem,
             this.pAYMENTADDToolStripMenuItem});
-            this.pAYMENTHISTORYToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.pAYMENTHISTORYToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.pAYMENTHISTORYToolStripMenuItem.Name = "pAYMENTHISTORYToolStripMenuItem";
             this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(201, 46);
             this.pAYMENTHISTORYToolStripMenuItem.Text = "PAYMENT HISTORY";
@@ -234,7 +235,7 @@ namespace HotelManagementSystem.Views.Menu
             // 
             // pnMain
             // 
-            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnMain.BackColor = System.Drawing.Color.LightGray;
             this.pnMain.Location = new System.Drawing.Point(0, 50);
             this.pnMain.Name = "pnMain";
@@ -262,7 +263,7 @@ namespace HotelManagementSystem.Views.Menu
             this.ClientSize = new System.Drawing.Size(1182, 853);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holtel Management System";
@@ -274,6 +275,11 @@ namespace HotelManagementSystem.Views.Menu
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.Panel pnMain;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
 
         private ToolStripPanel BottomToolStripPanel;
         private ToolStripPanel TopToolStripPanel;

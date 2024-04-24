@@ -53,8 +53,10 @@
       <HintPath>..\HotelManagementSystem\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,10 +76,7 @@
     <Compile Include="Room\RoomDao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HotelManagementSystem.Entities\HotelManagementSystem.Entities.csproj">
-      <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
-      <Name>HotelManagementSystem.Entities</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

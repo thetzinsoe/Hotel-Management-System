@@ -188,6 +188,7 @@ namespace HotelManagementSystem.Views.Employee
             {
                 btnAdd.Text = "ADD";
                 btnDelete.Enabled = false;
+                
             }
         }
 

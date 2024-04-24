@@ -21,11 +21,11 @@ namespace HotelManagementSystem.Views.Payment
     public partial class UCPayNow : UserControl
     {
         bool checkInput = false;
-        decimal totalFees = 0;
+        decimal totalFees = 0.00m;
         int roomId = 0;
-        decimal roomFees = 0;
-        decimal extraFees = 0;
-        decimal discount = 0;
+        decimal roomFees = 0.00m;
+        decimal extraFees = 0.00m;
+        decimal discount = 0.00m;
         int totalDays = 0;
         DateTime checkIn, checkOut;
         CheckInService checkInService = new CheckInService();
@@ -56,6 +56,10 @@ namespace HotelManagementSystem.Views.Payment
             if (!string.IsNullOrEmpty(hdPaymentId.Text.ToString()))
             {
                 btnConfirm.Enabled = false;
+            }
+            else
+            {
+                btnPrint.Enabled = false;
             }
             BindData();
         }
@@ -121,6 +125,8 @@ namespace HotelManagementSystem.Views.Payment
                 paymentEntity.discount = decimal.Parse(txtDiscount.Text.ToString());
                 paymentEntity.payment_type = cbPaymentType.SelectedItem.ToString();
                 paymentEntity.total_fees = decimal.Parse(txtTotalAmount.Text.ToString());
+                paymentEntity.created_date = DateTime.Today;
+                paymentEntity.updated_date = DateTime.Today;
                 return paymentEntity;
             }
             else
@@ -139,7 +145,7 @@ namespace HotelManagementSystem.Views.Payment
                     totalDays = (int)duration.TotalDays;
                     txtRoomFees.Text = (roomFees * totalDays).ToString();
                     txtDuration.Text = totalDays.ToString()+" days";
-                    txtTotalAmount.Text = calculateTotal().ToString();
+                    txtTotalAmount.Text = calculateTotal().ToString("0.00");
 
                 }
                 catch (Exception e)
@@ -212,7 +218,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void txtDiscount_TextChanged_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDiscount.Text.ToString()))
+            if (!string.IsNullOrEmpty(txtDiscount.Text.ToString()))
             {
                 bool isDigit = txtDiscount.Text.Any(c => char.IsDigit(c));
                 if (isDigit)

@@ -10,9 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagementSystem.Views.Admin;
 using HotelManagementSystem.Views.Payment;
 using HotelManagementSystem.Views.CheckIn;
 using HotelManagementSystem.Views.Room;
+using HotelManagementSystem.Views.Guest;
 
 namespace HotelManagementSystem.Views.Menu
 {

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem.Views.Reservation
+namespace HotelManagementSystem
 {
-    public partial class FrmGetGuest : Form
+    public partial class Login : UserControl
     {
-        public FrmGetGuest()
+        public Login()
         {
             InitializeComponent();
         }
