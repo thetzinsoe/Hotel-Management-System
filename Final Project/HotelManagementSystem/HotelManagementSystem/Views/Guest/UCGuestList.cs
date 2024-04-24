@@ -47,10 +47,6 @@ namespace HotelManagementSystem.Views.Guest
         {
             BindGrid();
             BindReportViewer();
-            if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
-            {
-                SearchNameorNrc();
-            }
 
         }
 
@@ -286,12 +282,7 @@ namespace HotelManagementSystem.Views.Guest
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            SearchNameorNrc();
-        }
-
-        private void SearchNameorNrc()
-        {
-            if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
+            if(!string.IsNullOrEmpty(txtSearch.Text.Trim()))
             {
                 if (cbSearch.SelectedIndex == 0 || cbSearch.SelectedIndex == -1)
                 {
@@ -311,8 +302,9 @@ namespace HotelManagementSystem.Views.Guest
             else
             {
                 BindGrid();
-            }
+            }            
         }
+
         private void btnCreateGuest_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(hdReservationId.Text))
@@ -341,7 +333,7 @@ namespace HotelManagementSystem.Views.Guest
                     string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
                     UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
                     uCCheckinAdd.RvId = hdReservationId.Text.ToString();
-                    uCCheckinAdd.Nrc = guestNrc;
+                    //uCCheckinAdd.Nrc = guestNrc;
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckinAdd);
                     // MessageBox.Show("Guest ID: " + guestId+"  "+guestNrc);

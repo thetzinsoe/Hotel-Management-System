@@ -28,6 +28,13 @@ namespace HotelManagementSystem.Views.Guest
             txtPhoneNumber.Text = guestPhone;
         }
 
+        public UCGuestCRUD(string guestName,string guestPhone)
+        {
+            InitializeComponent();
+            txtFullName.Text = guestName;
+            txtPhoneNumber.Text = guestPhone;
+        }
+
         public string ID
         { set { txtGuestId.Text = value; } }
 
