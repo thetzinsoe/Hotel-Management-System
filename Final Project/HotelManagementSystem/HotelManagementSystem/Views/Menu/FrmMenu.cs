@@ -85,5 +85,19 @@ namespace HotelManagementSystem.Views.Menu
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCGuestList);
         }
+
+        private void eMPLOYEEREGISTRATIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCEmployee uCEmployee = new UCEmployee();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCEmployee);
+        }
+
+        private void eMPLOYEELISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCEmployeeList uCEmployeeList = new UCEmployeeList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCEmployeeList);
+        }
     }
 }

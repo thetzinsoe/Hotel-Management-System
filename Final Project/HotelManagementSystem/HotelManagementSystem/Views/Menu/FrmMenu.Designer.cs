@@ -53,6 +53,9 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEELISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +105,7 @@ namespace HotelManagementSystem.Views.Menu
             this.dashBoardToolStripMenuItem,
             this.rESERVATIONToolStripMenuItem,
             this.gUESTINFOMATIONToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.rOOMENTRYLISTToolStripMenuItem,
             this.cHECKINLISTToolStripMenuItem,
             this.pAYMENTHISTORYToolStripMenuItem});
@@ -155,8 +159,8 @@ namespace HotelManagementSystem.Views.Menu
             this.guestListToolStripMenuItem});
             this.gUESTINFOMATIONToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.gUESTINFOMATIONToolStripMenuItem.Name = "gUESTINFOMATIONToolStripMenuItem";
-            this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(227, 61);
-            this.gUESTINFOMATIONToolStripMenuItem.Text = "GUEST INFORMATION";
+            this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(86, 61);
+            this.gUESTINFOMATIONToolStripMenuItem.Text = "GUEST";
             // 
             // guestRegistrationToolStripMenuItem
             // 
@@ -177,8 +181,8 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.rOOMENTRYLISTToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.rOOMENTRYLISTToolStripMenuItem.Name = "rOOMENTRYLISTToolStripMenuItem";
-            this.rOOMENTRYLISTToolStripMenuItem.Size = new System.Drawing.Size(227, 61);
-            this.rOOMENTRYLISTToolStripMenuItem.Text = "ROOM INFORMATION";
+            this.rOOMENTRYLISTToolStripMenuItem.Size = new System.Drawing.Size(86, 61);
+            this.rOOMENTRYLISTToolStripMenuItem.Text = "ROOM";
             // 
             // cHECKINLISTToolStripMenuItem
             // 
@@ -211,8 +215,8 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTADDToolStripMenuItem});
             this.pAYMENTHISTORYToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.pAYMENTHISTORYToolStripMenuItem.Name = "pAYMENTHISTORYToolStripMenuItem";
-            this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(201, 61);
-            this.pAYMENTHISTORYToolStripMenuItem.Text = "PAYMENT HISTORY";
+            this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(114, 61);
+            this.pAYMENTHISTORYToolStripMenuItem.Text = "PAYMENT";
             // 
             // pAYMENTLISTToolStripMenuItem
             // 
@@ -236,6 +240,29 @@ namespace HotelManagementSystem.Views.Menu
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem,
+            this.eMPLOYEELISTToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(122, 61);
+            this.toolStripMenuItem1.Text = "EMPLOYEE";
+            // 
+            // eMPLOYEEREGISTRATIONToolStripMenuItem
+            // 
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Name = "eMPLOYEEREGISTRATIONToolStripMenuItem";
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Text = "EMPLOYEE REGISTRATION";
+            this.eMPLOYEEREGISTRATIONToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEREGISTRATIONToolStripMenuItem_Click);
+            // 
+            // eMPLOYEELISTToolStripMenuItem
+            // 
+            this.eMPLOYEELISTToolStripMenuItem.Name = "eMPLOYEELISTToolStripMenuItem";
+            this.eMPLOYEELISTToolStripMenuItem.Size = new System.Drawing.Size(335, 32);
+            this.eMPLOYEELISTToolStripMenuItem.Text = "EMPLOYEE LIST";
+            this.eMPLOYEELISTToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEELISTToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -280,5 +307,8 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem pAYMENTADDToolStripMenuItem;
         private ToolStripMenuItem guestRegistrationToolStripMenuItem;
         private ToolStripMenuItem guestListToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem eMPLOYEEREGISTRATIONToolStripMenuItem;
+        private ToolStripMenuItem eMPLOYEELISTToolStripMenuItem;
     }
 }
