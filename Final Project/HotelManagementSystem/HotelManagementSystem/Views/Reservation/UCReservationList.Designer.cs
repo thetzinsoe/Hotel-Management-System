@@ -62,7 +62,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1100, 57);
+            this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 0;
             // 
             // lbTitle
@@ -71,7 +71,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(447, 13);
+            this.lbTitle.Location = new System.Drawing.Point(447, 14);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(202, 30);
             this.lbTitle.TabIndex = 0;
@@ -88,9 +88,9 @@
             this.groupBox1.Controls.Add(this.btn3xPrevious);
             this.groupBox1.Controls.Add(this.dgvReservation);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 64);
+            this.groupBox1.Location = new System.Drawing.Point(4, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1093, 633);
+            this.groupBox1.Size = new System.Drawing.Size(1093, 686);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reservation List";
@@ -98,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(613, 27);
+            this.label1.Location = new System.Drawing.Point(613, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 21);
             this.label1.TabIndex = 96;
@@ -106,7 +106,7 @@
             // 
             // txtSearchValue
             // 
-            this.txtSearchValue.Location = new System.Drawing.Point(762, 24);
+            this.txtSearchValue.Location = new System.Drawing.Point(762, 26);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
             this.txtSearchValue.Size = new System.Drawing.Size(325, 29);
@@ -116,35 +116,43 @@
             // 
             // btn3xNext
             // 
+            this.btn3xNext.BackColor = System.Drawing.Color.SteelBlue;
             this.btn3xNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xNext.Location = new System.Drawing.Point(738, 462);
+            this.btn3xNext.ForeColor = System.Drawing.Color.White;
+            this.btn3xNext.Location = new System.Drawing.Point(738, 501);
             this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xNext.Name = "btn3xNext";
-            this.btn3xNext.Size = new System.Drawing.Size(59, 38);
+            this.btn3xNext.Size = new System.Drawing.Size(59, 35);
             this.btn3xNext.TabIndex = 90;
             this.btn3xNext.Text = ">>";
-            this.btn3xNext.UseVisualStyleBackColor = true;
+            this.btn3xNext.UseVisualStyleBackColor = false;
             this.btn3xNext.Click += new System.EventHandler(this.btn3xNext_Click);
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
             this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(668, 462);
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(668, 501);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(59, 38);
+            this.btnNext.Size = new System.Drawing.Size(59, 35);
             this.btnNext.TabIndex = 89;
             this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblPageNo
             // 
             this.lblPageNo.AutoSize = true;
+            this.lblPageNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(523, 472);
+            this.lblPageNo.ForeColor = System.Drawing.Color.Black;
+            this.lblPageNo.Location = new System.Drawing.Point(523, 511);
             this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNo.Name = "lblPageNo";
             this.lblPageNo.Size = new System.Drawing.Size(43, 21);
@@ -153,28 +161,34 @@
             // 
             // btnPrev
             // 
+            this.btnPrev.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.Location = new System.Drawing.Point(383, 462);
+            this.btnPrev.ForeColor = System.Drawing.Color.White;
+            this.btnPrev.Location = new System.Drawing.Point(383, 501);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(59, 38);
+            this.btnPrev.Size = new System.Drawing.Size(59, 35);
             this.btnPrev.TabIndex = 87;
             this.btnPrev.Text = "<";
-            this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btn3xPrevious
             // 
+            this.btn3xPrevious.BackColor = System.Drawing.Color.SteelBlue;
             this.btn3xPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn3xPrevious.Location = new System.Drawing.Point(309, 462);
+            this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
+            this.btn3xPrevious.Location = new System.Drawing.Point(309, 501);
             this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xPrevious.Name = "btn3xPrevious";
-            this.btn3xPrevious.Size = new System.Drawing.Size(59, 38);
+            this.btn3xPrevious.Size = new System.Drawing.Size(59, 35);
             this.btn3xPrevious.TabIndex = 86;
             this.btn3xPrevious.Text = "<<";
-            this.btn3xPrevious.UseVisualStyleBackColor = true;
+            this.btn3xPrevious.UseVisualStyleBackColor = false;
             this.btn3xPrevious.Click += new System.EventHandler(this.btn3xPrevious_Click);
             // 
             // dgvReservation
@@ -201,12 +215,12 @@
             this.checkin_date,
             this.checkout_date,
             this.checkin});
-            this.dgvReservation.Location = new System.Drawing.Point(6, 59);
+            this.dgvReservation.Location = new System.Drawing.Point(6, 64);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.ReadOnly = true;
             this.dgvReservation.RowHeadersVisible = false;
             this.dgvReservation.RowTemplate.Height = 30;
-            this.dgvReservation.Size = new System.Drawing.Size(1081, 374);
+            this.dgvReservation.Size = new System.Drawing.Size(1081, 405);
             this.dgvReservation.TabIndex = 2;
             this.dgvReservation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservation_CellContentClick);
             // 
@@ -282,12 +296,12 @@
             // 
             // UCReservationList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnTitle);
             this.Name = "UCReservationList";
-            this.Size = new System.Drawing.Size(1100, 700);
+            this.Size = new System.Drawing.Size(1100, 758);
             this.Load += new System.EventHandler(this.UCReservation_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();

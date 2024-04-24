@@ -52,7 +52,7 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 if (e.ColumnIndex == dgvReservation.Columns["checkin"].Index && e.RowIndex >= 0)
                 {
-                   DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel);
+                   DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
                         DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];

@@ -22,7 +22,7 @@ namespace HotelManagementSystem.Views.Guest
             InitializeComponent();
         }
 
-        public UCGuestCRUD(string guestName,string guestPhone)
+        public UCGuestCRUD(string guestName, string guestPhone)
         {
             InitializeComponent();
             txtFullName.Text = guestName;
