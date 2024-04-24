@@ -86,9 +86,6 @@
     <Compile Include="Room\RoomService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\HotelManagementSystem.DAO\HotelManagementSystem.DAO.csproj">
       <Project>{0004d889-1b99-4219-9d47-0d05fc375515}</Project>
       <Name>HotelManagementSystem.DAO</Name>
@@ -97,10 +94,6 @@
       <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
       <Name>HotelManagementSystem.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

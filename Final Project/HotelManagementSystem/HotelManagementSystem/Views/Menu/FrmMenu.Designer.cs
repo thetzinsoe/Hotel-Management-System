@@ -286,12 +286,12 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripPanel RightToolStripPanel;
         private ToolStripPanel LeftToolStripPanel;
         private ToolStripContentPanel ContentPanel;
-        private MenuStrip menuStrip1;
+        //private MenuStrip menuStrip1;
         private ToolStripMenuItem dashBoardToolStripMenuItem;
         private ToolStripMenuItem rESERVATIONToolStripMenuItem;
         private ToolStripMenuItem gUESTINFOMATIONToolStripMenuItem;
         private ToolStripMenuItem rOOMENTRYLISTToolStripMenuItem;
-        private Panel pnMain;
+        //private Panel pnMain;
         private ToolStripMenuItem reservationListToolStripMenuItem;
         private ToolStripMenuItem reservationAddToolStripMenuItem;
         private ToolStripMenuItem cHECKINLISTToolStripMenuItem;

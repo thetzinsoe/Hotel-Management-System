@@ -313,14 +313,14 @@
       <DependentUpon>UCEmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Guest\ReportGuest.rdlc" />
-    <EmbeddedResource Include="Views\Admin\UCAdmin.resx">
-      <DependentUpon>UCAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\Guest\UCGuestCRUD.resx">
       <DependentUpon>UCGuestCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Guest\UCGuestList.resx">
       <DependentUpon>UCGuestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menu\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Menu\MainDashboard.resx">
       <DependentUpon>MainDashboard.cs</DependentUpon>
@@ -330,10 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Room\UCRoomList.resx">
       <DependentUpon>UCRoomList.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <EmbeddedResource Include="Views\Menu\FrmMenu.resx">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Menu\UCDashboard.resx">
       <DependentUpon>UCDashboard.cs</DependentUpon>
@@ -366,11 +362,6 @@
     <None Include="HotelManagementSystemDBDataSet.xss">
       <DependentUpon>HotelManagementSystemDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="packages.config" />
-    <EmbeddedResource Include="Views\Menu\FrmMenu.resx">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -433,6 +424,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guestCRUD.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelManagementSystem.Entities\HotelManagementSystem.Entities.csproj">
+      <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
+      <Name>HotelManagementSystem.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelManagementSystem.Services\HotelManagementSystem.Services.csproj">
+      <Project>{ab839509-93bf-47dc-ab4d-6fef875c0a67}</Project>
+      <Name>HotelManagementSystem.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
