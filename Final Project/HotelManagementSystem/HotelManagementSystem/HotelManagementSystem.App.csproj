@@ -157,6 +157,12 @@
     <Compile Include="Views\Admin\UCAdmin.Designer.cs">
       <DependentUpon>UCAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\UCAdminSignUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\UCAdminSignUp.Designer.cs">
+      <DependentUpon>UCAdminSignUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Employee\DataSetEmployee.cs">
       <DependentUpon>DataSetEmployee.xsd</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Admin\UCAdmin.resx">
       <DependentUpon>UCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\UCAdminSignUp.resx">
+      <DependentUpon>UCAdminSignUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckIn\UCCheckinAdd.resx">
       <DependentUpon>UCCheckinAdd.cs</DependentUpon>

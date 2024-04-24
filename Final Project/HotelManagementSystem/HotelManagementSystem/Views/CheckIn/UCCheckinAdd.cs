@@ -375,5 +375,120 @@ namespace HotelManagementSystem.Views.CheckIn
                 this.Controls.Add(uCCheckInList);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cbRoomNumber_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hdReservationId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hdGuestNrc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hdCheckInId_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbGuestNrcValidation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbGuestNameValidation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbRoomNumberValidation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCheckOutValidation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCheckInDateValidation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDob_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbGuestNrc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGender_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
