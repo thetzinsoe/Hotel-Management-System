@@ -105,10 +105,10 @@ namespace HotelManagementSystem.Views.Menu
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashBoardToolStripMenuItem,
+            this.rOOMENTRYLISTToolStripMenuItem,
             this.rESERVATIONToolStripMenuItem,
             this.gUESTINFOMATIONToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.rOOMENTRYLISTToolStripMenuItem,
             this.cHECKINLISTToolStripMenuItem,
             this.pAYMENTHISTORYToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);

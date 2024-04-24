@@ -33,7 +33,7 @@ namespace HotelManagementSystem.DAO.Room
 
         public bool Insert(RoomEntity roomEntity)
         {
-            strSql = "INSERT INTO Room(room_number, room_type, price, is_occupied, created_date, updated_date, is_deleted) " +
+            strSql = "INSERT INTO Room(room_no, room_type, room_price, is_occupied, created_date, updated_date, is_deleted) " +
                      "VALUES(@RoomNumber, @RoomType, @Price, @IsOccupied, @CreatedDate, @UpdatedDate, @IsDeleted)";
 
             SqlParameter[] sqlParam = {

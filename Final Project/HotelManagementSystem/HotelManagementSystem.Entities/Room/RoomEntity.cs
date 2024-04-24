@@ -31,7 +31,7 @@ namespace HotelManagementSystem.Entities.Room
         /// <summary>
         /// Gets or sets a value indicating whether the room is occupied.
         /// </summary>
-        public bool is_occupied { get; set; }
+        public short is_occupied { get; set; }
 
         /// <summary>
         /// Gets or sets the created date of the room.
@@ -63,7 +63,7 @@ namespace HotelManagementSystem.Entities.Room
             this.room_number = string.Empty;
             this.room_type = string.Empty;
             this.price = 0;
-            this.is_occupied = false;
+            this.is_occupied = 0;
             this.created_date = DateTime.Now;
             this.updated_date = DateTime.Now;
         }

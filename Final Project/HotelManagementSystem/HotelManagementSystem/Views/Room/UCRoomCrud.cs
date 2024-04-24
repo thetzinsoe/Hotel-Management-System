@@ -105,9 +105,10 @@ namespace HotelManagementSystem.Views.Room
             }
             roomEntity.room_number = txtRoomNumber.Text;
             roomEntity.room_type = cbType.Text;
-            roomEntity.price = Convert.ToInt32(txtPrice.Text);
-            roomEntity.is_occupied = false;
+            roomEntity.price = decimal.Parse(txtPrice.Text.ToString());
+            roomEntity.is_occupied = 0;
             roomEntity.created_date = DateTime.Now;
+            roomEntity.updated_date = DateTime.Now;
             return roomEntity;
         }
         private void BindData()
