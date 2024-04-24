@@ -72,12 +72,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HotelManagementSystem.Entities\HotelManagementSystem.Entities.csproj">
-      <Project>{916ac3a1-6284-4039-98b3-7f19b79a57dc}</Project>
-      <Name>HotelManagementSystem.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
