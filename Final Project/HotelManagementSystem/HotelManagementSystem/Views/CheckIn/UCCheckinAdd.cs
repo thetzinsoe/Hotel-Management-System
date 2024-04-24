@@ -234,7 +234,7 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
-                if (dtpCheckInDate.Value.Date >= DateTime.Now.Date )
+                if (dtpCheckInDate.Value.Date >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
                 {
                     validateInput = true;
                     //lbCheckInDateValidation.Text = "";
@@ -244,6 +244,7 @@ namespace HotelManagementSystem.Views.CheckIn
                     validateInput = false;
                     // lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
                     MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -258,21 +259,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 selectedRoomNo = selectedRow["room_no"].ToString();
                 selectedRoomId = int.Parse(selectedRow["room_id"].ToString());
                // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
-            }
-        }
-
-        private void cbRoomNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedRoomNo == cbRoomNumber.Text.ToString())
-            {
-                validateInput = true;
-                //lbRoomNumberValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbRoomNumberValidation.Text = "Choose the correct room number form drop down!";
-                MessageBox.Show("Wrong Date!Please Choose the Correct Date","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -303,37 +289,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
             }
         }
-
-        private void cbGuestName_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestName == cbGuestName.Text.ToString())
-            {
-                validateInput = true;
-                //lbGuestNameValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                lbGuestNameValidation.Text = "Choose the correct Guest form drop down!";
-                MessageBox.Show("Choose the correct Guest form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void cbGuestNrc_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestNrc == cbGuestNrc.Text.ToString())
-            {
-                validateInput = true;
-                //lbGuestNrcValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbGuestNrcValidation.Text = "Choose the correct Nrc Number form drop down!";
-                MessageBox.Show("Choose the correct Nrc Number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
 
         private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
@@ -375,5 +330,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 this.Controls.Add(uCCheckInList);
             }
         }
+
     }
 }

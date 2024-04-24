@@ -140,42 +140,34 @@ namespace HotelManagementSystem.Views.CheckIn
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
         }
 
-        private void txtSearchBox_TextChanged(object sender, EventArgs e)
-        {
-            //if(string.IsNullOrEmpty(txtSearchBox.Text))
-            //{
-            //    LoadCheckin();
-            //}
-            try
-            {
-                if (1 > 0)
-                {
-                    DataTable dt = checkInService.GetWithPagination(currentPageIndex, pageSize);
-                    DataTable dt1 = checkInService.GetAll();
-                    int rowCount = dt1.Rows.Count;
-                    totalPage = rowCount / pageSize;
-                    if (rowCount % pageSize > 0)
-                    {
-                        totalPage += 1;
-                    }
-                    lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-                    dgvCheckIn.AutoGenerateColumns = false;
-                    dgvCheckIn.DataSource = dt;
-                }
-                else
-                {
-                    LoadCheckin();
-                }
-            } catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
+        //private void txtSearchBox_TextChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (!string.IsNullOrEmpty(txtSearchBox)
+        //        {
+        //            DataTable dt = checkInService.GetWithPagination(currentPageIndex, pageSize);
+        //            DataTable dt1 = checkInService.GetAll();
+        //            int rowCount = dt1.Rows.Count;
+        //            totalPage = rowCount / pageSize;
+        //            if (rowCount % pageSize > 0)
+        //            {
+        //                totalPage += 1;
+        //            }
+        //            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+        //            dgvCheckIn.AutoGenerateColumns = false;
+        //            dgvCheckIn.DataSource = dt;
+        //        }
+        //        else
+        //        {
+        //            LoadCheckin();
+        //        }
+        //    } catch (Exception err)
+        //    {
+        //        MessageBox.Show(err.Message);
+        //    }
+        //}
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {

@@ -254,9 +254,10 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
-            if(dtpCheckInDate.Checked)
+            if (!string.IsNullOrEmpty(dtpCheckOutDate.Text))
             {
-                if(dtpCheckInDate.Value >= DateTime.Now.Date)
+              
+                if(dtpCheckInDate.Value >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
                 {
                     Load_room();
                     validateInput = true;
@@ -266,24 +267,27 @@ namespace HotelManagementSystem.Views.Reservation
                 {
                     validateInput = false;
                    // lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
-                   MessageBox.Show("Wrong Date!Please Choose the Correct Date","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   MessageBox.Show("Wrong Date!Please Choose the Correct Checkin Date","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            if(dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
-            {
-                validateInput = true;
-                //lbCheckOutValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbCheckOutValidation.Text="Wrong Date! Please choose the correct date.";
-                MessageBox.Show("Wrong Date! Please choose the correct date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
+                if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
+                {
+                    validateInput = true;
+                    //lbCheckOutValidation.Text = "";
+                }
+                else
+                {
+                    validateInput = false;
+                    //lbCheckOutValidation.Text="Wrong Date! Please choose the correct date.";
+                    MessageBox.Show("Wrong Date! Please choose the correct Checkout date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+           
         }
 
         private void cbRoomNo_TextChanged(object sender, EventArgs e)

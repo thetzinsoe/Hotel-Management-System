@@ -16,7 +16,7 @@ namespace HotelManagementSystem.Views.Reservation
 {
     public partial class UCReservationList : UserControl
     {
-        int pageSize = 2;
+        int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
         ReservationService reservationService = new ReservationService();
@@ -159,5 +159,6 @@ namespace HotelManagementSystem.Views.Reservation
             currentPageIndex = 1;
             LoadReservation();
         }
+
     }
 }

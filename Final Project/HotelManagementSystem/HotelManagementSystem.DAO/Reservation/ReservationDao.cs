@@ -83,9 +83,6 @@ namespace HotelManagementSystem.DAO.Reservation
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
-
-
-
         public bool RoomUpdate(int id, int is_occupied)
         {
             strSql = "UPDATE Room SET is_occupied = @is_occupied WHERE room_id = @room_id";

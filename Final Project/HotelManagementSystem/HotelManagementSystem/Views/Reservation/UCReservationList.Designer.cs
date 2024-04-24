@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearchValue = new System.Windows.Forms.TextBox();
             this.btn3xNext = new System.Windows.Forms.Button();
@@ -52,7 +52,6 @@
             this.checkout_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkin = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnTitle.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,41 +76,24 @@
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "RESERVATION LIST";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtSearchValue);
-            this.groupBox1.Controls.Add(this.btn3xNext);
-            this.groupBox1.Controls.Add(this.btnNext);
-            this.groupBox1.Controls.Add(this.lblPageNo);
-            this.groupBox1.Controls.Add(this.btnPrev);
-            this.groupBox1.Controls.Add(this.btn3xPrevious);
-            this.groupBox1.Controls.Add(this.dgvReservation);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 69);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1093, 686);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Reservation List";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(613, 29);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(617, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 21);
-            this.label1.TabIndex = 96;
+            this.label1.Size = new System.Drawing.Size(140, 21);
+            this.label1.TabIndex = 104;
             this.label1.Text = "Search With Name";
             // 
             // txtSearchValue
             // 
-            this.txtSearchValue.Location = new System.Drawing.Point(762, 26);
+            this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchValue.Location = new System.Drawing.Point(766, 93);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
             this.txtSearchValue.Size = new System.Drawing.Size(325, 29);
-            this.txtSearchValue.TabIndex = 95;
-            this.txtSearchValue.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearchValue_MouseClick);
+            this.txtSearchValue.TabIndex = 103;
             this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             // 
             // btn3xNext
@@ -121,11 +103,11 @@
             this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xNext.ForeColor = System.Drawing.Color.White;
-            this.btn3xNext.Location = new System.Drawing.Point(738, 501);
+            this.btn3xNext.Location = new System.Drawing.Point(742, 568);
             this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xNext.Name = "btn3xNext";
             this.btn3xNext.Size = new System.Drawing.Size(59, 35);
-            this.btn3xNext.TabIndex = 90;
+            this.btn3xNext.TabIndex = 102;
             this.btn3xNext.Text = ">>";
             this.btn3xNext.UseVisualStyleBackColor = false;
             this.btn3xNext.Click += new System.EventHandler(this.btn3xNext_Click);
@@ -137,11 +119,11 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(668, 501);
+            this.btnNext.Location = new System.Drawing.Point(672, 568);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(59, 35);
-            this.btnNext.TabIndex = 89;
+            this.btnNext.TabIndex = 101;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -152,11 +134,11 @@
             this.lblPageNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNo.ForeColor = System.Drawing.Color.Black;
-            this.lblPageNo.Location = new System.Drawing.Point(523, 511);
+            this.lblPageNo.Location = new System.Drawing.Point(527, 578);
             this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNo.Name = "lblPageNo";
             this.lblPageNo.Size = new System.Drawing.Size(43, 21);
-            this.lblPageNo.TabIndex = 88;
+            this.lblPageNo.TabIndex = 100;
             this.lblPageNo.Text = "label";
             // 
             // btnPrev
@@ -166,11 +148,11 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(383, 501);
+            this.btnPrev.Location = new System.Drawing.Point(387, 568);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(59, 35);
-            this.btnPrev.TabIndex = 87;
+            this.btnPrev.TabIndex = 99;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = false;
             this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
@@ -182,11 +164,11 @@
             this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
-            this.btn3xPrevious.Location = new System.Drawing.Point(309, 501);
+            this.btn3xPrevious.Location = new System.Drawing.Point(313, 568);
             this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xPrevious.Name = "btn3xPrevious";
             this.btn3xPrevious.Size = new System.Drawing.Size(59, 35);
-            this.btn3xPrevious.TabIndex = 86;
+            this.btn3xPrevious.TabIndex = 98;
             this.btn3xPrevious.Text = "<<";
             this.btn3xPrevious.UseVisualStyleBackColor = false;
             this.btn3xPrevious.Click += new System.EventHandler(this.btn3xPrevious_Click);
@@ -215,13 +197,21 @@
             this.checkin_date,
             this.checkout_date,
             this.checkin});
-            this.dgvReservation.Location = new System.Drawing.Point(6, 64);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReservation.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvReservation.Location = new System.Drawing.Point(10, 131);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.ReadOnly = true;
             this.dgvReservation.RowHeadersVisible = false;
             this.dgvReservation.RowTemplate.Height = 30;
             this.dgvReservation.Size = new System.Drawing.Size(1081, 405);
-            this.dgvReservation.TabIndex = 2;
+            this.dgvReservation.TabIndex = 97;
             this.dgvReservation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservation_CellContentClick);
             // 
             // reservation_id
@@ -298,17 +288,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSearchValue);
+            this.Controls.Add(this.btn3xNext);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.lblPageNo);
+            this.Controls.Add(this.btnPrev);
+            this.Controls.Add(this.btn3xPrevious);
+            this.Controls.Add(this.dgvReservation);
             this.Controls.Add(this.pnTitle);
             this.Name = "UCReservationList";
             this.Size = new System.Drawing.Size(1100, 758);
             this.Load += new System.EventHandler(this.UCReservation_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -316,15 +312,14 @@
 
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvReservation;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSearchValue;
         private System.Windows.Forms.Button btn3xNext;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblPageNo;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btn3xPrevious;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSearchValue;
+        private System.Windows.Forms.DataGridView dgvReservation;
         private System.Windows.Forms.DataGridViewLinkColumn reservation_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn room_number;
         private System.Windows.Forms.DataGridViewTextBoxColumn customer_name;
