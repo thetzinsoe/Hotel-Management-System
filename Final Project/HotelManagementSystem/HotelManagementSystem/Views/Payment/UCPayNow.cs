@@ -21,11 +21,11 @@ namespace HotelManagementSystem.Views.Payment
     public partial class UCPayNow : UserControl
     {
         bool checkInput = false;
-        decimal totalFees = 0;
+        decimal totalFees = 0.00m;
         int roomId = 0;
-        decimal roomFees = 0;
-        decimal extraFees = 0;
-        decimal discount = 0;
+        decimal roomFees = 0.00m;
+        decimal extraFees = 0.00m;
+        decimal discount = 0.00m;
         int totalDays = 0;
         DateTime checkIn, checkOut;
         CheckInService checkInService = new CheckInService();
@@ -57,6 +57,10 @@ namespace HotelManagementSystem.Views.Payment
             {
                 btnConfirm.Enabled = false;
             }
+            else
+            {
+                btnPrint.Enabled = false;
+            }
             BindData();
         }
 
@@ -65,12 +69,14 @@ namespace HotelManagementSystem.Views.Payment
             if (cbPaymentType.SelectedIndex < 0)
             {
                 checkInput = false;
-                lbPaymentTypeValidation.Text = "You must choose Payment Type!";
+                //lbPaymentTypeValidation.Text = "You must choose Payment Type!";
+                MessageBox.Show("You must choose Payment Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
                  checkInput=true;
-                lbPaymentTypeValidation.Text = "";
+                //lbPaymentTypeValidation.Text = "";
             }
 
             if (checkInput)
@@ -79,7 +85,8 @@ namespace HotelManagementSystem.Views.Payment
             }
             else
             {
-                MessageBox.Show("Somethig wrong in loading data!", "Error", MessageBoxButtons.RetryCancel);
+                MessageBox.Show("Somethig wrong in loading data!", "Error", MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                return;
             }
 
         }
@@ -101,12 +108,14 @@ namespace HotelManagementSystem.Views.Payment
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Payment!");
+                    MessageBox.Show("Something Wrong in Payment!","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
                 }
             }
             else
             {
-                MessageBox.Show("Wrong Input!");
+                MessageBox.Show("Wrong Input!","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
         }
         private PaymentEntity CreateData()
@@ -137,9 +146,10 @@ namespace HotelManagementSystem.Views.Payment
                 {
                     TimeSpan duration = checkOut - checkIn;
                     totalDays = (int)duration.TotalDays;
+                    totalDays = totalDays == 0 ? 1 : totalDays;
                     txtRoomFees.Text = (roomFees * totalDays).ToString();
                     txtDuration.Text = totalDays.ToString()+" days";
-                    txtTotalAmount.Text = calculateTotal().ToString();
+                    txtTotalAmount.Text = calculateTotal().ToString("0.00");
 
                 }
                 catch (Exception e)
@@ -212,7 +222,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void txtDiscount_TextChanged_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDiscount.Text.ToString()))
+            if (!string.IsNullOrEmpty(txtDiscount.Text.ToString()))
             {
                 bool isDigit = txtDiscount.Text.Any(c => char.IsDigit(c));
                 if (isDigit)
@@ -241,8 +251,8 @@ namespace HotelManagementSystem.Views.Payment
         private decimal calculateTotal()
         {
             decimal subTotal = (roomFees * totalDays) + extraFees;
-            decimal discountAmount = (roomFees * totalDays) * (discount / 100); 
-            return subTotal - discountAmount; 
+            decimal discountAmount = (roomFees * totalDays) * (discount / 100);
+            return subTotal - discountAmount;
         }
     }
 }

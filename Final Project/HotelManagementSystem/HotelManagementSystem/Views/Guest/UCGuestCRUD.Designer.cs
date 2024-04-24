@@ -215,6 +215,7 @@ namespace HotelManagementSystem.Views.Guest
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.hdReservationId);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label4);
@@ -308,7 +309,7 @@ namespace HotelManagementSystem.Views.Guest
             this.label1.Location = new System.Drawing.Point(711, 120);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 23);
+            this.label1.Size = new System.Drawing.Size(15, 19);
             this.label1.TabIndex = 38;
             this.label1.Text = "*";
             // 
@@ -351,7 +352,7 @@ namespace HotelManagementSystem.Views.Guest
             this.dtpDob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDob.MaxDate = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             this.dtpDob.Name = "dtpDob";
-            this.dtpDob.Size = new System.Drawing.Size(500, 30);
+            this.dtpDob.Size = new System.Drawing.Size(500, 26);
             this.dtpDob.TabIndex = 5;
             this.dtpDob.Value = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
@@ -449,5 +450,6 @@ namespace HotelManagementSystem.Views.Guest
         private Label label4;
         private Label label3;
         private Label label2;
+        private Label hdReservationId;
     }
 }

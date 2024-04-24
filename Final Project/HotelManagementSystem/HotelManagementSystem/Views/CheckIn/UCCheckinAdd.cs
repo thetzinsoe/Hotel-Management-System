@@ -35,6 +35,13 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             set { hdReservationId.Text = value;}
         }
+
+        public string Nrc
+        {
+            set { hdGuestNrc.Text = value; }
+        }
+
+
         public UCCheckinAdd()
         {
             InitializeComponent();
@@ -54,7 +61,8 @@ namespace HotelManagementSystem.Views.CheckIn
             else
             {
                 validateInput = false;
-                lbCheckOutValidation.Text = "Wrong Date! Please choose the correct date.";
+                //lbCheckOutValidation.Text = "Wrong Date! Please choose the correct date.";
+                MessageBox.Show("Wrong Date! Please choose the correct date.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             try
@@ -65,8 +73,9 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
             try
             {
                 DataTable dt = checkInService.GetAllGuest();
@@ -77,13 +86,14 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             BtnState();
             BindData();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
         {
             if (validateInput)
             {
@@ -91,7 +101,7 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             else
             {
-                MessageBox.Show("Some error occour! Please check the input value");
+                MessageBox.Show("Some error occour! Please check the input value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,17 +112,25 @@ namespace HotelManagementSystem.Views.CheckIn
 
             if (String.IsNullOrEmpty(hdCheckInId.Text))
             {
+                if (!string.IsNullOrEmpty(hdReservationId.Text))
+                {
+                   bool resDel = reservationService.Delete(int.Parse(hdReservationId.Text.ToString()));
+                    if (!resDel)
+                    {
+                        MessageBox.Show("Cant remove reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
                 success = checkInService.Insert(checkInEntity);
                 bool roomOp = reservationService.RoomUpdate(selectedRoomId, 1);
                 if (success && roomOp)
                 {
-                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckInList);
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in creating Check In!");
+                    MessageBox.Show("Something Wrong in creating Check In!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -120,13 +138,13 @@ namespace HotelManagementSystem.Views.CheckIn
                 success = checkInService.Update(checkInEntity);
                 if (success)
                 {
-                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckInList);
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Updating Checkin!");
+                    MessageBox.Show("Something Wrong in Updating Checkin!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
 
@@ -149,22 +167,20 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
-                btnBack.Enabled = true;
                 btnCheckOut.Enabled = true;
                 btnCheckIn.Text = "Update";
             }
             else
             {
-                btnBack.Enabled = false;
                 btnCheckOut.Enabled = false;
-                btnCheckIn.Text = "Add";
+                btnCheckIn.Text = "CheckIn";
             }
         }
 
         private void BindData()
         {
-            //try
-            //{
+            try
+            {
                 if (!String.IsNullOrEmpty(hdCheckInId.Text))
                 {
                     DataTable dt = checkInService.Get(Convert.ToInt32(hdCheckInId.Text.ToString()));
@@ -184,21 +200,24 @@ namespace HotelManagementSystem.Views.CheckIn
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
+                        cbGuestNrc.Text = hdGuestNrc.Text;
                         cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                     }
                 }
-            //}catch(Exception err){
-            //    MessageBox.Show(err.Message);
-            //}
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
-                if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
+                if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
                 {
                     validateInput = true;
                     lbCheckOutValidation.Text = "";
@@ -215,15 +234,17 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
-                if (dtpCheckInDate.Value >= DateTime.Now.Date)
+                if (dtpCheckInDate.Value.Date >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
                 {
                     validateInput = true;
-                    lbCheckInDateValidation.Text = "";
+                    //lbCheckInDateValidation.Text = "";
                 }
                 else
                 {
                     validateInput = false;
-                    lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
+                    // lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
+                    MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -238,20 +259,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 selectedRoomNo = selectedRow["room_no"].ToString();
                 selectedRoomId = int.Parse(selectedRow["room_id"].ToString());
                // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
-            }
-        }
-
-        private void cbRoomNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedRoomNo == cbRoomNumber.Text.ToString())
-            {
-                validateInput = true;
-                lbRoomNumberValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                lbRoomNumberValidation.Text = "Choose the correct room number form drop down!";
             }
         }
 
@@ -283,53 +290,11 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
-        private void cbGuestName_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestName == cbGuestName.Text.ToString())
-            {
-                validateInput = true;
-                lbGuestNameValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                lbGuestNameValidation.Text = "Choose the correct Guest form drop down!";
-            }
-        }
-
-        private void cbGuestNrc_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestNrc == cbGuestNrc.Text.ToString())
-            {
-                validateInput = true;
-                lbGuestNrcValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                lbGuestNrcValidation.Text = "Choose the correct Nrc Number form drop down!";
-            }
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Controls.Clear();
-            if (!string.IsNullOrEmpty(hdReservationId.Text.ToString()))
-            {
-                UCReservationList uCReservationList = new UCReservationList();
-                this.Controls.Add(uCReservationList);
-            }
-            else
-            {
-                this.Controls.Add(uCCheckInList);
-            }
-        }
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
+        private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(hdCheckInId.Text))
             {
-                DialogResult result = MessageBox.Show("Are You Sure to Checkout", "Confirmation", MessageBoxButtons.OKCancel);
+                DialogResult result = MessageBox.Show("Are You Sure to Checkout", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
                     int id = Convert.ToInt32(hdCheckInId.Text.ToString());
@@ -352,9 +317,19 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
-
+            this.Controls.Clear();
+            if (!string.IsNullOrEmpty(hdReservationId.Text.ToString()))
+            {
+                UCReservationList uCReservationList = new UCReservationList();
+                this.Controls.Add(uCReservationList);
+            }
+            else
+            {
+                this.Controls.Add(uCCheckInList);
+            }
         }
+
     }
 }

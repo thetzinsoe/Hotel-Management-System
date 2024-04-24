@@ -15,24 +15,43 @@ using HotelManagementSystem.Services.Guest;
 using Microsoft.Reporting.WinForms;
 using HotelManagementSystem.Entities.Guest;
 using ExcelDataReader;
+using HotelManagementSystem.Views.CheckIn;
 
 namespace HotelManagementSystem.Views.Guest
 {
     public partial class UCGuestList : UserControl
     {
+        public string ReservationID
+        {
+            set { hdReservationId.Text = value; }
+        }
         GuestService guestService = new GuestService();
         int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
+        private string guest_name = string.Empty;
+        private string guest_phone = string.Empty;
         public UCGuestList()
         {
             InitializeComponent();
+        }
+
+        public UCGuestList(string guestName,string guestPhone)
+        {
+            InitializeComponent();
+            txtSearch.Text = guestName;
+            guest_name = guestName;
+            guest_phone = guestPhone;
         }
 
         private void UCGuestList_Load(object sender, EventArgs e)
         {
             BindGrid();
             BindReportViewer();
+            if (string.IsNullOrEmpty(hdReservationId.Text))
+            {
+                btnGoToCheckin.Enabled = false;
+            }
         }
 
         private void BindGrid()
@@ -276,6 +295,43 @@ namespace HotelManagementSystem.Views.Guest
             {
                 MessageBox.Show("Data imported from Excel successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BindGrid();
+            }
+        }
+
+        private void btnCreateGuest_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(hdReservationId.Text))
+            {
+                UCGuestCRUD uCGuestCRUD = new UCGuestCRUD();
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestCRUD);
+            }
+            else
+            {
+                UCGuestCRUD uCGuestCRUD = new UCGuestCRUD(guest_name,guest_phone);
+                uCGuestCRUD.ReservationId = hdReservationId.Text;
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestCRUD);
+            }
+        }
+
+        private void btnGoToCheckin_Click(object sender, EventArgs e)
+        {
+            if (dgvGuestList.RowCount > 0)
+            {
+                if (dgvGuestList.SelectedCells.Count > 0 )
+                {
+                    int rowIndex = dgvGuestList.SelectedCells[0].RowIndex;
+                    // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
+                    string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
+                    UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
+                    uCCheckinAdd.RvId = hdReservationId.Text.ToString();
+                    uCCheckinAdd.Nrc = guestNrc;
+                    this.Controls.Clear();
+                    this.Controls.Add(uCCheckinAdd);
+                    // MessageBox.Show("Guest ID: " + guestId+"  "+guestNrc);
+
+                }
             }
         }
     }

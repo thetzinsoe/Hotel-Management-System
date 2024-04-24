@@ -22,8 +22,20 @@ namespace HotelManagementSystem.Views.Guest
             InitializeComponent();
         }
 
+        public UCGuestCRUD(string guestName, string guestPhone)
+        {
+            InitializeComponent();
+            txtFullName.Text = guestName;
+            txtPhoneNumber.Text = guestPhone;
+        }
+
         public string ID
         { set { txtGuestId.Text = value; } }
+
+        public string ReservationId
+        {
+            set { hdReservationId.Text = value; }
+        }
 
         private void AddorUpdate()
         {
@@ -60,8 +72,17 @@ namespace HotelManagementSystem.Views.Guest
                 else
                     MessageBox.Show("Error Updating", "Error", MessageBoxButtons.OK);
             }
-            this.Controls.Clear();
-            this.Controls.Add(uCGuestList);
+            if (string.IsNullOrEmpty(hdReservationId.Text))
+            {
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList);
+            }
+            else
+            {
+                uCGuestList.ReservationID=hdReservationId.Text;
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList);
+            } 
         }
 
         private GuestEntity CreateData()

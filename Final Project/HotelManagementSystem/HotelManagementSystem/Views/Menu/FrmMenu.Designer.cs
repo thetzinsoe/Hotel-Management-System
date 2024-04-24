@@ -31,6 +31,7 @@ namespace HotelManagementSystem.Views.Menu
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -42,13 +43,14 @@ namespace HotelManagementSystem.Views.Menu
             this.reservationListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gUESTINFOMATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUESTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gUESTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOOMENTRYLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTHISTORYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pAYMENTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
             this.guestRegistrationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +109,7 @@ namespace HotelManagementSystem.Views.Menu
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1084, 65);
+            this.menuStrip1.Size = new System.Drawing.Size(1105, 65);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -157,6 +159,20 @@ namespace HotelManagementSystem.Views.Menu
             this.gUESTINFOMATIONToolStripMenuItem.Size = new System.Drawing.Size(227, 61);
             this.gUESTINFOMATIONToolStripMenuItem.Text = "GUEST INFORMATION";
             // 
+            // gUESTADDToolStripMenuItem
+            // 
+            this.gUESTADDToolStripMenuItem.Name = "gUESTADDToolStripMenuItem";
+            this.gUESTADDToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.gUESTADDToolStripMenuItem.Text = "GUEST ADD";
+            this.gUESTADDToolStripMenuItem.Click += new System.EventHandler(this.gUESTADDToolStripMenuItem_Click);
+            // 
+            // gUESTLISTToolStripMenuItem
+            // 
+            this.gUESTLISTToolStripMenuItem.Name = "gUESTLISTToolStripMenuItem";
+            this.gUESTLISTToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+            this.gUESTLISTToolStripMenuItem.Text = "GUEST LIST";
+            this.gUESTLISTToolStripMenuItem.Click += new System.EventHandler(this.gUESTLISTToolStripMenuItem_Click);
+            // 
             // rOOMENTRYLISTToolStripMenuItem
             // 
             this.rOOMENTRYLISTToolStripMenuItem.ForeColor = System.Drawing.Color.White;
@@ -191,8 +207,7 @@ namespace HotelManagementSystem.Views.Menu
             // pAYMENTHISTORYToolStripMenuItem
             // 
             this.pAYMENTHISTORYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pAYMENTLISTToolStripMenuItem,
-            this.pAYMENTADDToolStripMenuItem});
+            this.pAYMENTLISTToolStripMenuItem});
             this.pAYMENTHISTORYToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.pAYMENTHISTORYToolStripMenuItem.Name = "pAYMENTHISTORYToolStripMenuItem";
             this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(201, 61);
@@ -214,11 +229,11 @@ namespace HotelManagementSystem.Views.Menu
             // 
             // pnMain
             // 
-            this.pnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnMain.BackColor = System.Drawing.Color.LightGray;
-            this.pnMain.Location = new System.Drawing.Point(0, 65);
+            this.pnMain.Location = new System.Drawing.Point(1, 65);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1084, 697);
+            this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
             // 
             // guestRegistrationToolStripMenuItem
@@ -240,10 +255,12 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1084, 749);
+            this.ClientSize = new System.Drawing.Size(1105, 749);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holtel Management System";
