@@ -188,6 +188,7 @@ namespace HotelManagementSystem.Views.Employee
             {
                 btnAdd.Text = "ADD";
                 btnDelete.Enabled = false;
+                
             }
         }
 
@@ -307,6 +308,13 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Maximum character limit reached (255).");
                 e.Handled = true;
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            UCEmployeeList uCEmployeeList = new UCEmployeeList();
+            this.Controls.Clear();
+            this.Controls.Add(uCEmployeeList);
         }
     }
 }

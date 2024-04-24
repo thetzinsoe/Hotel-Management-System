@@ -6,6 +6,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using HotelManagementSystem.DAO.CheckIn;
+using HotelManagementSystem.DAO.Payment;
 using HotelManagementSystem.DAO.Reservation;
 using HotelManagementSystem.Entities.Reservation;
 
@@ -27,10 +28,21 @@ namespace HotelManagementSystem.Services.Reservation
             DataTable dt = reservationDao.GetAll();
             return dt;
         }
-        
+
+        public DataTable GetWithPagination(int offset, int pageSize, string searchValue="")
+        {
+            DataTable dt = reservationDao.GetWithPagination(offset, pageSize,searchValue);
+            return dt;
+        }
         public DataTable GetAllRoom()
         {
             DataTable dt = reservationDao.GetAllRoom();
+            return dt;
+        }
+        
+        public DataTable GetRoomWithDate(DateTime checkinDate)
+        {
+            DataTable dt = reservationDao.GetRoomWithDate(checkinDate);
             return dt;
         }
 

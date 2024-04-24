@@ -34,6 +34,12 @@ namespace HotelManagementSystem.Services.Payment
             DataTable dt = paymentDao.Get(id);
             return dt;
         }
+        
+        public DataTable GetWithPagination(int offset,int pageSize)
+        {
+            DataTable dt = paymentDao.GetWithPagination(offset,pageSize);
+            return dt;
+        }
 
         /// <summary>
         /// Save Employee.

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem.Views.Reservation
 {
-    public partial class FrmGetGuest : Form
+    public partial class UCReservation : UserControl
     {
-        public FrmGetGuest()
+        public UCReservation()
         {
             InitializeComponent();
         }

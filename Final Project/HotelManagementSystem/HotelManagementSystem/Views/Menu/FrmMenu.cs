@@ -1,4 +1,6 @@
 ﻿using HotelManagementSystem.Views.Reservation;
+using HotelManagementSystem.Views.Guest;
+using HotelManagementSystem.Views.Employee;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Windows.Forms;
 using HotelManagementSystem.Views.Admin;
 using HotelManagementSystem.Views.Payment;
 using HotelManagementSystem.Views.CheckIn;
+using HotelManagementSystem.Views.Guest;
 
 namespace HotelManagementSystem.Views.Menu
 {
@@ -70,12 +73,18 @@ namespace HotelManagementSystem.Views.Menu
             pnMain.Controls.Add(uCCheckInList);
         }
 
-        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        private void guestRegistrationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCAdmin adminLogin = new UCAdmin();
+            UCGuestCRUD uCGuestCRUD = new UCGuestCRUD();
             pnMain.Controls.Clear();
-            pnMain.Controls.Add(adminLogin);
-            
+            pnMain.Controls.Add(uCGuestCRUD);
+        }
+
+        private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCGuestList uCGuestList = new UCGuestList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCGuestList);
         }
     }
 }

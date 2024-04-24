@@ -13,6 +13,7 @@ using Microsoft.Reporting.WinForms;
 using HotelManagementSystem.Entities.Guest;
 using HotelManagementSystem.Entities.Employee;
 using ExcelDataReader;
+using HotelManagementSystem.Services.Guest;
 namespace HotelManagementSystem.Views.Employee
 {
     public partial class UCEmployeeList : UserControl
@@ -43,17 +44,7 @@ namespace HotelManagementSystem.Views.Employee
                 totalPage += 1;
             }
             dgvEmployeeList.AutoGenerateColumns = false;
-            AddImage(dt,"image");
-            dgvEmployeeList.Columns["EmployeeId"].DataPropertyName = "employee_id";
-            dgvEmployeeList.Columns["FullName"].DataPropertyName = "full_name";
-            dgvEmployeeList.Columns["Image"].DataPropertyName = "photo";
-            dgvEmployeeList.Columns["PhoneNumber"].DataPropertyName = "phone_number";
-            dgvEmployeeList.Columns["Position"].DataPropertyName = "position";
-            dgvEmployeeList.Columns["NRCNumber"].DataPropertyName = "nrc_number";
-            dgvEmployeeList.Columns["Dob"].DataPropertyName = "dob";
-            dgvEmployeeList.Columns["Gender"].DataPropertyName = "gender";
-            dgvEmployeeList.Columns["JoinedDate"].DataPropertyName = "joined_date";
-            dgvEmployeeList.Columns["Address"].DataPropertyName = "address";
+            AddImage(dt,"image");            
             dgvEmployeeList.DataSource = dt;
             
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
@@ -118,25 +109,6 @@ namespace HotelManagementSystem.Views.Employee
                 e.Value = gender;
                 e.FormattingApplied = true;
             }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            EmployeeService employeeService = new EmployeeService();
-            DataTable dt = employeeService.Search(txtSearch.Text.Trim());
-            dgvEmployeeList.AutoGenerateColumns = false;
-            AddImage(dt, "image");
-            dgvEmployeeList.Columns["EmployeeId"].DataPropertyName = "employee_id";
-            dgvEmployeeList.Columns["FullName"].DataPropertyName = "full_name";
-            dgvEmployeeList.Columns["PhoneNumber"].DataPropertyName = "phone_number";
-            dgvEmployeeList.Columns["Position"].DataPropertyName = "position";
-            dgvEmployeeList.Columns["NRCNumber"].DataPropertyName = "nrc_number";
-            dgvEmployeeList.Columns["Dob"].DataPropertyName = "dob";
-            dgvEmployeeList.Columns["Gender"].DataPropertyName = "gender";
-            dgvEmployeeList.Columns["JoinedDate"].DataPropertyName = "joined_date";
-            dgvEmployeeList.Columns["Address"].DataPropertyName = "address";
-            dgvEmployeeList.Columns["Image"].DataPropertyName = "photo";
-            dgvEmployeeList.DataSource = dt;
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -326,6 +298,41 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Data imported from Excel successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 BindGrid();
             }           
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            UCEmployee uCEmployee = new UCEmployee();
+            this.Controls.Clear();
+            this.Controls.Add(uCEmployee);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            EmployeeService employeeService = new EmployeeService();
+            if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
+            {
+                if (cbSearch.SelectedIndex == 0 || cbSearch.SelectedIndex == -1)
+                {
+                    DataTable dt = employeeService.Search(0, txtSearch.Text.Trim());
+                    lblPageNo.Text = $"Page 1 of 1";
+                    dgvEmployeeList.AutoGenerateColumns = false;
+                    AddImage(dt, "image");
+                    dgvEmployeeList.DataSource = dt;
+                }
+                else if (cbSearch.SelectedIndex == 1)
+                {
+                    DataTable dt = employeeService.Search(1, txtSearch.Text.Trim());
+                    lblPageNo.Text = $"Page 1 of 1";
+                    dgvEmployeeList.AutoGenerateColumns = false;
+                    AddImage(dt, "image");
+                    dgvEmployeeList.DataSource = dt;
+                }
+            }
+            else
+            {
+                BindGrid();
+            }
         }
     }
 }
