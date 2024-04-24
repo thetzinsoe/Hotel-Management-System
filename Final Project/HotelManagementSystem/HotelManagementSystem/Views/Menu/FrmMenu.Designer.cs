@@ -43,8 +43,6 @@ namespace HotelManagementSystem.Views.Menu
             this.reservationListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservationAddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gUESTINFOMATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUESTADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gUESTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOOMENTRYLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
