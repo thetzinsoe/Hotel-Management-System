@@ -21,7 +21,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>1.425in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -547,7 +547,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetGuest</DataSetName>
         <Height>0.5in</Height>
-        <Width>8in</Width>
+        <Width>8.425in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -558,7 +558,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>8.18333in</Width>
+  <Width>8.425in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

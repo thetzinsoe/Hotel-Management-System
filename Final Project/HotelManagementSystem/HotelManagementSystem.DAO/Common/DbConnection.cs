@@ -15,7 +15,7 @@ namespace HotelManagementSystem.DAO.Common
         /// <summary>
         /// Defines the conStr.
         /// </summary>
-        public static string conStr = GetConnection();
+        public static string conStr = String.Empty;
 
         /// <summary>
         /// Defines the conn.
@@ -38,9 +38,11 @@ namespace HotelManagementSystem.DAO.Common
         private static string GetConnection(string id = "Default")
         {
             string connectionString = ConfigurationManager.ConnectionStrings[id].ConnectionString;
-            connectionString += ";Integrated Security=True;";
+
             return connectionString;
         }
+
+
         /// <summary>
         /// The GetPrivateProfileString.
         /// </summary>
@@ -92,8 +94,11 @@ namespace HotelManagementSystem.DAO.Common
                     sqlCmd.Connection = sqlConn;
                     sqlCmd.CommandText = CmdText;
                     sqlCmd.CommandType = TypeOfCommand;
-                    sqlCmd.CommandTimeout = 200;                  
+                    sqlCmd.CommandTimeout = 200;
+
+                    // Creating a new SqlDataAdapter using 'conn' instead of 'sqlConn'
                     adapter = new SqlDataAdapter(CmdText, conn);
+
                     adapter.SelectCommand = sqlCmd;
                     dtSet.Reset();
                     adapter.Fill(dtSet);
@@ -108,7 +113,7 @@ namespace HotelManagementSystem.DAO.Common
                     sqlConn.Close();
                 }
             }
-            return dtSet.Tables[0];
+            return dtSet.Tables[0]; // This line might throw IndexOutOfRangeException
 
         }
 
@@ -149,7 +154,8 @@ namespace HotelManagementSystem.DAO.Common
                     if (sqlConn.State != ConnectionState.Open)
                     {
                         sqlCmd.Connection.Open();
-                    }                   
+                    }
+                    //Execute and sets object returned.
                     objTemp = sqlCmd.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -356,6 +362,7 @@ namespace HotelManagementSystem.DAO.Common
                     sqlCmd.Connection.Close();
                 }
             }
+            // Return from function
             return dsSet;
         }
     }

@@ -1,6 +1,6 @@
-﻿namespace HotelManagementSystem
+﻿namespace HotelManagementSystem.Views.Room
 {
-    partial class Login
+    partial class UCRoom
     {
         /// <summary> 
         /// Required designer variable.
