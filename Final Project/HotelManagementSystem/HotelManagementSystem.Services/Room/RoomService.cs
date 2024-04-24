@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelManagementSystem.DAO.Guest;
 using HotelManagementSystem.DAO.Room;
 using HotelManagementSystem.Entities.Room;
 
@@ -22,6 +23,16 @@ namespace HotelManagementSystem.Services.Room
         public DataTable GetAllRooms()
         {
             return roomDao.GetAll();
+        }
+        /// <summary>
+        /// Get.
+        /// </summary>
+        /// <param name="roomID">.</param>
+        /// <returns>.</returns>
+        public DataTable Get(int roomID)
+        {
+            DataTable dt = roomDao.Get(roomID);
+            return dt;
         }
 
         /// <summary>

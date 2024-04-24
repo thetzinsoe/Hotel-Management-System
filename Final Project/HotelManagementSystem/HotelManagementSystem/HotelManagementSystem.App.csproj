@@ -215,6 +215,12 @@
     <Compile Include="Views\Menu\FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Menu\MainDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Menu\MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Menu\UCDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,6 +298,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\Admin\UCAdmin.resx">
+      <DependentUpon>UCAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CheckIn\UCCheckinAdd.resx">
       <DependentUpon>UCCheckinAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Guest\UCGuestList.resx">
       <DependentUpon>UCGuestList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Menu\MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Room\UCRoomCRUD.resx">
       <DependentUpon>UCRoomCRUD.cs</DependentUpon>

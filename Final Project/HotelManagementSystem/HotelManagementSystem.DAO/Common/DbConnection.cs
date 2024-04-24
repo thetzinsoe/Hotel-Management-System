@@ -94,11 +94,8 @@ namespace HotelManagementSystem.DAO.Common
                     sqlCmd.Connection = sqlConn;
                     sqlCmd.CommandText = CmdText;
                     sqlCmd.CommandType = TypeOfCommand;
-                    sqlCmd.CommandTimeout = 200;
-
-                    // Creating a new SqlDataAdapter using 'conn' instead of 'sqlConn'
+                    sqlCmd.CommandTimeout = 200;                  
                     adapter = new SqlDataAdapter(CmdText, conn);
-
                     adapter.SelectCommand = sqlCmd;
                     dtSet.Reset();
                     adapter.Fill(dtSet);
@@ -113,7 +110,7 @@ namespace HotelManagementSystem.DAO.Common
                     sqlConn.Close();
                 }
             }
-            return dtSet.Tables[0]; // This line might throw IndexOutOfRangeException
+            return dtSet.Tables[0];
 
         }
 
@@ -154,8 +151,7 @@ namespace HotelManagementSystem.DAO.Common
                     if (sqlConn.State != ConnectionState.Open)
                     {
                         sqlCmd.Connection.Open();
-                    }
-                    //Execute and sets object returned.
+                    }                   
                     objTemp = sqlCmd.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -362,7 +358,6 @@ namespace HotelManagementSystem.DAO.Common
                     sqlCmd.Connection.Close();
                 }
             }
-            // Return from function
             return dsSet;
         }
     }
