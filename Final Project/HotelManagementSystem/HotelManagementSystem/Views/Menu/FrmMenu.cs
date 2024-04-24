@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using HotelManagementSystem.Views.Admin;
 using HotelManagementSystem.Views.Payment;
 using HotelManagementSystem.Views.CheckIn;
+using HotelManagementSystem.Views.Room;
 using HotelManagementSystem.Views.Guest;
 
 namespace HotelManagementSystem.Views.Menu
@@ -85,6 +86,27 @@ namespace HotelManagementSystem.Views.Menu
             UCGuestList uCGuestList = new UCGuestList();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCGuestList);
+        }
+
+        private void newRoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCRoomCRUD uCRoomCRUD = new UCRoomCRUD();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCRoomCRUD);
+        }
+
+        private void availableRoomListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCRoomList uCRoomList = new UCRoomList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCRoomList);
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            UCDashboard uCDashboard = new UCDashboard();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCDashboard);
         }
     }
 }

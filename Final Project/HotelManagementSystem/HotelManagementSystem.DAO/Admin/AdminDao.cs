@@ -12,10 +12,10 @@ namespace HotelManagementSystem.DAO.Admin
 {
     public class AdminDao
     {
-        private Common.DbConnection connection = new Common.DbConnection();
+        private DbConnection connection = new DbConnection();
         private string strSql = String.Empty;
 
-        
+
         public DataTable GetAllAdmins()
         {
             strSql = "SELECT * FROM Admin";
@@ -27,7 +27,7 @@ namespace HotelManagementSystem.DAO.Admin
         public DataTable GetAdminById(int adminId)
         {
             strSql = "SELECT * FROM Guest " +
-                      "WHERE  guestId= " + adminId + "AND is_deleted = 0";           
+                      "WHERE  guestId= " + adminId + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
         public DataTable GetAdminByUsername(string username)
@@ -38,7 +38,7 @@ namespace HotelManagementSystem.DAO.Admin
         }
 
         // Insert Admin
-        public bool InsertAdmin(Entities.Admin.AdminEntity adminEntity)
+        public bool InsertAdmin(AdminEntity adminEntity)
         {
             strSql = "INSERT INTO Admin(username, password, role, created_date, updated_date)" +
                      "VALUES(@Username, @Password, @Role, @CreatedDate, @UpdatedDate)";
@@ -54,7 +54,7 @@ namespace HotelManagementSystem.DAO.Admin
         }
 
         // Update Admin
-        public bool UpdateAdmin(Entities.Admin.AdminEntity adminEntity)
+        public bool UpdateAdmin(AdminEntity adminEntity)
         {
             strSql = "UPDATE Admin SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE adminId = @AdminId";
             SqlParameter[] sqlParam = {

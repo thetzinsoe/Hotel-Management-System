@@ -4,13 +4,14 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HotelManagementSystem.DAO.Admin;
 using HotelManagementSystem.Entities.Admin;
 
 namespace HotelManagementSystem.Services.Admin
 {
     public class AdminService
     {
-        private DAO.Admin.AdminDao adminDao = new DAO.Admin.AdminDao();
+        private AdminDao adminDao = new AdminDao();
 
         // Get All Admins
         public DataTable GetAllAdmins()
