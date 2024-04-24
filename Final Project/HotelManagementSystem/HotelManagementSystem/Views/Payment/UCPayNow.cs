@@ -81,7 +81,11 @@ namespace HotelManagementSystem.Views.Payment
 
             if (checkInput)
             {
-                AddorUpdate();
+                DialogResult result = MessageBox.Show("Are you sure to payment!", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    AddorUpdate();
+                }
             }
             else
             {
@@ -98,7 +102,12 @@ namespace HotelManagementSystem.Views.Payment
                 PaymentEntity paymentEntity = CreateData();
                 bool success = paymentService.Insert(paymentEntity);
                 bool delCheckin = checkInService.Delete(int.Parse(txtCheckInId.Text.ToString()));
-                bool upRoom = reservationService.RoomUpdate(roomId,0);
+                DataTable dt = reservationService.haveRoom(roomId);
+                bool upRoom=true;
+                if (dt.Rows.Count == 0)
+                {
+                    upRoom = reservationService.RoomUpdate(roomId, 0);
+                }
                 if (success && delCheckin && upRoom)
                 {
                     MessageBox.Show("Payment Success.", "Success", MessageBoxButtons.OK);

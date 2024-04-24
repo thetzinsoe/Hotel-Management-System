@@ -48,6 +48,11 @@ namespace HotelManagementSystem.Services.CheckIn
             DataTable dt = checkInDao.Get(id);
             return dt;
         }
+        public DataTable haveRoom(int id)
+        {
+            DataTable dt = checkInDao.haveRoom(id);
+            return dt;
+        }
 
         public DataTable GetWithPagination(int offset, int pageSize)
         {
