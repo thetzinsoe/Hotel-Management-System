@@ -27,9 +27,9 @@ namespace HotelManagementSystem.Views.Menu
 
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCDashboard uCDashboard = new UCDashboard();
+            MainDashBoard mainDashBoard = new MainDashBoard();
             pnMain.Controls.Clear();
-            pnMain.Controls.Add(uCDashboard);
+            pnMain.Controls.Add(mainDashBoard);
         }
 
         private void reservationListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,9 +118,9 @@ namespace HotelManagementSystem.Views.Menu
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-            UCAdmin uCAdmin = new UCAdmin();
-            pnMain.Controls.Clear();
-            pnMain.Controls.Add(uCAdmin);
+            //UCAdmin uCAdmin = new UCAdmin();
+            //pnMain.Controls.Clear();
+            //pnMain.Controls.Add(uCAdmin);
         }
     }
 }
