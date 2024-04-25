@@ -211,12 +211,12 @@ namespace HotelManagementSystem.Views.CheckIn
             if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
                 btnCheckOut.Enabled = true;
-                btnCheckIn.Text = "Update";
+                btnCheckIn.Text = "UPDATE";
             }
             else
             {
                 btnCheckOut.Enabled = false;
-                btnCheckIn.Text = "CheckIn";
+                btnCheckIn.Text = "CHECKIN";
             }
         }
 

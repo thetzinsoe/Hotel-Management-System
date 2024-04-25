@@ -69,7 +69,6 @@ namespace HotelManagementSystem.Views.Payment
             if (cbPaymentType.SelectedIndex < 0)
             {
                 checkInput = false;
-                //lbPaymentTypeValidation.Text = "You must choose Payment Type!";
                 MessageBox.Show("You must choose Payment Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -110,7 +109,7 @@ namespace HotelManagementSystem.Views.Payment
                 }
                 if (success && delCheckin && upRoom)
                 {
-                    MessageBox.Show("Payment Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Payment Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     UCPaymentHistory uCPaymentHistory = new UCPaymentHistory();
                     this.Controls.Clear();
                     this.Controls.Add(uCPaymentHistory);

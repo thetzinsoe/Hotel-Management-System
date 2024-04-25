@@ -41,7 +41,7 @@ namespace HotelManagementSystem.Views.Payment
                 int id = int.Parse(hdPaymentId.Text.ToString());
                 DataTable dt = paymentService.Get(id);
                 reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource datasource = new ReportDataSource("DataSet1", dt);
+                ReportDataSource datasource = new ReportDataSource("DataSet2", dt);
                 string parentDirectoryPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
                 reportViewer1.LocalReport.ReportPath = parentDirectoryPath+@"\Views\Payment\PaymentReport.rdlc";
                 reportViewer1.LocalReport.DataSources.Add(datasource);

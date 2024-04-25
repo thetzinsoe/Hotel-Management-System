@@ -57,9 +57,14 @@ namespace HotelManagementSystem.DAO.Payment
         /// <returns></returns>
         public DataTable Get(int id)
         {
-            strSql = "SELECT t1.*, t2.checkin_date, t2.checkout_date FROM Payment t1" +
-                      " JOIN Checkin t2 ON t1.checkin_id = t2.checkin_id WHERE  t1.payment_id= " + id;
+            //strSql = "SELECT t1.*, t2.checkin_date, t2.checkout_date FROM Payment t1" +
+            //          " JOIN Checkin t2 ON t1.checkin_id = t2.checkin_id WHERE  t1.payment_id= " + id;
 
+            strSql = "SELECT  Payment.*, Room.room_no, Guest.full_name, Checkin.room_id, Checkin.guest_id, Checkin.checkin_date, Checkin.checkout_date, Checkin.created_date AS Expr1, Checkin.updated_date AS Expr2, Checkin.is_deleted AS Expr3 FROM " +
+                "Payment INNER JOIN " +
+                "Checkin ON Payment.checkin_id = Checkin.checkin_id INNER JOIN " +
+                "Guest ON Checkin.guest_id = Guest.guest_id INNER JOIN " +
+                "Room ON Checkin.room_id = Room.room_id WHERE Payment.payment_id="+id;
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
