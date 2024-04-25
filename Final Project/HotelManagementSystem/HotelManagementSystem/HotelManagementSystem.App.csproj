@@ -146,6 +146,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelManagementSystemDBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HotelManagementSystemDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelManagementSystemDBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Admin\UCAdmin.cs">
@@ -153,6 +158,12 @@
     </Compile>
     <Compile Include="Views\Admin\UCAdmin.Designer.cs">
       <DependentUpon>UCAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckIn\UCOldCheckinList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\CheckIn\UCOldCheckinList.Designer.cs">
+      <DependentUpon>UCOldCheckinList.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Employee\DataSetEmployee.cs">
       <DependentUpon>DataSetEmployee.xsd</DependentUpon>
@@ -218,13 +229,10 @@
     <Compile Include="Views\Menu\UCDashboard.Designer.cs">
       <DependentUpon>UCDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Payment\PaymentDataSet.cs">
-      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Payment\PaymentDataSet.Designer.cs">
+    <Compile Include="Views\Payment\Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+      <DependentUpon>Report.xsd</DependentUpon>
     </Compile>
     <Compile Include="Views\Payment\UCPaymentHistory.cs">
       <SubType>UserControl</SubType>
@@ -279,6 +287,9 @@
     <EmbeddedResource Include="Views\CheckIn\UCCheckInList.resx">
       <DependentUpon>UCCheckInList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\CheckIn\UCOldCheckinList.resx">
+      <DependentUpon>UCOldCheckinList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Employee\ReportEmployee.rdlc" />
     <EmbeddedResource Include="Views\Employee\UCEmployee.resx">
       <DependentUpon>UCEmployee.cs</DependentUpon>
@@ -327,7 +338,23 @@
     <None Include="HotelManagementSystemDBDataSet.xss">
       <DependentUpon>HotelManagementSystemDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HotelManagementSystemDBDataSet1.xsc">
+      <DependentUpon>HotelManagementSystemDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HotelManagementSystemDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelManagementSystemDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HotelManagementSystemDBDataSet1.xss">
+      <DependentUpon>HotelManagementSystemDBDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\HotelManagementSystem.Services.CheckIn.CheckInService.datasource" />
+    <None Include="Properties\DataSources\HotelManagementSystem.Services.Employee.EmployeeService.datasource" />
+    <None Include="Properties\DataSources\HotelManagementSystem.Services.Guest.GuestService.datasource" />
+    <None Include="Properties\DataSources\HotelManagementSystem.Services.Payment.PaymentService.datasource" />
+    <None Include="Properties\DataSources\HotelManagementSystem.Services.Reservation.ReservationService.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -359,16 +386,16 @@
     <None Include="Views\Guest\DataSetGuest.xss">
       <DependentUpon>DataSetGuest.xsd</DependentUpon>
     </None>
-    <None Include="Views\Payment\PaymentDataSet.xsc">
-      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    <None Include="Views\Payment\Report.xsc">
+      <DependentUpon>Report.xsd</DependentUpon>
     </None>
-    <None Include="Views\Payment\PaymentDataSet.xsd">
+    <None Include="Views\Payment\Report.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PaymentDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>Report.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Views\Payment\PaymentDataSet.xss">
-      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    <None Include="Views\Payment\Report.xss">
+      <DependentUpon>Report.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

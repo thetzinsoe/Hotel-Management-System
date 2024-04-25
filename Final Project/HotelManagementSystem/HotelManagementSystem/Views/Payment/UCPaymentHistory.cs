@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagementSystem.Views.CheckIn;
 
 namespace HotelManagementSystem.Views.Payment
 {
@@ -57,6 +58,15 @@ namespace HotelManagementSystem.Views.Payment
                     uCPayNow.ID = paymentId.ToString();
                     this.Controls.Clear();
                     this.Controls.Add(uCPayNow);
+                }
+
+                int checkinId = Convert.ToInt32(dgvPaymentHistory.Rows[e.RowIndex].Cells["checkin_id"].Value);
+                if (e.ColumnIndex == dgvPaymentHistory.Columns["checkin_id"].Index)
+                {
+                    UCOldCheckinList uCOldCheckinList = new UCOldCheckinList();
+                    uCOldCheckinList.ID = checkinId.ToString();
+                    this.Controls.Clear();
+                    this.Controls.Add(uCOldCheckinList);
                 }
             }
         }

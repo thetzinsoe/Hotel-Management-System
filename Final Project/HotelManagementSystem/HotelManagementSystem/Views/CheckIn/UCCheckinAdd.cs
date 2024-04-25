@@ -1,5 +1,4 @@
-﻿using DevExpress.Emf;
-using HotelManagementSystem.Entities.CheckIn;
+﻿using HotelManagementSystem.Entities.CheckIn;
 using HotelManagementSystem.Entities.Reservation;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Reservation;
@@ -212,12 +211,12 @@ namespace HotelManagementSystem.Views.CheckIn
             if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
                 btnCheckOut.Enabled = true;
-                btnCheckIn.Text = "Update";
+                btnCheckIn.Text = "UPDATE";
             }
             else
             {
                 btnCheckOut.Enabled = false;
-                btnCheckIn.Text = "CheckIn";
+                btnCheckIn.Text = "CHECKIN";
             }
         }
 

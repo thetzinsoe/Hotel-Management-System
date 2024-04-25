@@ -33,5 +33,16 @@ namespace HotelManagementSystem.Properties {
                 return ((string)(this["HotelManagementSystemDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\sqlexpress01;Initial Catalog=HotelManagementSystemDB;Integrated Sec" +
+            "urity=True;TrustServerCertificate=True")]
+        public string HotelManagementSystemDBConnectionString1 {
+            get {
+                return ((string)(this["HotelManagementSystemDBConnectionString1"]));
+            }
+        }
     }
 }
