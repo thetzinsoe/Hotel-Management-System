@@ -1,5 +1,4 @@
-﻿using DevExpress.Emf;
-using HotelManagementSystem.Entities.CheckIn;
+﻿using HotelManagementSystem.Entities.CheckIn;
 using HotelManagementSystem.Entities.Reservation;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Reservation;

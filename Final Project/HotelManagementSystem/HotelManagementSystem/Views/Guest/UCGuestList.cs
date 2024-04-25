@@ -56,6 +56,7 @@ namespace HotelManagementSystem.Views.Guest
 
         private void BindGrid()
         {
+            dgvGuestList.RowCount = 10;
             DataTable dt = guestService.GetRecord(1,pageSize);
             DataTable dt1 = guestService.GetAll();
             int rowCount = dt1.Rows.Count;

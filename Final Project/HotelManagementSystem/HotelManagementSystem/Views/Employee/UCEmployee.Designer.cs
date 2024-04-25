@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbPosition = new System.Windows.Forms.ComboBox();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.btnChooseFile = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
             this.dtpJoinedDate = new System.Windows.Forms.DateTimePicker();
@@ -60,7 +61,6 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtNRCNumber = new System.Windows.Forms.TextBox();
-            this.pbImage = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
@@ -207,6 +207,16 @@
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(500, 36);
             this.cbPosition.TabIndex = 42;
+            // 
+            // pbImage
+            // 
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImage.Location = new System.Drawing.Point(1041, 197);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(150, 150);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.TabIndex = 41;
+            this.pbImage.TabStop = false;
             // 
             // btnChooseFile
             // 
@@ -361,7 +371,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -398,7 +408,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Green;
+            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,16 +484,6 @@
             this.txtNRCNumber.Size = new System.Drawing.Size(500, 34);
             this.txtNRCNumber.TabIndex = 4;
             this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
-            // 
-            // pbImage
-            // 
-            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Location = new System.Drawing.Point(1041, 197);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(150, 150);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImage.TabIndex = 41;
-            this.pbImage.TabStop = false;
             // 
             // UCEmployee
             // 

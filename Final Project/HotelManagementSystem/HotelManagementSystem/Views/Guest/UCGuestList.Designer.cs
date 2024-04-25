@@ -70,6 +70,7 @@
             // dgvGuestList
             // 
             this.dgvGuestList.AllowUserToAddRows = false;
+            this.dgvGuestList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
@@ -113,7 +114,6 @@
             this.GuestId.MinimumWidth = 6;
             this.GuestId.Name = "GuestId";
             this.GuestId.ReadOnly = true;
-            this.GuestId.Width = 75;
             // 
             // FullName
             // 
@@ -124,7 +124,6 @@
             this.FullName.ReadOnly = true;
             this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FullName.Width = 125;
             // 
             // PhoneNumber
             // 
@@ -135,7 +134,6 @@
             this.PhoneNumber.ReadOnly = true;
             this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PhoneNumber.Width = 125;
             // 
             // Nationality
             // 
@@ -146,7 +144,6 @@
             this.Nationality.MinimumWidth = 6;
             this.Nationality.Name = "Nationality";
             this.Nationality.ReadOnly = true;
-            this.Nationality.Width = 125;
             // 
             // NRCNumber
             // 
@@ -157,7 +154,6 @@
             this.NRCNumber.MinimumWidth = 6;
             this.NRCNumber.Name = "NRCNumber";
             this.NRCNumber.ReadOnly = true;
-            this.NRCNumber.Width = 150;
             // 
             // Dob
             // 
@@ -169,7 +165,6 @@
             this.Dob.Name = "Dob";
             this.Dob.ReadOnly = true;
             this.Dob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Dob.Width = 125;
             // 
             // Gender
             // 
@@ -180,7 +175,6 @@
             this.Gender.MinimumWidth = 6;
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
-            this.Gender.Width = 125;
             // 
             // Address
             // 
@@ -189,7 +183,6 @@
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
-            this.Address.Width = 150;
             // 
             // Delete
             // 
@@ -206,7 +199,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
-            this.Delete.Width = 80;
             // 
             // txtSearch
             // 

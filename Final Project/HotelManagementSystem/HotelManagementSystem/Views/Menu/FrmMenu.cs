@@ -122,5 +122,12 @@ namespace HotelManagementSystem.Views.Menu
             //pnMain.Controls.Clear();
             //pnMain.Controls.Add(uCAdmin);
         }
+
+        private void pAYMENTLISTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UCPaymentHistory uCPaymentHistory = new UCPaymentHistory();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCPaymentHistory);
+        }
     }
 }

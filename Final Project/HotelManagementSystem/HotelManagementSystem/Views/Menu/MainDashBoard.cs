@@ -44,7 +44,7 @@ namespace HotelManagementSystem.Views.Menu
             TtlEmp.Text = employeeData.Rows.Count.ToString();
             TtlChecked.Text = checkinData.Rows.Count.ToString();
             TtlReservation.Text = resrvationData.Rows.Count.ToString();
-            TtlAvailableRoom.Text = (resrvationData.Rows.Count - roomData.Rows.Count).ToString();
+            TtlAvailableRoom.Text = (roomData.Rows.Count).ToString();
         }
 
         private void btnViewRoom_Click(object sender, EventArgs e)

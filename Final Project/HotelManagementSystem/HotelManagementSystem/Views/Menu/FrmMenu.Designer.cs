@@ -57,6 +57,7 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTHISTORYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.pAYMENTLISTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,15 +141,15 @@ namespace HotelManagementSystem.Views.Menu
             // addRoomToolStripMenuItem
             // 
             this.addRoomToolStripMenuItem.Name = "addRoomToolStripMenuItem";
-            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
-            this.addRoomToolStripMenuItem.Text = "Add Room";
+            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.addRoomToolStripMenuItem.Text = "ROOM ADD";
             this.addRoomToolStripMenuItem.Click += new System.EventHandler(this.addRoomToolStripMenuItem_Click);
             // 
             // roomListToolStripMenuItem
             // 
             this.roomListToolStripMenuItem.Name = "roomListToolStripMenuItem";
-            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
-            this.roomListToolStripMenuItem.Text = "Room List";
+            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.roomListToolStripMenuItem.Text = "ROOM LIST";
             this.roomListToolStripMenuItem.Click += new System.EventHandler(this.roomListToolStripMenuItem_Click);
             // 
             // rESERVATIONToolStripMenuItem
@@ -252,8 +253,7 @@ namespace HotelManagementSystem.Views.Menu
             // pAYMENTHISTORYToolStripMenuItem
             // 
             this.pAYMENTHISTORYToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pAYMENTLISTToolStripMenuItem,
-            this.pAYMENTADDToolStripMenuItem});
+            this.pAYMENTLISTToolStripMenuItem1});
             this.pAYMENTHISTORYToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.pAYMENTHISTORYToolStripMenuItem.Name = "pAYMENTHISTORYToolStripMenuItem";
             this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(114, 46);
@@ -266,13 +266,6 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem.Text = "PAYMENT LIST";
             this.pAYMENTLISTToolStripMenuItem.Click += new System.EventHandler(this.pAYMENTLISTToolStripMenuItem_Click);
             // 
-            // pAYMENTADDToolStripMenuItem
-            // 
-            this.pAYMENTADDToolStripMenuItem.Name = "pAYMENTADDToolStripMenuItem";
-            this.pAYMENTADDToolStripMenuItem.Size = new System.Drawing.Size(233, 32);
-            this.pAYMENTADDToolStripMenuItem.Text = "PAYMENT ADD";
-            this.pAYMENTADDToolStripMenuItem.Click += new System.EventHandler(this.pAYMENTADDToolStripMenuItem_Click);
-            // 
             // pnMain
             // 
             this.pnMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -281,6 +274,13 @@ namespace HotelManagementSystem.Views.Menu
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
+            // 
+            // pAYMENTLISTToolStripMenuItem1
+            // 
+            this.pAYMENTLISTToolStripMenuItem1.Name = "pAYMENTLISTToolStripMenuItem1";
+            this.pAYMENTLISTToolStripMenuItem1.Size = new System.Drawing.Size(230, 32);
+            this.pAYMENTLISTToolStripMenuItem1.Text = "PAYMENT LIST";
+            this.pAYMENTLISTToolStripMenuItem1.Click += new System.EventHandler(this.pAYMENTLISTToolStripMenuItem1_Click);
             // 
             // FrmMenu
             // 
@@ -331,5 +331,6 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem eMPLOYEELISTToolStripMenuItem;
         private ToolStripMenuItem addRoomToolStripMenuItem;
         private ToolStripMenuItem roomListToolStripMenuItem;
+        private ToolStripMenuItem pAYMENTLISTToolStripMenuItem1;
     }
 }
