@@ -40,8 +40,8 @@ namespace HotelManagementSystem.DAO.Admin
         // Insert Admin
         public bool InsertAdmin(AdminEntity adminEntity)
         {
-            strSql = "INSERT INTO Admin(username, password, role, created_date, updated_date)" +
-                     "VALUES(@Username, @Password, @Role, @CreatedDate, @UpdatedDate)";
+            strSql = "INSERT INTO Admin(username, password, role, created_date, updated_date, is_deleted)" +
+                     "VALUES(@Username, @Password, @Role, @CreatedDate, @UpdatedDate, @IsDeleted)";
             SqlParameter[] sqlParam = {
                 new SqlParameter("@Username", adminEntity.Username),
                 new SqlParameter("@Password", adminEntity.Password),

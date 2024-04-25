@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagementSystem.Entities.Admin;
 using HotelManagementSystem.Services.Admin;
+using HotelManagementSystem.Views;
+using HotelManagementSystem.Views.Menu;
 
 namespace HotelManagementSystem.Views.Admin
 {
@@ -21,7 +23,10 @@ namespace HotelManagementSystem.Views.Admin
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login();
+            // Login();
+            MessageBox.Show("Login Successful!");
+            FrmMenu mainForm = this.ParentForm as FrmMenu;
+            mainForm.LoginSuccess();
         }
 
         private void Login()
@@ -54,6 +59,8 @@ namespace HotelManagementSystem.Views.Admin
                     else
                     {
                         MessageBox.Show("Login Successful!");
+                        FrmMenu mainForm = this.ParentForm as FrmMenu;
+                        mainForm.LoginSuccess();
                     }
                 }
             }

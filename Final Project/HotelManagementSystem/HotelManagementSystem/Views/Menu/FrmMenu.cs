@@ -118,9 +118,19 @@ namespace HotelManagementSystem.Views.Menu
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-            //UCAdmin uCAdmin = new UCAdmin();
-            //pnMain.Controls.Clear();
-            //pnMain.Controls.Add(uCAdmin);
+            UCAdmin uCAdmin = new UCAdmin();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCAdmin);
+            mainMenu.Visible = false;
+            btnLogout.Visible = false;
+        }
+        public void LoginSuccess()
+        {
+            MainDashBoard mainDashBoard = new MainDashBoard();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(mainDashBoard);
+            mainMenu.Visible = true;
+            btnLogout.Visible = true;
         }
 
         private void pAYMENTLISTToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -132,12 +142,14 @@ namespace HotelManagementSystem.Views.Menu
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            DialogResult result= MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 UCAdmin uCAdmin = new UCAdmin();
                 pnMain.Controls.Clear();
                 pnMain.Controls.Add(uCAdmin);
+                mainMenu.Visible = false;
+                btnLogout.Visible = false;
             }
         }
     }

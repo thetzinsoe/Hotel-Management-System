@@ -128,7 +128,7 @@ namespace HotelManagementSystem.Views.Room
 
                     if (dt.Rows.Count > 0)
                     {
-
+                        txtRoomID.Text = dt.Rows[0]["RoomID"].ToString();
                         txtRoomNumber.Text = dt.Rows[0]["RoomNumber"].ToString();
                         cbType.Text = dt.Rows[0]["Type"].ToString();
                         txtPrice.Text = dt.Rows[0]["Price"].ToString();
