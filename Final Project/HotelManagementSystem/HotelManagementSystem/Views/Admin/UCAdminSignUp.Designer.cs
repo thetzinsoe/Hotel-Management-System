@@ -38,10 +38,9 @@
             this.txtvalidpass = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtadminID = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtadminID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,7 +143,6 @@
             // 
             this.groupBox1.Controls.Add(this.btnLogIn);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtadminID);
             this.groupBox1.Controls.Add(this.txtusername);
             this.groupBox1.Controls.Add(this.btnShow);
@@ -162,25 +160,6 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Register";
-            // 
-            // txtadminID
-            // 
-            this.txtadminID.AutoSize = true;
-            this.txtadminID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtadminID.Location = new System.Drawing.Point(128, 81);
-            this.txtadminID.Name = "txtadminID";
-            this.txtadminID.Size = new System.Drawing.Size(0, 23);
-            this.txtadminID.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Admin -";
             // 
             // btnLogIn
             // 
@@ -202,6 +181,16 @@
             this.label2.Size = new System.Drawing.Size(147, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Already an admin?";
+            // 
+            // txtadminID
+            // 
+            this.txtadminID.AutoSize = true;
+            this.txtadminID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtadminID.Location = new System.Drawing.Point(50, 84);
+            this.txtadminID.Name = "txtadminID";
+            this.txtadminID.Size = new System.Drawing.Size(0, 23);
+            this.txtadminID.TabIndex = 9;
+            this.txtadminID.Visible = false;
             // 
             // UCAdminSignUp
             // 
@@ -229,7 +218,6 @@
         private System.Windows.Forms.TextBox txtvalidpass;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtadminID;
         private System.Windows.Forms.Label btnLogIn;
         private System.Windows.Forms.Label label2;

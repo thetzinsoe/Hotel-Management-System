@@ -26,14 +26,14 @@ namespace HotelManagementSystem.DAO.Admin
         // Get Admin by Id
         public DataTable GetAdminById(int adminId)
         {
-            strSql = "SELECT * FROM Guest " +
-                      "WHERE  guestId= " + adminId + "AND is_deleted = 0";
+            strSql = "SELECT * FROM Admin " +
+                      "WHERE  admin_id= " + adminId + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
         public DataTable GetAdminByUsername(string username)
         {
-            strSql = "SELECT * FROM Guest " +
-                      "WHERE  guestId= " + username + "AND is_deleted = 0";
+            strSql = "SELECT * FROM Admin " +
+                      "WHERE  username = " + username + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
@@ -56,9 +56,9 @@ namespace HotelManagementSystem.DAO.Admin
         // Update Admin
         public bool UpdateAdmin(AdminEntity adminEntity)
         {
-            strSql = "UPDATE Admin SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE adminId = @AdminId";
+            strSql = "UPDATE Admin SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE admin_id = @AdminId";
             SqlParameter[] sqlParam = {
-                new SqlParameter("@AdminId", adminEntity.UserId),
+                new SqlParameter("@AdminId", adminEntity.admin_id),
                 new SqlParameter("@Username", adminEntity.Username),
                 new SqlParameter("@Password", adminEntity.Password),
                 new SqlParameter("@Role", adminEntity.Role),
@@ -71,7 +71,7 @@ namespace HotelManagementSystem.DAO.Admin
         // Delete Admin
         public bool DeleteAdmin(int adminId)
         {
-            strSql = "DELETE FROM Admin WHERE adminId = @AdminId";
+            strSql = "DELETE FROM Admin WHERE admin_id = @AdminId";
             SqlParameter[] sqlParam = {
                 new SqlParameter("@AdminId", adminId)
             };
