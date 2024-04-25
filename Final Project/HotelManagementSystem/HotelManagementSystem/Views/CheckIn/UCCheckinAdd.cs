@@ -53,18 +53,6 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void UCCheckinAdd_Load(object sender, EventArgs e)
         {
-            if (dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
-            {
-                validateInput = true;
-                lbCheckOutValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbCheckOutValidation.Text = "Wrong Date! Please choose the correct date.";
-                MessageBox.Show("Wrong Date! Please choose the correct date.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
             try
             {
                 DataTable dtr = reservationService.GetAllRoom();
@@ -95,6 +83,39 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
+            if (dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date || dtpCheckInDate.Value.Date>=DateTime.Today.Date)
+            {
+                validateInput = true;
+            }
+            else
+            {
+                validateInput = false;
+                MessageBox.Show("Checkin date must be equal or earlier than checkout date and equal or later than today date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(selectedGuestId == 0 || selectedGuestName == string.Empty || selectedGuestNrc == string.Empty)
+            {
+                validateInput = false;
+                MessageBox.Show("Please Choose Guest","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                validateInput = true;
+            }
+
+            if(selectedRoomId  == 0 || selectedRoomNo == string.Empty)
+            {
+                validateInput = false;
+                MessageBox.Show("Choose room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                validateInput = true;
+            }
+
             if (validateInput)
             {
                 AddorUpdate();
