@@ -57,7 +57,7 @@ namespace HotelManagementSystem.Views.Admin
         {
             if (!String.IsNullOrEmpty(txtadminID.Text))
             {
-                adminEntity.UserId = Convert.ToInt32(txtadminID.Text);
+                adminEntity.user_id = Convert.ToInt32(txtadminID.Text);
             }
             adminEntity.Username = txtusername.Text;
             adminEntity.Password = txtpassword.Text;

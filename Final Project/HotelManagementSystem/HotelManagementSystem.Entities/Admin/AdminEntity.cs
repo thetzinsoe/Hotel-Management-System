@@ -11,7 +11,7 @@ namespace HotelManagementSystem.Entities.Admin
         /// <summary>
         /// Gets or sets the user id.
         /// </summary>
-        public int admin_id { get; set; }
+        public int user_id { get; set; }
 
         /// <summary>
         /// Gets or sets the username.
@@ -56,7 +56,7 @@ namespace HotelManagementSystem.Entities.Admin
         /// </summary>
         internal void InitializedObjectValue()
         {
-            admin_id = 0;
+            user_id = 0;
             Username = string.Empty;
             Password = string.Empty;
             Role = string.Empty;

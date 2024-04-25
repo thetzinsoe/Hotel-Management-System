@@ -79,11 +79,10 @@ namespace HotelManagementSystem.Views.Room
             if (e.RowIndex >= 0)
             {
                 UCRoomCrud uCRoomCRUD = new UCRoomCrud();
-                int roomID = Convert.ToInt32(dgvRoomList.Rows[e.RowIndex].Cells["RoomID"].Value);
                 string roomnumber=dgvRoomList.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
                 if (e.ColumnIndex == dgvRoomList.Columns["EditRoom"].Index)
                 {
-                    uCRoomCRUD.ID= roomID.ToString();
+                    //uCRoomCRUD.ID= roomID.ToString();
                     uCRoomCRUD.ROOMNumber = roomnumber;
                     this.Controls.Clear();
                     this.Controls.Add(uCRoomCRUD);

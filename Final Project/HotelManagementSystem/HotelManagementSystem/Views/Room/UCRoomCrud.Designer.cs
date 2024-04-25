@@ -45,7 +45,7 @@
             // 
             this.lblRoomNumber.AutoSize = true;
             this.lblRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNumber.Location = new System.Drawing.Point(257, 190);
+            this.lblRoomNumber.Location = new System.Drawing.Point(394, 258);
             this.lblRoomNumber.Name = "lblRoomNumber";
             this.lblRoomNumber.Size = new System.Drawing.Size(145, 28);
             this.lblRoomNumber.TabIndex = 0;
@@ -54,7 +54,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(440, 324);
+            this.txtPrice.Location = new System.Drawing.Point(577, 392);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(500, 34);
             this.txtPrice.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(840, 458);
+            this.btnBack.Location = new System.Drawing.Point(977, 526);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 35);
             this.btnBack.TabIndex = 2;
@@ -76,12 +76,12 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.BackColor = System.Drawing.Color.SteelBlue;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(646, 458);
+            this.btnDelete.Location = new System.Drawing.Point(783, 526);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 35);
             this.btnDelete.TabIndex = 5;
@@ -92,7 +92,7 @@
             // txtRoomNumber
             // 
             this.txtRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomNumber.Location = new System.Drawing.Point(440, 183);
+            this.txtRoomNumber.Location = new System.Drawing.Point(577, 251);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(500, 34);
             this.txtRoomNumber.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(257, 260);
+            this.lblType.Location = new System.Drawing.Point(394, 328);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(114, 28);
             this.lblType.TabIndex = 3;
@@ -109,12 +109,12 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Green;
+            this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(261, 458);
+            this.btnAdd.Location = new System.Drawing.Point(398, 526);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
             this.btnAdd.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(257, 330);
+            this.lblPrice.Location = new System.Drawing.Point(394, 398);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(115, 28);
             this.lblPrice.TabIndex = 6;
@@ -144,7 +144,7 @@
             "Standard Family Room",
             "Junior Suite",
             "Standard Suite"});
-            this.cbType.Location = new System.Drawing.Point(440, 252);
+            this.cbType.Location = new System.Drawing.Point(577, 320);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(500, 36);
             this.cbType.TabIndex = 9;
@@ -154,7 +154,7 @@
             // 
             this.txtRoomID.AutoSize = true;
             this.txtRoomID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomID.Location = new System.Drawing.Point(257, 133);
+            this.txtRoomID.Location = new System.Drawing.Point(394, 201);
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(0, 23);
             this.txtRoomID.TabIndex = 10;
@@ -166,7 +166,7 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(454, 458);
+            this.btnClear.Location = new System.Drawing.Point(591, 526);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 35);
             this.btnClear.TabIndex = 11;
@@ -191,7 +191,7 @@
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.lblRoomNumber);
             this.Name = "UCRoomCrud";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCRoomCrud_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

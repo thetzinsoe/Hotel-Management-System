@@ -36,6 +36,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvRoomList = new System.Windows.Forms.DataGridView();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_occupied = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditRoom = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnLast = new System.Windows.Forms.Button();
@@ -43,16 +48,12 @@
             this.lblPageNo = new System.Windows.Forms.Label();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_occupied = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditRoom = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRoomList
             // 
+            this.dgvRoomList.AllowUserToAddRows = false;
             this.dgvRoomList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -70,7 +71,7 @@
             this.is_occupied,
             this.EditRoom});
             this.dgvRoomList.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvRoomList.Location = new System.Drawing.Point(130, 141);
+            this.dgvRoomList.Location = new System.Drawing.Point(287, 231);
             this.dgvRoomList.Name = "dgvRoomList";
             this.dgvRoomList.RowHeadersVisible = false;
             this.dgvRoomList.RowHeadersWidth = 51;
@@ -80,99 +81,6 @@
             this.dgvRoomList.Size = new System.Drawing.Size(925, 400);
             this.dgvRoomList.TabIndex = 0;
             this.dgvRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomList_CellContentClick);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.White;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(955, 100);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 35);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "SEARCH";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(130, 101);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(694, 34);
-            this.txtSearch.TabIndex = 2;
-            this.txtSearch.MouseEnter += new System.EventHandler(this.txtSearch_MouseEnter);
-            this.txtSearch.MouseLeave += new System.EventHandler(this.txtSearch_MouseLeave);
-            // 
-            // btnLast
-            // 
-            this.btnLast.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLast.ForeColor = System.Drawing.Color.Black;
-            this.btnLast.Location = new System.Drawing.Point(995, 566);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(60, 35);
-            this.btnLast.TabIndex = 19;
-            this.btnLast.Text = ">>";
-            this.btnLast.UseVisualStyleBackColor = false;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(892, 566);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(60, 35);
-            this.btnNext.TabIndex = 18;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // lblPageNo
-            // 
-            this.lblPageNo.AutoSize = true;
-            this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(600, 578);
-            this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(17, 23);
-            this.lblPageNo.TabIndex = 17;
-            this.lblPageNo.Text = "-";
-            // 
-            // btnPrev
-            // 
-            this.btnPrev.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrev.ForeColor = System.Drawing.Color.Black;
-            this.btnPrev.Location = new System.Drawing.Point(262, 566);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(60, 35);
-            this.btnPrev.TabIndex = 16;
-            this.btnPrev.Text = "<";
-            this.btnPrev.UseVisualStyleBackColor = false;
-            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
-            // 
-            // btnFirst
-            // 
-            this.btnFirst.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFirst.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirst.ForeColor = System.Drawing.Color.Black;
-            this.btnFirst.Location = new System.Drawing.Point(130, 566);
-            this.btnFirst.Name = "btnFirst";
-            this.btnFirst.Size = new System.Drawing.Size(60, 35);
-            this.btnFirst.TabIndex = 15;
-            this.btnFirst.Text = "<<";
-            this.btnFirst.UseVisualStyleBackColor = false;
-            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
             // RoomNumber
             // 
@@ -231,6 +139,99 @@
             this.EditRoom.Text = "Edit";
             this.EditRoom.Width = 125;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(1112, 190);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 35);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "SEARCH";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(287, 191);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(694, 34);
+            this.txtSearch.TabIndex = 2;
+            this.txtSearch.MouseEnter += new System.EventHandler(this.txtSearch_MouseEnter);
+            this.txtSearch.MouseLeave += new System.EventHandler(this.txtSearch_MouseLeave);
+            // 
+            // btnLast
+            // 
+            this.btnLast.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.Black;
+            this.btnLast.Location = new System.Drawing.Point(1152, 656);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(60, 35);
+            this.btnLast.TabIndex = 19;
+            this.btnLast.Text = ">>";
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
+            this.btnNext.Location = new System.Drawing.Point(1049, 656);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(60, 35);
+            this.btnNext.TabIndex = 18;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblPageNo
+            // 
+            this.lblPageNo.AutoSize = true;
+            this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPageNo.Location = new System.Drawing.Point(757, 668);
+            this.lblPageNo.Name = "lblPageNo";
+            this.lblPageNo.Size = new System.Drawing.Size(17, 23);
+            this.lblPageNo.TabIndex = 17;
+            this.lblPageNo.Text = "-";
+            // 
+            // btnPrev
+            // 
+            this.btnPrev.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrev.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrev.ForeColor = System.Drawing.Color.Black;
+            this.btnPrev.Location = new System.Drawing.Point(419, 656);
+            this.btnPrev.Name = "btnPrev";
+            this.btnPrev.Size = new System.Drawing.Size(60, 35);
+            this.btnPrev.TabIndex = 16;
+            this.btnPrev.Text = "<";
+            this.btnPrev.UseVisualStyleBackColor = false;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
+            // 
+            // btnFirst
+            // 
+            this.btnFirst.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnFirst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFirst.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirst.ForeColor = System.Drawing.Color.Black;
+            this.btnFirst.Location = new System.Drawing.Point(287, 656);
+            this.btnFirst.Name = "btnFirst";
+            this.btnFirst.Size = new System.Drawing.Size(60, 35);
+            this.btnFirst.TabIndex = 15;
+            this.btnFirst.Text = "<<";
+            this.btnFirst.UseVisualStyleBackColor = false;
+            this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
+            // 
             // UCRoomList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,7 +246,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dgvRoomList);
             this.Name = "UCRoomList";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCRoomList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomList)).EndInit();
             this.ResumeLayout(false);
