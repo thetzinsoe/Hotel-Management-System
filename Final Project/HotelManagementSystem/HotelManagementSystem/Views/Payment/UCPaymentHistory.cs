@@ -11,12 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagementSystem.Views.CheckIn;
 
 namespace HotelManagementSystem.Views.Payment
 {
     public partial class UCPaymentHistory : UserControl
     {
-        int pageSize = 3;
+        int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
         PaymentService paymentService = new PaymentService();
@@ -43,7 +44,17 @@ namespace HotelManagementSystem.Views.Payment
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvPaymentHistory.AutoGenerateColumns = false;
+            if (dt.Rows.Count < pageSize)
+            {
+                int blankRowCount = pageSize - dt.Rows.Count;
+                for (int i = 0; i < blankRowCount; i++)
+                {
+                    DataRow newRow = dt.NewRow();
+                    dt.Rows.Add(newRow);
+                }
+            }
             dgvPaymentHistory.DataSource = dt;
+            dgvPaymentHistory.Refresh();
         }
 
         private void dgvPaymentHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,6 +68,15 @@ namespace HotelManagementSystem.Views.Payment
                     uCPayNow.ID = paymentId.ToString();
                     this.Controls.Clear();
                     this.Controls.Add(uCPayNow);
+                }
+
+                int checkinId = Convert.ToInt32(dgvPaymentHistory.Rows[e.RowIndex].Cells["checkin_id"].Value);
+                if (e.ColumnIndex == dgvPaymentHistory.Columns["checkin_id"].Index)
+                {
+                    UCOldCheckinList uCOldCheckinList = new UCOldCheckinList();
+                    uCOldCheckinList.ID = checkinId.ToString();
+                    this.Controls.Clear();
+                    this.Controls.Add(uCOldCheckinList);
                 }
             }
         }

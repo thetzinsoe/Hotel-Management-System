@@ -20,9 +20,9 @@ namespace HotelManagementSystem.Views.Payment {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PaymentDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Report")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PaymentDataSet : global::System.Data.DataSet {
+    public partial class Report : global::System.Data.DataSet {
         
         private DataTable1DataTable tableDataTable1;
         
@@ -30,7 +30,7 @@ namespace HotelManagementSystem.Views.Payment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PaymentDataSet() {
+        public Report() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace HotelManagementSystem.Views.Payment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected PaymentDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Report(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace HotelManagementSystem.Views.Payment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PaymentDataSet cln = ((PaymentDataSet)(base.Clone()));
+            Report cln = ((Report)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace HotelManagementSystem.Views.Payment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PaymentDataSet";
+            this.DataSetName = "Report";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PaymentDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Report.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDataTable1 = new DataTable1DataTable();
@@ -225,7 +225,7 @@ namespace HotelManagementSystem.Views.Payment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PaymentDataSet ds = new PaymentDataSet();
+            Report ds = new Report();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -301,9 +301,23 @@ namespace HotelManagementSystem.Views.Payment {
             
             private global::System.Data.DataColumn columnis_deleted;
             
+            private global::System.Data.DataColumn columnroom_no;
+            
+            private global::System.Data.DataColumn columnfull_name;
+            
+            private global::System.Data.DataColumn columnroom_id;
+            
+            private global::System.Data.DataColumn columnguest_id;
+            
             private global::System.Data.DataColumn columncheckin_date;
             
             private global::System.Data.DataColumn columncheckout_date;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnExpr2;
+            
+            private global::System.Data.DataColumn columnExpr3;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -428,6 +442,38 @@ namespace HotelManagementSystem.Views.Payment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn room_noColumn {
+                get {
+                    return this.columnroom_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn full_nameColumn {
+                get {
+                    return this.columnfull_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn room_idColumn {
+                get {
+                    return this.columnroom_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn guest_idColumn {
+                get {
+                    return this.columnguest_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn checkin_dateColumn {
                 get {
                     return this.columncheckin_date;
@@ -439,6 +485,30 @@ namespace HotelManagementSystem.Views.Payment {
             public global::System.Data.DataColumn checkout_dateColumn {
                 get {
                     return this.columncheckout_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Expr2Column {
+                get {
+                    return this.columnExpr2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Expr3Column {
+                get {
+                    return this.columnExpr3;
                 }
             }
             
@@ -479,7 +549,26 @@ namespace HotelManagementSystem.Views.Payment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(int checkin_id, decimal room_fees, decimal extra_fees, string description, decimal discount, decimal total_fees, string payment_type, System.DateTime created_date, System.DateTime updated_date, short is_deleted, System.DateTime checkin_date, System.DateTime checkout_date) {
+            public DataTable1Row AddDataTable1Row(
+                        int checkin_id, 
+                        decimal room_fees, 
+                        decimal extra_fees, 
+                        string description, 
+                        decimal discount, 
+                        decimal total_fees, 
+                        string payment_type, 
+                        System.DateTime created_date, 
+                        System.DateTime updated_date, 
+                        short is_deleted, 
+                        string room_no, 
+                        string full_name, 
+                        int room_id, 
+                        int guest_id, 
+                        System.DateTime checkin_date, 
+                        System.DateTime checkout_date, 
+                        System.DateTime Expr1, 
+                        System.DateTime Expr2, 
+                        short Expr3) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -493,8 +582,15 @@ namespace HotelManagementSystem.Views.Payment {
                         created_date,
                         updated_date,
                         is_deleted,
+                        room_no,
+                        full_name,
+                        room_id,
+                        guest_id,
                         checkin_date,
-                        checkout_date};
+                        checkout_date,
+                        Expr1,
+                        Expr2,
+                        Expr3};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -535,8 +631,15 @@ namespace HotelManagementSystem.Views.Payment {
                 this.columncreated_date = base.Columns["created_date"];
                 this.columnupdated_date = base.Columns["updated_date"];
                 this.columnis_deleted = base.Columns["is_deleted"];
+                this.columnroom_no = base.Columns["room_no"];
+                this.columnfull_name = base.Columns["full_name"];
+                this.columnroom_id = base.Columns["room_id"];
+                this.columnguest_id = base.Columns["guest_id"];
                 this.columncheckin_date = base.Columns["checkin_date"];
                 this.columncheckout_date = base.Columns["checkout_date"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnExpr2 = base.Columns["Expr2"];
+                this.columnExpr3 = base.Columns["Expr3"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -564,10 +667,24 @@ namespace HotelManagementSystem.Views.Payment {
                 base.Columns.Add(this.columnupdated_date);
                 this.columnis_deleted = new global::System.Data.DataColumn("is_deleted", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnis_deleted);
+                this.columnroom_no = new global::System.Data.DataColumn("room_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroom_no);
+                this.columnfull_name = new global::System.Data.DataColumn("full_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfull_name);
+                this.columnroom_id = new global::System.Data.DataColumn("room_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroom_id);
+                this.columnguest_id = new global::System.Data.DataColumn("guest_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnguest_id);
                 this.columncheckin_date = new global::System.Data.DataColumn("checkin_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncheckin_date);
                 this.columncheckout_date = new global::System.Data.DataColumn("checkout_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncheckout_date);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr2);
+                this.columnExpr3 = new global::System.Data.DataColumn("Expr3", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr3);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpayment_id}, true));
                 this.columnpayment_id.AutoIncrement = true;
@@ -587,7 +704,16 @@ namespace HotelManagementSystem.Views.Payment {
                 this.columncreated_date.AllowDBNull = false;
                 this.columnupdated_date.AllowDBNull = false;
                 this.columnis_deleted.AllowDBNull = false;
+                this.columnroom_no.AllowDBNull = false;
+                this.columnroom_no.MaxLength = 50;
+                this.columnfull_name.AllowDBNull = false;
+                this.columnfull_name.MaxLength = 100;
+                this.columnroom_id.AllowDBNull = false;
+                this.columnguest_id.AllowDBNull = false;
                 this.columncheckin_date.AllowDBNull = false;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnExpr2.AllowDBNull = false;
+                this.columnExpr3.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -655,7 +781,7 @@ namespace HotelManagementSystem.Views.Payment {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PaymentDataSet ds = new PaymentDataSet();
+                Report ds = new Report();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -856,6 +982,50 @@ namespace HotelManagementSystem.Views.Payment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string room_no {
+                get {
+                    return ((string)(this[this.tableDataTable1.room_noColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.room_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string full_name {
+                get {
+                    return ((string)(this[this.tableDataTable1.full_nameColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.full_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int room_id {
+                get {
+                    return ((int)(this[this.tableDataTable1.room_idColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.room_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int guest_id {
+                get {
+                    return ((int)(this[this.tableDataTable1.guest_idColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.guest_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime checkin_date {
                 get {
                     return ((global::System.DateTime)(this[this.tableDataTable1.checkin_dateColumn]));
@@ -878,6 +1048,39 @@ namespace HotelManagementSystem.Views.Payment {
                 }
                 set {
                     this[this.tableDataTable1.checkout_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Expr1 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDataTable1.Expr1Column]));
+                }
+                set {
+                    this[this.tableDataTable1.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Expr2 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableDataTable1.Expr2Column]));
+                }
+                set {
+                    this[this.tableDataTable1.Expr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public short Expr3 {
+                get {
+                    return ((short)(this[this.tableDataTable1.Expr3Column]));
+                }
+                set {
+                    this[this.tableDataTable1.Expr3Column] = value;
                 }
             }
             
@@ -941,7 +1144,7 @@ namespace HotelManagementSystem.Views.Payment {
         }
     }
 }
-namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
+namespace HotelManagementSystem.Views.Payment.ReportTableAdapters {
     
     
     /// <summary>
@@ -1076,8 +1279,15 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("updated_date", "updated_date");
             tableMapping.ColumnMappings.Add("is_deleted", "is_deleted");
+            tableMapping.ColumnMappings.Add("room_no", "room_no");
+            tableMapping.ColumnMappings.Add("full_name", "full_name");
+            tableMapping.ColumnMappings.Add("room_id", "room_id");
+            tableMapping.ColumnMappings.Add("guest_id", "guest_id");
             tableMapping.ColumnMappings.Add("checkin_date", "checkin_date");
             tableMapping.ColumnMappings.Add("checkout_date", "checkout_date");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
+            tableMapping.ColumnMappings.Add("Expr3", "Expr3");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1085,7 +1295,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::HotelManagementSystem.Properties.Settings.Default.HotelManagementSystemDBConnectionString;
+            this._connection.ConnectionString = global::HotelManagementSystem.Properties.Settings.Default.HotelManagementSystemDBConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1094,9 +1304,11 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT   Payment.*, Checkin.checkin_date, Checkin.checkout_date\r\nFROM      Checki" +
-                "n INNER JOIN\r\n                Payment ON Checkin.checkin_id = Payment.checkin_id" +
-                "";
+            this._commandCollection[0].CommandText = @"SELECT       Payment.*, Room.room_no, Guest.full_name, Checkin.room_id, Checkin.guest_id, Checkin.checkin_date, Checkin.checkout_date, Checkin.created_date AS Expr1, Checkin.updated_date AS Expr2, Checkin.is_deleted AS Expr3
+FROM            Payment INNER JOIN
+                         Checkin ON Payment.checkin_id = Checkin.checkin_id INNER JOIN
+                         Guest ON Checkin.guest_id = Guest.guest_id INNER JOIN
+                         Room ON Checkin.room_id = Room.room_id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1104,7 +1316,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PaymentDataSet.DataTable1DataTable dataTable) {
+        public virtual int Fill(Report.DataTable1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1117,9 +1329,9 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PaymentDataSet.DataTable1DataTable GetData() {
+        public virtual Report.DataTable1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PaymentDataSet.DataTable1DataTable dataTable = new PaymentDataSet.DataTable1DataTable();
+            Report.DataTable1DataTable dataTable = new Report.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1193,7 +1405,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(PaymentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Report dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1203,7 +1415,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(PaymentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Report dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1213,7 +1425,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(PaymentDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Report dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1247,7 +1459,7 @@ namespace HotelManagementSystem.Views.Payment.PaymentDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(PaymentDataSet dataSet) {
+        public virtual int UpdateAll(Report dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Payment Id</Value>
+                <Value>Customer Name</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -20,9 +20,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.33208in</Top>
-        <Left>0.03238in</Left>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -51,9 +51,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.33208in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.375in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -83,9 +83,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.95771in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.375in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -104,21 +104,25 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!payment_id.Value, "DataSet1")</Value>
+                <Value>=First(Fields!full_name.Value, "DataSet2")</Value>
                 <Style>
+                  <FontFamily>Segoe UI</FontFamily>
                   <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.33208in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.43166in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.5625in</Width>
         <ZIndex>3</ZIndex>
+        <ToolTip>=First(Fields!full_name.Value, "DataSet2")</ToolTip>
         <Style>
           <Border>
             <Style>None</Style>
@@ -147,9 +151,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.46812in</Top>
-        <Left>0.03238in</Left>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -179,9 +183,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>3.25979in</Top>
-        <Left>4.0775in</Left>
+        <Left>4.3275in</Left>
         <Height>0.25in</Height>
-        <Width>0.36458in</Width>
+        <Width>0.17708in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -213,7 +217,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>3.25979in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
         <Width>1.44792in</Width>
         <ZIndex>6</ZIndex>
@@ -234,7 +238,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!total_fees.Value, "DataSet1")</Value>
+                <Value>=First(Fields!total_fees.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -246,9 +250,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>3.25979in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.69208in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.30208in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -267,7 +271,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!discount.Value, "DataSet1")</Value>
+                <Value>=First(Fields!discount.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -278,9 +282,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>2.49937in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.43166in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.33333in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -310,9 +314,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>2.49937in</Top>
-        <Left>0.03238in</Left>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -331,7 +335,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!extra_fees.Value, "DataSet1")</Value>
+                <Value>=First(Fields!extra_fees.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -342,9 +346,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.95771in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.43166in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.5625in</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -363,7 +367,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!room_fees.Value, "DataSet1")</Value>
+                <Value>=First(Fields!room_fees.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -374,9 +378,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.46812in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.43166in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.5625in</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -406,9 +410,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.95771in</Top>
-        <Left>0.03238in</Left>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2in</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -427,20 +431,22 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!checkin_id.Value, "DataSet1")</Value>
+                <Value>=First(Fields!room_no.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.95771in</Top>
-        <Left>4.44208in</Left>
+        <Left>4.43166in</Left>
         <Height>0.25in</Height>
-        <Width>1.77083in</Width>
+        <Width>1.5625in</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -470,9 +476,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>2.49937in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.375in</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -491,7 +497,18 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Checkin Id</Value>
+                <Value>Room Number</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -502,9 +519,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>0.95771in</Top>
-        <Left>0.03238in</Left>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>2in</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -534,9 +551,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.95771in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.375in</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -566,9 +583,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
         <Top>1.46812in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0.25in</Height>
-        <Width>1in</Width>
+        <Width>0.375in</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -582,9 +599,9 @@
       </Textbox>
       <Line Name="Line1">
         <Top>2.97792in</Top>
-        <Left>2.36107in</Left>
+        <Left>2.61107in</Left>
         <Height>0in</Height>
-        <Width>3.85184in</Width>
+        <Width>3.38309in</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -610,8 +627,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>3.73896in</Top>
-        <Left>0.03238in</Left>
+        <Top>3.23896in</Top>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
         <Width>1.26042in</Width>
         <ZIndex>19</ZIndex>
@@ -632,7 +649,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!checkin_date.Value, "DataSet1")</Value>
+                <Value>=First(Fields!checkin_date.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -640,8 +657,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>4.0584in</Top>
-        <Left>0.03238in</Left>
+        <Top>3.54452in</Top>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
         <Width>1.83333in</Width>
         <ZIndex>20</ZIndex>
@@ -673,8 +690,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>4.67993in</Top>
-        <Left>0.03238in</Left>
+        <Top>4.05493in</Top>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
         <Width>1.26042in</Width>
         <ZIndex>21</ZIndex>
@@ -695,7 +712,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!checkout_date.Value, "DataSet1")</Value>
+                <Value>=First(Fields!checkout_date.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -703,8 +720,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox15</rd:DefaultName>
-        <Top>4.99937in</Top>
-        <Left>0.03238in</Left>
+        <Top>4.37437in</Top>
+        <Left>0.28238in</Left>
         <Height>0.25in</Height>
         <Width>1.83333in</Width>
         <ZIndex>22</ZIndex>
@@ -758,7 +775,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!description.Value, "DataSet1")</Value>
+                    <Value>=First(Fields!description.Value, "DataSet2")</Value>
                     <Style>
                       <FontFamily>Segoe UI</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -769,10 +786,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox15</rd:DefaultName>
-            <Top>0.44444in</Top>
+            <Top>0.5in</Top>
             <Left>0.12616in</Left>
             <Height>1.10274in</Height>
-            <Width>3.62036in</Width>
+            <Width>3.15276in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -786,10 +803,10 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>3.70219in</Top>
-        <Left>2.36107in</Left>
-        <Height>1.63541in</Height>
-        <Width>3.85184in</Width>
+        <Top>3.82719in</Top>
+        <Left>2.61107in</Left>
+        <Height>1.72774in</Height>
+        <Width>3.38309in</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -809,11 +826,110 @@
           </RightBorder>
         </Style>
       </Rectangle>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!payment_type.Value, "DataSet2")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>5.17993in</Top>
+        <Left>0.28238in</Left>
+        <Height>0.25in</Height>
+        <Width>1.5625in</Width>
+        <ZIndex>24</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Top</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox30">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Payment By :</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>4.8525in</Top>
+        <Left>0.28238in</Left>
+        <Height>0.25in</Height>
+        <Width>1.13542in</Width>
+        <ZIndex>25</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>%</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>2.49937in</Top>
+        <Left>5.79277in</Left>
+        <Height>0.25in</Height>
+        <Width>0.20139in</Width>
+        <ZIndex>26</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>6.08in</Height>
     <Style />
   </Body>
-  <Width>6.33792in</Width>
+  <Width>6.33791in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -827,7 +943,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Holtel Management System</Value>
+                  <Value>Hotel Management System</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -874,7 +990,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Thank You Our Customer!</Value>
+                  <Value>Thank You to Our Customers!</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                   </Style>
@@ -905,7 +1021,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=DateTime.Now</Value>
+                  <Value>=First(Fields!created_date.Value, "DataSet2")</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                   </Style>
@@ -916,7 +1032,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox50</rd:DefaultName>
           <Top>0.20834in</Top>
-          <Left>4.44208in</Left>
+          <Left>4.22333in</Left>
           <Height>0.25in</Height>
           <Width>1.77083in</Width>
           <ZIndex>1</ZIndex>
@@ -961,11 +1077,18 @@
       </ConnectionProperties>
       <rd:DataSourceID>3e54ff96-c5fa-425c-9749-f40ce794e72b</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="Report">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>dcd59c63-8c45-4897-a334-a5299d4e848a</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSet2">
       <Query>
-        <DataSourceName>PaymentDataSet</DataSourceName>
+        <DataSourceName>Report</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1013,6 +1136,22 @@
           <DataField>is_deleted</DataField>
           <rd:TypeName>System.Int16</rd:TypeName>
         </Field>
+        <Field Name="room_no">
+          <DataField>room_no</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="full_name">
+          <DataField>full_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="room_id">
+          <DataField>room_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="guest_id">
+          <DataField>guest_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="checkin_date">
           <DataField>checkin_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
@@ -1021,10 +1160,22 @@
           <DataField>checkout_date</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="Expr1">
+          <DataField>Expr1</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Expr2">
+          <DataField>Expr2</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Expr3">
+          <DataField>Expr3</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>PaymentDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\C-Sharp-ojt-final-project\Final Project\HotelManagementSystem\HotelManagementSystem\Views\Payment\PaymentDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>Report</rd:DataSetName>
+        <rd:SchemaPath>C:\C-Sharp-ojt-final-project\Final Project\HotelManagementSystem\HotelManagementSystem\Views\Payment\Report.xsd</rd:SchemaPath>
         <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

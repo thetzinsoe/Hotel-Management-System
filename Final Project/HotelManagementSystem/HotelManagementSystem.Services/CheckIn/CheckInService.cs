@@ -29,6 +29,12 @@ namespace HotelManagementSystem.Services.CheckIn
             DataTable dt = checkInDao.GetAll();
             return dt;
         }
+        
+        public DataTable GetAllOld()
+        {
+            DataTable dt = checkInDao.GetAllOld();
+            return dt;
+        }
 
         public DataTable GetAllGuest()
         {
@@ -48,16 +54,32 @@ namespace HotelManagementSystem.Services.CheckIn
             DataTable dt = checkInDao.Get(id);
             return dt;
         }
+        public DataTable haveRoom(int id)
+        {
+            DataTable dt = checkInDao.haveRoom(id);
+            return dt;
+        }
 
         public DataTable GetWithPagination(int offset, int pageSize)
         {
             DataTable dt = checkInDao.GetWithPagination(offset, pageSize);
             return dt;
         }
+        public DataTable GetWithPaginationOld(int offset, int pageSize)
+        {
+            DataTable dt = checkInDao.GetWithPaginationOld(offset, pageSize);
+            return dt;
+        }
         
         public DataTable Search(int searchType, string searchValue)
         {
             DataTable dt = checkInDao.Search(searchType, searchValue);
+            return dt;
+        }
+        
+        public DataTable SearchOld(int searchType, string searchValue)
+        {
+            DataTable dt = checkInDao.SearchOld(searchType, searchValue);
             return dt;
         }
 
