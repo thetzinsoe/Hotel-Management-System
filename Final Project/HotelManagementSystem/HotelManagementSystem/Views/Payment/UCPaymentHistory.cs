@@ -16,7 +16,7 @@ namespace HotelManagementSystem.Views.Payment
 {
     public partial class UCPaymentHistory : UserControl
     {
-        int pageSize = 3;
+        int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
         PaymentService paymentService = new PaymentService();

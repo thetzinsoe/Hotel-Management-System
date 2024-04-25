@@ -1,4 +1,5 @@
-﻿using HotelManagementSystem.Entities.CheckIn;
+﻿using DevExpress.Emf;
+using HotelManagementSystem.Entities.CheckIn;
 using HotelManagementSystem.Entities.Reservation;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Reservation;
@@ -61,7 +62,6 @@ namespace HotelManagementSystem.Views.CheckIn
             else
             {
                 validateInput = false;
-                //lbCheckOutValidation.Text = "Wrong Date! Please choose the correct date.";
                 MessageBox.Show("Wrong Date! Please choose the correct date.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -95,6 +95,50 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
+            if(selectedGuestName != cbGuestName.Text || selectedGuestId == 0)
+            {
+                validateInput = false;
+                MessageBox.Show("You must need to choose one Guest to checkin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                validateInput=true;
+            }
+
+            if (string.IsNullOrEmpty(cbRoomNumber.Text) || selectedRoomId==0 || selectedRoomNo != cbRoomNumber.Text)
+            {
+                validateInput = false;
+                MessageBox.Show("You must need to choose one room to checkin","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                validateInput=true;
+            }
+
+            if (selectedGuestNrc != cbGuestNrc.Text)
+            {
+                validateInput = false;
+                MessageBox.Show("You must need to choose one valid Nrc to checkin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                validateInput = true;
+            }
+
+            if (dtpCheckInDate.Value.Date>=DateTime.Today && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
+            {
+                validateInput = true;
+            }
+            else
+            {
+                validateInput = false;
+                MessageBox.Show("Check in date must earlier than check out date and not earlier than today date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (validateInput)
             {
                 AddorUpdate();
@@ -234,16 +278,15 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
-                if (dtpCheckInDate.Value.Date >= DateTime.Now.Date )
+                if (dtpCheckInDate.Value.Date >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
                 {
                     validateInput = true;
-                    //lbCheckInDateValidation.Text = "";
                 }
                 else
                 {
                     validateInput = false;
-                    // lbCheckInDateValidation.Text = "Wrong Date!Please Choose the Correct Date";
                     MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -257,22 +300,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 DataRowView selectedRow = (DataRowView)cbRoomNumber.SelectedItem;
                 selectedRoomNo = selectedRow["room_no"].ToString();
                 selectedRoomId = int.Parse(selectedRow["room_id"].ToString());
-               // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
-            }
-        }
-
-        private void cbRoomNumber_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedRoomNo == cbRoomNumber.Text.ToString())
-            {
-                validateInput = true;
-                //lbRoomNumberValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbRoomNumberValidation.Text = "Choose the correct room number form drop down!";
-                MessageBox.Show("Wrong Date!Please Choose the Correct Date","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -286,7 +313,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 selectedGuestName = selectedRow["full_name"].ToString();
                 selectedGuestNrc = selectedRow["nrc_number"].ToString();
                 selectedGuestId = int.Parse(selectedRow["guest_id"].ToString());
-               // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
             }
         }
 
@@ -300,40 +326,8 @@ namespace HotelManagementSystem.Views.CheckIn
                 selectedGuestName = selectedRow["full_name"].ToString();
                 selectedGuestNrc = selectedRow["nrc_number"].ToString();
                 selectedGuestId = int.Parse(selectedRow["guest_id"].ToString());
-                // MessageBox.Show("id: " + selectedRoomId + " and room no: " + selectedRoomNo);
             }
         }
-
-        private void cbGuestName_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestName == cbGuestName.Text.ToString())
-            {
-                validateInput = true;
-                //lbGuestNameValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                lbGuestNameValidation.Text = "Choose the correct Guest form drop down!";
-                MessageBox.Show("Choose the correct Guest form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void cbGuestNrc_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedGuestNrc == cbGuestNrc.Text.ToString())
-            {
-                validateInput = true;
-                //lbGuestNrcValidation.Text = "";
-            }
-            else
-            {
-                validateInput = false;
-                //lbGuestNrcValidation.Text = "Choose the correct Nrc Number form drop down!";
-                MessageBox.Show("Choose the correct Nrc Number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
 
         private void btnCheckOut_Click_1(object sender, EventArgs e)
         {
@@ -376,119 +370,5 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnTitle_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cbRoomNumber_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hdReservationId_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hdGuestNrc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void hdCheckInId_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbGuestNrcValidation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbGuestNameValidation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbRoomNumberValidation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCheckOutValidation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbCheckInDateValidation_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDob_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbGuestNrc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblGender_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

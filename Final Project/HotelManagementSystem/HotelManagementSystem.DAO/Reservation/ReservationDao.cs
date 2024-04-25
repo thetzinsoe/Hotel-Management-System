@@ -59,32 +59,41 @@ namespace HotelManagementSystem.DAO.Reservation
 
         //public DataTable GetRoomWithDate(DateTime checkinDate)
         //{
-        //    strSql = "SELECT t1.*" +
-        //             "FROM Room t1 " +
-        //             "JOIN Checkin t2 ON t1.room_id = t2.room_id " +
-        //             "JOIN Reservation t3 ON t3.room_id = t1.room_id " +
-        //             "WHERE t1.is_deleted = 0 AND t1.is_occupied = 0 " +
-        //             "OR ((t2.checkout_date < '" + checkinDate + "' AND t2.is_deleted = 0) AND " +
-        //             "(t3.is_deleted = 0 AND t3.checkout_date < '" + checkinDate + "'))";
+        //    string strSql = "SELECT t1.*, t2.checkout_date " +
+        //                    "FROM Room t1 " +
+        //                    "LEFT JOIN Checkin t2 ON t1.room_id = t2.room_id " +
+        //                    "WHERE (t1.is_deleted = 0 AND t1.is_occupied = 0) " +
+        //                    "OR (t1.is_occupied = 1 AND t2.checkout_date < '" + checkinDate + "' AND t2.is_deleted = 0)";
+
         //    return connection.ExecuteDataTable(CommandType.Text, strSql);
         //}
 
+        //public DataTable GetRoomWithDate(DateTime checkinDate)
+        //{
+        //    string strSql = "SELECT DISTINCT t1.*, t2.checkout_date " +
+        //                    "FROM Room t1 " +
+        //                    "LEFT JOIN Checkin t2 ON t1.room_id = t2.room_id " +
+        //                    "LEFT JOIN Reservation t3 ON t3.room_id = t1.room_id " +
+        //                    "WHERE (t1.is_deleted = 0 AND t1.is_occupied = 0) " +
+        //                    "OR (((t2.checkout_date IS NULL OR t2.checkout_date < '" + checkinDate + "') AND t2.is_deleted = 0) " +
+        //                    "AND ((t3.checkout_date IS NULL OR t3.checkout_date < '" + checkinDate + "') AND t3.is_deleted = 0)) " +
+        //                    "OR (t3.room_id IS NULL AND t2.room_id IS NULL)";
+
+        //    return connection.ExecuteDataTable(CommandType.Text, strSql);
+        //}
         public DataTable GetRoomWithDate(DateTime checkinDate)
         {
-            string strSql = "SELECT t1.*, t2.checkout_date " +
+            string strSql = "SELECT DISTINCT t1.*, t2.checkout_date " +
                             "FROM Room t1 " +
                             "LEFT JOIN Checkin t2 ON t1.room_id = t2.room_id " +
                             "LEFT JOIN Reservation t3 ON t3.room_id = t1.room_id " +
-                            "WHERE (t1.is_deleted = 0) " +
-                            "AND ((t2.checkout_date IS NULL OR t2.checkout_date < '" + checkinDate + "') AND t2.is_deleted = 0) " +
-                            "AND ((t3.checkout_date IS NULL OR t3.checkout_date < '" + checkinDate + "') AND t3.is_deleted = 0) " +
-                            "OR t1.is_occupied = 0";
+                            "WHERE (t1.is_deleted = 0 AND t1.is_occupied = 0) " +
+                            "OR (t3.checkout_date < '" + checkinDate + "' AND t3.is_deleted = 0 AND t2.room_id IS NULL) " +
+                            "OR (t2.checkout_date < '" + checkinDate + "' AND t2.is_deleted = 0 AND t1.is_occupied = 1) " +
+                            "OR (t3.room_id IS NULL AND t2.room_id IS NULL)";
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
-
-
-
 
         public bool RoomUpdate(int id, int is_occupied)
         {
@@ -106,6 +115,13 @@ namespace HotelManagementSystem.DAO.Reservation
         {
             string strSql = "SELECT t1.*, t2.room_no FROM Reservation t1 " +
                 "JOIN Room t2 ON t1.room_id = t2.room_id WHERE reservation_id ="+id;
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+        public DataTable haveRoom(int id)
+        {
+            string strSql = "SELECT * FROM Reservation " +
+                "WHERE room_id ='"+id+"' AND is_deleted=0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

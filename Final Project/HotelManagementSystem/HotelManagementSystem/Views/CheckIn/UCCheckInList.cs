@@ -30,27 +30,28 @@ namespace HotelManagementSystem.Views.CheckIn
             if (e.ColumnIndex == dgvCheckIn.Columns["checkout"].Index && e.RowIndex >= 0)
             {
                 DialogResult result = MessageBox.Show("Are You Sure to Checkout?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-
+               
                 if (result == DialogResult.OK)
                 {
-                    DataGridViewRow selectedRow = dgvCheckIn.Rows[e.RowIndex];
-                    int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                    decimal room_fees = 0;
-                    int room_id = 0;
-                    DateTime checkinDate = DateTime.MinValue;
-                    DateTime checkoutDate = DateTime.MinValue;
-                    DataTable dt = checkInService.Get(id);
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        room_fees = Convert.ToDecimal(row["room_price"]);
-                        room_id = Convert.ToInt32(row["room_id"]);
-                        checkinDate = Convert.ToDateTime(row["checkin_date"]);
-                        checkoutDate = Convert.ToDateTime(row["checkout_date"]);
-                    }
-                    UCPayNow uCPayNow = new UCPayNow(id, room_id, room_fees, checkinDate, checkoutDate);
-                    this.Controls.Clear();
-                    this.Controls.Add(uCPayNow);
-                    // MessageBox.Show("id : " + id);
+                  
+                        DataGridViewRow selectedRow = dgvCheckIn.Rows[e.RowIndex];
+                        int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                        decimal room_fees = 0;
+                        int room_id = 0;
+                        DateTime checkinDate = DateTime.MinValue;
+                        DateTime checkoutDate = DateTime.MinValue;
+                        DataTable dt = checkInService.Get(id);
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            room_fees = Convert.ToDecimal(row["room_price"]);
+                            room_id = Convert.ToInt32(row["room_id"]);
+                            checkinDate = Convert.ToDateTime(row["checkin_date"]);
+                            checkoutDate = Convert.ToDateTime(row["checkout_date"]);
+                        }
+                        UCPayNow uCPayNow = new UCPayNow(id, room_id, room_fees, checkinDate, checkoutDate);
+                        this.Controls.Clear();
+                        this.Controls.Add(uCPayNow);
+                    
                 }
             }
 
@@ -67,9 +68,6 @@ namespace HotelManagementSystem.Views.CheckIn
         private void UCCheckInList_Load(object sender, EventArgs e)
         {
             LoadCheckin();
-            //DataTable dt1 = checkInService.GetAll();
-            //dgvCheckIn.AutoGenerateColumns = false;
-            //dgvCheckIn.DataSource = dt1;
         }
 
         private void LoadCheckin()
@@ -138,43 +136,6 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             LoadCheckin();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-        }
-
-        private void txtSearchBox_TextChanged(object sender, EventArgs e)
-        {
-            //if(string.IsNullOrEmpty(txtSearchBox.Text))
-            //{
-            //    LoadCheckin();
-            //}
-            try
-            {
-                if (1 > 0)
-                {
-                    DataTable dt = checkInService.GetWithPagination(currentPageIndex, pageSize);
-                    DataTable dt1 = checkInService.GetAll();
-                    int rowCount = dt1.Rows.Count;
-                    totalPage = rowCount / pageSize;
-                    if (rowCount % pageSize > 0)
-                    {
-                        totalPage += 1;
-                    }
-                    lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-                    dgvCheckIn.AutoGenerateColumns = false;
-                    dgvCheckIn.DataSource = dt;
-                }
-                else
-                {
-                    LoadCheckin();
-                }
-            } catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)

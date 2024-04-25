@@ -69,21 +69,28 @@ namespace HotelManagementSystem.Views.Payment
             if (cbPaymentType.SelectedIndex < 0)
             {
                 checkInput = false;
-                lbPaymentTypeValidation.Text = "You must choose Payment Type!";
+                //lbPaymentTypeValidation.Text = "You must choose Payment Type!";
+                MessageBox.Show("You must choose Payment Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             else
             {
                  checkInput=true;
-                lbPaymentTypeValidation.Text = "";
+                //lbPaymentTypeValidation.Text = "";
             }
 
             if (checkInput)
             {
-                AddorUpdate();
+                DialogResult result = MessageBox.Show("Are you sure to payment!", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    AddorUpdate();
+                }
             }
             else
             {
-                MessageBox.Show("Somethig wrong in loading data!", "Error", MessageBoxButtons.RetryCancel);
+                MessageBox.Show("Somethig wrong in loading data!", "Error", MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+                return;
             }
 
         }
@@ -95,7 +102,12 @@ namespace HotelManagementSystem.Views.Payment
                 PaymentEntity paymentEntity = CreateData();
                 bool success = paymentService.Insert(paymentEntity);
                 bool delCheckin = checkInService.Delete(int.Parse(txtCheckInId.Text.ToString()));
-                bool upRoom = reservationService.RoomUpdate(roomId,0);
+                DataTable dt = reservationService.haveRoom(roomId);
+                bool upRoom=true;
+                if (dt.Rows.Count == 0)
+                {
+                    upRoom = reservationService.RoomUpdate(roomId, 0);
+                }
                 if (success && delCheckin && upRoom)
                 {
                     MessageBox.Show("Payment Success.", "Success", MessageBoxButtons.OK);
@@ -105,12 +117,14 @@ namespace HotelManagementSystem.Views.Payment
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Payment!");
+                    MessageBox.Show("Something Wrong in Payment!","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
                 }
             }
             else
             {
-                MessageBox.Show("Wrong Input!");
+                MessageBox.Show("Wrong Input!","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
         }
         private PaymentEntity CreateData()
@@ -143,6 +157,7 @@ namespace HotelManagementSystem.Views.Payment
                 {
                     TimeSpan duration = checkOut - checkIn;
                     totalDays = (int)duration.TotalDays;
+                    totalDays = totalDays == 0 ? 1 : totalDays;
                     txtRoomFees.Text = (roomFees * totalDays).ToString();
                     txtDuration.Text = totalDays.ToString()+" days";
                     txtTotalAmount.Text = calculateTotal().ToString("0.00");
@@ -247,8 +262,8 @@ namespace HotelManagementSystem.Views.Payment
         private decimal calculateTotal()
         {
             decimal subTotal = (roomFees * totalDays) + extraFees;
-            decimal discountAmount = (roomFees * totalDays) * (discount / 100); 
-            return subTotal - discountAmount; 
+            decimal discountAmount = (roomFees * totalDays) * (discount / 100);
+            return subTotal - discountAmount;
         }
     }
 }
