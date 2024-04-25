@@ -39,7 +39,7 @@ namespace HotelManagementSystem.DAO.Room
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@RoomNumber", roomEntity.room_number),
                                         new SqlParameter("@RoomType", roomEntity.room_type),
-                                        new SqlParameter("@Price", roomEntity.price),
+                                        new SqlParameter("@Price", roomEntity.room_price),
                                         new SqlParameter("@IsOccupied", roomEntity.is_occupied),
                                         new SqlParameter("@CreatedDate", roomEntity.created_date),
                                         new SqlParameter("@UpdatedDate", roomEntity.updated_date),
@@ -51,14 +51,14 @@ namespace HotelManagementSystem.DAO.Room
 
         public bool Update(RoomEntity roomEntity)
         {
-            strSql = "UPDATE Room SET room_number = @RoomNumber, room_type = @RoomType, price = @Price, " +
+            strSql = "UPDATE Room SET room_number = @RoomNumber, room_type = @RoomType, room_price = @Price, " +
                      "is_occupied = @IsOccupied, updated_date = @UpdatedDate WHERE room_id = @RoomId";
 
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@RoomId", roomEntity.room_id),
                                         new SqlParameter("@RoomNumber", roomEntity.room_number),
                                         new SqlParameter("@RoomType", roomEntity.room_type),
-                                        new SqlParameter("@Price", roomEntity.price),
+                                        new SqlParameter("@Price", roomEntity.room_price),
                                         new SqlParameter("@IsOccupied", roomEntity.is_occupied),
                                         new SqlParameter("@UpdatedDate", roomEntity.updated_date)
                                       };

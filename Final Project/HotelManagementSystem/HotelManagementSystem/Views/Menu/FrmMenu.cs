@@ -129,5 +129,16 @@ namespace HotelManagementSystem.Views.Menu
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCPaymentHistory);
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result= MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                UCAdmin uCAdmin = new UCAdmin();
+                pnMain.Controls.Clear();
+                pnMain.Controls.Add(uCAdmin);
+            }
+        }
     }
 }

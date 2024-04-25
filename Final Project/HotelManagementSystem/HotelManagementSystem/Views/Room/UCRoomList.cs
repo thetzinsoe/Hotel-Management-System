@@ -79,21 +79,55 @@ namespace HotelManagementSystem.Views.Room
             if (e.RowIndex >= 0)
             {
                 UCRoomCrud uCRoomCRUD = new UCRoomCrud();
-                int roomId = Convert.ToInt32(dgvRoomList.Rows[e.RowIndex].Cells["RoomID"].Value);
-                if (e.ColumnIndex == dgvRoomList.Columns["RoomID"].Index)
+                int roomID = Convert.ToInt32(dgvRoomList.Rows[e.RowIndex].Cells["RoomID"].Value);
+                string roomnumber=dgvRoomList.Rows[e.RowIndex].Cells["RoomNumber"].Value.ToString();
+                if (e.ColumnIndex == dgvRoomList.Columns["EditRoom"].Index)
                 {
-                    uCRoomCRUD.ID = roomId.ToString();
+                    uCRoomCRUD.ID= roomID.ToString();
+                    uCRoomCRUD.ROOMNumber = roomnumber;
                     this.Controls.Clear();
                     this.Controls.Add(uCRoomCRUD);
                 }
             }
         }
+        private void BindGrid()
+        {
+            DataTable dt = roomService.GetPagedRooms(1, pageSize);
+            DataTable dt1 = roomService.GetAllRooms();
+            int rowCount = dt1.Rows.Count;
+            totalPage = rowCount / pageSize;
+            if (rowCount % pageSize > 0)
+            {
+                totalPage += 1;
+            }
+            lblPageNo.Text = $"Page 1 of {totalPage}";
+            dgvRoomList.AutoGenerateColumns = false;
+            dgvRoomList.DataSource = dt;
+        }
 
         private void UCRoomList_Load(object sender, EventArgs e)
         {
-            DataTable dt = roomService.GetAllRooms();
-            dgvRoomList.AutoGenerateColumns = false;
-            dgvRoomList.DataSource = dt;
+            BindGrid();
+            txtSearch.Text = "Search by Room Type...";
+
+        }
+
+        private void txtSearch_MouseEnter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search by Room Type...")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = SystemColors.WindowText;
+            }
+        }
+
+        private void txtSearch_MouseLeave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                txtSearch.Text = "Search by Room Type...";
+                txtSearch.ForeColor = SystemColors.GrayText;
+            }
         }
     }
 }

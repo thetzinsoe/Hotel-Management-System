@@ -20,6 +20,8 @@ namespace HotelManagementSystem.Views.Room
         RoomService roomService = new RoomService();
         public string ID
         { set {  txtRoomID.Text= value; } }
+        public string ROOMNumber 
+        { set { txtRoomNumber.Text= value; } }
         public UCRoomCrud()
         {
             InitializeComponent();
@@ -30,22 +32,27 @@ namespace HotelManagementSystem.Views.Room
             if (string.IsNullOrWhiteSpace(roomNumber))
             {
                 MessageBox.Show("Empty Room Number!");
+                return false;
             }
-            else if (!roomNumber.Any(char.IsDigit) && !roomNumber.Any(char.IsLetter))
+             if (!roomNumber.Any(char.IsDigit) || !roomNumber.Any(char.IsLetter))
             {
-                MessageBox.Show("Invalid Room Number");
+                MessageBox.Show("Invalid Room Number!Eg. A-101");
+                return false ;
             }
-            else if (string.IsNullOrWhiteSpace(roomType))
+             if (string.IsNullOrWhiteSpace(roomType))
             {
                 MessageBox.Show("Empty Room Type!");
+                return false;
             }
-            else if (string.IsNullOrWhiteSpace(Price))
+             if (string.IsNullOrWhiteSpace(Price))
             {
                 MessageBox.Show("Empty Room Price!");
+                return false;
             }
-            else if (Price.Any(char.IsLetter))
+              if (Price.Any(char.IsLetter))
             {
                 MessageBox.Show("Invalid input should be digits!");
+                return false;
             }
             return true;
         }
@@ -78,7 +85,7 @@ namespace HotelManagementSystem.Views.Room
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Reservation Adding!");
+                    MessageBox.Show("Something Wrong in Room Adding!");
                 }
             }
             else
@@ -92,7 +99,7 @@ namespace HotelManagementSystem.Views.Room
                 }
                 else
                 {
-                    MessageBox.Show("Something Wrong in Updating Reservation!");
+                    MessageBox.Show("Something Wrong in Updating Room!");
                 }
             }
         }
@@ -104,8 +111,8 @@ namespace HotelManagementSystem.Views.Room
                 roomEntity.room_id = Convert.ToInt32(txtRoomID.Text);
             }
             roomEntity.room_number = txtRoomNumber.Text;
-            roomEntity.room_type = cbType.Text;
-            roomEntity.price = decimal.Parse(txtPrice.Text.ToString());
+            roomEntity.room_type = cbType.SelectedItem.ToString();
+            roomEntity.room_price = decimal.Parse(txtPrice.Text.ToString());
             roomEntity.is_occupied = 0;
             roomEntity.created_date = DateTime.Now;
             roomEntity.updated_date = DateTime.Now;
@@ -167,11 +174,11 @@ namespace HotelManagementSystem.Views.Room
             success = roomService.DeleteRoom(roomId);
             if (success)
             {
-                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK);
+                MessageBox.Show("Delete Room success", "Success", MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error deleting Room", "Error", MessageBoxButtons.OK);
             }
             this.Controls.Clear();
             this.Controls.Add(uCRoomList);
@@ -188,6 +195,34 @@ namespace HotelManagementSystem.Views.Room
         {
             BindData();
             btnControl();
+        }
+
+        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbType.SelectedIndex)
+            {
+                case 0:
+                    txtPrice.Text = "20000";
+                    break;
+                case 1:
+                    txtPrice.Text = "24000";
+                    break;
+                case 2:
+                    txtPrice.Text = "30000";
+                    break;
+                case 3:
+                    txtPrice.Text = "34000";
+                    break;
+                case 4:
+                    txtPrice.Text = "38000";
+                    break;
+                case 5:
+                    txtPrice.Text = "44000";
+                    break;
+                case 6:
+                    txtPrice.Text = "50000";
+                    break;
+            }
         }
     }
 }

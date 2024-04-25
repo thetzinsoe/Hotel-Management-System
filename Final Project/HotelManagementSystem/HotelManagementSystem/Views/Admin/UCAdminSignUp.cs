@@ -74,42 +74,52 @@ namespace HotelManagementSystem.Views.Admin
             if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Enter username to register");
+                return false;
             }
-            else if (!username.Any(char.IsLetter))
+             if (!username.Any(char.IsLetter))
             {
                 MessageBox.Show("Username Should be valid letter(up to 10 character!)");
+                return false;
             }
-            else if (!username.Any(char.IsDigit))
+             if (!username.Any(char.IsDigit))
             {
                 MessageBox.Show("username should include at least 1 digit!");
+                return false;
             }
-            else if (string.IsNullOrWhiteSpace(password))
+             if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Enter a vaild password");
+                return false;
             }
-            else if (!password.Any(char.IsLetter))
+             if (!password.Any(char.IsLetter))
             {
                 MessageBox.Show("Password should at least contain 1 letter");
+                return false;
             }
-            else if (!password.Any(char.IsDigit))
+             if (!password.Any(char.IsDigit))
             {
                 MessageBox.Show("Password should at least has 1 digit!");
+                return false;
             }
-            else if (!password.Any(char.IsUpper))
+             if (!password.Any(char.IsUpper))
             {
                 MessageBox.Show("Password should at least has 1 upper letter");
+                return false;
             }
-            else if (password.Length < 8)
+             if (password.Length < 8)
             {
                 MessageBox.Show("Password should at least be 8 characters long");
+                return false;
             }
-            else if (string.IsNullOrWhiteSpace(validpass))
+             if (string.IsNullOrWhiteSpace(validpass))
             {
                 MessageBox.Show("Enter to confirm password!");
+                return false;
             }
-            else if (validpass != password)
+             if (validpass != password)
             {
                 MessageBox.Show("Password not matching!");
+                return false;
             }
             return true;
         }

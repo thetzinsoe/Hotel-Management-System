@@ -142,12 +142,13 @@
             "Standard Double Room",
             "Dulexe Double Room",
             "Standard Family Room",
-            "Suite",
-            ""});
+            "Junior Suite",
+            "Standard Suite"});
             this.cbType.Location = new System.Drawing.Point(440, 252);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(500, 36);
             this.cbType.TabIndex = 9;
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             // 
             // txtRoomID
             // 

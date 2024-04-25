@@ -26,7 +26,7 @@ namespace HotelManagementSystem.Entities.Room
         /// <summary>
         /// Gets or sets the price of the room.
         /// </summary>
-        public decimal price { get; set; }
+        public decimal room_price { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the room is occupied.
@@ -62,7 +62,7 @@ namespace HotelManagementSystem.Entities.Room
             this.room_id = 0;
             this.room_number = string.Empty;
             this.room_type = string.Empty;
-            this.price = 0;
+            this.room_price = 0;
             this.is_occupied = 0;
             this.created_date = DateTime.Now;
             this.updated_date = DateTime.Now;

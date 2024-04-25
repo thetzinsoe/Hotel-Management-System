@@ -33,39 +33,34 @@
             this.TtlRoom = new System.Windows.Forms.Label();
             this.pbRoom = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnViewRoom = new System.Windows.Forms.Button();
             this.gbMain = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnViewCheck = new System.Windows.Forms.Button();
             this.TtlChecked = new System.Windows.Forms.Label();
             this.pbCheck = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.TtlEmp = new System.Windows.Forms.Label();
             this.pbEmp = new System.Windows.Forms.PictureBox();
+            this.btnViewEmp = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.TtlGuest = new System.Windows.Forms.Label();
+            this.btnViewGuest = new System.Windows.Forms.Button();
             this.pbGuest = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.TtlReservation = new System.Windows.Forms.Label();
             this.pbReserve = new System.Windows.Forms.PictureBox();
+            this.btnViewReservation = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnViewRoom1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.TtlAvailableRoom = new System.Windows.Forms.Label();
             this.pbAvRoom = new System.Windows.Forms.PictureBox();
-            this.dgvFeedBack = new System.Windows.Forms.DataGridView();
-            this.review = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GuestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rating = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Feedback = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnViewReservation = new System.Windows.Forms.Button();
-            this.btnViewRoom = new System.Windows.Forms.Button();
-            this.btnViewEmp = new System.Windows.Forms.Button();
-            this.btnViewGuest = new System.Windows.Forms.Button();
-            this.btnViewCheck = new System.Windows.Forms.Button();
-            this.btnViewRoom1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom)).BeginInit();
             this.gbMain.SuspendLayout();
@@ -79,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbReserve)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAvRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedBack)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -136,6 +130,20 @@
             this.label1.Text = "Total Rooms";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnViewRoom
+            // 
+            this.btnViewRoom.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewRoom.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRoom.ForeColor = System.Drawing.Color.White;
+            this.btnViewRoom.Location = new System.Drawing.Point(85, 160);
+            this.btnViewRoom.Name = "btnViewRoom";
+            this.btnViewRoom.Size = new System.Drawing.Size(75, 25);
+            this.btnViewRoom.TabIndex = 40;
+            this.btnViewRoom.Text = "View";
+            this.btnViewRoom.UseVisualStyleBackColor = false;
+            this.btnViewRoom.Click += new System.EventHandler(this.btnViewRoom_Click);
+            // 
             // gbMain
             // 
             this.gbMain.Controls.Add(this.monthCalendar1);
@@ -146,7 +154,7 @@
             this.gbMain.Controls.Add(this.panel2);
             this.gbMain.Controls.Add(this.panel1);
             this.gbMain.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMain.Location = new System.Drawing.Point(0, 0);
+            this.gbMain.Location = new System.Drawing.Point(0, 200);
             this.gbMain.Name = "gbMain";
             this.gbMain.Size = new System.Drawing.Size(1200, 450);
             this.gbMain.TabIndex = 37;
@@ -157,7 +165,7 @@
             // 
             this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.monthCalendar1.Location = new System.Drawing.Point(860, 40);
+            this.monthCalendar1.Location = new System.Drawing.Point(857, 40);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(11, 10, 11, 10);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 38;
@@ -189,6 +197,20 @@
             this.label10.TabIndex = 5;
             this.label10.Text = "Checked In";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnViewCheck
+            // 
+            this.btnViewCheck.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewCheck.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewCheck.ForeColor = System.Drawing.Color.White;
+            this.btnViewCheck.Location = new System.Drawing.Point(85, 160);
+            this.btnViewCheck.Name = "btnViewCheck";
+            this.btnViewCheck.Size = new System.Drawing.Size(75, 25);
+            this.btnViewCheck.TabIndex = 43;
+            this.btnViewCheck.Text = "View";
+            this.btnViewCheck.UseVisualStyleBackColor = false;
+            this.btnViewCheck.Click += new System.EventHandler(this.btnViewCheck_Click);
             // 
             // TtlChecked
             // 
@@ -270,6 +292,20 @@
             this.pbEmp.TabIndex = 1;
             this.pbEmp.TabStop = false;
             // 
+            // btnViewEmp
+            // 
+            this.btnViewEmp.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewEmp.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewEmp.ForeColor = System.Drawing.Color.White;
+            this.btnViewEmp.Location = new System.Drawing.Point(85, 160);
+            this.btnViewEmp.Name = "btnViewEmp";
+            this.btnViewEmp.Size = new System.Drawing.Size(75, 25);
+            this.btnViewEmp.TabIndex = 41;
+            this.btnViewEmp.Text = "View";
+            this.btnViewEmp.UseVisualStyleBackColor = false;
+            this.btnViewEmp.Click += new System.EventHandler(this.btnViewEmp_Click);
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -310,6 +346,20 @@
             this.TtlGuest.TabIndex = 2;
             this.TtlGuest.Text = "-";
             this.TtlGuest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnViewGuest
+            // 
+            this.btnViewGuest.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewGuest.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewGuest.ForeColor = System.Drawing.Color.White;
+            this.btnViewGuest.Location = new System.Drawing.Point(85, 160);
+            this.btnViewGuest.Name = "btnViewGuest";
+            this.btnViewGuest.Size = new System.Drawing.Size(75, 25);
+            this.btnViewGuest.TabIndex = 42;
+            this.btnViewGuest.Text = "View";
+            this.btnViewGuest.UseVisualStyleBackColor = false;
+            this.btnViewGuest.Click += new System.EventHandler(this.btnViewGuest_Click);
             // 
             // pbGuest
             // 
@@ -378,6 +428,20 @@
             this.pbReserve.TabIndex = 1;
             this.pbReserve.TabStop = false;
             // 
+            // btnViewReservation
+            // 
+            this.btnViewReservation.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewReservation.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReservation.ForeColor = System.Drawing.Color.White;
+            this.btnViewReservation.Location = new System.Drawing.Point(85, 160);
+            this.btnViewReservation.Name = "btnViewReservation";
+            this.btnViewReservation.Size = new System.Drawing.Size(75, 25);
+            this.btnViewReservation.TabIndex = 39;
+            this.btnViewReservation.Text = "View";
+            this.btnViewReservation.UseVisualStyleBackColor = false;
+            this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -392,6 +456,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 200);
             this.panel2.TabIndex = 32;
+            // 
+            // btnViewRoom1
+            // 
+            this.btnViewRoom1.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnViewRoom1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewRoom1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewRoom1.ForeColor = System.Drawing.Color.White;
+            this.btnViewRoom1.Location = new System.Drawing.Point(85, 160);
+            this.btnViewRoom1.Name = "btnViewRoom1";
+            this.btnViewRoom1.Size = new System.Drawing.Size(75, 25);
+            this.btnViewRoom1.TabIndex = 44;
+            this.btnViewRoom1.Text = "View";
+            this.btnViewRoom1.UseVisualStyleBackColor = false;
+            this.btnViewRoom1.Click += new System.EventHandler(this.btnViewRoom1_Click);
             // 
             // label12
             // 
@@ -432,134 +510,11 @@
             this.pbAvRoom.TabIndex = 1;
             this.pbAvRoom.TabStop = false;
             // 
-            // dgvFeedBack
-            // 
-            this.dgvFeedBack.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvFeedBack.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFeedBack.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.review,
-            this.GuestName,
-            this.Rating,
-            this.Feedback});
-            this.dgvFeedBack.Location = new System.Drawing.Point(5, 455);
-            this.dgvFeedBack.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.dgvFeedBack.Name = "dgvFeedBack";
-            this.dgvFeedBack.RowHeadersWidth = 51;
-            this.dgvFeedBack.Size = new System.Drawing.Size(750, 375);
-            this.dgvFeedBack.TabIndex = 38;
-            // 
-            // review
-            // 
-            this.review.HeaderText = "Review No";
-            this.review.MinimumWidth = 6;
-            this.review.Name = "review";
-            this.review.Width = 125;
-            // 
-            // GuestName
-            // 
-            this.GuestName.HeaderText = "Guest Name";
-            this.GuestName.MinimumWidth = 6;
-            this.GuestName.Name = "GuestName";
-            this.GuestName.Width = 150;
-            // 
-            // Rating
-            // 
-            this.Rating.HeaderText = "Rating";
-            this.Rating.MinimumWidth = 6;
-            this.Rating.Name = "Rating";
-            this.Rating.Width = 125;
-            // 
-            // Feedback
-            // 
-            this.Feedback.HeaderText = "Feedback Message";
-            this.Feedback.MinimumWidth = 6;
-            this.Feedback.Name = "Feedback";
-            this.Feedback.Width = 300;
-            // 
-            // btnViewReservation
-            // 
-            this.btnViewReservation.BackColor = System.Drawing.Color.White;
-            this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewReservation.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReservation.Location = new System.Drawing.Point(85, 160);
-            this.btnViewReservation.Name = "btnViewReservation";
-            this.btnViewReservation.Size = new System.Drawing.Size(75, 25);
-            this.btnViewReservation.TabIndex = 39;
-            this.btnViewReservation.Text = "View";
-            this.btnViewReservation.UseVisualStyleBackColor = false;
-            this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
-            // 
-            // btnViewRoom
-            // 
-            this.btnViewRoom.BackColor = System.Drawing.Color.White;
-            this.btnViewRoom.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewRoom.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewRoom.Location = new System.Drawing.Point(85, 160);
-            this.btnViewRoom.Name = "btnViewRoom";
-            this.btnViewRoom.Size = new System.Drawing.Size(75, 25);
-            this.btnViewRoom.TabIndex = 40;
-            this.btnViewRoom.Text = "View";
-            this.btnViewRoom.UseVisualStyleBackColor = false;
-            this.btnViewRoom.Click += new System.EventHandler(this.btnViewRoom_Click);
-            // 
-            // btnViewEmp
-            // 
-            this.btnViewEmp.BackColor = System.Drawing.Color.White;
-            this.btnViewEmp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewEmp.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewEmp.Location = new System.Drawing.Point(85, 160);
-            this.btnViewEmp.Name = "btnViewEmp";
-            this.btnViewEmp.Size = new System.Drawing.Size(75, 25);
-            this.btnViewEmp.TabIndex = 41;
-            this.btnViewEmp.Text = "View";
-            this.btnViewEmp.UseVisualStyleBackColor = false;
-            this.btnViewEmp.Click += new System.EventHandler(this.btnViewEmp_Click);
-            // 
-            // btnViewGuest
-            // 
-            this.btnViewGuest.BackColor = System.Drawing.Color.White;
-            this.btnViewGuest.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewGuest.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewGuest.Location = new System.Drawing.Point(85, 160);
-            this.btnViewGuest.Name = "btnViewGuest";
-            this.btnViewGuest.Size = new System.Drawing.Size(75, 25);
-            this.btnViewGuest.TabIndex = 42;
-            this.btnViewGuest.Text = "View";
-            this.btnViewGuest.UseVisualStyleBackColor = false;
-            this.btnViewGuest.Click += new System.EventHandler(this.btnViewGuest_Click);
-            // 
-            // btnViewCheck
-            // 
-            this.btnViewCheck.BackColor = System.Drawing.Color.White;
-            this.btnViewCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewCheck.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewCheck.Location = new System.Drawing.Point(85, 160);
-            this.btnViewCheck.Name = "btnViewCheck";
-            this.btnViewCheck.Size = new System.Drawing.Size(75, 25);
-            this.btnViewCheck.TabIndex = 43;
-            this.btnViewCheck.Text = "View";
-            this.btnViewCheck.UseVisualStyleBackColor = false;
-            this.btnViewCheck.Click += new System.EventHandler(this.btnViewCheck_Click);
-            // 
-            // btnViewRoom1
-            // 
-            this.btnViewRoom1.BackColor = System.Drawing.Color.White;
-            this.btnViewRoom1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnViewRoom1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewRoom1.Location = new System.Drawing.Point(85, 160);
-            this.btnViewRoom1.Name = "btnViewRoom1";
-            this.btnViewRoom1.Size = new System.Drawing.Size(75, 25);
-            this.btnViewRoom1.TabIndex = 44;
-            this.btnViewRoom1.Text = "View";
-            this.btnViewRoom1.UseVisualStyleBackColor = false;
-            this.btnViewRoom1.Click += new System.EventHandler(this.btnViewRoom1_Click);
-            // 
             // MainDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.dgvFeedBack);
             this.Controls.Add(this.gbMain);
             this.Name = "MainDashBoard";
             this.Size = new System.Drawing.Size(1200, 850);
@@ -577,7 +532,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbReserve)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbAvRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFeedBack)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -604,11 +558,6 @@
         private System.Windows.Forms.Label TtlAvailableRoom;
         private System.Windows.Forms.PictureBox pbAvRoom;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridView dgvFeedBack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn review;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GuestName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rating;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Feedback;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;

@@ -55,9 +55,10 @@ namespace HotelManagementSystem.Views.Menu
             this.cHECKADDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINLISTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTHISTORYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pAYMENTLISTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
-            this.pAYMENTLISTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -259,6 +260,13 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTHISTORYToolStripMenuItem.Size = new System.Drawing.Size(114, 46);
             this.pAYMENTHISTORYToolStripMenuItem.Text = "PAYMENT";
             // 
+            // pAYMENTLISTToolStripMenuItem1
+            // 
+            this.pAYMENTLISTToolStripMenuItem1.Name = "pAYMENTLISTToolStripMenuItem1";
+            this.pAYMENTLISTToolStripMenuItem1.Size = new System.Drawing.Size(230, 32);
+            this.pAYMENTLISTToolStripMenuItem1.Text = "PAYMENT LIST";
+            this.pAYMENTLISTToolStripMenuItem1.Click += new System.EventHandler(this.pAYMENTLISTToolStripMenuItem1_Click);
+            // 
             // pAYMENTLISTToolStripMenuItem
             // 
             this.pAYMENTLISTToolStripMenuItem.Name = "pAYMENTLISTToolStripMenuItem";
@@ -275,18 +283,23 @@ namespace HotelManagementSystem.Views.Menu
             this.pnMain.Size = new System.Drawing.Size(1102, 698);
             this.pnMain.TabIndex = 16;
             // 
-            // pAYMENTLISTToolStripMenuItem1
+            // btnLogout
             // 
-            this.pAYMENTLISTToolStripMenuItem1.Name = "pAYMENTLISTToolStripMenuItem1";
-            this.pAYMENTLISTToolStripMenuItem1.Size = new System.Drawing.Size(230, 32);
-            this.pAYMENTLISTToolStripMenuItem1.Text = "PAYMENT LIST";
-            this.pAYMENTLISTToolStripMenuItem1.Click += new System.EventHandler(this.pAYMENTLISTToolStripMenuItem1_Click);
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(993, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 30);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Log out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1105, 749);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pnMain);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -332,5 +345,6 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem addRoomToolStripMenuItem;
         private ToolStripMenuItem roomListToolStripMenuItem;
         private ToolStripMenuItem pAYMENTLISTToolStripMenuItem1;
+        private Button btnLogout;
     }
 }
