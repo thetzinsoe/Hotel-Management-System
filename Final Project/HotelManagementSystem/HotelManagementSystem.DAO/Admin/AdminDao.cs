@@ -58,7 +58,7 @@ namespace HotelManagementSystem.DAO.Admin
         {
             strSql = "UPDATE Admin SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE admin_id = @AdminId";
             SqlParameter[] sqlParam = {
-                new SqlParameter("@AdminId", adminEntity.admin_id),
+                new SqlParameter("@AdminId", adminEntity.user_id),
                 new SqlParameter("@Username", adminEntity.Username),
                 new SqlParameter("@Password", adminEntity.Password),
                 new SqlParameter("@Role", adminEntity.Role),
