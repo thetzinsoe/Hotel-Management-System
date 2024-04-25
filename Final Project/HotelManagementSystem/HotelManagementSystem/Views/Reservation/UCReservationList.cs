@@ -44,7 +44,17 @@ namespace HotelManagementSystem.Views.Reservation
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvReservation.AutoGenerateColumns = false;
+            if (dt.Rows.Count < pageSize)
+            {
+                int blankRowCount = pageSize - dt.Rows.Count;
+                for (int i = 0; i < blankRowCount; i++)
+                {
+                    DataRow newRow = dt.NewRow();
+                    dt.Rows.Add(newRow);
+                }
+            }
             dgvReservation.DataSource = dt;
+            dgvReservation.Refresh();
         }
 
         private void dgvReservation_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,11 +63,15 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 if (e.ColumnIndex == dgvReservation.Columns["checkin"].Index && e.RowIndex >= 0)
                 {
-                   
-                        DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                    DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];
+                    if (string.IsNullOrEmpty(selectedRow.Cells["reservation_id"].Value.ToString()))
+                    {
+                        MessageBox.Show("Empty Row", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
-                        DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];
                         int id = Convert.ToInt32(selectedRow.Cells["reservation_id"].Value);
                         DataTable dt = reservationService.Get(id);
                         string name = string.Empty;

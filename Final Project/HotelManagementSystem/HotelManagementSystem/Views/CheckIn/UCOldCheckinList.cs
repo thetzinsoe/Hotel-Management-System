@@ -38,7 +38,17 @@ namespace HotelManagementSystem.Views.CheckIn
                 DataTable dt = checkInService.SearchOld(2, hdOldCheckinId.Text.Trim());
                 lblPageNo.Text = $"Page 1 of 1";
                 dgvOldCheckIn.AutoGenerateColumns = false;
+                if (dt.Rows.Count < pageSize)
+                {
+                    int blankRowCount = pageSize - dt.Rows.Count;
+                    for (int i = 0; i < blankRowCount; i++)
+                    {
+                        DataRow newRow = dt.NewRow();
+                        dt.Rows.Add(newRow);
+                    }
+                }
                 dgvOldCheckIn.DataSource = dt;
+                dgvOldCheckIn.Refresh();
             }
             else
             {
@@ -71,7 +81,17 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvOldCheckIn.AutoGenerateColumns = false;
+            if (dt.Rows.Count < pageSize)
+            {
+                int blankRowCount = pageSize - dt.Rows.Count;
+                for (int i = 0; i < blankRowCount; i++)
+                {
+                    DataRow newRow = dt.NewRow();
+                    dt.Rows.Add(newRow);
+                }
+            }
             dgvOldCheckIn.DataSource = dt;
+            dgvOldCheckIn.Refresh();
         }
 
 

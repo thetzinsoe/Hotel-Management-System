@@ -16,7 +16,7 @@ namespace HotelManagementSystem.Views.CheckIn
 {
     public partial class UCCheckInList : UserControl
     {
-        int pageSize = 2;
+        int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
         CheckInService checkInService = new CheckInService();
@@ -29,13 +29,17 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (e.ColumnIndex == dgvCheckIn.Columns["checkout"].Index && e.RowIndex >= 0)
             {
+                DataGridViewRow selectedRow = dgvCheckIn.Rows[e.RowIndex];
+                if (string.IsNullOrEmpty(selectedRow.Cells["ID"].Value.ToString()))
+                {
+                    MessageBox.Show("Empty Row", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 DialogResult result = MessageBox.Show("Are You Sure to Checkout?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                
                 if (result == DialogResult.OK)
                 {
-                  
-                        DataGridViewRow selectedRow = dgvCheckIn.Rows[e.RowIndex];
-                        int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                    int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
                         decimal room_fees = 0;
                         int room_id = 0;
                         DateTime checkinDate = DateTime.MinValue;
@@ -83,7 +87,17 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvCheckIn.AutoGenerateColumns = false;
+            if (dt.Rows.Count < pageSize)
+            {
+                int blankRowCount = pageSize - dt.Rows.Count;
+                for (int i = 0; i < blankRowCount; i++)
+                {
+                    DataRow newRow = dt.NewRow();
+                    dt.Rows.Add(newRow);
+                }
+            }
             dgvCheckIn.DataSource = dt;
+            dgvCheckIn.Refresh();
         }
 
 

@@ -44,7 +44,17 @@ namespace HotelManagementSystem.Views.Payment
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvPaymentHistory.AutoGenerateColumns = false;
+            if (dt.Rows.Count < pageSize)
+            {
+                int blankRowCount = pageSize - dt.Rows.Count;
+                for (int i = 0; i < blankRowCount; i++)
+                {
+                    DataRow newRow = dt.NewRow();
+                    dt.Rows.Add(newRow);
+                }
+            }
             dgvPaymentHistory.DataSource = dt;
+            dgvPaymentHistory.Refresh();
         }
 
         private void dgvPaymentHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)

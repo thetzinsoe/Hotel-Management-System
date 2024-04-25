@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearchValue = new System.Windows.Forms.TextBox();
             this.cbSearchType = new System.Windows.Forms.ComboBox();
             this.btn3xNext = new System.Windows.Forms.Button();
@@ -42,16 +42,16 @@
             this.btnPrev = new System.Windows.Forms.Button();
             this.btn3xPrevious = new System.Windows.Forms.Button();
             this.dgvOldCheckIn = new System.Windows.Forms.DataGridView();
-            this.lbTitle = new System.Windows.Forms.Label();
-            this.pnTitle = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.hdOldCheckinId = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestNrc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkInDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkOutDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbTitle = new System.Windows.Forms.Label();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.hdOldCheckinId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOldCheckIn)).BeginInit();
             this.pnTitle.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xNext.ForeColor = System.Drawing.Color.White;
-            this.btn3xNext.Location = new System.Drawing.Point(742, 556);
+            this.btn3xNext.Location = new System.Drawing.Point(742, 525);
             this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xNext.Name = "btn3xNext";
             this.btn3xNext.Size = new System.Drawing.Size(64, 34);
@@ -104,7 +104,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(672, 556);
+            this.btnNext.Location = new System.Drawing.Point(672, 525);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(64, 34);
@@ -117,7 +117,7 @@
             // 
             this.lblPageNo.AutoSize = true;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(536, 562);
+            this.lblPageNo.Location = new System.Drawing.Point(536, 531);
             this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNo.Name = "lblPageNo";
             this.lblPageNo.Size = new System.Drawing.Size(45, 21);
@@ -131,7 +131,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(387, 556);
+            this.btnPrev.Location = new System.Drawing.Point(387, 525);
             this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(64, 34);
@@ -147,7 +147,7 @@
             this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
-            this.btn3xPrevious.Location = new System.Drawing.Point(313, 556);
+            this.btn3xPrevious.Location = new System.Drawing.Point(313, 525);
             this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xPrevious.Name = "btn3xPrevious";
             this.btn3xPrevious.Size = new System.Drawing.Size(64, 34);
@@ -160,14 +160,14 @@
             // 
             this.dgvOldCheckIn.AllowUserToAddRows = false;
             this.dgvOldCheckIn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOldCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOldCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvOldCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOldCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -176,22 +176,79 @@
             this.roomNumber,
             this.checkInDate,
             this.checkOutDate});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOldCheckIn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOldCheckIn.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvOldCheckIn.Location = new System.Drawing.Point(10, 165);
             this.dgvOldCheckIn.Name = "dgvOldCheckIn";
             this.dgvOldCheckIn.ReadOnly = true;
             this.dgvOldCheckIn.RowHeadersVisible = false;
             this.dgvOldCheckIn.RowTemplate.Height = 30;
-            this.dgvOldCheckIn.Size = new System.Drawing.Size(1081, 373);
+            this.dgvOldCheckIn.Size = new System.Drawing.Size(1081, 330);
             this.dgvOldCheckIn.TabIndex = 104;
             this.dgvOldCheckIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOldCheckIn_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Id.DataPropertyName = "checkin_id";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Id.HeaderText = "Checkin No.";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // guestName
+            // 
+            this.guestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.guestName.DataPropertyName = "full_name";
+            this.guestName.HeaderText = "Guest Name";
+            this.guestName.Name = "guestName";
+            this.guestName.ReadOnly = true;
+            // 
+            // guestNrc
+            // 
+            this.guestNrc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.guestNrc.DataPropertyName = "nrc_number";
+            this.guestNrc.HeaderText = "Guest Nrc Number";
+            this.guestNrc.Name = "guestNrc";
+            this.guestNrc.ReadOnly = true;
+            // 
+            // roomNumber
+            // 
+            this.roomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.roomNumber.DataPropertyName = "room_no";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.roomNumber.DefaultCellStyle = dataGridViewCellStyle9;
+            this.roomNumber.HeaderText = "Room Number";
+            this.roomNumber.Name = "roomNumber";
+            this.roomNumber.ReadOnly = true;
+            // 
+            // checkInDate
+            // 
+            this.checkInDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.checkInDate.DataPropertyName = "checkin_date";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkInDate.DefaultCellStyle = dataGridViewCellStyle10;
+            this.checkInDate.HeaderText = "CheckIn Date";
+            this.checkInDate.Name = "checkInDate";
+            this.checkInDate.ReadOnly = true;
+            // 
+            // checkOutDate
+            // 
+            this.checkOutDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.checkOutDate.DataPropertyName = "checkout_date";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkOutDate.DefaultCellStyle = dataGridViewCellStyle11;
+            this.checkOutDate.HeaderText = "Check Out Date";
+            this.checkOutDate.Name = "checkOutDate";
+            this.checkOutDate.ReadOnly = true;
             // 
             // lbTitle
             // 
@@ -241,63 +298,6 @@
             this.hdOldCheckinId.Size = new System.Drawing.Size(0, 21);
             this.hdOldCheckinId.TabIndex = 113;
             this.hdOldCheckinId.Visible = false;
-            // 
-            // Id
-            // 
-            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Id.DataPropertyName = "checkin_id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Id.HeaderText = "Checkin No.";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // guestName
-            // 
-            this.guestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.guestName.DataPropertyName = "full_name";
-            this.guestName.HeaderText = "Guest Name";
-            this.guestName.Name = "guestName";
-            this.guestName.ReadOnly = true;
-            // 
-            // guestNrc
-            // 
-            this.guestNrc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.guestNrc.DataPropertyName = "nrc_number";
-            this.guestNrc.HeaderText = "Guest Nrc Number";
-            this.guestNrc.Name = "guestNrc";
-            this.guestNrc.ReadOnly = true;
-            // 
-            // roomNumber
-            // 
-            this.roomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.roomNumber.DataPropertyName = "room_no";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.roomNumber.DefaultCellStyle = dataGridViewCellStyle3;
-            this.roomNumber.HeaderText = "Room Number";
-            this.roomNumber.Name = "roomNumber";
-            this.roomNumber.ReadOnly = true;
-            // 
-            // checkInDate
-            // 
-            this.checkInDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkInDate.DataPropertyName = "checkin_date";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkInDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.checkInDate.HeaderText = "CheckIn Date";
-            this.checkInDate.Name = "checkInDate";
-            this.checkInDate.ReadOnly = true;
-            // 
-            // checkOutDate
-            // 
-            this.checkOutDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.checkOutDate.DataPropertyName = "checkout_date";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkOutDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.checkOutDate.HeaderText = "Check Out Date";
-            this.checkOutDate.Name = "checkOutDate";
-            this.checkOutDate.ReadOnly = true;
             // 
             // UCOldCheckinList
             // 
