@@ -253,11 +253,19 @@ namespace HotelManagementSystem.Views.Guest
 
         private bool ValidateInput()
         {
+            GuestService guestService = new GuestService();
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
                 MessageBox.Show("Please enter Full Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            if (!rdbOther.Checked && !rdbMale.Checked && !rdbFemale.Checked)
+            {
+                MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
             int age = Convert.ToInt32(DateTime.Today.Year - dtpDob.Value.Year);
             if (dtpDob.Value.Date > DateTime.Today.AddYears(-age))
             {
@@ -283,7 +291,36 @@ namespace HotelManagementSystem.Views.Guest
                 MessageBox.Show("Please enter Phone Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            if (string.IsNullOrEmpty(txtGuestId.Text)) 
+            {
+                if (guestService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Guest with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (guestService.IsNRCValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+
+            if(guestService.IsGuestValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
+            {
+                MessageBox.Show("The Guest with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if(guestService.IsNRCValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
+            {
+                MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -313,6 +350,11 @@ namespace HotelManagementSystem.Views.Guest
         }
 
         private void txtGuestId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdbOther_CheckedChanged(object sender, EventArgs e)
         {
 
         }

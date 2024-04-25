@@ -274,7 +274,7 @@ namespace HotelManagementSystem.Views.Employee
             DateTime minJoinedDate = dtpDob.Value.AddYears(18);
             if (dtpJoinedDate.Value.Date < minJoinedDate)
             {
-                MessageBox.Show("Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

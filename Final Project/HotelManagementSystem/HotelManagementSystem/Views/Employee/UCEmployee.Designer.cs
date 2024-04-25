@@ -301,7 +301,7 @@
             // 
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(565, 473);
+            this.rdbFemale.Location = new System.Drawing.Point(469, 473);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(95, 32);
             this.rdbFemale.TabIndex = 8;
@@ -312,7 +312,7 @@
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(475, 473);
+            this.rdbMale.Location = new System.Drawing.Point(379, 473);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(76, 32);
             this.rdbMale.TabIndex = 7;
@@ -322,13 +322,11 @@
             // rdbOther
             // 
             this.rdbOther.AutoSize = true;
-            this.rdbOther.Checked = true;
             this.rdbOther.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOther.Location = new System.Drawing.Point(379, 473);
+            this.rdbOther.Location = new System.Drawing.Point(583, 473);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(83, 32);
             this.rdbOther.TabIndex = 6;
-            this.rdbOther.TabStop = true;
             this.rdbOther.Text = "Other";
             this.rdbOther.UseVisualStyleBackColor = true;
             // 

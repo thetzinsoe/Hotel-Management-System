@@ -378,7 +378,7 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.rdbFemale.AutoSize = true;
             this.rdbFemale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbFemale.Location = new System.Drawing.Point(714, 244);
+            this.rdbFemale.Location = new System.Drawing.Point(617, 242);
             this.rdbFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(95, 32);
@@ -390,7 +390,7 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMale.Location = new System.Drawing.Point(625, 244);
+            this.rdbMale.Location = new System.Drawing.Point(528, 242);
             this.rdbMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(76, 32);
@@ -401,16 +401,15 @@ namespace HotelManagementSystem.Views.Guest
             // rdbOther
             // 
             this.rdbOther.AutoSize = true;
-            this.rdbOther.Checked = true;
             this.rdbOther.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOther.Location = new System.Drawing.Point(529, 244);
+            this.rdbOther.Location = new System.Drawing.Point(718, 242);
             this.rdbOther.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(83, 32);
             this.rdbOther.TabIndex = 2;
-            this.rdbOther.TabStop = true;
             this.rdbOther.Text = "Other";
             this.rdbOther.UseVisualStyleBackColor = true;
+            this.rdbOther.CheckedChanged += new System.EventHandler(this.rdbOther_CheckedChanged);
             // 
             // lblGender
             // 
