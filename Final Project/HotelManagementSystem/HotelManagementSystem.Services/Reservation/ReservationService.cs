@@ -62,6 +62,12 @@ namespace HotelManagementSystem.Services.Reservation
             DataTable dt = reservationDao.Get(id);
             return dt;
         }
+        
+        public DataTable haveRoom(int id)
+        {
+            DataTable dt = reservationDao.haveRoom(id);
+            return dt;
+        }
 
         /// <summary>
         /// Save Employee.

@@ -89,7 +89,13 @@ namespace HotelManagementSystem.DAO.CheckIn
              return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
-        
+        public DataTable haveRoom(int id)
+        {
+            strSql = "SELECT * FROM Checkin Where is_deleted=0 AND room_id="+id;
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
+
+
         /// <summary>
         /// Get
         /// </summary>
