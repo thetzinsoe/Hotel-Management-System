@@ -65,21 +65,6 @@ namespace HotelManagementSystem.Entities.Employee
         public short is_deleted { get; set; }
 
         /// <summary>
-        /// Gets or sets the created user id.
-        /// </summary>
-        public int createdUserId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the updated user id.
-        /// </summary>
-        public int updatedUserId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the deleted user id.
-        /// </summary>
-        public int deletedUserId { get; set; }
-
-        /// <summary>
         /// Gets or sets the created date time.
         /// </summary>
         public System.DateTime createdDateTime { get; set; }
@@ -114,10 +99,7 @@ namespace HotelManagementSystem.Entities.Employee
             this.address = string.Empty;
             this.is_deleted = 0;
             this.createdDateTime = DateTime.Now;
-            this.updatedDateTime = DateTime.Now;
-            this.createdUserId = 0;
-            this.updatedUserId = 0;
-            this.deletedUserId = 0;
+            this.updatedDateTime = DateTime.Now;           
         }
     }
 }

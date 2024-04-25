@@ -56,7 +56,7 @@ namespace HotelManagementSystem.Views.Guest
 
         private void BindGrid()
         {
-            dgvGuestList.RowCount = 10;
+            
             DataTable dt = guestService.GetRecord(1,pageSize);
             DataTable dt1 = guestService.GetAll();
             int rowCount = dt1.Rows.Count;
@@ -273,7 +273,7 @@ namespace HotelManagementSystem.Views.Guest
                 success = guestService.Insert(guestEntity);
                 if (!success)
                 {
-                    MessageBox.Show("Error inserting data into the database.");
+                    MessageBox.Show("Error inserting data into the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 }
             }

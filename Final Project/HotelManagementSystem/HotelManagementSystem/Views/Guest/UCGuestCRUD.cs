@@ -38,12 +38,6 @@ namespace HotelManagementSystem.Views.Guest
         private void AddorUpdate()
         {
             UCGuestList uCGuestList = new UCGuestList();
-            if (string.IsNullOrWhiteSpace(txtFullName.Text))
-            {
-                MessageBox.Show("Please enter Full Name (up to 100 characters).");
-                return;
-            }
-
             bool success = false;
             GuestService guestService = new GuestService();
             GuestEntity guestEntity = CreateData();
@@ -52,11 +46,11 @@ namespace HotelManagementSystem.Views.Guest
                 success = guestService.Insert(guestEntity);
                 if (success)
                 {
-                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error Saving", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error Saving", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -65,10 +59,10 @@ namespace HotelManagementSystem.Views.Guest
                 success = guestService.Update(guestEntity);
                 if (success)
                 {
-                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Error Updating", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error Updating", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             if (string.IsNullOrEmpty(hdReservationId.Text))
             {
@@ -78,8 +72,9 @@ namespace HotelManagementSystem.Views.Guest
             else
             {
                 uCGuestList.ReservationID=hdReservationId.Text;
+                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text,txtPhoneNumber.Text);
                 this.Controls.Clear();
-                this.Controls.Add(uCGuestList);
+                this.Controls.Add(uCGuestList1);
             } 
         }
 
@@ -149,7 +144,7 @@ namespace HotelManagementSystem.Views.Guest
                             rdbFemale.Checked = true;
                             break;
                         default:
-                            MessageBox.Show("Error assigning gendervalue");
+                            MessageBox.Show("Error assigning gendervalue","Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                     }
                 }
@@ -196,13 +191,13 @@ namespace HotelManagementSystem.Views.Guest
             success = guestService.Delete(guestId);
             if (success)
             {
-                MessageBox.Show("Delete Success");
+                MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList);
             }
             else
             {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -210,7 +205,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (txtFullName.Text.Length >= 100 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximun character limit reached (100).");
+                MessageBox.Show("Maximun character limit reached (100).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -219,7 +214,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (txtNationality.Text.Length >= 50 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximun character limit reached (50).");
+                MessageBox.Show("Maximun character limit reached (50).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -228,7 +223,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (txtNRCNumber.Text.Length >= 50 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximun character limit reached (50).");
+                MessageBox.Show("Maximun character limit reached (50).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -237,7 +232,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (txtAddress.Text.Length >= 255 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximun character limit reached (255).");
+                MessageBox.Show("Maximun character limit reached (255).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -246,7 +241,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (txtPhoneNumber.Text.Length >= 50 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximun character limit reached (50).");
+                MessageBox.Show("Maximun character limit reached (50).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -334,7 +329,7 @@ namespace HotelManagementSystem.Views.Guest
             txtFullName.Clear();
             txtNationality.Clear();
             dtpDob.Value = DateTime.Today;
-            rdbOther.Checked = true;
+            rdbOther.Checked = false;
             rdbMale.Checked = false;
             rdbFemale.Checked = false;
             txtNRCNumber.Clear();
@@ -347,16 +342,6 @@ namespace HotelManagementSystem.Views.Guest
             UCGuestList uCGuestList = new UCGuestList();
             this.Controls.Clear();
             this.Controls.Add(uCGuestList);
-        }
-
-        private void txtGuestId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdbOther_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
     }
 }
