@@ -65,9 +65,11 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 80;
+            this.pnTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTitle_Paint);
             // 
             // lbTitle
             // 
@@ -77,9 +79,10 @@
             this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(470, 15);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(216, 30);
+            this.lbTitle.Size = new System.Drawing.Size(277, 37);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "ADD NEW CHECKIN ";
+            this.lbTitle.Click += new System.EventHandler(this.lbTitle_Click);
             // 
             // hdReservationId
             // 
@@ -89,6 +92,7 @@
             this.hdReservationId.Size = new System.Drawing.Size(0, 13);
             this.hdReservationId.TabIndex = 177;
             this.hdReservationId.Visible = false;
+            this.hdReservationId.Click += new System.EventHandler(this.hdReservationId_Click);
             // 
             // hdGuestNrc
             // 
@@ -98,6 +102,7 @@
             this.hdGuestNrc.Size = new System.Drawing.Size(0, 13);
             this.hdGuestNrc.TabIndex = 176;
             this.hdGuestNrc.Visible = false;
+            this.hdGuestNrc.Click += new System.EventHandler(this.hdGuestNrc_Click);
             // 
             // hdCheckInId
             // 
@@ -107,6 +112,7 @@
             this.hdCheckInId.Size = new System.Drawing.Size(0, 13);
             this.hdCheckInId.TabIndex = 175;
             this.hdCheckInId.Visible = false;
+            this.hdCheckInId.Click += new System.EventHandler(this.hdCheckInId_Click);
             // 
             // lbGuestNrcValidation
             // 
@@ -118,6 +124,7 @@
             this.lbGuestNrcValidation.Size = new System.Drawing.Size(0, 15);
             this.lbGuestNrcValidation.TabIndex = 174;
             this.lbGuestNrcValidation.Visible = false;
+            this.lbGuestNrcValidation.Click += new System.EventHandler(this.lbGuestNrcValidation_Click);
             // 
             // label12
             // 
@@ -129,6 +136,7 @@
             this.label12.Size = new System.Drawing.Size(22, 30);
             this.label12.TabIndex = 173;
             this.label12.Text = "*";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // lbGuestNameValidation
             // 
@@ -140,6 +148,7 @@
             this.lbGuestNameValidation.Size = new System.Drawing.Size(0, 15);
             this.lbGuestNameValidation.TabIndex = 172;
             this.lbGuestNameValidation.Visible = false;
+            this.lbGuestNameValidation.Click += new System.EventHandler(this.lbGuestNameValidation_Click);
             // 
             // lbRoomNumberValidation
             // 
@@ -151,6 +160,7 @@
             this.lbRoomNumberValidation.Size = new System.Drawing.Size(0, 15);
             this.lbRoomNumberValidation.TabIndex = 171;
             this.lbRoomNumberValidation.Visible = false;
+            this.lbRoomNumberValidation.Click += new System.EventHandler(this.lbRoomNumberValidation_Click);
             // 
             // label5
             // 
@@ -162,6 +172,7 @@
             this.label5.Size = new System.Drawing.Size(22, 30);
             this.label5.TabIndex = 170;
             this.label5.Text = "*";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label7
             // 
@@ -173,6 +184,7 @@
             this.label7.Size = new System.Drawing.Size(22, 30);
             this.label7.TabIndex = 169;
             this.label7.Text = "*";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lbCheckOutValidation
             // 
@@ -184,6 +196,7 @@
             this.lbCheckOutValidation.Size = new System.Drawing.Size(0, 15);
             this.lbCheckOutValidation.TabIndex = 168;
             this.lbCheckOutValidation.Visible = false;
+            this.lbCheckOutValidation.Click += new System.EventHandler(this.lbCheckOutValidation_Click);
             // 
             // lbCheckInDateValidation
             // 
@@ -195,6 +208,7 @@
             this.lbCheckInDateValidation.Size = new System.Drawing.Size(0, 15);
             this.lbCheckInDateValidation.TabIndex = 167;
             this.lbCheckInDateValidation.Visible = false;
+            this.lbCheckInDateValidation.Click += new System.EventHandler(this.lbCheckInDateValidation_Click);
             // 
             // label11
             // 
@@ -206,6 +220,7 @@
             this.label11.Size = new System.Drawing.Size(22, 30);
             this.label11.TabIndex = 166;
             this.label11.Text = "*";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label8
             // 
@@ -217,6 +232,7 @@
             this.label8.Size = new System.Drawing.Size(22, 30);
             this.label8.TabIndex = 165;
             this.label8.Text = "*";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label2
             // 
@@ -229,6 +245,7 @@
             this.label2.Size = new System.Drawing.Size(121, 21);
             this.label2.TabIndex = 164;
             this.label2.Text = "CheckOut Date :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpCheckOutDate
             // 
@@ -254,6 +271,7 @@
             this.lblDob.Size = new System.Drawing.Size(108, 21);
             this.lblDob.TabIndex = 162;
             this.lblDob.Text = "CheckIn Date :";
+            this.lblDob.Click += new System.EventHandler(this.lblDob_Click);
             // 
             // dtpCheckInDate
             // 
@@ -333,6 +351,7 @@
             this.label6.Size = new System.Drawing.Size(148, 21);
             this.label6.TabIndex = 156;
             this.label6.Text = "Guest Nrc Number :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // cbRoomNumber
             // 
@@ -364,6 +383,7 @@
             this.label1.Size = new System.Drawing.Size(103, 21);
             this.label1.TabIndex = 153;
             this.label1.Text = "Guest Name :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblGender
             // 
@@ -375,6 +395,7 @@
             this.lblGender.Size = new System.Drawing.Size(121, 21);
             this.lblGender.TabIndex = 152;
             this.lblGender.Text = "Room Number :";
+            this.lblGender.Click += new System.EventHandler(this.lblGender_Click);
             // 
             // UCCheckinAdd
             // 
@@ -407,6 +428,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.pnTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCCheckinAdd";
             this.Size = new System.Drawing.Size(1100, 650);
             this.Load += new System.EventHandler(this.UCCheckinAdd_Load);

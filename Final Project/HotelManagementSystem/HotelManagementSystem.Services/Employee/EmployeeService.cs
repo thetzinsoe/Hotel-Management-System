@@ -46,9 +46,9 @@ namespace HotelManagementSystem.Services.Employee
         /// </summary>
         /// <param name="name">.</param>
         /// <returns>.</returns>
-        public DataTable Search(string name)
+        public DataTable Search(int searchType, string name)
         {
-            DataTable dt = employeeDao.Search(name);
+            DataTable dt = employeeDao.Search(searchType, name);
             return dt;
         }
         /// <summary>

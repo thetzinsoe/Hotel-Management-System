@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Payment;
 using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Views.CheckIn;
@@ -52,7 +53,8 @@ namespace HotelManagementSystem.Views.Reservation
             {
                 if (e.ColumnIndex == dgvReservation.Columns["checkin"].Index && e.RowIndex >= 0)
                 {
-                   DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                   
+                        DialogResult result = MessageBox.Show("You need to check the guest is registered or create account for this guest!","Check!",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
                         DataGridViewRow selectedRow = dgvReservation.Rows[e.RowIndex];
@@ -60,20 +62,34 @@ namespace HotelManagementSystem.Views.Reservation
                         DataTable dt = reservationService.Get(id);
                         string name = string.Empty;
                         string phone = string.Empty;
+                        int roomId = 0;
                         if (dt != null)
                         {
                             foreach (DataRow row in dt.Rows)
                             {
                                 name = row["customer_name"].ToString();
                                 phone = row["customer_phoneNo"].ToString();
+                                roomId = int.Parse(row["room_id"].ToString());
                             }
                         }
-                        
-                        UCGuestList uCGuestList = new UCGuestList(name,phone);
-                        uCGuestList.ReservationID = id.ToString();
-                        this.Controls.Clear();
-                        this.Controls.Add(uCGuestList);
+                        if (roomId != 0)
+                        {
+                            CheckInService checkInService = new CheckInService();
+                            DataTable dtCheck = checkInService.haveRoom(roomId);
+                            if (dtCheck.Rows.Count == 0)
+                            {
+                                UCGuestList uCGuestList = new UCGuestList(name, phone);
+                                uCGuestList.ReservationID = id.ToString();
+                                this.Controls.Clear();
+                                this.Controls.Add(uCGuestList);
+                            }
+                            else
+                            {
+                                MessageBox.Show("The Room is still checkin!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     }
+                   
                 }
 
                 int reservationId = Convert.ToInt32(dgvReservation.Rows[e.RowIndex].Cells["reservation_id"].Value);

@@ -15,43 +15,43 @@ using HotelManagementSystem.Services.Guest;
 using Microsoft.Reporting.WinForms;
 using HotelManagementSystem.Entities.Guest;
 using ExcelDataReader;
+using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Views.CheckIn;
 
 namespace HotelManagementSystem.Views.Guest
 {
     public partial class UCGuestList : UserControl
     {
-        public string ReservationID
-        {
-            set { hdReservationId.Text = value; }
-        }
         GuestService guestService = new GuestService();
         int pageSize = 10;
         int currentPageIndex = 1;
         int totalPage = 0;
         private string guest_name = string.Empty;
         private string guest_phone = string.Empty;
+        public string ReservationID
+        {
+            set { hdReservationId.Text = value; }
+        }
         public UCGuestList()
         {
             InitializeComponent();
         }
-
-        public UCGuestList(string guestName,string guestPhone)
+        public UCGuestList(string guestName, string guestPhone)
         {
             InitializeComponent();
             txtSearch.Text = guestName;
             guest_name = guestName;
             guest_phone = guestPhone;
         }
-
         private void UCGuestList_Load(object sender, EventArgs e)
         {
             BindGrid();
             BindReportViewer();
-            if (string.IsNullOrEmpty(hdReservationId.Text))
+            if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
             {
-                btnGoToCheckin.Enabled = false;
+                SearchNameorNrc();
             }
+
         }
 
         private void BindGrid()
@@ -65,15 +65,7 @@ namespace HotelManagementSystem.Views.Guest
                 totalPage += 1;
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
-            dgvGuestList.AutoGenerateColumns = false;
-            dgvGuestList.Columns["GuestId"].DataPropertyName = "guest_id";
-            dgvGuestList.Columns["FullName"].DataPropertyName = "full_name";
-            dgvGuestList.Columns["PhoneNumber"].DataPropertyName = "phone_number";
-            dgvGuestList.Columns["Nationality"].DataPropertyName = "nationality";
-            dgvGuestList.Columns["NRCNumber"].DataPropertyName = "nrc_number";
-            dgvGuestList.Columns["Dob"].DataPropertyName = "dob";
-            dgvGuestList.Columns["Gender"].DataPropertyName = "gender";
-            dgvGuestList.Columns["Address"].DataPropertyName = "address";
+            dgvGuestList.AutoGenerateColumns = false;           
             dgvGuestList.DataSource = dt;
         }
 
@@ -132,12 +124,6 @@ namespace HotelManagementSystem.Views.Guest
                     e.FormattingApplied = true;
                 }
             }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            DataTable dt = guestService.Search(txtSearch.Text.Trim());
-            dgvGuestList.DataSource = dt;
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -298,6 +284,35 @@ namespace HotelManagementSystem.Views.Guest
             }
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchNameorNrc();
+        }
+
+        private void SearchNameorNrc()
+        {
+            if (!string.IsNullOrEmpty(txtSearch.Text.Trim()))
+            {
+                if (cbSearch.SelectedIndex == 0 || cbSearch.SelectedIndex == -1)
+                {
+                    DataTable dt = guestService.Search(0, txtSearch.Text.Trim());
+                    lblPageNo.Text = $"Page 1 of 1";
+                    dgvGuestList.AutoGenerateColumns = false;
+                    dgvGuestList.DataSource = dt;
+                }
+                else if (cbSearch.SelectedIndex == 1)
+                {
+                    DataTable dt = guestService.Search(1, txtSearch.Text.Trim());
+                    lblPageNo.Text = $"Page 1 of 1";
+                    dgvGuestList.AutoGenerateColumns = false;
+                    dgvGuestList.DataSource = dt;
+                }
+            }
+            else
+            {
+                BindGrid();
+            }
+        }
         private void btnCreateGuest_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(hdReservationId.Text))
@@ -308,7 +323,7 @@ namespace HotelManagementSystem.Views.Guest
             }
             else
             {
-                UCGuestCRUD uCGuestCRUD = new UCGuestCRUD(guest_name,guest_phone);
+                UCGuestCRUD uCGuestCRUD = new UCGuestCRUD(guest_name, guest_phone);
                 uCGuestCRUD.ReservationId = hdReservationId.Text;
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestCRUD);
@@ -319,7 +334,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (dgvGuestList.RowCount > 0)
             {
-                if (dgvGuestList.SelectedCells.Count > 0 )
+                if (dgvGuestList.SelectedCells.Count > 0)
                 {
                     int rowIndex = dgvGuestList.SelectedCells[0].RowIndex;
                     // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();

@@ -21,7 +21,6 @@ namespace HotelManagementSystem.Views.Guest
         {
             InitializeComponent();
         }
-
         public UCGuestCRUD(string guestName, string guestPhone)
         {
             InitializeComponent();
@@ -36,7 +35,6 @@ namespace HotelManagementSystem.Views.Guest
         {
             set { hdReservationId.Text = value; }
         }
-
         private void AddorUpdate()
         {
             UCGuestList uCGuestList = new UCGuestList();
@@ -257,7 +255,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
-                MessageBox.Show("Please enter Full Name.", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Please enter Full Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             int age = Convert.ToInt32(DateTime.Today.Year - dtpDob.Value.Year);
@@ -267,22 +265,22 @@ namespace HotelManagementSystem.Views.Guest
             }
             if (age < 18)
             {
-                MessageBox.Show("You need to be above 18 years old", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("You need to be above 18 years old", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(txtNationality.Text))
             {
-                MessageBox.Show("Please enter Nationality.", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Please enter Nationality.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(txtNRCNumber.Text))
             {
-                MessageBox.Show("Please enter NRC Number.", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Please enter NRC Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(txtPhoneNumber.Text))
             {
-                MessageBox.Show("Please enter Phone Number.", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Please enter Phone Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -305,6 +303,18 @@ namespace HotelManagementSystem.Views.Guest
             txtNRCNumber.Clear();
             txtAddress.Clear();
             txtPhoneNumber.Clear();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            UCGuestList uCGuestList = new UCGuestList();
+            this.Controls.Clear();
+            this.Controls.Add(uCGuestList);
+        }
+
+        private void txtGuestId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

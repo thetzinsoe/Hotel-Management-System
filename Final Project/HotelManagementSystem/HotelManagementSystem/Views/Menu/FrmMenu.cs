@@ -13,6 +13,8 @@ using System.Windows.Forms;
 using HotelManagementSystem.Views.Payment;
 using HotelManagementSystem.Views.CheckIn;
 using HotelManagementSystem.Views.Guest;
+using HotelManagementSystem.Views.Room;
+using HotelManagementSystem.Views.Admin;
 
 namespace HotelManagementSystem.Views.Menu
 {
@@ -25,9 +27,9 @@ namespace HotelManagementSystem.Views.Menu
 
         private void dashBoardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCDashboard uCDashboard = new UCDashboard();
+            MainDashBoard mainDashBoard = new MainDashBoard();
             pnMain.Controls.Clear();
-            pnMain.Controls.Add(uCDashboard);
+            pnMain.Controls.Add(mainDashBoard);
         }
 
         private void reservationListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +86,41 @@ namespace HotelManagementSystem.Views.Menu
             UCGuestList uCGuestList = new UCGuestList();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCGuestList);
+        }
+
+        private void eMPLOYEEREGISTRATIONToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCEmployee uCEmployee = new UCEmployee();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCEmployee);
+        }
+
+        private void eMPLOYEELISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCEmployeeList uCEmployeeList = new UCEmployeeList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCEmployeeList);
+        }
+
+        private void addRoomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCRoomCrud uCRoomCrud = new UCRoomCrud();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCRoomCrud);
+        }
+
+        private void roomListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UCRoomList uCRoomList=new UCRoomList();
+            pnMain.Controls.Clear();
+            pnMain.Controls.Add(uCRoomList);
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            //UCAdmin uCAdmin = new UCAdmin();
+            //pnMain.Controls.Clear();
+            //pnMain.Controls.Add(uCAdmin);
         }
     }
 }

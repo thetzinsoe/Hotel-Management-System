@@ -188,6 +188,7 @@ namespace HotelManagementSystem.Views.Employee
             {
                 btnAdd.Text = "ADD";
                 btnDelete.Enabled = false;
+                
             }
         }
 
@@ -270,6 +271,12 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            DateTime minJoinedDate = dtpDob.Value.AddYears(18);
+            if (dtpJoinedDate.Value.Date < minJoinedDate)
+            {
+                MessageBox.Show("Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             return true;
         }
 
@@ -307,6 +314,13 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Maximum character limit reached (255).");
                 e.Handled = true;
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            UCEmployeeList uCEmployeeList = new UCEmployeeList();
+            this.Controls.Clear();
+            this.Controls.Add(uCEmployeeList);
         }
     }
 }

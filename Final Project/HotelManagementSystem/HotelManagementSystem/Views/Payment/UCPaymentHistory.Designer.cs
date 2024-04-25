@@ -61,6 +61,7 @@
             this.pnTitle.BackColor = System.Drawing.Color.Silver;
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 78;
@@ -73,7 +74,7 @@
             this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(470, 15);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(206, 30);
+            this.lbTitle.Size = new System.Drawing.Size(263, 37);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "PAYMENT HISTORY";
             // 
@@ -200,6 +201,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.payment_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.payment_id.HeaderText = "ID";
+            this.payment_id.MinimumWidth = 6;
             this.payment_id.Name = "payment_id";
             this.payment_id.ReadOnly = true;
             this.payment_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -213,6 +215,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.payment_date.DefaultCellStyle = dataGridViewCellStyle3;
             this.payment_date.HeaderText = "Payment Date";
+            this.payment_date.MinimumWidth = 6;
             this.payment_date.Name = "payment_date";
             this.payment_date.ReadOnly = true;
             // 
@@ -223,6 +226,7 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.checkin_id.DefaultCellStyle = dataGridViewCellStyle4;
             this.checkin_id.HeaderText = "Checkin Id";
+            this.checkin_id.MinimumWidth = 6;
             this.checkin_id.Name = "checkin_id";
             this.checkin_id.ReadOnly = true;
             // 
@@ -231,6 +235,7 @@
             this.room_fees.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.room_fees.DataPropertyName = "room_fees";
             this.room_fees.HeaderText = "Room Fees";
+            this.room_fees.MinimumWidth = 6;
             this.room_fees.Name = "room_fees";
             this.room_fees.ReadOnly = true;
             // 
@@ -239,6 +244,7 @@
             this.extra_fees.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.extra_fees.DataPropertyName = "extra_fees";
             this.extra_fees.HeaderText = "Extra Fees";
+            this.extra_fees.MinimumWidth = 6;
             this.extra_fees.Name = "extra_fees";
             this.extra_fees.ReadOnly = true;
             // 
@@ -246,6 +252,7 @@
             // 
             this.description.DataPropertyName = "description";
             this.description.HeaderText = "Description";
+            this.description.MinimumWidth = 6;
             this.description.Name = "description";
             this.description.ReadOnly = true;
             this.description.Width = 300;
@@ -255,6 +262,7 @@
             this.discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.discount.DataPropertyName = "discount";
             this.discount.HeaderText = "Discount";
+            this.discount.MinimumWidth = 6;
             this.discount.Name = "discount";
             this.discount.ReadOnly = true;
             // 
@@ -263,6 +271,7 @@
             this.total_fees.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.total_fees.DataPropertyName = "total_fees";
             this.total_fees.HeaderText = "Total ";
+            this.total_fees.MinimumWidth = 6;
             this.total_fees.Name = "total_fees";
             this.total_fees.ReadOnly = true;
             // 
@@ -271,6 +280,7 @@
             this.payment_type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.payment_type.DataPropertyName = "payment_type";
             this.payment_type.HeaderText = "Payment Type";
+            this.payment_type.MinimumWidth = 6;
             this.payment_type.Name = "payment_type";
             this.payment_type.ReadOnly = true;
             // 
@@ -285,6 +295,7 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvPaymentHistory);
             this.Controls.Add(this.pnTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCPaymentHistory";
             this.Size = new System.Drawing.Size(1100, 700);
             this.Load += new System.EventHandler(this.UCPaymentHistory_Load);
