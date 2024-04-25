@@ -287,7 +287,7 @@ namespace HotelManagementSystem.Views.Employee
                 success = employeeService.Insert(employeeEntity);
                 if (!success)
                 {
-                    MessageBox.Show("Error inserting data into the database.");
+                    MessageBox.Show("Error inserting data into the database.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 }
             }

@@ -401,7 +401,7 @@ namespace HotelManagementSystem.Views.Guest
             // 
             this.rdbOther.AutoSize = true;
             this.rdbOther.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOther.Location = new System.Drawing.Point(718, 242);
+            this.rdbOther.Location = new System.Drawing.Point(723, 242);
             this.rdbOther.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(83, 32);
