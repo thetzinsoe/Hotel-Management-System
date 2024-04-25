@@ -280,8 +280,6 @@ namespace HotelManagementSystem.Views.Employee
                     joinedDate = (DateTime)row["Joined Date"],
                     address = row["Address"].ToString(),
                     image = row["Image"].ToString(),
-                    createdUserId = 1,
-                    updatedUserId = 1,
                     createdDateTime = DateTime.Now,
                     updatedDateTime = DateTime.Now,
                     is_deleted = 0

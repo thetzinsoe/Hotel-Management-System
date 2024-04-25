@@ -78,9 +78,7 @@ namespace HotelManagementSystem.Views.Employee
             employeeEntity.address = txtAddress.Text;
             employeeEntity.image = imagePath;
             employeeEntity.createdDateTime = DateTime.Now;
-            employeeEntity.updatedDateTime = DateTime.Now;
-            employeeEntity.createdUserId = 1;
-            employeeEntity.updatedUserId = 1;
+            employeeEntity.updatedDateTime = DateTime.Now;            
             return employeeEntity;
         }
 

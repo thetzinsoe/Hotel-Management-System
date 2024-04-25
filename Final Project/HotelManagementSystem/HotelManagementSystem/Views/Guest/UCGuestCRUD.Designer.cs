@@ -350,7 +350,6 @@ namespace HotelManagementSystem.Views.Guest
             this.txtGuestId.Size = new System.Drawing.Size(500, 34);
             this.txtGuestId.TabIndex = 36;
             this.txtGuestId.Visible = false;
-            this.txtGuestId.TextChanged += new System.EventHandler(this.txtGuestId_TextChanged);
             // 
             // lblDob
             // 
@@ -409,7 +408,6 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbOther.TabIndex = 2;
             this.rdbOther.Text = "Other";
             this.rdbOther.UseVisualStyleBackColor = true;
-            this.rdbOther.CheckedChanged += new System.EventHandler(this.rdbOther_CheckedChanged);
             // 
             // lblGender
             // 

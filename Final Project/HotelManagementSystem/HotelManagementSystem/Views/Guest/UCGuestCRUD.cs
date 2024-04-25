@@ -334,7 +334,7 @@ namespace HotelManagementSystem.Views.Guest
             txtFullName.Clear();
             txtNationality.Clear();
             dtpDob.Value = DateTime.Today;
-            rdbOther.Checked = true;
+            rdbOther.Checked = false;
             rdbMale.Checked = false;
             rdbFemale.Checked = false;
             txtNRCNumber.Clear();
@@ -349,14 +349,6 @@ namespace HotelManagementSystem.Views.Guest
             this.Controls.Add(uCGuestList);
         }
 
-        private void txtGuestId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rdbOther_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
