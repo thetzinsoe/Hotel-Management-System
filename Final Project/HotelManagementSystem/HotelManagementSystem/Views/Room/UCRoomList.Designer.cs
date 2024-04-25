@@ -54,6 +54,7 @@
             // dgvRoomList
             // 
             this.dgvRoomList.AllowUserToAddRows = false;
+            this.dgvRoomList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRoomList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -71,14 +72,14 @@
             this.is_occupied,
             this.EditRoom});
             this.dgvRoomList.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvRoomList.Location = new System.Drawing.Point(287, 231);
+            this.dgvRoomList.Location = new System.Drawing.Point(117, 231);
             this.dgvRoomList.Name = "dgvRoomList";
             this.dgvRoomList.RowHeadersVisible = false;
             this.dgvRoomList.RowHeadersWidth = 51;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvRoomList.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRoomList.RowTemplate.Height = 24;
-            this.dgvRoomList.Size = new System.Drawing.Size(925, 400);
+            this.dgvRoomList.Size = new System.Drawing.Size(1229, 400);
             this.dgvRoomList.TabIndex = 0;
             this.dgvRoomList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoomList_CellContentClick);
             // 
@@ -92,7 +93,6 @@
             this.RoomNumber.Name = "RoomNumber";
             this.RoomNumber.ReadOnly = true;
             this.RoomNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.RoomNumber.Width = 145;
             // 
             // RoomType
             // 
@@ -103,7 +103,6 @@
             this.RoomType.MinimumWidth = 6;
             this.RoomType.Name = "RoomType";
             this.RoomType.ReadOnly = true;
-            this.RoomType.Width = 300;
             // 
             // RoomPrice
             // 
@@ -113,7 +112,6 @@
             this.RoomPrice.HeaderText = "Price";
             this.RoomPrice.MinimumWidth = 6;
             this.RoomPrice.Name = "RoomPrice";
-            this.RoomPrice.Width = 200;
             // 
             // is_occupied
             // 
@@ -123,7 +121,6 @@
             this.is_occupied.HeaderText = "Available";
             this.is_occupied.MinimumWidth = 6;
             this.is_occupied.Name = "is_occupied";
-            this.is_occupied.Width = 150;
             // 
             // EditRoom
             // 
@@ -137,14 +134,13 @@
             this.EditRoom.MinimumWidth = 6;
             this.EditRoom.Name = "EditRoom";
             this.EditRoom.Text = "Edit";
-            this.EditRoom.Width = 125;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(1112, 190);
+            this.btnSearch.Location = new System.Drawing.Point(1246, 172);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 35);
             this.btnSearch.TabIndex = 1;
@@ -155,9 +151,9 @@
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(287, 191);
+            this.txtSearch.Location = new System.Drawing.Point(117, 173);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(694, 34);
+            this.txtSearch.Size = new System.Drawing.Size(1123, 34);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.MouseEnter += new System.EventHandler(this.txtSearch_MouseEnter);
             this.txtSearch.MouseLeave += new System.EventHandler(this.txtSearch_MouseLeave);

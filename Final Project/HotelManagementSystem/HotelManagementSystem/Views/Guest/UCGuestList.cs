@@ -86,17 +86,22 @@ namespace HotelManagementSystem.Views.Guest
                 if(e.ColumnIndex == dgvGuestList.Columns["Delete"].Index)
                 {
                     bool success = false;
-                    success = guestService.Delete(guestId);
-                    if (success)
+                    
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
-                        DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
-                        this.dgvGuestList.DataSource = dt;
-                        lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                        success = guestService.Delete(guestId);
+                        if (success)
+                        {
+                            MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
+                            DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
+                            this.dgvGuestList.DataSource = dt;
+                            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                        }
                     }
                 }
             }             
@@ -341,7 +346,7 @@ namespace HotelManagementSystem.Views.Guest
                     // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
                     string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
                     UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
-                    uCCheckinAdd.RvId = hdReservationId.Text.ToString();
+                    uCCheckinAdd.RvId = hdReservationId.Text;
                     uCCheckinAdd.Nrc = guestNrc;
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckinAdd);

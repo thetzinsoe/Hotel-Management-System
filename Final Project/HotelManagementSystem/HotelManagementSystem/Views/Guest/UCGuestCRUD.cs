@@ -71,10 +71,11 @@ namespace HotelManagementSystem.Views.Guest
             }
             else
             {
-                uCGuestList.ReservationID=hdReservationId.Text;
                 UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text,txtPhoneNumber.Text);
+                uCGuestList1.ReservationID = hdReservationId.Text;
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList1);
+
             } 
         }
 
@@ -187,17 +188,21 @@ namespace HotelManagementSystem.Views.Guest
             UCGuestList uCGuestList = new UCGuestList();
             int guestId = Convert.ToInt32(txtGuestId.Text);
             GuestService guestService = new GuestService();
-            bool success = false;
-            success = guestService.Delete(guestId);
-            if (success)
+            bool success = false;            
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Controls.Clear();
-                this.Controls.Add(uCGuestList);
-            }
-            else
-            {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                success = guestService.Delete(guestId);
+                if (success)
+                {
+                    MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Controls.Clear();
+                    this.Controls.Add(uCGuestList);
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

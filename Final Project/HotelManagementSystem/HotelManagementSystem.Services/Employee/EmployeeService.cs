@@ -86,9 +86,9 @@ namespace HotelManagementSystem.Services.Employee
         /// </summary>
         /// <param name="employeeId">.</param>
         /// <param name="userId">.</param>
-        public bool Delete(int employeeId, int userId)
+        public bool Delete(int employeeId)
         {
-            return employeeDao.Delete(employeeId, userId);
+            return employeeDao.Delete(employeeId);
         }
     }
 }

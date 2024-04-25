@@ -157,13 +157,12 @@ namespace HotelManagementSystem.DAO.Employee
         /// Delete.
         /// </summary>
         /// <param name="employeeId">.</param>
-        public bool Delete(int employeeId, int userId)
+        public bool Delete(int employeeId)
         {
             strSql = "UPDATE Employee SET is_deleted = @IsDeleted, deleted_userId = @DeletedUserId WHERE employee_id =@EmployeeId";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@EmployeeId", employeeId),
-                                        new SqlParameter("@IsDeleted", 1),
-                                        new SqlParameter("@DeletedUserId", userId)
+                                        new SqlParameter("@IsDeleted", 1)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
             return success;

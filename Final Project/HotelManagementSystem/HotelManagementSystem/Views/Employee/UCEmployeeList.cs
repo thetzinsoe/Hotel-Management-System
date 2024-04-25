@@ -67,20 +67,24 @@ namespace HotelManagementSystem.Views.Employee
                 {
                     EmployeeService employeeService = new EmployeeService();
                     bool success = false;
-                    success = employeeService.Delete(employeeId, 1);
-                    if (success)
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);                      
-                        DataTable dt = employeeService.GetRecord(currentPageIndex, pageSize);
-                        AddImage(dt, "image");
-                        this.dgvEmployeeList.DataSource = dt;
-                        lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
-                    }
+                        success = employeeService.Delete(employeeId);
+                        if (success)
+                        {
+                            MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
+                            DataTable dt = employeeService.GetRecord(currentPageIndex, pageSize);
+                            AddImage(dt, "image");
+                            this.dgvEmployeeList.DataSource = dt;
+                            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                        }
+                    }                  
                 }
             }
         }

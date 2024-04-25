@@ -162,17 +162,21 @@ namespace HotelManagementSystem.Views.Employee
             UCEmployeeList uCEmployeeList = new UCEmployeeList();
             int guestId = Convert.ToInt32(txtEmployeeId.Text);
             bool success = false;
-            success = employeeService.Delete(guestId, 1);
-            if (success)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                success = employeeService.Delete(guestId);
+                if (success)
+                {
+                    MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                this.Controls.Clear();
+                this.Controls.Add(uCEmployeeList);
             }
-            else
-            {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-            this.Controls.Clear();
-            this.Controls.Add(uCEmployeeList);
         }
 
         private void BtnControl()
