@@ -78,9 +78,7 @@ namespace HotelManagementSystem.Views.Employee
             employeeEntity.address = txtAddress.Text;
             employeeEntity.image = imagePath;
             employeeEntity.createdDateTime = DateTime.Now;
-            employeeEntity.updatedDateTime = DateTime.Now;
-            employeeEntity.createdUserId = 1;
-            employeeEntity.updatedUserId = 1;
+            employeeEntity.updatedDateTime = DateTime.Now;            
             return employeeEntity;
         }
 
@@ -95,11 +93,11 @@ namespace HotelManagementSystem.Views.Employee
                 success = employeeService.Insert(employeeEntity);
                 if (success)
                 {
-                    MessageBox.Show("Save success", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Save success", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error saving", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error saving", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             else
@@ -107,11 +105,11 @@ namespace HotelManagementSystem.Views.Employee
                 success = employeeService.Update(employeeEntity);
                 if (success)
                 {
-                    MessageBox.Show("Update success", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Update success", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error updating", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error updating", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             this.Controls.Clear();
@@ -167,11 +165,11 @@ namespace HotelManagementSystem.Views.Employee
             success = employeeService.Delete(guestId, 1);
             if (success)
             {
-                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK);
+                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             this.Controls.Clear();
             this.Controls.Add(uCEmployeeList);
@@ -192,7 +190,7 @@ namespace HotelManagementSystem.Views.Employee
             }
         }
 
-        private void BindData()
+        private void BindData()     
         {
             EmployeeService employeeService = new EmployeeService();
             if (!string.IsNullOrEmpty(txtEmployeeId.Text))
@@ -263,12 +261,18 @@ namespace HotelManagementSystem.Views.Employee
             }
             if (age < 18 || age > 60)
             {
-                MessageBox.Show("You need to be above 18 years old and under 60 years old", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("You need to be above 18 years old and under 60 years old", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return false;
             }
             if (!rdbOther.Checked && !rdbMale.Checked && !rdbFemale.Checked)
             {
                 MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            DateTime minJoinedDate = dtpDob.Value.AddYears(18);
+            if (dtpJoinedDate.Value.Date < minJoinedDate)
+            {
+                MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -278,7 +282,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             if (txtFullName.Text.Length >= 100 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximum character limit reached (100).");
+                MessageBox.Show("Maximum character limit reached (100).","Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -287,7 +291,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             if (txtPhoneNumber.Text.Length >= 50 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximum character limit reached (50).");
+                MessageBox.Show("Maximum character limit reached (50).","Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -296,7 +300,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             if (txtNRCNumber.Text.Length >= 50 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximum character limit reached (50).");
+                MessageBox.Show("Maximum character limit reached (50).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }
@@ -305,7 +309,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             if (txtAddress.Text.Length >= 255 && e.KeyChar != '\b')
             {
-                MessageBox.Show("Maximum character limit reached (255).");
+                MessageBox.Show("Maximum character limit reached (255).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
             }
         }

@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,7 +59,6 @@
             this.NRCNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JoinedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
@@ -71,15 +69,15 @@
             // dgvEmployeeList
             // 
             this.dgvEmployeeList.AllowUserToAddRows = false;
-            this.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployeeList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployeeList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeId,
@@ -90,17 +88,17 @@
             this.NRCNumber,
             this.Dob,
             this.Gender,
-            this.JoinedDate,
             this.Address,
             this.Delete});
             this.dgvEmployeeList.Location = new System.Drawing.Point(29, 250);
             this.dgvEmployeeList.Name = "dgvEmployeeList";
             this.dgvEmployeeList.RowHeadersVisible = false;
             this.dgvEmployeeList.RowHeadersWidth = 51;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvEmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvEmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmployeeList.RowTemplate.Height = 24;
-            this.dgvEmployeeList.Size = new System.Drawing.Size(1143, 421);
+            this.dgvEmployeeList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvEmployeeList.Size = new System.Drawing.Size(1417, 341);
             this.dgvEmployeeList.TabIndex = 1;
             this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             this.dgvEmployeeList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmployeeList_CellFormatting);
@@ -112,7 +110,7 @@
             this.pnTitle.Controls.Add(this.lblTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1200, 75);
+            this.pnTitle.Size = new System.Drawing.Size(1467, 75);
             this.pnTitle.TabIndex = 5;
             // 
             // pictureBox1
@@ -141,7 +139,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(29, 180);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(898, 34);
+            this.txtSearch.Size = new System.Drawing.Size(1183, 34);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -151,9 +149,9 @@
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDownload.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
-            this.btnDownload.Location = new System.Drawing.Point(1037, 100);
+            this.btnDownload.Location = new System.Drawing.Point(1306, 100);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(135, 35);
+            this.btnDownload.Size = new System.Drawing.Size(140, 35);
             this.btnDownload.TabIndex = 8;
             this.btnDownload.Text = "DOWNLOAD";
             this.btnDownload.UseVisualStyleBackColor = false;
@@ -166,7 +164,7 @@
             this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xNext.ForeColor = System.Drawing.Color.White;
-            this.btn3xNext.Location = new System.Drawing.Point(855, 720);
+            this.btn3xNext.Location = new System.Drawing.Point(995, 684);
             this.btn3xNext.Name = "btn3xNext";
             this.btn3xNext.Size = new System.Drawing.Size(60, 35);
             this.btn3xNext.TabIndex = 14;
@@ -181,7 +179,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(761, 720);
+            this.btnNext.Location = new System.Drawing.Point(901, 684);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(60, 35);
             this.btnNext.TabIndex = 13;
@@ -193,7 +191,7 @@
             // 
             this.lblPageNo.AutoSize = true;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(560, 725);
+            this.lblPageNo.Location = new System.Drawing.Point(700, 689);
             this.lblPageNo.Name = "lblPageNo";
             this.lblPageNo.Size = new System.Drawing.Size(46, 23);
             this.lblPageNo.TabIndex = 12;
@@ -206,7 +204,7 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(381, 720);
+            this.btnPrev.Location = new System.Drawing.Point(521, 684);
             this.btnPrev.Name = "btnPrev";
             this.btnPrev.Size = new System.Drawing.Size(60, 35);
             this.btnPrev.TabIndex = 11;
@@ -221,7 +219,7 @@
             this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
-            this.btn3xPrevious.Location = new System.Drawing.Point(283, 720);
+            this.btn3xPrevious.Location = new System.Drawing.Point(423, 684);
             this.btn3xPrevious.Name = "btn3xPrevious";
             this.btn3xPrevious.Size = new System.Drawing.Size(60, 35);
             this.btn3xPrevious.TabIndex = 10;
@@ -232,7 +230,7 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "HotelManagementSystem.Views.Employee.ReportEmployee.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(1175, 739);
+            this.reportViewer1.Location = new System.Drawing.Point(1315, 703);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(10, 10);
@@ -245,7 +243,7 @@
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.ForeColor = System.Drawing.Color.White;
-            this.btnImport.Location = new System.Drawing.Point(500, 100);
+            this.btnImport.Location = new System.Drawing.Point(642, 100);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(210, 35);
             this.btnImport.TabIndex = 16;
@@ -274,7 +272,7 @@
             this.cbSearch.Items.AddRange(new object[] {
             "Name",
             "NRC Number"});
-            this.cbSearch.Location = new System.Drawing.Point(944, 181);
+            this.cbSearch.Location = new System.Drawing.Point(1218, 181);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(228, 31);
             this.cbSearch.TabIndex = 18;
@@ -283,8 +281,8 @@
             // EmployeeId
             // 
             this.EmployeeId.DataPropertyName = "employee_id";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.EmployeeId.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.EmployeeId.DefaultCellStyle = dataGridViewCellStyle2;
             this.EmployeeId.HeaderText = "ID";
             this.EmployeeId.MinimumWidth = 6;
             this.EmployeeId.Name = "EmployeeId";
@@ -300,6 +298,7 @@
             this.FullName.ReadOnly = true;
             this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.FullName.Width = 125;
             // 
             // Image
             // 
@@ -319,13 +318,13 @@
             this.PhoneNumber.ReadOnly = true;
             this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PhoneNumber.Width = 150;
+            this.PhoneNumber.Width = 125;
             // 
             // Position
             // 
             this.Position.DataPropertyName = "position";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Position.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Position.DefaultCellStyle = dataGridViewCellStyle3;
             this.Position.HeaderText = "Position";
             this.Position.MinimumWidth = 6;
             this.Position.Name = "Position";
@@ -334,8 +333,8 @@
             // NRCNumber
             // 
             this.NRCNumber.DataPropertyName = "nrc_number";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NRCNumber.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NRCNumber.DefaultCellStyle = dataGridViewCellStyle4;
             this.NRCNumber.HeaderText = "NRC Number";
             this.NRCNumber.MinimumWidth = 6;
             this.NRCNumber.Name = "NRCNumber";
@@ -345,34 +344,23 @@
             // Dob
             // 
             this.Dob.DataPropertyName = "dob";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Dob.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dob.DefaultCellStyle = dataGridViewCellStyle5;
             this.Dob.HeaderText = "Date of Birth";
             this.Dob.MinimumWidth = 6;
             this.Dob.Name = "Dob";
             this.Dob.ReadOnly = true;
-            this.Dob.Width = 150;
+            this.Dob.Width = 125;
             // 
             // Gender
             // 
             this.Gender.DataPropertyName = "gender";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Gender.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Gender.DefaultCellStyle = dataGridViewCellStyle6;
             this.Gender.HeaderText = "Gender";
             this.Gender.MinimumWidth = 6;
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
-            // 
-            // JoinedDate
-            // 
-            this.JoinedDate.DataPropertyName = "joined_date";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.JoinedDate.DefaultCellStyle = dataGridViewCellStyle16;
-            this.JoinedDate.HeaderText = "Joined Date";
-            this.JoinedDate.MinimumWidth = 6;
-            this.JoinedDate.Name = "JoinedDate";
-            this.JoinedDate.ReadOnly = true;
-            this.JoinedDate.Width = 150;
             // 
             // Address
             // 
@@ -381,16 +369,16 @@
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
-            this.Address.Width = 125;
+            this.Address.Width = 110;
             // 
             // Delete
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.NullValue = "Delete";
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.IndianRed;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.NullValue = "Delete";
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle7;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.HeaderText = "Delete";
             this.Delete.MinimumWidth = 6;
@@ -403,6 +391,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.cbSearch);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnImport);
@@ -417,7 +406,7 @@
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.dgvEmployeeList);
             this.Name = "UCEmployeeList";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCEmployeeLIst_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             this.pnTitle.ResumeLayout(false);
@@ -453,7 +442,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NRCNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dob;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn JoinedDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }

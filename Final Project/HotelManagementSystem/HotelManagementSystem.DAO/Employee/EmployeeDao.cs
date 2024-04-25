@@ -121,8 +121,6 @@ namespace HotelManagementSystem.DAO.Employee
                                         new SqlParameter("@Address", employeeEntity.address),
                                         new SqlParameter("@CreatedDate", employeeEntity.createdDateTime),
                                         new SqlParameter("@UpdatedDate", employeeEntity.updatedDateTime),
-                                        new SqlParameter("@CreatedUserId", employeeEntity.createdUserId),
-                                        new SqlParameter("@UpdatedUserId", employeeEntity.updatedUserId)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
 
@@ -149,7 +147,6 @@ namespace HotelManagementSystem.DAO.Employee
                                         new SqlParameter("@JoinedDate", employeeEntity.joinedDate),
                                         new SqlParameter("@Address", employeeEntity.address),
                                         new SqlParameter("@UpdatedDate", employeeEntity.updatedDateTime),
-                                        new SqlParameter("@UpdatedUserId", employeeEntity.updatedUserId)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
 

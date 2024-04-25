@@ -76,8 +76,8 @@ namespace HotelManagementSystem.DAO.Payment
         {
             try
             {
-                string strSql = "INSERT INTO Payment(checkin_id, room_fees, extra_fees, description, discount, total_fees, payment_type)" +
-                                "VALUES(@checkin_id, @room_fees, @extra_fees, @description, @discount, @total_fees, @payment_type)";
+                string strSql = "INSERT INTO Payment(checkin_id, room_fees, extra_fees, description, discount, total_fees, payment_type, created_date, updated_date)" +
+                                "VALUES(@checkin_id, @room_fees, @extra_fees, @description, @discount, @total_fees, @payment_type, @created_date, @updated_date)";
 
                 SqlParameter[] sqlParam = {
             new SqlParameter("@checkin_id", paymentEntity.checkin_id),
@@ -86,7 +86,9 @@ namespace HotelManagementSystem.DAO.Payment
             new SqlParameter("@description", paymentEntity.description),
             new SqlParameter("@discount", paymentEntity.discount),
             new SqlParameter("@total_fees", paymentEntity.total_fees),
-            new SqlParameter("@payment_type", paymentEntity.payment_type)
+            new SqlParameter("@payment_type", paymentEntity.payment_type),
+            new SqlParameter("@created_date", paymentEntity.created_date),
+            new SqlParameter("@updated_date", paymentEntity.updated_date),
         };
 
                 bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);

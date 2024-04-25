@@ -64,6 +64,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1100, 57);
             this.pnTitle.TabIndex = 78;
@@ -76,7 +77,7 @@
             this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(470, 14);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(111, 30);
+            this.lbTitle.Size = new System.Drawing.Size(140, 37);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "PAY NOW";
             // 
@@ -96,7 +97,7 @@
             this.lbDiscountValidation.ForeColor = System.Drawing.Color.Red;
             this.lbDiscountValidation.Location = new System.Drawing.Point(810, 401);
             this.lbDiscountValidation.Name = "lbDiscountValidation";
-            this.lbDiscountValidation.Size = new System.Drawing.Size(0, 15);
+            this.lbDiscountValidation.Size = new System.Drawing.Size(0, 20);
             this.lbDiscountValidation.TabIndex = 141;
             // 
             // lbPaymentTypeValidation
@@ -106,7 +107,7 @@
             this.lbPaymentTypeValidation.ForeColor = System.Drawing.Color.Red;
             this.lbPaymentTypeValidation.Location = new System.Drawing.Point(803, 450);
             this.lbPaymentTypeValidation.Name = "lbPaymentTypeValidation";
-            this.lbPaymentTypeValidation.Size = new System.Drawing.Size(0, 15);
+            this.lbPaymentTypeValidation.Size = new System.Drawing.Size(0, 20);
             this.lbPaymentTypeValidation.TabIndex = 140;
             // 
             // lbExtraFeesValidation
@@ -116,7 +117,7 @@
             this.lbExtraFeesValidation.ForeColor = System.Drawing.Color.Red;
             this.lbExtraFeesValidation.Location = new System.Drawing.Point(812, 223);
             this.lbExtraFeesValidation.Name = "lbExtraFeesValidation";
-            this.lbExtraFeesValidation.Size = new System.Drawing.Size(0, 15);
+            this.lbExtraFeesValidation.Size = new System.Drawing.Size(0, 20);
             this.lbExtraFeesValidation.TabIndex = 139;
             // 
             // txtDuration
@@ -126,7 +127,7 @@
             this.txtDuration.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.ReadOnly = true;
-            this.txtDuration.Size = new System.Drawing.Size(376, 29);
+            this.txtDuration.Size = new System.Drawing.Size(500, 34);
             this.txtDuration.TabIndex = 138;
             // 
             // label6
@@ -136,7 +137,7 @@
             this.label6.Location = new System.Drawing.Point(288, 274);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 21);
+            this.label6.Size = new System.Drawing.Size(98, 28);
             this.label6.TabIndex = 137;
             this.label6.Text = "Duration :";
             // 
@@ -148,7 +149,7 @@
             this.txtTotalAmount.MaxLength = 50;
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
-            this.txtTotalAmount.Size = new System.Drawing.Size(376, 29);
+            this.txtTotalAmount.Size = new System.Drawing.Size(500, 34);
             this.txtTotalAmount.TabIndex = 136;
             // 
             // btnPrint
@@ -174,7 +175,7 @@
             this.txtExtraFees.Location = new System.Drawing.Point(421, 223);
             this.txtExtraFees.Margin = new System.Windows.Forms.Padding(2);
             this.txtExtraFees.Name = "txtExtraFees";
-            this.txtExtraFees.Size = new System.Drawing.Size(376, 29);
+            this.txtExtraFees.Size = new System.Drawing.Size(500, 34);
             this.txtExtraFees.TabIndex = 135;
             this.txtExtraFees.Text = "0";
             this.txtExtraFees.TextChanged += new System.EventHandler(this.txtExtraFees_TextChanged);
@@ -185,7 +186,7 @@
             this.txtDiscount.Location = new System.Drawing.Point(421, 400);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(376, 29);
+            this.txtDiscount.Size = new System.Drawing.Size(500, 34);
             this.txtDiscount.TabIndex = 134;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged_1);
@@ -197,7 +198,7 @@
             this.label5.Location = new System.Drawing.Point(288, 457);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 21);
+            this.label5.Size = new System.Drawing.Size(142, 28);
             this.label5.TabIndex = 133;
             this.label5.Text = "Payment Type :";
             // 
@@ -208,7 +209,7 @@
             this.label4.Location = new System.Drawing.Point(288, 506);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 21);
+            this.label4.Size = new System.Drawing.Size(151, 28);
             this.label4.TabIndex = 132;
             this.label4.Text = "Totoal Amount :";
             // 
@@ -219,7 +220,7 @@
             this.label2.Location = new System.Drawing.Point(288, 410);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 21);
+            this.label2.Size = new System.Drawing.Size(98, 28);
             this.label2.TabIndex = 131;
             this.label2.Text = "Discount :";
             // 
@@ -230,7 +231,7 @@
             this.label3.Location = new System.Drawing.Point(288, 316);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 21);
+            this.label3.Size = new System.Drawing.Size(121, 28);
             this.label3.TabIndex = 130;
             this.label3.Text = "Description :";
             // 
@@ -253,7 +254,7 @@
             "Mobile Banking"});
             this.cbPaymentType.Location = new System.Drawing.Point(421, 453);
             this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(376, 29);
+            this.cbPaymentType.Size = new System.Drawing.Size(500, 36);
             this.cbPaymentType.TabIndex = 128;
             this.cbPaymentType.Text = "Choose Payment Type";
             // 
@@ -264,7 +265,7 @@
             this.label1.Location = new System.Drawing.Point(288, 228);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 21);
+            this.label1.Size = new System.Drawing.Size(107, 28);
             this.label1.TabIndex = 127;
             this.label1.Text = "Extra Fees :";
             // 
@@ -275,7 +276,7 @@
             this.txtRoomFees.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoomFees.Name = "txtRoomFees";
             this.txtRoomFees.ReadOnly = true;
-            this.txtRoomFees.Size = new System.Drawing.Size(376, 29);
+            this.txtRoomFees.Size = new System.Drawing.Size(500, 34);
             this.txtRoomFees.TabIndex = 126;
             // 
             // txtCheckInId
@@ -286,7 +287,7 @@
             this.txtCheckInId.MaxLength = 50;
             this.txtCheckInId.Name = "txtCheckInId";
             this.txtCheckInId.ReadOnly = true;
-            this.txtCheckInId.Size = new System.Drawing.Size(376, 29);
+            this.txtCheckInId.Size = new System.Drawing.Size(500, 34);
             this.txtCheckInId.TabIndex = 125;
             // 
             // lblGender
@@ -296,7 +297,7 @@
             this.lblGender.Location = new System.Drawing.Point(288, 182);
             this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(94, 21);
+            this.lblGender.Size = new System.Drawing.Size(116, 28);
             this.lblGender.TabIndex = 124;
             this.lblGender.Text = "Room Fees :";
             // 
@@ -323,7 +324,7 @@
             this.lblFullName.Location = new System.Drawing.Point(288, 138);
             this.lblFullName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(89, 21);
+            this.lblFullName.Size = new System.Drawing.Size(111, 28);
             this.lblFullName.TabIndex = 119;
             this.lblFullName.Text = "CheckIn Id :";
             // 
@@ -348,7 +349,7 @@
             this.txtFullName.Location = new System.Drawing.Point(421, 131);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(376, 29);
+            this.txtFullName.Size = new System.Drawing.Size(500, 34);
             this.txtFullName.TabIndex = 120;
             // 
             // UCPayNow
@@ -380,6 +381,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.pnTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCPayNow";
             this.Size = new System.Drawing.Size(1100, 650);
             this.Load += new System.EventHandler(this.UCPayNow_Load);

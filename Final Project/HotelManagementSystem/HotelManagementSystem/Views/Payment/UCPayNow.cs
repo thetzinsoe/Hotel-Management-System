@@ -138,6 +138,8 @@ namespace HotelManagementSystem.Views.Payment
                 paymentEntity.discount = decimal.Parse(txtDiscount.Text.ToString());
                 paymentEntity.payment_type = cbPaymentType.SelectedItem.ToString();
                 paymentEntity.total_fees = decimal.Parse(txtTotalAmount.Text.ToString());
+                paymentEntity.created_date = DateTime.Today;
+                paymentEntity.updated_date = DateTime.Today;
                 return paymentEntity;
             }
             else

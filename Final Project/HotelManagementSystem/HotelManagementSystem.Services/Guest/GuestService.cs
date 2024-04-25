@@ -91,6 +91,26 @@ namespace HotelManagementSystem.Services.Guest
         {
             return guestDao.Delete(guestId);
         }
+
+        public bool IsGuestValid(string name, string nrc)
+        {
+            return guestDao.IsGuestValid(name, nrc);
+        }
+
+        public bool IsNRCValid(string name, string nrc)
+        {
+            return guestDao.IsNRCValid(name, nrc);
+        }
+
+        public bool IsGuestValidForUpdating(int id, string name, string nrc)
+        {
+            return guestDao.IsGuestValidForUpdating(id, name, nrc);
+        }
+
+        public bool IsNRCValidForUpdating(int id, string name, string nrc)
+        {
+            return guestDao.IsNRCValidForUpdating(id, name, nrc);
+        }
         #endregion
     }
 }
