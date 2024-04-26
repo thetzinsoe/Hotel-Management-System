@@ -142,14 +142,14 @@ namespace HotelManagementSystem.Views.Menu
             // addRoomToolStripMenuItem
             // 
             this.addRoomToolStripMenuItem.Name = "addRoomToolStripMenuItem";
-            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
+            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.addRoomToolStripMenuItem.Text = "ROOM ADD";
             this.addRoomToolStripMenuItem.Click += new System.EventHandler(this.addRoomToolStripMenuItem_Click);
             // 
             // roomListToolStripMenuItem
             // 
             this.roomListToolStripMenuItem.Name = "roomListToolStripMenuItem";
-            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
+            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.roomListToolStripMenuItem.Text = "ROOM LIST";
             this.roomListToolStripMenuItem.Click += new System.EventHandler(this.roomListToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@ namespace HotelManagementSystem.Views.Menu
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(100, 30);
             this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "Log out";
+            this.btnLogout.Text = "LOG OUT";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 

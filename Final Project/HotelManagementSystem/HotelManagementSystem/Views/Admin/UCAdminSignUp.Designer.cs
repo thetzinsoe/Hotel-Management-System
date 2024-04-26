@@ -46,84 +46,86 @@
             // 
             // txtusername
             // 
-            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(248, 125);
+            this.txtusername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusername.Location = new System.Drawing.Point(248, 122);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(300, 30);
+            this.txtusername.Size = new System.Drawing.Size(300, 34);
             this.txtusername.TabIndex = 0;
             // 
             // lblusername
             // 
             this.lblusername.AutoSize = true;
-            this.lblusername.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblusername.Location = new System.Drawing.Point(50, 128);
             this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(87, 23);
+            this.lblusername.Size = new System.Drawing.Size(103, 28);
             this.lblusername.TabIndex = 1;
-            this.lblusername.Text = "Username";
+            this.lblusername.Text = "Username:";
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.White;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegister.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(448, 368);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 35);
             this.btnRegister.TabIndex = 2;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(54, 368);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 5;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.Location = new System.Drawing.Point(50, 183);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(80, 23);
+            this.lblPass.Size = new System.Drawing.Size(97, 28);
             this.lblPass.TabIndex = 4;
-            this.lblPass.Text = "Password";
+            this.lblPass.Text = "Password:";
             // 
             // txtpassword
             // 
-            this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassword.Location = new System.Drawing.Point(248, 180);
+            this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.Location = new System.Drawing.Point(248, 177);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
-            this.txtpassword.Size = new System.Drawing.Size(300, 30);
+            this.txtpassword.Size = new System.Drawing.Size(300, 34);
             this.txtpassword.TabIndex = 3;
             // 
             // lblConPass
             // 
             this.lblConPass.AutoSize = true;
-            this.lblConPass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConPass.Location = new System.Drawing.Point(50, 262);
             this.lblConPass.Name = "lblConPass";
-            this.lblConPass.Size = new System.Drawing.Size(146, 23);
+            this.lblConPass.Size = new System.Drawing.Size(172, 28);
             this.lblConPass.TabIndex = 7;
-            this.lblConPass.Text = "Confirm Password";
+            this.lblConPass.Text = "Confirm Password:";
             // 
             // txtvalidpass
             // 
-            this.txtvalidpass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtvalidpass.Location = new System.Drawing.Point(248, 259);
+            this.txtvalidpass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtvalidpass.Location = new System.Drawing.Point(248, 256);
             this.txtvalidpass.Name = "txtvalidpass";
             this.txtvalidpass.PasswordChar = '*';
-            this.txtvalidpass.Size = new System.Drawing.Size(300, 30);
+            this.txtvalidpass.Size = new System.Drawing.Size(300, 34);
             this.txtvalidpass.TabIndex = 6;
             // 
             // btnShow
@@ -131,7 +133,7 @@
             this.btnShow.BackColor = System.Drawing.Color.White;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(473, 216);
+            this.btnShow.Location = new System.Drawing.Point(473, 217);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 25);
             this.btnShow.TabIndex = 8;
@@ -185,10 +187,10 @@
             // txtadminID
             // 
             this.txtadminID.AutoSize = true;
-            this.txtadminID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtadminID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtadminID.Location = new System.Drawing.Point(50, 84);
             this.txtadminID.Name = "txtadminID";
-            this.txtadminID.Size = new System.Drawing.Size(0, 23);
+            this.txtadminID.Size = new System.Drawing.Size(0, 28);
             this.txtadminID.TabIndex = 9;
             this.txtadminID.Visible = false;
             // 
