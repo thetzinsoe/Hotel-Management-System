@@ -23,10 +23,8 @@ namespace HotelManagementSystem.Views.Admin
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Login();
-            MessageBox.Show("Login Successful!");
-            FrmMenu mainForm = this.ParentForm as FrmMenu;
-            mainForm.LoginSuccess();
+            Login();
+            
         }
 
         private void Login()
