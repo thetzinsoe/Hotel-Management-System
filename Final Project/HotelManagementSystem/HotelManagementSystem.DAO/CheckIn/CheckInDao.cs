@@ -154,7 +154,7 @@ namespace HotelManagementSystem.DAO.CheckIn
         /// <returns></returns>
         public DataTable Get(int id)
         {
-            strSql = "SELECT t1.room_id, t1.checkin_id, t1.checkin_date, t1.checkout_date ,t2.room_id ,t2.room_no ,t2.room_price, t3.full_name ,t3.nrc_number " +
+            strSql = "SELECT t1.room_id, t1.checkin_id, t1.checkin_date, t1.checkout_date ,t2.room_id ,t2.room_no ,t2.room_price, t3.full_name ,t3.nrc_number ,t3.phone_number " +
             "FROM Checkin t1 JOIN Room t2 ON t1.room_id = t2.room_id " +
            "JOIN Guest t3 ON t1.guest_id = t3.guest_id Where t1.checkin_id=" + id;
             return connection.ExecuteDataTable(CommandType.Text, strSql);
@@ -200,7 +200,8 @@ namespace HotelManagementSystem.DAO.CheckIn
         {
             try
             {
-                strSql = "UPDATE Checkin SET room_id = @room_id ,guest_id = @guest_id ,checkin_date = @checkin_date ,checkout_date = @checkout_date ,@updated_date=updated_date WHERE checkin_id = @checkin_id";
+                strSql = "UPDATE Checkin SET room_id = @room_id ,guest_id = @guest_id ,checkin_date = @checkin_date ,checkout_date = @checkout_date ,updated_date= @updated_date" +
+                    " WHERE checkin_id = @checkin_id";
 
                 SqlParameter[] sqlParam =  {
             new SqlParameter("@room_id", checkInEntity.room_id),
