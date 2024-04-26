@@ -238,6 +238,7 @@ namespace HotelManagementSystem.Views.Employee
         }
         private bool InputValidation()
         {
+            EmployeeService employeeService = new EmployeeService();
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
                 MessageBox.Show("Please enter Full Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -279,6 +280,36 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (string.IsNullOrEmpty(txtEmployeeId.Text))
+            {
+                if (employeeService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Employee with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (employeeService.IsNRCValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+            else if (!string.IsNullOrEmpty (txtEmployeeId.Text)) 
+            {
+                if (employeeService.IsGuestValidForUpdating(Convert.ToInt32(txtEmployeeId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Employee with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (employeeService.IsNRCValidForUpdating(Convert.ToInt32(txtEmployeeId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            
             return true;
         }
 

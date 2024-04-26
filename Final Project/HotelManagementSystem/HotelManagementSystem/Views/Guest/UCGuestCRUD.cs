@@ -307,18 +307,21 @@ namespace HotelManagementSystem.Views.Guest
                 }
                 return true;
             }
-
-            if(guestService.IsGuestValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
+            else if (!string.IsNullOrEmpty(txtGuestId.Text))
             {
-                MessageBox.Show("The Guest with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+                if (guestService.IsGuestValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Guest with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
 
-            if(guestService.IsNRCValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
-            {
-                MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                if (guestService.IsNRCValidForUpdating(Convert.ToInt32(txtGuestId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
+            
             return true;
             
         }

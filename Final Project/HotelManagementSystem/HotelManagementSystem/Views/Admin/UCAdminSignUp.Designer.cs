@@ -154,7 +154,7 @@
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.lblPass);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(279, 97);
+            this.groupBox1.Location = new System.Drawing.Point(437, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(600, 600);
             this.groupBox1.TabIndex = 9;
@@ -199,7 +199,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.groupBox1);
             this.Name = "UCAdminSignUp";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

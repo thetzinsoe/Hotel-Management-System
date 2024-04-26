@@ -152,7 +152,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblpass);
             this.Name = "UCAdmin";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.ResumeLayout(false);
             this.PerformLayout();
 
