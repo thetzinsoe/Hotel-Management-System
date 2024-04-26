@@ -43,8 +43,8 @@
             this.lblPageNo = new System.Windows.Forms.Label();
             this.btnPrev = new System.Windows.Forms.Button();
             this.btnFirst = new System.Windows.Forms.Button();
-            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoomPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.is_occupied = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +67,8 @@
             this.dgvRoomList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRoomList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRoomList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RoomNumber,
             this.RoomID,
+            this.RoomNumber,
             this.RoomType,
             this.RoomPrice,
             this.is_occupied,
@@ -178,6 +178,14 @@
             this.btnFirst.UseVisualStyleBackColor = false;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
             // 
+            // RoomID
+            // 
+            this.RoomID.DataPropertyName = "room_id";
+            this.RoomID.HeaderText = "ID";
+            this.RoomID.MinimumWidth = 6;
+            this.RoomID.Name = "RoomID";
+            this.RoomID.Visible = false;
+            // 
             // RoomNumber
             // 
             this.RoomNumber.DataPropertyName = "room_no";
@@ -188,14 +196,6 @@
             this.RoomNumber.Name = "RoomNumber";
             this.RoomNumber.ReadOnly = true;
             this.RoomNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // RoomID
-            // 
-            this.RoomID.DataPropertyName = "room_id";
-            this.RoomID.HeaderText = "ID";
-            this.RoomID.MinimumWidth = 6;
-            this.RoomID.Name = "RoomID";
-            this.RoomID.Visible = false;
             // 
             // RoomType
             // 
@@ -270,8 +270,8 @@
         private System.Windows.Forms.Label lblPageNo;
         private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.Button btnFirst;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomType;
         private System.Windows.Forms.DataGridViewTextBoxColumn RoomPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn is_occupied;
