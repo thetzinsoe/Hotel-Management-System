@@ -61,6 +61,7 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.txtNRCNumber = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -483,6 +485,17 @@
             this.txtNRCNumber.TabIndex = 4;
             this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(672, 473);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 38);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "*";
+            // 
             // UCEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -533,5 +546,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label8;
     }
 }
