@@ -35,27 +35,40 @@ namespace HotelManagementSystem.Views.CheckIn
                     MessageBox.Show("Empty Row", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                DialogResult result = MessageBox.Show("Are You Sure to Checkout?", "Confirmation", MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-               
+
+
+                DialogResult result = MessageBox.Show("Are You Sure to Checkout?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                 if (result == DialogResult.OK)
                 {
                     int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                        decimal room_fees = 0;
-                        int room_id = 0;
-                        DateTime checkinDate = DateTime.MinValue;
-                        DateTime checkoutDate = DateTime.MinValue;
-                        DataTable dt = checkInService.Get(id);
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            room_fees = Convert.ToDecimal(row["room_price"]);
-                            room_id = Convert.ToInt32(row["room_id"]);
-                            checkinDate = Convert.ToDateTime(row["checkin_date"]);
-                            checkoutDate = Convert.ToDateTime(row["checkout_date"]);
-                        }
-                        UCPayNow uCPayNow = new UCPayNow(id, room_id, room_fees, checkinDate, checkoutDate);
-                        this.Controls.Clear();
-                        this.Controls.Add(uCPayNow);
-                    
+                    decimal room_fees = 0;
+                    int room_id = 0;
+                    DateTime checkinDate = DateTime.MinValue;
+                    DateTime checkoutDate = DateTime.MinValue;
+                    DataTable dt = checkInService.Get(id);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        room_fees = Convert.ToDecimal(row["room_price"]);
+                        room_id = Convert.ToInt32(row["room_id"]);
+                        checkinDate = Convert.ToDateTime(row["checkin_date"]);
+                        checkoutDate = Convert.ToDateTime(row["checkout_date"]);
+                    }
+
+                    ReservationService reservationService = new ReservationService();
+                    int Reid = reservationService.FindReservationId(room_id,checkinDate.Date, checkoutDate.Date);
+                    if (id <= 0)
+                    {
+                        MessageBox.Show("Reservation not Found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        reservationService.Delete(Reid);
+                    }
+                    UCPayNow uCPayNow = new UCPayNow(id, room_id, room_fees, checkinDate, checkoutDate);
+                    this.Controls.Clear();
+                    this.Controls.Add(uCPayNow);
                 }
             }
 

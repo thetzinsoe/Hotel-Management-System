@@ -62,6 +62,11 @@ namespace HotelManagementSystem.Services.Reservation
             DataTable dt = reservationDao.Get(id);
             return dt;
         }
+
+        public int FindReservationId(int room_id,DateTime checkin_date,DateTime checkout_date)
+        {
+            return reservationDao.FindReservationId(room_id,checkin_date,checkout_date); 
+        }
         
         public DataTable haveRoom(int id)
         {

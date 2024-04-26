@@ -24,6 +24,7 @@ namespace HotelManagementSystem.Views.CheckIn
         private string selectedGuestName = string.Empty;
         private string selectedGuestNrc = string.Empty;
         private int selectedGuestId = 0;
+        private string selectedPhone = string.Empty;
         UCCheckInList uCCheckInList = new UCCheckInList();
         CheckInEntity checkInEntity = new CheckInEntity();
         CheckInService checkInService = new CheckInService();
@@ -49,6 +50,8 @@ namespace HotelManagementSystem.Views.CheckIn
             dtpCheckInDate.MaxDate = DateTime.Today.AddMonths(1);
             dtpCheckOutDate.MinDate = DateTime.Today;
             dtpCheckOutDate.MaxDate = DateTime.Today.AddMonths(6);
+            dtpCheckInDate.Value = DateTime.Today;
+            dtpCheckOutDate.Value = DateTime.Today;
         }
 
         private void UCCheckinAdd_Load(object sender, EventArgs e)
@@ -157,10 +160,22 @@ namespace HotelManagementSystem.Views.CheckIn
             {
                 if (!string.IsNullOrEmpty(hdReservationId.Text))
                 {
-                   bool resDel = reservationService.Delete(int.Parse(hdReservationId.Text.ToString()));
+                   ReservationEntity reservationEntity = CreateReservationData();
+                   bool resDel = reservationService.Update(reservationEntity);
                     if (!resDel)
                     {
-                        MessageBox.Show("Cant remove reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Cant add reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    ReservationEntity reservationEntity = CreateReservationData();
+                    bool resDel = reservationService.Insert(reservationEntity);
+                    if (!resDel)
+                    {
+                        MessageBox.Show("Cant add reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
                 success = checkInService.Insert(checkInEntity);
@@ -178,6 +193,16 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             else
             {
+                if (!string.IsNullOrEmpty(hdReservationId.Text))
+                {
+                    ReservationEntity reservationEntity = CreateReservationData();
+                    bool resDel = reservationService.Update(reservationEntity);
+                    if (!resDel)
+                    {
+                        MessageBox.Show("Cant add reservation!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
                 success = checkInService.Update(checkInEntity);
                 if (success)
                 {
@@ -203,6 +228,23 @@ namespace HotelManagementSystem.Views.CheckIn
             checkInEntity.checkin_date = dtpCheckInDate.Value.Date;
             checkInEntity.checkout_date = dtpCheckOutDate.Value.Date;
             return checkInEntity;
+        }
+
+        private ReservationEntity CreateReservationData()
+        {
+            ReservationEntity reservationEntity = new ReservationEntity();
+            if (!String.IsNullOrEmpty(hdReservationId.Text))
+            {
+                reservationEntity.reservation_id = Convert.ToInt32(hdReservationId.Text);
+            }
+            reservationEntity.room_id = selectedRoomId;
+            reservationEntity.room_number = selectedRoomNo;
+            reservationEntity.checkin_date = dtpCheckInDate.Value.Date;
+            reservationEntity.checkout_date = dtpCheckOutDate.Value.Date;
+            reservationEntity.customer_name = selectedGuestName;
+            reservationEntity.customer_phoneNo = selectedPhone;
+            reservationEntity.is_deleted = 2;
+            return reservationEntity;
         }
 
 
@@ -232,17 +274,33 @@ namespace HotelManagementSystem.Views.CheckIn
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
                         cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
-                        //cbGuestName.SelectedItem = dt.Rows[0]["full_name"].ToString();
+                        selectedPhone = dt.Rows[0]["phone_number"].ToString();
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                     }
-                }else if(!string.IsNullOrEmpty(hdReservationId.Text)){
+
+                    if (string.IsNullOrEmpty(hdReservationId.Text))
+                    {
+                        int id = reservationService.FindReservationId(selectedRoomId, dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
+                        if (id <= 0)
+                        {
+                            MessageBox.Show("Reservation not Found","Error!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            hdReservationId.Text = id.ToString();
+                        }
+                    }
+                }
+                else if(!string.IsNullOrEmpty(hdReservationId.Text)){
                     DataTable dt = reservationService.Get(Convert.ToInt32(hdReservationId.Text.ToString()));
                     if (dt.Rows.Count > 0)
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
+                        selectedPhone = dt.Rows[0]["customer_phoneNo"].ToString();
                         cbGuestNrc.Text = hdGuestNrc.Text;
                         cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
@@ -263,12 +321,12 @@ namespace HotelManagementSystem.Views.CheckIn
                 if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
                 {
                     validateInput = true;
-                    lbCheckOutValidation.Text = "";
                 }
                 else
                 {
                     validateInput = false;
-                    lbCheckOutValidation.Text = "Wrong Date! Please choose the correct date.";
+                    MessageBox.Show("Wrong Date! Please choose the correct date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -284,8 +342,8 @@ namespace HotelManagementSystem.Views.CheckIn
                 else
                 {
                     validateInput = false;
-                    MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    //MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //return;
                 }
             }
         }
@@ -311,6 +369,7 @@ namespace HotelManagementSystem.Views.CheckIn
                 DataRowView selectedRow = (DataRowView)cbGuestNrc.SelectedItem;
                 selectedGuestName = selectedRow["full_name"].ToString();
                 selectedGuestNrc = selectedRow["nrc_number"].ToString();
+                selectedPhone = selectedRow["phone_number"].ToString();
                 selectedGuestId = int.Parse(selectedRow["guest_id"].ToString());
             }
         }
@@ -358,7 +417,7 @@ namespace HotelManagementSystem.Views.CheckIn
         private void btnBack_Click_1(object sender, EventArgs e)
         {
             this.Controls.Clear();
-            if (!string.IsNullOrEmpty(hdReservationId.Text.ToString()))
+            if (!string.IsNullOrEmpty(hdReservationId.Text.ToString()) && string.IsNullOrEmpty(hdCheckInId.Text))
             {
                 UCReservationList uCReservationList = new UCReservationList();
                 this.Controls.Add(uCReservationList);

@@ -44,6 +44,26 @@ namespace HotelManagementSystem.DAO.Reservation
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public int FindReservationId(int room_id, DateTime checkin_date, DateTime checkout_date)
+        {
+            int id = 0;
+            string strSql = "SELECT reservation_id FROM Reservation WHERE room_id='" + room_id + "'" +
+                            " AND checkin_date = '" + checkin_date.ToString("yyyy-MM-dd") + "' AND checkout_date = '" + checkout_date.ToString("yyyy-MM-dd") + "'";
+
+            DataTable dt = connection.ExecuteDataTable(CommandType.Text, strSql);
+
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    id = Convert.ToInt32(dataRow["reservation_id"]);
+                }
+            }
+
+            return id;
+        }
+
+
         public DataTable GetAllRoom()
         {
             strSql = "SELECT * FROM Room Where is_deleted = 0 AND is_occupied = 0";
@@ -133,8 +153,8 @@ namespace HotelManagementSystem.DAO.Reservation
         {
             try
             {
-                string strSql = "INSERT INTO Reservation(room_id, room_number, checkin_date, checkout_date, customer_name, customer_phoneNo, created_date, updated_date)" +
-                                "VALUES(@room_id, @room_number, @checkin_date, @checkout_date, @customer_name, @customer_phoneNo, @created_date, @updated_date)";
+                string strSql = "INSERT INTO Reservation(room_id, room_number, checkin_date, checkout_date, customer_name, customer_phoneNo, created_date, updated_date, is_deleted)" +
+                                "VALUES(@room_id, @room_number, @checkin_date, @checkout_date, @customer_name, @customer_phoneNo, @created_date, @updated_date, @is_deleted)";
 
                 SqlParameter[] sqlParam = {
             new SqlParameter("@room_id", reservationEntity.room_id),
@@ -144,7 +164,8 @@ namespace HotelManagementSystem.DAO.Reservation
             new SqlParameter("@customer_name", reservationEntity.customer_name),
             new SqlParameter("@customer_phoneNo", reservationEntity.customer_phoneNo),
             new SqlParameter("@created_date", reservationEntity.created_date),
-            new SqlParameter("@updated_date", reservationEntity.updated_date)
+            new SqlParameter("@updated_date", reservationEntity.updated_date),
+            new SqlParameter("@is_deleted", reservationEntity.is_deleted)
         };
 
                 bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
@@ -167,7 +188,7 @@ namespace HotelManagementSystem.DAO.Reservation
         {
             try
             {
-                strSql = "UPDATE Reservation SET room_id = @room_id ,room_number = @room_number ,checkin_date = @checkin_date ,checkout_date = @checkout_date ,customer_name = @customer_name, customer_phoneNo = @customer_phoneNo, updated_date = @updated_date WHERE reservation_id = @reservation_id";
+                strSql = "UPDATE Reservation SET room_id = @room_id ,room_number = @room_number ,checkin_date = @checkin_date ,checkout_date = @checkout_date ,customer_name = @customer_name, customer_phoneNo = @customer_phoneNo, updated_date = @updated_date, is_deleted = @is_deleted WHERE reservation_id = @reservation_id";
 
                 SqlParameter[] sqlParam =  {
             new SqlParameter("@room_id", reservationEntity.room_id),
@@ -177,6 +198,7 @@ namespace HotelManagementSystem.DAO.Reservation
             new SqlParameter("@customer_name", reservationEntity.customer_name),
             new SqlParameter("@customer_phoneNo", reservationEntity.customer_phoneNo),
             new SqlParameter("@updated_date", reservationEntity.updated_date),
+            new SqlParameter("@is_deleted", reservationEntity.is_deleted),
             new SqlParameter("@reservation_id", reservationEntity.reservation_id) // Ensure Reservation is set
         };
 
