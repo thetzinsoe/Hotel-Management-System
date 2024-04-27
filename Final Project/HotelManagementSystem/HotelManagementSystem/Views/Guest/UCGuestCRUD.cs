@@ -73,7 +73,7 @@ namespace HotelManagementSystem.Views.Guest
             else
             {
                 UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text, txtPhoneNumber.Text);
-                uCGuestList1.ReservationID = hdReservationId.Text;
+                uCGuestList1.ReservationID=hdReservationId.Text;
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList1);
 
@@ -352,20 +352,18 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UCGuestList uCGuestList = new UCGuestList();
-            this.Controls.Clear();
-            this.Controls.Add(uCGuestList);
-        }
-
-        
-        private bool ValidateNRCNumber(string nrcNumber)
-        {
-            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
-
-            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            if (string.IsNullOrEmpty(hdReservationId.Text))
             {
-                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                UCGuestList uCGuestList = new UCGuestList();
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList);
+            }
+            else
+            {
+                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text, txtPhoneNumber.Text);
+                uCGuestList1.ReservationID = hdReservationId.Text;
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList1);
             }
 
             return true;

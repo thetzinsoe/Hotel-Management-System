@@ -63,10 +63,6 @@ namespace HotelManagementSystem.Views.CheckIn
             this.Controls.Add(uCPaymentHistory);
         }
 
-        private void dgvOldCheckIn_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
 
         private void LoadCheckin()
         {
@@ -81,19 +77,9 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvOldCheckIn.AutoGenerateColumns = false;
-            if (dt.Rows.Count < pageSize)
-            {
-                int blankRowCount = pageSize - dt.Rows.Count;
-                for (int i = 0; i < blankRowCount; i++)
-                {
-                    DataRow newRow = dt.NewRow();
-                    dt.Rows.Add(newRow);
-                }
-            }
             dgvOldCheckIn.DataSource = dt;
             dgvOldCheckIn.Refresh();
         }
-
 
         private void btn3xPrevious_Click(object sender, EventArgs e)
         {

@@ -59,7 +59,7 @@ namespace HotelManagementSystem.Views.Reservation
                 validateInput = true;
             }
 
-            if (cbRoomNo.SelectedIndex>=0 || selectedRoomId >0 || selectedRoomNo==cbRoomNo.Text)
+            if (cbRoomNo.SelectedIndex>=0 && selectedRoomId >0 && selectedRoomNo==cbRoomNo.Text)
             {
                 validateInput = true;
             }
@@ -146,12 +146,14 @@ namespace HotelManagementSystem.Views.Reservation
         {
             if (!string.IsNullOrEmpty(hdReservationId.Text))
             {
+                lbTitle.Text = "RESERVATION UPDATE";
                 btnBack.Enabled = true;
                 btnDelete.Enabled=true;
                 btnAdd.Text = "Update";
             }
             else
             {
+                lbTitle.Text = "RESERVATION ADD";
                 btnBack.Enabled = false;
                 btnDelete.Enabled = false;
                 btnAdd.Text = "Add";

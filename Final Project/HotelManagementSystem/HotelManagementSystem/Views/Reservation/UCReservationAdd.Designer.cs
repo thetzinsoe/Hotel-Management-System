@@ -59,24 +59,23 @@
             // 
             // pnTitle
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
+            this.pnTitle.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 1);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1467, 76);
+            this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 77;
             // 
             // lbTitle
             // 
             this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbTitle.Location = new System.Drawing.Point(629, 19);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.White;
+            this.lbTitle.Location = new System.Drawing.Point(470, 15);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(203, 38);
+            this.lbTitle.Size = new System.Drawing.Size(154, 30);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "RESERVATION";
             // 
@@ -85,10 +84,9 @@
             this.lbCheckOutValidation.AutoSize = true;
             this.lbCheckOutValidation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckOutValidation.ForeColor = System.Drawing.Color.Red;
-            this.lbCheckOutValidation.Location = new System.Drawing.Point(1160, 516);
-            this.lbCheckOutValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCheckOutValidation.Location = new System.Drawing.Point(870, 419);
             this.lbCheckOutValidation.Name = "lbCheckOutValidation";
-            this.lbCheckOutValidation.Size = new System.Drawing.Size(0, 20);
+            this.lbCheckOutValidation.Size = new System.Drawing.Size(0, 15);
             this.lbCheckOutValidation.TabIndex = 136;
             this.lbCheckOutValidation.Visible = false;
             // 
@@ -97,10 +95,9 @@
             this.lbPhoneNumberValidation.AutoSize = true;
             this.lbPhoneNumberValidation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPhoneNumberValidation.ForeColor = System.Drawing.Color.Red;
-            this.lbPhoneNumberValidation.Location = new System.Drawing.Point(1160, 276);
-            this.lbPhoneNumberValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbPhoneNumberValidation.Location = new System.Drawing.Point(870, 224);
             this.lbPhoneNumberValidation.Name = "lbPhoneNumberValidation";
-            this.lbPhoneNumberValidation.Size = new System.Drawing.Size(0, 20);
+            this.lbPhoneNumberValidation.Size = new System.Drawing.Size(0, 15);
             this.lbPhoneNumberValidation.TabIndex = 135;
             this.lbPhoneNumberValidation.Visible = false;
             // 
@@ -109,10 +106,9 @@
             this.lbRoomNoValidation.AutoSize = true;
             this.lbRoomNoValidation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRoomNoValidation.ForeColor = System.Drawing.Color.Red;
-            this.lbRoomNoValidation.Location = new System.Drawing.Point(1160, 360);
-            this.lbRoomNoValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbRoomNoValidation.Location = new System.Drawing.Point(870, 292);
             this.lbRoomNoValidation.Name = "lbRoomNoValidation";
-            this.lbRoomNoValidation.Size = new System.Drawing.Size(0, 20);
+            this.lbRoomNoValidation.Size = new System.Drawing.Size(0, 15);
             this.lbRoomNoValidation.TabIndex = 134;
             this.lbRoomNoValidation.Visible = false;
             // 
@@ -121,10 +117,9 @@
             this.lbCheckInDateValidation.AutoSize = true;
             this.lbCheckInDateValidation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckInDateValidation.ForeColor = System.Drawing.Color.Red;
-            this.lbCheckInDateValidation.Location = new System.Drawing.Point(1160, 440);
-            this.lbCheckInDateValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCheckInDateValidation.Location = new System.Drawing.Point(870, 358);
             this.lbCheckInDateValidation.Name = "lbCheckInDateValidation";
-            this.lbCheckInDateValidation.Size = new System.Drawing.Size(0, 20);
+            this.lbCheckInDateValidation.Size = new System.Drawing.Size(0, 15);
             this.lbCheckInDateValidation.TabIndex = 133;
             this.lbCheckInDateValidation.Visible = false;
             // 
@@ -133,10 +128,9 @@
             this.lbFullNameValidation.AutoSize = true;
             this.lbFullNameValidation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFullNameValidation.ForeColor = System.Drawing.Color.Red;
-            this.lbFullNameValidation.Location = new System.Drawing.Point(1160, 195);
-            this.lbFullNameValidation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFullNameValidation.Location = new System.Drawing.Point(870, 158);
             this.lbFullNameValidation.Name = "lbFullNameValidation";
-            this.lbFullNameValidation.Size = new System.Drawing.Size(0, 20);
+            this.lbFullNameValidation.Size = new System.Drawing.Size(0, 15);
             this.lbFullNameValidation.TabIndex = 132;
             this.lbFullNameValidation.Visible = false;
             // 
@@ -145,10 +139,9 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(1012, 509);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(759, 414);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(28, 37);
+            this.label11.Size = new System.Drawing.Size(22, 30);
             this.label11.TabIndex = 131;
             this.label11.Text = "*";
             // 
@@ -157,10 +150,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(1012, 267);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(759, 217);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 37);
+            this.label10.Size = new System.Drawing.Size(22, 30);
             this.label10.TabIndex = 130;
             this.label10.Text = "*";
             // 
@@ -169,10 +161,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(1013, 349);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(760, 284);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 37);
+            this.label9.Size = new System.Drawing.Size(22, 30);
             this.label9.TabIndex = 129;
             this.label9.Text = "*";
             // 
@@ -181,10 +172,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(1013, 429);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(760, 349);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(28, 37);
+            this.label8.Size = new System.Drawing.Size(22, 30);
             this.label8.TabIndex = 128;
             this.label8.Text = "*";
             // 
@@ -193,20 +183,18 @@
             this.lb3.AutoSize = true;
             this.lb3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb3.ForeColor = System.Drawing.Color.Red;
-            this.lb3.Location = new System.Drawing.Point(1012, 184);
-            this.lb3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lb3.Location = new System.Drawing.Point(759, 150);
             this.lb3.Name = "lb3";
-            this.lb3.Size = new System.Drawing.Size(28, 37);
+            this.lb3.Size = new System.Drawing.Size(22, 30);
             this.lb3.TabIndex = 127;
             this.lb3.Text = "*";
             // 
             // hdReservationId
             // 
             this.hdReservationId.AutoSize = true;
-            this.hdReservationId.Location = new System.Drawing.Point(340, 131);
-            this.hdReservationId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.hdReservationId.Location = new System.Drawing.Point(255, 106);
             this.hdReservationId.Name = "hdReservationId";
-            this.hdReservationId.Size = new System.Drawing.Size(0, 16);
+            this.hdReservationId.Size = new System.Drawing.Size(0, 13);
             this.hdReservationId.TabIndex = 126;
             this.hdReservationId.Visible = false;
             // 
@@ -215,20 +203,22 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(308, 516);
+            this.label2.Location = new System.Drawing.Point(231, 419);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 28);
+            this.label2.Size = new System.Drawing.Size(121, 21);
             this.label2.TabIndex = 125;
             this.label2.Text = "CheckOut Date :";
             // 
             // dtpCheckOutDate
             // 
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(501, 509);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(376, 414);
+            this.dtpCheckOutDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpCheckOutDate.MaxDate = new System.DateTime(2024, 5, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
-            this.dtpCheckOutDate.Size = new System.Drawing.Size(500, 34);
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(376, 29);
             this.dtpCheckOutDate.TabIndex = 124;
             this.dtpCheckOutDate.Value = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
@@ -237,10 +227,9 @@
             // 
             this.cbRoomNo.DropDownWidth = 376;
             this.cbRoomNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRoomNo.Location = new System.Drawing.Point(501, 349);
-            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbRoomNo.Location = new System.Drawing.Point(376, 284);
             this.cbRoomNo.Name = "cbRoomNo";
-            this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
+            this.cbRoomNo.Size = new System.Drawing.Size(376, 29);
             this.cbRoomNo.TabIndex = 123;
             this.cbRoomNo.Text = "Choose Room";
             this.cbRoomNo.SelectedValueChanged += new System.EventHandler(this.cbRoomNo_SelectedValueChanged);
@@ -249,19 +238,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(308, 353);
+            this.label1.Location = new System.Drawing.Point(231, 287);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 28);
+            this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 122;
             this.label1.Text = "Room Number :";
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(501, 267);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(376, 217);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(376, 29);
             this.txtPhoneNumber.TabIndex = 121;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
@@ -270,20 +261,22 @@
             this.lblDob.AutoSize = true;
             this.lblDob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDob.ForeColor = System.Drawing.Color.Black;
-            this.lblDob.Location = new System.Drawing.Point(308, 433);
+            this.lblDob.Location = new System.Drawing.Point(231, 352);
+            this.lblDob.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDob.Name = "lblDob";
-            this.lblDob.Size = new System.Drawing.Size(135, 28);
+            this.lblDob.Size = new System.Drawing.Size(108, 21);
             this.lblDob.TabIndex = 120;
             this.lblDob.Text = "CheckIn Date :";
             // 
             // dtpCheckInDate
             // 
             this.dtpCheckInDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInDate.Location = new System.Drawing.Point(501, 432);
+            this.dtpCheckInDate.Location = new System.Drawing.Point(376, 351);
+            this.dtpCheckInDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpCheckInDate.MaxDate = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckInDate.MinDate = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
-            this.dtpCheckInDate.Size = new System.Drawing.Size(500, 34);
+            this.dtpCheckInDate.Size = new System.Drawing.Size(376, 29);
             this.dtpCheckInDate.TabIndex = 115;
             this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
@@ -292,9 +285,10 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(308, 272);
+            this.lblGender.Location = new System.Drawing.Point(231, 221);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(153, 28);
+            this.lblGender.Size = new System.Drawing.Size(123, 21);
             this.lblGender.TabIndex = 119;
             this.lblGender.Text = "Phone Number :";
             // 
@@ -304,9 +298,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(852, 619);
+            this.btnBack.Location = new System.Drawing.Point(639, 503);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(151, 43);
+            this.btnBack.Size = new System.Drawing.Size(113, 35);
             this.btnBack.TabIndex = 118;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -317,9 +312,10 @@
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.Color.Black;
-            this.lblFullName.Location = new System.Drawing.Point(308, 191);
+            this.lblFullName.Location = new System.Drawing.Point(231, 155);
+            this.lblFullName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(109, 28);
+            this.lblFullName.Size = new System.Drawing.Size(88, 21);
             this.lblFullName.TabIndex = 113;
             this.lblFullName.Text = "Full Name :";
             // 
@@ -329,9 +325,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(681, 619);
+            this.btnDelete.Location = new System.Drawing.Point(511, 503);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(151, 43);
+            this.btnDelete.Size = new System.Drawing.Size(113, 35);
             this.btnDelete.TabIndex = 117;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -340,10 +337,11 @@
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(501, 184);
+            this.txtFullName.Location = new System.Drawing.Point(376, 150);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(500, 34);
+            this.txtFullName.Size = new System.Drawing.Size(376, 29);
             this.txtFullName.TabIndex = 114;
             this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             // 
@@ -353,9 +351,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(501, 619);
+            this.btnAdd.Location = new System.Drawing.Point(376, 503);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(151, 43);
+            this.btnAdd.Size = new System.Drawing.Size(113, 35);
             this.btnAdd.TabIndex = 116;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -363,7 +362,7 @@
             // 
             // UCReservationAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.lbCheckOutValidation);
@@ -391,9 +390,9 @@
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCReservationAdd";
-            this.Size = new System.Drawing.Size(1467, 861);
+            this.Size = new System.Drawing.Size(1100, 700);
             this.Load += new System.EventHandler(this.UCReservationAdd_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
