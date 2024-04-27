@@ -44,15 +44,6 @@ namespace HotelManagementSystem.Views.Reservation
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvReservation.AutoGenerateColumns = false;
-            if (dt.Rows.Count < pageSize)
-            {
-                int blankRowCount = pageSize - dt.Rows.Count;
-                for (int i = 0; i < blankRowCount; i++)
-                {
-                    DataRow newRow = dt.NewRow();
-                    dt.Rows.Add(newRow);
-                }
-            }
             dgvReservation.DataSource = dt;
             dgvReservation.Refresh();
         }

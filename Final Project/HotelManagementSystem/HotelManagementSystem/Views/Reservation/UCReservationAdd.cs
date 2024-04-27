@@ -146,12 +146,14 @@ namespace HotelManagementSystem.Views.Reservation
         {
             if (!string.IsNullOrEmpty(hdReservationId.Text))
             {
+                lbTitle.Text = "RESERVATION UPDATE";
                 btnBack.Enabled = true;
                 btnDelete.Enabled=true;
                 btnAdd.Text = "Update";
             }
             else
             {
+                lbTitle.Text = "RESERVATION ADD";
                 btnBack.Enabled = false;
                 btnDelete.Enabled = false;
                 btnAdd.Text = "Add";
