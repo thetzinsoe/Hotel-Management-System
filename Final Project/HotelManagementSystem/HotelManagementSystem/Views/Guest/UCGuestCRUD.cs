@@ -365,8 +365,18 @@ namespace HotelManagementSystem.Views.Guest
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList1);
             }
+        }
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
             return true;
-        }        
+        }
     }
 }
