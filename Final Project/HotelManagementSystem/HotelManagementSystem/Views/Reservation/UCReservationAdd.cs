@@ -169,7 +169,7 @@ namespace HotelManagementSystem.Views.Reservation
         {
             try
             {
-                DataTable dt = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date);
+                DataTable dt = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
                 if (dt == null)
                 {
                     validateInput = false;
@@ -249,7 +249,7 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-           
+            Load_room();
                 if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
                 {
                     validateInput = true;
@@ -259,22 +259,6 @@ namespace HotelManagementSystem.Views.Reservation
                     validateInput = false;
                     MessageBox.Show("Checkout date equal or later than checkin date!", "Wrong Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-        }
-
-        private void cbRoomNo_TextChanged(object sender, EventArgs e)
-        {
-            if (selectedRoomNo != string.Empty) {
-                if (selectedRoomNo == cbRoomNo.Text.ToString())
-                {
-                    validateInput = true;
-                }
-                else
-                {
-                    validateInput = false;
-                    MessageBox.Show("Choose the correct room number form drop down!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            
         }
 
         private void txtFullName_TextChanged(object sender, EventArgs e)
