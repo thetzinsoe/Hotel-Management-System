@@ -336,7 +336,6 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem cHECKADDToolStripMenuItem;
         private ToolStripMenuItem cHECKINLISTToolStripMenuItem1;
         private ToolStripMenuItem pAYMENTLISTToolStripMenuItem;
-        private ToolStripMenuItem pAYMENTADDToolStripMenuItem;
         private ToolStripMenuItem guestRegistrationToolStripMenuItem;
         private ToolStripMenuItem guestListToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
