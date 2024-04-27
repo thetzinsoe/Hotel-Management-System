@@ -266,11 +266,13 @@ namespace HotelManagementSystem.Views.CheckIn
         {
             if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
+                lbTitle.Text = "UPDATE CHECKIN";
                 btnCheckOut.Enabled = true;
                 btnCheckIn.Text = "UPDATE";
             }
             else
             {
+                lbTitle.Text = "ADD NEW CHECKIN";
                 btnCheckOut.Enabled = false;
                 btnCheckIn.Text = "CHECKIN";
             }

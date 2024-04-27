@@ -38,10 +38,10 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(4, 99);
+            this.reportViewer1.Location = new System.Drawing.Point(4, 107);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1093, 537);
+            this.reportViewer1.Size = new System.Drawing.Size(1093, 582);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -51,9 +51,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(4, 63);
+            this.button1.Location = new System.Drawing.Point(4, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 30);
+            this.button1.Size = new System.Drawing.Size(118, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
@@ -62,20 +62,20 @@
             // hdPaymentId
             // 
             this.hdPaymentId.AutoSize = true;
-            this.hdPaymentId.Location = new System.Drawing.Point(231, 18);
+            this.hdPaymentId.Location = new System.Drawing.Point(231, 20);
             this.hdPaymentId.Name = "hdPaymentId";
-            this.hdPaymentId.Size = new System.Drawing.Size(0, 12);
+            this.hdPaymentId.Size = new System.Drawing.Size(0, 13);
             this.hdPaymentId.TabIndex = 2;
             this.hdPaymentId.Visible = false;
             // 
             // pnTitle
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.Silver;
+            this.pnTitle.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1100, 57);
+            this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 79;
             // 
             // lbTitle
@@ -84,7 +84,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(470, 14);
+            this.lbTitle.Location = new System.Drawing.Point(470, 15);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(181, 30);
             this.lbTitle.TabIndex = 0;
@@ -92,14 +92,15 @@
             // 
             // UCPaymentReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.hdPaymentId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "UCPaymentReport";
-            this.Size = new System.Drawing.Size(1100, 639);
+            this.Size = new System.Drawing.Size(1100, 692);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
             this.ResumeLayout(false);

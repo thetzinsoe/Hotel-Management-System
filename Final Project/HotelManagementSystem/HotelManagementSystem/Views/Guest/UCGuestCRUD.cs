@@ -71,8 +71,8 @@ namespace HotelManagementSystem.Views.Guest
             }
             else
             {
-                uCGuestList.ReservationID=hdReservationId.Text;
-                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text,txtPhoneNumber.Text);
+                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text, txtPhoneNumber.Text);
+                uCGuestList1.ReservationID=hdReservationId.Text;
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList1);
             } 
@@ -339,9 +339,19 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UCGuestList uCGuestList = new UCGuestList();
-            this.Controls.Clear();
-            this.Controls.Add(uCGuestList);
+            if (string.IsNullOrEmpty(hdReservationId.Text))
+            {
+                UCGuestList uCGuestList = new UCGuestList();
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList);
+            }
+            else
+            {
+                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text, txtPhoneNumber.Text);
+                uCGuestList1.ReservationID = hdReservationId.Text;
+                this.Controls.Clear();
+                this.Controls.Add(uCGuestList1);
+            }
         }      
     }
 }

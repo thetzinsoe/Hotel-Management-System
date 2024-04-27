@@ -88,15 +88,6 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvCheckIn.AutoGenerateColumns = false;
-            if (dt.Rows.Count < pageSize)
-            {
-                int blankRowCount = pageSize - dt.Rows.Count;
-                for (int i = 0; i < blankRowCount; i++)
-                {
-                    DataRow newRow = dt.NewRow();
-                    dt.Rows.Add(newRow);
-                }
-            }
             dgvCheckIn.DataSource = dt;
             dgvCheckIn.Refresh();
         }

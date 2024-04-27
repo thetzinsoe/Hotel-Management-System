@@ -56,10 +56,12 @@ namespace HotelManagementSystem.Views.Payment
             if (!string.IsNullOrEmpty(hdPaymentId.Text.ToString()))
             {
                 btnConfirm.Enabled = false;
+                lbTitle.Text = "PAYMENT DETAIL";
             }
             else
             {
                 btnPrint.Enabled = false;
+                lbTitle.Text = "PAY NOW";
             }
             BindData();
         }
