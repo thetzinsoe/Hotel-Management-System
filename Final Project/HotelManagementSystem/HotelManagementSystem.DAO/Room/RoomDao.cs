@@ -78,6 +78,11 @@ namespace HotelManagementSystem.DAO.Room
             strSql = "SELECT * FROM Room WHERE room_type LIKE '%" + roomType + "%' AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
+        public DataTable SearchByRoomNumber(string roomNumber)
+        {
+            strSql = "SELECT * FROM Room WHERE room_type LIKE '%" + roomNumber + "%' AND is_deleted = 0";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
 
         public DataTable GetRecord(int page, int pageSize)
         {

@@ -29,6 +29,19 @@ namespace HotelManagementSystem.Views.Room
         private bool vaildInput()
         {
             string roomNumber = txtRoomNumber.Text, roomType = cbType.Text, Price = txtPrice.Text;
+            try
+            {
+                DataTable dt = roomService.SearchbyRoomNumber(roomNumber);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Room Number already in use!");
+                    return false;
+                }
+            }
+            catch
+            {
+                return true;
+            }
             if (string.IsNullOrWhiteSpace(roomNumber))
             {
                 MessageBox.Show("Empty Room Number!");

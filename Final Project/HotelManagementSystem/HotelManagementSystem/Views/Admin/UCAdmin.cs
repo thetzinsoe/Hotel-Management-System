@@ -42,25 +42,33 @@ namespace HotelManagementSystem.Views.Admin
             }
             else
             {
-                DataTable dt = adminService.GetAdminByUsername(txtUsername.Text);
-                if (dt.Rows.Count == 0)
+                try
                 {
-                    MessageBox.Show("Username Does not Exist!");
-                }
-                else
-                {
-                    string validpass = dt.Rows[0][2].ToString();
-                    if (password != validpass)
+                    DataTable dt = adminService.GetAdminByUsername(txtUsername.Text);
+                    if (dt.Rows.Count == 0)
                     {
-                        MessageBox.Show("Incorrect Password!");
+                        MessageBox.Show("Username Does not Exist!");
                     }
                     else
                     {
-                        MessageBox.Show("Login Successful!");
-                        FrmMenu mainForm = this.ParentForm as FrmMenu;
-                        mainForm.LoginSuccess();
+                        string validpass = dt.Rows[0][2].ToString();
+                        if (password != validpass)
+                        {
+                            MessageBox.Show("Incorrect Password!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Successful!");
+                            FrmMenu mainForm = this.ParentForm as FrmMenu;
+                            mainForm.LoginSuccess();
+                        }
                     }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Username does not exist!");
+                }
+                
             }
         }
 
