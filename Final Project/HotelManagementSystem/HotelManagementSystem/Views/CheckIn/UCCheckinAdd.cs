@@ -25,6 +25,7 @@ namespace HotelManagementSystem.Views.CheckIn
         private string selectedGuestNrc = string.Empty;
         private int selectedGuestId = 0;
         private string selectedPhone = string.Empty;
+        private DateTime newCheckinDate = DateTime.MinValue;
         UCCheckInList uCCheckInList = new UCCheckInList();
         CheckInEntity checkInEntity = new CheckInEntity();
         CheckInService checkInService = new CheckInService();
@@ -69,17 +70,6 @@ namespace HotelManagementSystem.Views.CheckIn
 
             try
             {
-                DataTable dtr = reservationService.GetAllRoom();
-                cbRoomNumber.DataSource = dtr;
-                cbRoomNumber.DisplayMember = "room_no";
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-
-            try
-            {
                 DataTable dt = checkInService.GetAllGuest();
                 cbGuestName.DataSource = dt;
                 cbGuestNrc.DataSource = dt;
@@ -90,8 +80,31 @@ namespace HotelManagementSystem.Views.CheckIn
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            Load_Room();
             BtnState();
             BindData();
+        }
+
+        private void Load_Room()
+        {
+            try
+            {
+                DataTable dtr = null;
+                if (string.IsNullOrEmpty(hdCheckInId.Text))
+                {
+                    dtr = reservationService.GetAllRoom();
+                }
+                else
+                {
+                    dtr = reservationService.GetRoomWithDate(newCheckinDate.Date, dtpCheckOutDate.Value.Date);
+                }
+                cbRoomNumber.DataSource = dtr;
+                cbRoomNumber.DisplayMember = "room_no";
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -230,6 +243,7 @@ namespace HotelManagementSystem.Views.CheckIn
             return checkInEntity;
         }
 
+
         private ReservationEntity CreateReservationData()
         {
             ReservationEntity reservationEntity = new ReservationEntity();
@@ -278,6 +292,8 @@ namespace HotelManagementSystem.Views.CheckIn
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
+                        DateTime oldCheckOutDate = Convert.ToDateTime(dt.Rows[0]["checkout_date"]);
+                        newCheckinDate = oldCheckOutDate.AddDays(1);
                     }
 
                     if (string.IsNullOrEmpty(hdReservationId.Text))
@@ -323,6 +339,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
+            Load_Room();
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
                 if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)

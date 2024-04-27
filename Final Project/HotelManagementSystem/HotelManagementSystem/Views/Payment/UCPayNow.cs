@@ -99,6 +99,17 @@ namespace HotelManagementSystem.Views.Payment
             if (!string.IsNullOrEmpty(txtCheckInId.Text.ToString()))
             {
                 PaymentEntity paymentEntity = CreateData();
+                ReservationService reservationService = new ReservationService();
+                int Reid = reservationService.FindReservationId(roomId, checkIn.Date, checkOut.Date);
+                if (Reid <= 0)
+                {
+                    MessageBox.Show("Reservation not Found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    reservationService.Delete(Reid);
+                }
                 bool success = paymentService.Insert(paymentEntity);
                 bool delCheckin = checkInService.Delete(int.Parse(txtCheckInId.Text.ToString()));
                 DataTable dt = reservationService.haveRoom(roomId);

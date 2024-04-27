@@ -244,7 +244,6 @@
             this.cbRoomNo.TabIndex = 123;
             this.cbRoomNo.Text = "Choose Room";
             this.cbRoomNo.SelectedValueChanged += new System.EventHandler(this.cbRoomNo_SelectedValueChanged);
-            this.cbRoomNo.TextChanged += new System.EventHandler(this.cbRoomNo_TextChanged);
             // 
             // label1
             // 

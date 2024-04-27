@@ -40,9 +40,9 @@ namespace HotelManagementSystem.Services.Reservation
             return dt;
         }
         
-        public DataTable GetRoomWithDate(DateTime checkinDate)
+        public DataTable GetRoomWithDate(DateTime checkinDate,DateTime checkoutDate)
         {
-            DataTable dt = reservationDao.GetRoomWithDate(checkinDate);
+            DataTable dt = reservationDao.GetRoomWithDate(checkinDate,checkoutDate);
             return dt;
         }
 

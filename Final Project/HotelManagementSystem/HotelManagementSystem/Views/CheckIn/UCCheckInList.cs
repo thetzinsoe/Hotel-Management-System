@@ -54,18 +54,6 @@ namespace HotelManagementSystem.Views.CheckIn
                         checkinDate = Convert.ToDateTime(row["checkin_date"]);
                         checkoutDate = Convert.ToDateTime(row["checkout_date"]);
                     }
-
-                    ReservationService reservationService = new ReservationService();
-                    int Reid = reservationService.FindReservationId(room_id,checkinDate.Date, checkoutDate.Date);
-                    if (id <= 0)
-                    {
-                        MessageBox.Show("Reservation not Found", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        reservationService.Delete(Reid);
-                    }
                     UCPayNow uCPayNow = new UCPayNow(id, room_id, room_fees, checkinDate, checkoutDate);
                     this.Controls.Clear();
                     this.Controls.Add(uCPayNow);
