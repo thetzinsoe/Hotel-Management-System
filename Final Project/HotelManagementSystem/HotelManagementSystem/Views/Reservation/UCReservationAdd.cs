@@ -59,7 +59,7 @@ namespace HotelManagementSystem.Views.Reservation
                 validateInput = true;
             }
 
-            if (cbRoomNo.SelectedIndex>=0 || selectedRoomId >0 || selectedRoomNo==cbRoomNo.Text)
+            if (cbRoomNo.SelectedIndex>=0 && selectedRoomId >0 && selectedRoomNo==cbRoomNo.Text)
             {
                 validateInput = true;
             }
