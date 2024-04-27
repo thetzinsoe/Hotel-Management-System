@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearchValue = new System.Windows.Forms.TextBox();
             this.cbSearchType = new System.Windows.Forms.ComboBox();
             this.btn3xNext = new System.Windows.Forms.Button();
@@ -59,10 +59,11 @@
             // txtSearchValue
             // 
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchValue.Location = new System.Drawing.Point(577, 130);
+            this.txtSearchValue.Location = new System.Drawing.Point(769, 173);
+            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
-            this.txtSearchValue.Size = new System.Drawing.Size(314, 29);
+            this.txtSearchValue.Size = new System.Drawing.Size(417, 34);
             this.txtSearchValue.TabIndex = 111;
             this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             // 
@@ -75,9 +76,10 @@
             "Name",
             "Nrc Number",
             "Checkin No."});
-            this.cbSearchType.Location = new System.Drawing.Point(897, 130);
+            this.cbSearchType.Location = new System.Drawing.Point(1196, 173);
+            this.cbSearchType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSearchType.Name = "cbSearchType";
-            this.cbSearchType.Size = new System.Drawing.Size(194, 29);
+            this.cbSearchType.Size = new System.Drawing.Size(257, 36);
             this.cbSearchType.TabIndex = 110;
             this.cbSearchType.Text = "Search By";
             // 
@@ -88,10 +90,9 @@
             this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xNext.ForeColor = System.Drawing.Color.White;
-            this.btn3xNext.Location = new System.Drawing.Point(742, 525);
-            this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3xNext.Location = new System.Drawing.Point(989, 700);
             this.btn3xNext.Name = "btn3xNext";
-            this.btn3xNext.Size = new System.Drawing.Size(64, 34);
+            this.btn3xNext.Size = new System.Drawing.Size(85, 45);
             this.btn3xNext.TabIndex = 109;
             this.btn3xNext.Text = ">>";
             this.btn3xNext.UseVisualStyleBackColor = false;
@@ -104,10 +105,9 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(672, 525);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Location = new System.Drawing.Point(896, 700);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(64, 34);
+            this.btnNext.Size = new System.Drawing.Size(85, 45);
             this.btnNext.TabIndex = 108;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -117,10 +117,9 @@
             // 
             this.lblPageNo.AutoSize = true;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPageNo.Location = new System.Drawing.Point(536, 531);
-            this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPageNo.Location = new System.Drawing.Point(715, 708);
             this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(45, 21);
+            this.lblPageNo.Size = new System.Drawing.Size(55, 28);
             this.lblPageNo.TabIndex = 107;
             this.lblPageNo.Text = "label";
             // 
@@ -131,10 +130,9 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(387, 525);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrev.Location = new System.Drawing.Point(516, 700);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(64, 34);
+            this.btnPrev.Size = new System.Drawing.Size(85, 45);
             this.btnPrev.TabIndex = 106;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = false;
@@ -147,10 +145,9 @@
             this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
-            this.btn3xPrevious.Location = new System.Drawing.Point(313, 525);
-            this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
+            this.btn3xPrevious.Location = new System.Drawing.Point(417, 700);
             this.btn3xPrevious.Name = "btn3xPrevious";
-            this.btn3xPrevious.Size = new System.Drawing.Size(64, 34);
+            this.btn3xPrevious.Size = new System.Drawing.Size(85, 45);
             this.btn3xPrevious.TabIndex = 105;
             this.btn3xPrevious.Text = "<<";
             this.btn3xPrevious.UseVisualStyleBackColor = false;
@@ -160,14 +157,14 @@
             // 
             this.dgvOldCheckIn.AllowUserToAddRows = false;
             this.dgvOldCheckIn.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOldCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOldCheckIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvOldCheckIn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOldCheckIn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -176,20 +173,22 @@
             this.roomNumber,
             this.checkInDate,
             this.checkOutDate});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOldCheckIn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvOldCheckIn.Location = new System.Drawing.Point(10, 165);
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOldCheckIn.DefaultCellStyle = dataGridViewCellStyle30;
+            this.dgvOldCheckIn.Location = new System.Drawing.Point(13, 220);
+            this.dgvOldCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvOldCheckIn.Name = "dgvOldCheckIn";
             this.dgvOldCheckIn.ReadOnly = true;
             this.dgvOldCheckIn.RowHeadersVisible = false;
+            this.dgvOldCheckIn.RowHeadersWidth = 51;
             this.dgvOldCheckIn.RowTemplate.Height = 30;
-            this.dgvOldCheckIn.Size = new System.Drawing.Size(1081, 330);
+            this.dgvOldCheckIn.Size = new System.Drawing.Size(1441, 440);
             this.dgvOldCheckIn.TabIndex = 104;
             this.dgvOldCheckIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOldCheckIn_CellContentClick);
             // 
@@ -197,9 +196,10 @@
             // 
             this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Id.DataPropertyName = "checkin_id";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Id.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle26;
             this.Id.HeaderText = "Checkin No.";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -209,6 +209,7 @@
             this.guestName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.guestName.DataPropertyName = "full_name";
             this.guestName.HeaderText = "Guest Name";
+            this.guestName.MinimumWidth = 6;
             this.guestName.Name = "guestName";
             this.guestName.ReadOnly = true;
             // 
@@ -217,6 +218,7 @@
             this.guestNrc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.guestNrc.DataPropertyName = "nrc_number";
             this.guestNrc.HeaderText = "Guest Nrc Number";
+            this.guestNrc.MinimumWidth = 6;
             this.guestNrc.Name = "guestNrc";
             this.guestNrc.ReadOnly = true;
             // 
@@ -224,9 +226,10 @@
             // 
             this.roomNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.roomNumber.DataPropertyName = "room_no";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.roomNumber.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.roomNumber.DefaultCellStyle = dataGridViewCellStyle27;
             this.roomNumber.HeaderText = "Room Number";
+            this.roomNumber.MinimumWidth = 6;
             this.roomNumber.Name = "roomNumber";
             this.roomNumber.ReadOnly = true;
             // 
@@ -234,9 +237,10 @@
             // 
             this.checkInDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkInDate.DataPropertyName = "checkin_date";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkInDate.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkInDate.DefaultCellStyle = dataGridViewCellStyle28;
             this.checkInDate.HeaderText = "CheckIn Date";
+            this.checkInDate.MinimumWidth = 6;
             this.checkInDate.Name = "checkInDate";
             this.checkInDate.ReadOnly = true;
             // 
@@ -244,9 +248,10 @@
             // 
             this.checkOutDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkOutDate.DataPropertyName = "checkout_date";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkOutDate.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkOutDate.DefaultCellStyle = dataGridViewCellStyle29;
             this.checkOutDate.HeaderText = "Check Out Date";
+            this.checkOutDate.MinimumWidth = 6;
             this.checkOutDate.Name = "checkOutDate";
             this.checkOutDate.ReadOnly = true;
             // 
@@ -254,22 +259,24 @@
             // 
             this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(470, 14);
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Black;
+            this.lbTitle.Location = new System.Drawing.Point(627, 19);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(200, 30);
+            this.lbTitle.Size = new System.Drawing.Size(263, 38);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "OLD CHECKIN LIST";
             // 
             // pnTitle
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.Silver;
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1100, 57);
+            this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 103;
             // 
             // button1
@@ -279,10 +286,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(10, 125);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(13, 167);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 34);
+            this.button1.Size = new System.Drawing.Size(184, 45);
             this.button1.TabIndex = 112;
             this.button1.Text = "BACK";
             this.button1.UseVisualStyleBackColor = false;
@@ -292,17 +298,17 @@
             // 
             this.hdOldCheckinId.AutoSize = true;
             this.hdOldCheckinId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hdOldCheckinId.Location = new System.Drawing.Point(309, 131);
-            this.hdOldCheckinId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.hdOldCheckinId.Location = new System.Drawing.Point(412, 175);
             this.hdOldCheckinId.Name = "hdOldCheckinId";
-            this.hdOldCheckinId.Size = new System.Drawing.Size(0, 21);
+            this.hdOldCheckinId.Size = new System.Drawing.Size(0, 28);
             this.hdOldCheckinId.TabIndex = 113;
             this.hdOldCheckinId.Visible = false;
             // 
             // UCOldCheckinList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.hdOldCheckinId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtSearchValue);
@@ -314,8 +320,9 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvOldCheckIn);
             this.Controls.Add(this.pnTitle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCOldCheckinList";
-            this.Size = new System.Drawing.Size(1100, 650);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCOldCheckinList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOldCheckIn)).EndInit();
             this.pnTitle.ResumeLayout(false);

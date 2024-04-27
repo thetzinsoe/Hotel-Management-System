@@ -208,7 +208,7 @@ namespace HotelManagementSystem.DAO.Employee
         /// <param name="employeeId">.</param>
         public bool Delete(int employeeId)
         {
-            strSql = "UPDATE Employee SET is_deleted = @IsDeleted, deleted_userId = @DeletedUserId WHERE employee_id =@EmployeeId";
+            strSql = "UPDATE Employee SET is_deleted = @IsDeleted WHERE employee_id =@EmployeeId";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@EmployeeId", employeeId),
                                         new SqlParameter("@IsDeleted", 1)

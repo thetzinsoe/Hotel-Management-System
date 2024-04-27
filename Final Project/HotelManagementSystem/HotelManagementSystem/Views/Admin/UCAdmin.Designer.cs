@@ -37,6 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Label();
             this.btnShow = new System.Windows.Forms.Button();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblpass
@@ -139,11 +142,33 @@
             this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
+            // pnTitle
+            // 
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
+            this.pnTitle.Controls.Add(this.lblTitle);
+            this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(1467, 75);
+            this.pnTitle.TabIndex = 10;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitle.Location = new System.Drawing.Point(683, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(123, 38);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "SIGN IN";
+            // 
             // UCAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label1);
@@ -155,6 +180,8 @@
             this.Controls.Add(this.lblpass);
             this.Name = "UCAdmin";
             this.Size = new System.Drawing.Size(1467, 861);
+            this.pnTitle.ResumeLayout(false);
+            this.pnTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +198,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label btnSignUp;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Panel pnTitle;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

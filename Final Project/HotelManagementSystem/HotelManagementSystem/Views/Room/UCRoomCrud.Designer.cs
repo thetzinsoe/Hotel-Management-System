@@ -39,6 +39,9 @@
             this.cbType = new System.Windows.Forms.ComboBox();
             this.txtRoomID = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblRoomNumber
@@ -175,11 +178,33 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // pnTitle
+            // 
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
+            this.pnTitle.Controls.Add(this.lblTitle);
+            this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(1467, 75);
+            this.pnTitle.TabIndex = 12;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitle.Location = new System.Drawing.Point(650, 18);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(182, 38);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "ADD ROOM ";
+            // 
             // UCRoomCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtRoomID);
             this.Controls.Add(this.cbType);
@@ -194,6 +219,8 @@
             this.Name = "UCRoomCrud";
             this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCRoomCrud_Load);
+            this.pnTitle.ResumeLayout(false);
+            this.pnTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,5 +239,7 @@
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label txtRoomID;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel pnTitle;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

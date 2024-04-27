@@ -101,7 +101,7 @@ namespace HotelManagementSystem.Views.Menu
             // mainMenu
             // 
             this.mainMenu.AutoSize = false;
-            this.mainMenu.BackColor = System.Drawing.Color.SteelBlue;
+            this.mainMenu.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.mainMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {

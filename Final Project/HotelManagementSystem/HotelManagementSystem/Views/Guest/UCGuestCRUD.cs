@@ -369,6 +369,6 @@ namespace HotelManagementSystem.Views.Guest
             }
 
             return true;
-        }
+        }        
     }
 }

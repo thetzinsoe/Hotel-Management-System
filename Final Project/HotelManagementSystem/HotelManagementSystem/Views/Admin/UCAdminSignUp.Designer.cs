@@ -41,7 +41,10 @@
             this.btnLogIn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtadminID = new System.Windows.Forms.Label();
+            this.pnTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtusername
@@ -194,16 +197,40 @@
             this.txtadminID.TabIndex = 9;
             this.txtadminID.Visible = false;
             // 
+            // pnTitle
+            // 
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
+            this.pnTitle.Controls.Add(this.lblTitle);
+            this.pnTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnTitle.Name = "pnTitle";
+            this.pnTitle.Size = new System.Drawing.Size(1467, 75);
+            this.pnTitle.TabIndex = 11;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitle.Location = new System.Drawing.Point(612, 14);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(292, 38);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "USER REGISTRATION";
+            // 
             // UCAdminSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.groupBox1);
             this.Name = "UCAdminSignUp";
             this.Size = new System.Drawing.Size(1467, 861);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.pnTitle.ResumeLayout(false);
+            this.pnTitle.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +250,7 @@
         private System.Windows.Forms.Label txtadminID;
         private System.Windows.Forms.Label btnLogIn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnTitle;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

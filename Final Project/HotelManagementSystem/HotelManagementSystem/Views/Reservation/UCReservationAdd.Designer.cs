@@ -59,10 +59,10 @@
             // 
             // pnTitle
             // 
-            this.pnTitle.BackColor = System.Drawing.Color.Silver;
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 1);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 77;
@@ -71,12 +71,12 @@
             // 
             this.lbTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(627, 19);
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.Black;
+            this.lbTitle.Location = new System.Drawing.Point(629, 19);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(196, 37);
+            this.lbTitle.Size = new System.Drawing.Size(203, 38);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "RESERVATION";
             // 
@@ -238,7 +238,7 @@
             this.cbRoomNo.DropDownWidth = 376;
             this.cbRoomNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomNo.Location = new System.Drawing.Point(501, 349);
-            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNo.Name = "cbRoomNo";
             this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
             this.cbRoomNo.TabIndex = 123;
@@ -365,6 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.lbCheckOutValidation);
             this.Controls.Add(this.lbPhoneNumberValidation);
             this.Controls.Add(this.lbRoomNoValidation);
@@ -390,7 +391,7 @@
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCReservationAdd";
             this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.UCReservationAdd_Load);
