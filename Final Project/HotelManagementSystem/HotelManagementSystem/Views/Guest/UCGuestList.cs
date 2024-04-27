@@ -338,7 +338,26 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btnGoToCheckin_Click(object sender, EventArgs e)
         {
-            if (dgvGuestList.RowCount > 0)
+            if (!string.IsNullOrEmpty (hdReservationId.Text))
+            {
+                if (dgvGuestList.RowCount > 0)
+                {
+                    if (dgvGuestList.SelectedCells.Count > 0)
+                    {
+                        int rowIndex = dgvGuestList.SelectedCells[0].RowIndex;
+                        // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
+                        string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
+                        UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
+                        uCCheckinAdd.RvId = hdReservationId.Text;
+                        uCCheckinAdd.Nrc = guestNrc;
+                        this.Controls.Clear();
+                        this.Controls.Add(uCCheckinAdd);
+                        // MessageBox.Show("Guest ID: " + guestId+"  "+guestNrc);
+
+                    }
+                }
+            }
+            else
             {
                 if (dgvGuestList.SelectedCells.Count > 0)
                 {
@@ -346,7 +365,6 @@ namespace HotelManagementSystem.Views.Guest
                     // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
                     string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
                     UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
-                    uCCheckinAdd.RvId = hdReservationId.Text;
                     uCCheckinAdd.Nrc = guestNrc;
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckinAdd);
@@ -354,6 +372,7 @@ namespace HotelManagementSystem.Views.Guest
 
                 }
             }
+
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace HotelManagementSystem.Views.Employee
 {
@@ -259,6 +260,11 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Please enter NRC Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false; 
             }
+
+            if (!ValidateNRCNumber(txtNRCNumber.Text))
+            {
+                return false;
+            }
             int age = Convert.ToInt32(DateTime.Today.Year - dtpDob.Value.Year);
             if (dtpDob.Value.Date > DateTime.Today.AddYears(-age))
             {
@@ -354,6 +360,19 @@ namespace HotelManagementSystem.Views.Employee
             UCEmployeeList uCEmployeeList = new UCEmployeeList();
             this.Controls.Clear();
             this.Controls.Add(uCEmployeeList);
+        }
+
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -307,6 +307,13 @@ namespace HotelManagementSystem.Views.CheckIn
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                     }
                 }
+                else if (string.IsNullOrEmpty(hdReservationId.Text))
+                {                   
+                    if (!string.IsNullOrEmpty(hdGuestNrc.Text))
+                    {
+                        cbGuestNrc.Text = hdGuestNrc.Text;
+                    }
+                }
             }
             catch (Exception err)
             {

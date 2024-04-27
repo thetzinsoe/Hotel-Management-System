@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace HotelManagementSystem.Views.Guest
 {
@@ -59,7 +60,7 @@ namespace HotelManagementSystem.Views.Guest
                 success = guestService.Update(guestEntity);
                 if (success)
                 {
-                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                     MessageBox.Show("Error Updating", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -71,12 +72,12 @@ namespace HotelManagementSystem.Views.Guest
             }
             else
             {
-                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text,txtPhoneNumber.Text);
+                UCGuestList uCGuestList1 = new UCGuestList(txtFullName.Text, txtPhoneNumber.Text);
                 uCGuestList1.ReservationID = hdReservationId.Text;
                 this.Controls.Clear();
                 this.Controls.Add(uCGuestList1);
 
-            } 
+            }
         }
 
         private GuestEntity CreateData()
@@ -145,7 +146,7 @@ namespace HotelManagementSystem.Views.Guest
                             rdbFemale.Checked = true;
                             break;
                         default:
-                            MessageBox.Show("Error assigning gendervalue","Error",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Error assigning gendervalue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
                     }
                 }
@@ -176,7 +177,7 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(!ValidateInput())
+            if (!ValidateInput())
             {
                 return;
             }
@@ -188,7 +189,7 @@ namespace HotelManagementSystem.Views.Guest
             UCGuestList uCGuestList = new UCGuestList();
             int guestId = Convert.ToInt32(txtGuestId.Text);
             GuestService guestService = new GuestService();
-            bool success = false;            
+            bool success = false;
             DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
@@ -286,13 +287,17 @@ namespace HotelManagementSystem.Views.Guest
                 MessageBox.Show("Please enter NRC Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (!ValidateNRCNumber(txtNRCNumber.Text))
+            {
+                return false;
+            }
             if (string.IsNullOrEmpty(txtPhoneNumber.Text))
             {
                 MessageBox.Show("Please enter Phone Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (string.IsNullOrEmpty(txtGuestId.Text)) 
+            if (string.IsNullOrEmpty(txtGuestId.Text))
             {
                 if (guestService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))
                 {
@@ -321,9 +326,9 @@ namespace HotelManagementSystem.Views.Guest
                     return false;
                 }
             }
-            
+
             return true;
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -350,6 +355,20 @@ namespace HotelManagementSystem.Views.Guest
             UCGuestList uCGuestList = new UCGuestList();
             this.Controls.Clear();
             this.Controls.Add(uCGuestList);
-        }      
+        }
+
+        
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
     }
 }
