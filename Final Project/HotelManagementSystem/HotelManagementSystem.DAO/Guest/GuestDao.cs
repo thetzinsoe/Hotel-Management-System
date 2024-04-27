@@ -63,12 +63,21 @@ namespace HotelManagementSystem.DAO.Guest
         /// <summary>
         /// Search
         /// </summary>
+        /// <param name="searchtype"></param>
         /// <param name="name">.</param>
         /// <returns></returns>
-        public DataTable Search(string name)
+        public DataTable Search(int searchType, string name)
         {
-            strSql = "SELECT * FROM Guest " +
+            if (searchType == 0)
+            {
+                strSql = "SELECT * FROM Guest " +
              "WHERE full_name LIKE '%" + name + "%' AND is_deleted = 0";
+            }
+            else if (searchType == 1)
+            {
+                strSql = "SELECT * FROM Guest " +
+             "WHERE nrc_number LIKE '%" + name + "%' AND is_deleted = 0";
+            }
             return connection.ExecuteDataTable (CommandType.Text, strSql);
         }
 
@@ -92,6 +101,55 @@ namespace HotelManagementSystem.DAO.Guest
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public bool IsGuestValid(string name, string nrc)
+        {
+            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };    
+            object result = connection.ExecuteScalar(CommandType.Text,strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsGuestValidForUpdating(int id, string name, string nrc)
+        {
+            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber and guest_id != @GuestId";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@GuestId", id),
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsNRCValid(string name, string nrc)
+        {
+            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsNRCValidForUpdating(int id, string name, string nrc)
+        {
+            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName AND guest_id != @GuestId";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@GuestId", id),
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
         /// <summary>
         /// Create Guest
         /// </summary>

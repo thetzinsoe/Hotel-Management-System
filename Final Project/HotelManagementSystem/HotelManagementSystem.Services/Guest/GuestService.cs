@@ -47,9 +47,9 @@ namespace HotelManagementSystem.Services.Guest
         /// </summary>
         /// <param name="name">.</param>
         /// <returns>.</returns>
-        public DataTable Search(string name)
+        public DataTable Search(int searchType, string name)
         {
-            DataTable dt = guestDao.Search(name);
+            DataTable dt = guestDao.Search(searchType, name);
             return dt;
         }
 
@@ -90,6 +90,26 @@ namespace HotelManagementSystem.Services.Guest
         public bool Delete(int guestId)
         {
             return guestDao.Delete(guestId);
+        }
+
+        public bool IsGuestValid(string name, string nrc)
+        {
+            return guestDao.IsGuestValid(name, nrc);
+        }
+
+        public bool IsNRCValid(string name, string nrc)
+        {
+            return guestDao.IsNRCValid(name, nrc);
+        }
+
+        public bool IsGuestValidForUpdating(int id, string name, string nrc)
+        {
+            return guestDao.IsGuestValidForUpdating(id, name, nrc);
+        }
+
+        public bool IsNRCValidForUpdating(int id, string name, string nrc)
+        {
+            return guestDao.IsNRCValidForUpdating(id, name, nrc);
         }
         #endregion
     }

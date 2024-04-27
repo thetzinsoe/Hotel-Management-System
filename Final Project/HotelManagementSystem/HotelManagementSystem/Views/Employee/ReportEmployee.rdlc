@@ -18,7 +18,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.00833in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -27,7 +27,7 @@
               <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1in</Width>
+              <Width>2.26666in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -675,7 +675,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetEmployee</DataSetName>
         <Height>0.5in</Height>
-        <Width>10in</Width>
+        <Width>12.27499in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -686,7 +686,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>10in</Width>
+  <Width>12.39999in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
