@@ -97,7 +97,7 @@
             this.dgvEmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmployeeList.RowTemplate.Height = 24;
             this.dgvEmployeeList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvEmployeeList.Size = new System.Drawing.Size(1417, 341);
+            this.dgvEmployeeList.Size = new System.Drawing.Size(1417, 360);
             this.dgvEmployeeList.TabIndex = 1;
             this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             this.dgvEmployeeList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmployeeList_CellFormatting);
