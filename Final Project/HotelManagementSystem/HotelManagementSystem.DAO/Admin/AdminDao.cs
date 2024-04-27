@@ -24,10 +24,10 @@ namespace HotelManagementSystem.DAO.Admin
         }
 
         // Get Admin by Id
-        public DataTable GetAdminById(int adminId)
+        public DataTable GetAdminById(int user_id)
         {
             strSql = "SELECT * FROM User " +
-                      "WHERE  user_id= " + adminId + "AND is_deleted = 0";
+                      "WHERE  user_id= " + user_id + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
         public DataTable GetAdminByUsername(string username)
@@ -69,11 +69,11 @@ namespace HotelManagementSystem.DAO.Admin
         }
 
         // Delete Admin
-        public bool DeleteAdmin(int adminId)
+        public bool DeleteAdmin(int user_id)
         {
             strSql = "DELETE FROM User WHERE user_id = @AdminId";
             SqlParameter[] sqlParam = {
-                new SqlParameter("@AdminId", adminId)
+                new SqlParameter("@AdminId", user_id)
             };
 
             return connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
