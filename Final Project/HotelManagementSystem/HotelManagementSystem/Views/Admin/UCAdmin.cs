@@ -103,5 +103,20 @@ namespace HotelManagementSystem.Views.Admin
             this.Controls.Clear();
             this.Controls.Add(uCAdminSignUp);
         }
+
+        private void UCAdmin_Load(object sender, EventArgs e)
+        {
+            btnShow.Visible=false;         
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            btnShow.Visible = true;
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+        }
     }
 }

@@ -46,7 +46,7 @@
             // 
             this.lblpass.AutoSize = true;
             this.lblpass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpass.Location = new System.Drawing.Point(361, 369);
+            this.lblpass.Location = new System.Drawing.Point(361, 302);
             this.lblpass.Name = "lblpass";
             this.lblpass.Size = new System.Drawing.Size(97, 28);
             this.lblpass.TabIndex = 0;
@@ -55,19 +55,23 @@
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(518, 363);
+            this.txtPassword.Location = new System.Drawing.Point(518, 296);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(436, 34);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(854, 489);
+            this.btnLogin.Location = new System.Drawing.Point(854, 426);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 35);
             this.btnLogin.TabIndex = 2;
@@ -96,11 +100,12 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(652, 489);
+            this.btnCancel.Location = new System.Drawing.Point(656, 426);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 5;
@@ -112,7 +117,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(686, 567);
+            this.label1.Location = new System.Drawing.Point(679, 511);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 6;
@@ -122,7 +127,7 @@
             // 
             this.btnSignUp.AutoSize = true;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Location = new System.Drawing.Point(818, 559);
+            this.btnSignUp.Location = new System.Drawing.Point(811, 503);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(89, 28);
             this.btnSignUp.TabIndex = 7;
@@ -134,7 +139,7 @@
             this.btnShow.BackColor = System.Drawing.Color.White;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(879, 403);
+            this.btnShow.Location = new System.Drawing.Point(879, 336);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 25);
             this.btnShow.TabIndex = 9;
@@ -180,6 +185,7 @@
             this.Controls.Add(this.lblpass);
             this.Name = "UCAdmin";
             this.Size = new System.Drawing.Size(1467, 861);
+            this.Load += new System.EventHandler(this.UCAdmin_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
             this.ResumeLayout(false);

@@ -33,7 +33,7 @@ namespace HotelManagementSystem.DAO.Admin
         public DataTable GetAdminByUsername(string username)
         {
             strSql = "SELECT * FROM [User] " +
-                      "WHERE  username = " + username + "AND is_deleted = 0";
+                      "WHERE  username = '" + username + "' AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

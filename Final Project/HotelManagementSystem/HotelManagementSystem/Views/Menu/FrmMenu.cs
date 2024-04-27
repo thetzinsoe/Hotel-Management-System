@@ -120,7 +120,7 @@ namespace HotelManagementSystem.Views.Menu
             UCAdmin uCAdmin = new UCAdmin();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCAdmin);
-            mainMenu.Enabled = true;
+            mainMenu.Enabled = false;
             btnLogout.Visible = false;
         }
         public void LoginSuccess()
