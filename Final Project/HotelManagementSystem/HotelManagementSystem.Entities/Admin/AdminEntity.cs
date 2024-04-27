@@ -26,7 +26,7 @@ namespace HotelManagementSystem.Entities.Admin
         /// <summary>
         /// Gets or sets the role of the user.
         /// </summary>
-        public string Role { get; set; }
+        public short Role { get; set; }
 
         /// <summary>
         /// Gets or sets the created date.
@@ -41,7 +41,7 @@ namespace HotelManagementSystem.Entities.Admin
         /// <summary>
         /// Gets or sets whether the user is deleted.
         /// </summary>
-        public bool IsDeleted { get; set; }
+        public short IsDeleted { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UserEntity"/> class.
@@ -59,10 +59,10 @@ namespace HotelManagementSystem.Entities.Admin
             user_id = 0;
             Username = string.Empty;
             Password = string.Empty;
-            Role = string.Empty;
+            Role = 0;
             CreatedDate = DateTime.Now;
             UpdatedDate = DateTime.Now;
-            IsDeleted = false;
+            IsDeleted = 0;
         }
     }
 }

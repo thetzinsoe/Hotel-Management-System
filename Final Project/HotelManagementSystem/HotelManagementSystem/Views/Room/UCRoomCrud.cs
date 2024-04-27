@@ -128,10 +128,10 @@ namespace HotelManagementSystem.Views.Room
 
                     if (dt.Rows.Count > 0)
                     {
-
-                        txtRoomNumber.Text = dt.Rows[0]["RoomNumber"].ToString();
-                        cbType.Text = dt.Rows[0]["Type"].ToString();
-                        txtPrice.Text = dt.Rows[0]["Price"].ToString();
+                        txtRoomID.Text = dt.Rows[0]["room_id"].ToString();
+                        txtRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
+                        cbType.Text = dt.Rows[0]["room_type"].ToString();
+                        txtPrice.Text = dt.Rows[0]["room_price"].ToString();
                     }
                 }
             }

@@ -154,7 +154,7 @@
             this.gbMain.Controls.Add(this.panel2);
             this.gbMain.Controls.Add(this.panel1);
             this.gbMain.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMain.Location = new System.Drawing.Point(0, 200);
+            this.gbMain.Location = new System.Drawing.Point(142, 209);
             this.gbMain.Name = "gbMain";
             this.gbMain.Size = new System.Drawing.Size(1200, 450);
             this.gbMain.TabIndex = 37;
@@ -517,7 +517,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.gbMain);
             this.Name = "MainDashBoard";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.MainDashBoard_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom)).EndInit();

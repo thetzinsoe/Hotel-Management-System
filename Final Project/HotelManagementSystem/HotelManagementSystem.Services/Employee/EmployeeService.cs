@@ -86,9 +86,29 @@ namespace HotelManagementSystem.Services.Employee
         /// </summary>
         /// <param name="employeeId">.</param>
         /// <param name="userId">.</param>
-        public bool Delete(int employeeId, int userId)
+        public bool Delete(int employeeId)
         {
-            return employeeDao.Delete(employeeId, userId);
+            return employeeDao.Delete(employeeId);
+        }
+
+        public bool IsGuestValid(string name, string nrc)
+        {
+            return employeeDao.IsEmployeeValid(name, nrc);
+        }
+
+        public bool IsNRCValid(string name, string nrc)
+        {
+            return employeeDao.IsNRCValid(name, nrc);
+        }
+
+        public bool IsGuestValidForUpdating(int id, string name, string nrc)
+        {
+            return employeeDao.IsEmployeeValidForUpdating(id, name, nrc);
+        }
+
+        public bool IsNRCValidForUpdating(int id, string name, string nrc)
+        {
+            return employeeDao.IsNRCValidForUpdating(id, name, nrc);
         }
     }
 }

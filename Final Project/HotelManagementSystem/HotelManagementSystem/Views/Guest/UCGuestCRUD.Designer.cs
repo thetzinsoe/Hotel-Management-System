@@ -59,6 +59,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbMale = new System.Windows.Forms.RadioButton();
             this.rdbOther = new System.Windows.Forms.RadioButton();
             this.lblGender = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,6 +219,7 @@ namespace HotelManagementSystem.Views.Guest
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.hdReservationId);
             this.groupBox1.Controls.Add(this.btnBack);
             this.groupBox1.Controls.Add(this.label5);
@@ -419,6 +421,18 @@ namespace HotelManagementSystem.Views.Guest
             this.lblGender.TabIndex = 30;
             this.lblGender.Text = "Gender:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(813, 241);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 38);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "*";
+            // 
             // UCGuestCRUD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -465,5 +479,6 @@ namespace HotelManagementSystem.Views.Guest
         private Label label2;
         private Button btnBack;
         private Label hdReservationId;
+        private Label label6;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace HotelManagementSystem.Views.Employee
 {
@@ -162,17 +163,21 @@ namespace HotelManagementSystem.Views.Employee
             UCEmployeeList uCEmployeeList = new UCEmployeeList();
             int guestId = Convert.ToInt32(txtEmployeeId.Text);
             bool success = false;
-            success = employeeService.Delete(guestId, 1);
-            if (success)
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
             {
-                MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                success = employeeService.Delete(guestId);
+                if (success)
+                {
+                    MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                this.Controls.Clear();
+                this.Controls.Add(uCEmployeeList);
             }
-            else
-            {
-                MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK,MessageBoxIcon.Warning);
-            }
-            this.Controls.Clear();
-            this.Controls.Add(uCEmployeeList);
         }
 
         private void BtnControl()
@@ -234,6 +239,7 @@ namespace HotelManagementSystem.Views.Employee
         }
         private bool InputValidation()
         {
+            EmployeeService employeeService = new EmployeeService();
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
                 MessageBox.Show("Please enter Full Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -253,6 +259,11 @@ namespace HotelManagementSystem.Views.Employee
             {
                 MessageBox.Show("Please enter NRC Number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false; 
+            }
+
+            if (!ValidateNRCNumber(txtNRCNumber.Text))
+            {
+                return false;
             }
             int age = Convert.ToInt32(DateTime.Today.Year - dtpDob.Value.Year);
             if (dtpDob.Value.Date > DateTime.Today.AddYears(-age))
@@ -275,6 +286,36 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (string.IsNullOrEmpty(txtEmployeeId.Text))
+            {
+                if (employeeService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Employee with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (employeeService.IsNRCValid(txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                return true;
+            }
+            else if (!string.IsNullOrEmpty (txtEmployeeId.Text)) 
+            {
+                if (employeeService.IsGuestValidForUpdating(Convert.ToInt32(txtEmployeeId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("The Employee with this name and this NRC number is already registered.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                if (employeeService.IsNRCValidForUpdating(Convert.ToInt32(txtEmployeeId.Text), txtFullName.Text, txtNRCNumber.Text))
+                {
+                    MessageBox.Show("This NRC number is already registered with different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+            
             return true;
         }
 
@@ -319,6 +360,19 @@ namespace HotelManagementSystem.Views.Employee
             UCEmployeeList uCEmployeeList = new UCEmployeeList();
             this.Controls.Clear();
             this.Controls.Add(uCEmployeeList);
+        }
+
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }

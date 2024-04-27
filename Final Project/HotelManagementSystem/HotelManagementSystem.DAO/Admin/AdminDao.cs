@@ -18,21 +18,21 @@ namespace HotelManagementSystem.DAO.Admin
 
         public DataTable GetAllAdmins()
         {
-            strSql = "SELECT * FROM Admin";
+            strSql = "SELECT * FROM [User]";
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
         // Get Admin by Id
-        public DataTable GetAdminById(int adminId)
+        public DataTable GetAdminById(int user_id)
         {
-            strSql = "SELECT * FROM Admin " +
-                      "WHERE  admin_id= " + adminId + "AND is_deleted = 0";
+            strSql = "SELECT * FROM [User] " +
+                      "WHERE  user_id= " + user_id + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
         public DataTable GetAdminByUsername(string username)
         {
-            strSql = "SELECT * FROM Admin " +
+            strSql = "SELECT * FROM [User] " +
                       "WHERE  username = " + username + "AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
@@ -40,7 +40,7 @@ namespace HotelManagementSystem.DAO.Admin
         // Insert Admin
         public bool InsertAdmin(AdminEntity adminEntity)
         {
-            strSql = "INSERT INTO Admin(username, password, role, created_date, updated_date)" +
+            strSql = "INSERT INTO [User](username, password, role, created_date, updated_date)" +
                      "VALUES(@Username, @Password, @Role, @CreatedDate, @UpdatedDate)";
             SqlParameter[] sqlParam = {
                 new SqlParameter("@Username", adminEntity.Username),
@@ -56,7 +56,7 @@ namespace HotelManagementSystem.DAO.Admin
         // Update Admin
         public bool UpdateAdmin(AdminEntity adminEntity)
         {
-            strSql = "UPDATE Admin SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE admin_id = @AdminId";
+            strSql = "UPDATE [User] SET username = @Username, password = @Password, role = @Role, updated_date = @UpdatedDate WHERE user_id = @AdminId";
             SqlParameter[] sqlParam = {
                 new SqlParameter("@AdminId", adminEntity.user_id),
                 new SqlParameter("@Username", adminEntity.Username),
@@ -69,11 +69,11 @@ namespace HotelManagementSystem.DAO.Admin
         }
 
         // Delete Admin
-        public bool DeleteAdmin(int adminId)
+        public bool DeleteAdmin(int user_id)
         {
-            strSql = "DELETE FROM Admin WHERE admin_id = @AdminId";
+            strSql = "DELETE FROM [User] WHERE user_id = @AdminId";
             SqlParameter[] sqlParam = {
-                new SqlParameter("@AdminId", adminId)
+                new SqlParameter("@AdminId", user_id)
             };
 
             return connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);

@@ -158,6 +158,7 @@
             this.txtRoomID.Name = "txtRoomID";
             this.txtRoomID.Size = new System.Drawing.Size(0, 23);
             this.txtRoomID.TabIndex = 10;
+            this.txtRoomID.Visible = false;
             // 
             // btnClear
             // 

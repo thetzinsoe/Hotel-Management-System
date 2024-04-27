@@ -51,7 +51,7 @@ namespace HotelManagementSystem.DAO.Room
 
         public bool Update(RoomEntity roomEntity)
         {
-            strSql = "UPDATE Room SET room_number = @RoomNumber, room_type = @RoomType, room_price = @Price, " +
+            strSql = "UPDATE Room SET room_no = @RoomNumber, room_type = @RoomType, room_price = @Price, " +
                      "is_occupied = @IsOccupied, updated_date = @UpdatedDate WHERE room_id = @RoomId";
 
             SqlParameter[] sqlParam = {

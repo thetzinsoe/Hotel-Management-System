@@ -86,17 +86,22 @@ namespace HotelManagementSystem.Views.Guest
                 if(e.ColumnIndex == dgvGuestList.Columns["Delete"].Index)
                 {
                     bool success = false;
-                    success = guestService.Delete(guestId);
-                    if (success)
+                    
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
                     {
-                        MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
-                        DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
-                        this.dgvGuestList.DataSource = dt;
-                        lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                        success = guestService.Delete(guestId);
+                        if (success)
+                        {
+                            MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
+                            DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
+                            this.dgvGuestList.DataSource = dt;
+                            lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error deleting", "Error", MessageBoxButtons.OK);
+                        }
                     }
                 }
             }             
@@ -333,7 +338,26 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btnGoToCheckin_Click(object sender, EventArgs e)
         {
-            if (dgvGuestList.RowCount > 0)
+            if (!string.IsNullOrEmpty (hdReservationId.Text))
+            {
+                if (dgvGuestList.RowCount > 0)
+                {
+                    if (dgvGuestList.SelectedCells.Count > 0)
+                    {
+                        int rowIndex = dgvGuestList.SelectedCells[0].RowIndex;
+                        // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
+                        string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
+                        UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
+                        uCCheckinAdd.RvId = hdReservationId.Text;
+                        uCCheckinAdd.Nrc = guestNrc;
+                        this.Controls.Clear();
+                        this.Controls.Add(uCCheckinAdd);
+                        // MessageBox.Show("Guest ID: " + guestId+"  "+guestNrc);
+
+                    }
+                }
+            }
+            else
             {
                 if (dgvGuestList.SelectedCells.Count > 0)
                 {
@@ -341,7 +365,6 @@ namespace HotelManagementSystem.Views.Guest
                     // string guestId = dgvGuestList.Rows[rowIndex].Cells["GuestId"].Value.ToString();
                     string guestNrc = dgvGuestList.Rows[rowIndex].Cells["NRCNumber"].Value.ToString();
                     UCCheckinAdd uCCheckinAdd = new UCCheckinAdd();
-                    uCCheckinAdd.RvId = hdReservationId.Text.ToString();
                     uCCheckinAdd.Nrc = guestNrc;
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckinAdd);
@@ -349,6 +372,7 @@ namespace HotelManagementSystem.Views.Guest
 
                 }
             }
+
         }
     }
 }
