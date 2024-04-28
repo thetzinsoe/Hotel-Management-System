@@ -1,6 +1,7 @@
 ﻿using HotelManagementSystem.Entities.Admin;
 using HotelManagementSystem.Services.Admin;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -63,7 +64,21 @@ namespace HotelManagementSystem.Views.Admin
 
         private bool ValidInput()
         {
+
             string username = txtusername.Text, password = txtpassword.Text, validpass = txtvalidpass.Text;
+            try
+            {
+                DataTable dt = adminService.searchByUsername(username);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Username already in use!");
+                    return false;
+                }
+            }
+            catch
+            {
+                return true;
+            }
             if (string.IsNullOrWhiteSpace(username))
             {
                 MessageBox.Show("Enter username to register");

@@ -36,7 +36,11 @@ namespace HotelManagementSystem.DAO.Admin
                       "WHERE  username = '" + username + "' AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
-
+        public DataTable SearchByUsername(string username)
+        {
+            strSql = "SELECT * FROM [User] WHERE username LIKE '%" + username + "%' AND is_deleted = 0";
+            return connection.ExecuteDataTable(CommandType.Text, strSql);
+        }
         // Insert Admin
         public bool InsertAdmin(AdminEntity adminEntity)
         {
