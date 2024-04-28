@@ -14,6 +14,7 @@ using HotelManagementSystem.Entities.Guest;
 using HotelManagementSystem.Entities.Employee;
 using ExcelDataReader;
 using HotelManagementSystem.Services.Guest;
+using System.Text.RegularExpressions;
 namespace HotelManagementSystem.Views.Employee
 {
     public partial class UCEmployeeList : UserControl
@@ -39,6 +40,7 @@ namespace HotelManagementSystem.Views.Employee
             DataTable dt1 = employeeService.GetAll();
             int rowCount = dt1.Rows.Count;
             totalPage = rowCount/pageSize;
+            currentPageIndex = 1;
             if (rowCount % pageSize > 0)
             {
                 totalPage += 1;
@@ -273,6 +275,10 @@ namespace HotelManagementSystem.Views.Employee
             bool success = false;
             foreach (DataRow row in dataTable.Rows)
             {
+                if (!ValidateExcelDataRow(row))
+                {
+                    return;
+                }
                 EmployeeEntity employeeEntity = new EmployeeEntity()
                 {
                     fullName = row["Full Name"].ToString(),
@@ -335,6 +341,94 @@ namespace HotelManagementSystem.Views.Employee
             {
                 BindGrid();
             }
+        }
+        private bool ValidateExcelDataRow(DataRow row)
+        {
+            EmployeeService employeeService = new EmployeeService();
+            if (string.IsNullOrEmpty(row["Full Name"].ToString()))
+            {
+                MessageBox.Show("Please enter Full Name for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrEmpty(row["Phone Number"].ToString()))
+            {
+                MessageBox.Show("Please enter Phone Number for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (row["Position"] == null || string.IsNullOrEmpty(row["Position"].ToString()) || !IsValidPosition(row["Position"].ToString()))
+            {
+                MessageBox.Show("Please select a valid Position for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrEmpty(row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("Please enter NRC Number for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!ValidateNRCNumber(row["NRC Number"].ToString()))
+            {
+                return false;
+            }
+            int age = DateTime.Today.Year - ((DateTime)row["Dob"]).Year;
+            if (DateTime.Today.Date < ((DateTime)row["Dob"]).AddYears(age))
+            {
+                age--;
+            }
+            if (age < 18 || age > 60)
+            {
+                MessageBox.Show("Employees must be between 18 and 60 years old.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (!IsValidGender(row["Gender"]))
+            {
+                MessageBox.Show("Please enter a valid gender value for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            DateTime minJoinedDate = ((DateTime)row["Dob"]).AddYears(18);
+            if ((DateTime)row["Joined Date"] < minJoinedDate)
+            {
+                MessageBox.Show("Invalid Joined Date. Employees must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (employeeService.IsGuestValid(row["Full Name"].ToString(),row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("The Guest who is already registered is included in excel data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (employeeService.IsNRCValid(row["Full Name"].ToString(), row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("The NRC number that is already registered with different name is included in excel data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool IsValidPosition(string position)
+        {
+            string[] validPositions = { "Manager", "Housekeeping", "Security", "Receptionist", "Food and Beverage Server" };
+            return validPositions.Contains(position);
+        }
+        private bool IsValidGender(object gender)
+        {
+            int genderValue;
+            if (int.TryParse(gender.ToString(), out genderValue))
+            {
+                return genderValue == 0 || genderValue == 1 || genderValue == 2;
+            }
+            return false;
+        }
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
     }
 }

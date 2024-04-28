@@ -103,7 +103,7 @@ namespace HotelManagementSystem.DAO.Guest
 
         public bool IsGuestValid(string name, string nrc)
         {
-            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber";
+            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber and is_deleted = 0";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@FullName", name),
                                         new SqlParameter("@NRCNumber", nrc)
@@ -115,7 +115,7 @@ namespace HotelManagementSystem.DAO.Guest
 
         public bool IsGuestValidForUpdating(int id, string name, string nrc)
         {
-            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber and guest_id != @GuestId";
+            strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber and guest_id != @GuestId and is_deleted = 0";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@GuestId", id),
                                         new SqlParameter("@FullName", name),
@@ -128,7 +128,7 @@ namespace HotelManagementSystem.DAO.Guest
 
         public bool IsNRCValid(string name, string nrc)
         {
-            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName";
+            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName AND is_deleted = 0";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@FullName", name),
                                         new SqlParameter("@NRCNumber", nrc)
@@ -140,7 +140,7 @@ namespace HotelManagementSystem.DAO.Guest
 
         public bool IsNRCValidForUpdating(int id, string name, string nrc)
         {
-            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName AND guest_id != @GuestId";
+            strSql = "SELECT COUNT(*) FROM Guest WHERE nrc_number = @NRCNumber AND full_name != @FullName AND guest_id != @GuestId AND is_deleted = 0";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@GuestId", id),
                                         new SqlParameter("@FullName", name),

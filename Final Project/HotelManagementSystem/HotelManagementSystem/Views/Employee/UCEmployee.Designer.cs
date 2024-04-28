@@ -188,7 +188,7 @@
             this.cbPosition.Items.AddRange(new object[] {
             "Manager",
             "Receptionist",
-            "Housekeping",
+            "Housekeeping",
             "Food and Beverage Server",
             "Security"});
             this.cbPosition.Location = new System.Drawing.Point(389, 252);

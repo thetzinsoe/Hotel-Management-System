@@ -17,6 +17,7 @@ using HotelManagementSystem.Entities.Guest;
 using ExcelDataReader;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Views.CheckIn;
+using System.Text.RegularExpressions;
 
 namespace HotelManagementSystem.Views.Guest
 {
@@ -60,6 +61,7 @@ namespace HotelManagementSystem.Views.Guest
             DataTable dt = guestService.GetRecord(1,pageSize);
             DataTable dt1 = guestService.GetAll();
             int rowCount = dt1.Rows.Count;
+            currentPageIndex = 1;
             totalPage = rowCount / pageSize;
             if (rowCount % pageSize > 0)
             {
@@ -260,6 +262,10 @@ namespace HotelManagementSystem.Views.Guest
 
             foreach (DataRow row in dataTable.Rows)
             {
+                if (!ValidateExcelDataRow(row))
+                {
+                     return;
+                }
                 GuestEntity guestEntity = new GuestEntity()
                 {
 
@@ -290,6 +296,100 @@ namespace HotelManagementSystem.Views.Guest
             }
         }
 
+        private bool ValidateExcelDataRow(DataRow row)
+        {
+            if (string.IsNullOrEmpty(row["Full Name"].ToString()))
+            {
+                MessageBox.Show("Please enter Full Name for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!IsValidGender(row["Gender"]))
+            {
+                MessageBox.Show("Please enter a valid gender value for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!IsValidDateOfBirth(row["Dob"]))
+            {
+                MessageBox.Show("Please enter a valid Date of Birth for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(row["Nationality"].ToString()))
+            {
+                MessageBox.Show("Please enter Nationality for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("Please enter NRC Number for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!ValidateNRCNumber(row["NRC Number"].ToString()))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(row["Address"].ToString()))
+            {
+                MessageBox.Show("Please enter Address for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(row["Phone Number"].ToString()))
+            {
+                MessageBox.Show("Please enter Phone Number for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (guestService.IsGuestValid(row["Full Name"].ToString(), row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("The Guest who is already registered is included in excel data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (guestService.IsNRCValid(row["Full Name"].ToString(), row["NRC Number"].ToString()))
+            {
+                MessageBox.Show("The NRC number that is already registered with different name is included in excel data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool IsValidGender(object gender)
+        {           
+            int genderValue;
+            if (int.TryParse(gender.ToString(), out genderValue))
+            {
+                return genderValue == 0 || genderValue == 1 || genderValue ==2;
+            }
+            return false;
+        }
+        private bool IsValidDateOfBirth(object dob)
+        {
+            DateTime dobValue;
+            if (DateTime.TryParse(dob.ToString(), out dobValue))
+            {
+                return dobValue.AddYears(18) < DateTime.Today;
+            }
+            return false;
+        }
+
+        private bool ValidateNRCNumber(string nrcNumber)
+        {
+            string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
+
+            if (!Regex.IsMatch(nrcNumber, nrcPattern))
+            {
+                MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
+        }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             SearchNameorNrc();
