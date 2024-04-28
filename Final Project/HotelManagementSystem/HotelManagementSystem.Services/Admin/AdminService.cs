@@ -29,6 +29,10 @@ namespace HotelManagementSystem.Services.Admin
         {
             return adminDao.GetAdminByUsername(username);
         }
+        public DataTable searchByUsername(string username)
+        {
+            return adminDao.SearchByUsername(username);
+        }
         // Insert Admin
         public bool InsertAdmin(AdminEntity adminEntity)
         {
