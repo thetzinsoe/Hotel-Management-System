@@ -68,12 +68,13 @@
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(448, 368);
+            this.btnRegister.Location = new System.Drawing.Point(433, 368);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(100, 35);
+            this.btnRegister.Size = new System.Drawing.Size(115, 35);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -82,6 +83,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;

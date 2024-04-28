@@ -35,11 +35,14 @@ namespace HotelManagementSystem.Views.Admin
                 success = adminService.InsertAdmin(adminEntity);
                 if (success)
                 {
-                    MessageBox.Show("Save success", "Success", MessageBoxButtons.OK);
+                    MessageBox.Show("Register success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UCAdmin uCAdmin = new UCAdmin();
+                    this.Controls.Clear();
+                    this.Controls.Add(uCAdmin);
                 }
                 else
                 {
-                    MessageBox.Show("Error saving", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Error registering", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
