@@ -88,16 +88,13 @@ namespace HotelManagementSystem.Views.Room
 
             if (String.IsNullOrEmpty(txtRoomID.Text))
             {
-                try
+                DataTable dt = roomService.SearchbyRoomNumber(txtRoomNumber.Text);
+                if (dt.Rows.Count > 0)
                 {
-                    DataTable dt = roomService.SearchbyRoomNumber(txtRoomNumber.Text);
-                    if (dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Room Number already in use!");
-                        
-                    }
+                    MessageBox.Show("Room Number already in use!");
+
                 }
-                catch
+                else
                 {
                     success = roomService.InsertRoom(roomEntity);
                     if (success)
@@ -110,8 +107,7 @@ namespace HotelManagementSystem.Views.Room
                     {
                         MessageBox.Show("Something Wrong in Room Adding!");
                     }
-                }
-                
+                }                                 
             }
             else
             {
