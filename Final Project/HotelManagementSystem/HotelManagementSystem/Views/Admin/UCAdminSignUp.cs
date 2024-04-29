@@ -64,7 +64,6 @@ namespace HotelManagementSystem.Views.Admin
 
         private bool ValidInput()
         {
-
             string username = txtusername.Text, password = txtpassword.Text, validpass = txtvalidpass.Text;
             try
             {
