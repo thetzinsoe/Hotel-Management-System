@@ -60,7 +60,7 @@
             // 
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchValue.Location = new System.Drawing.Point(516, 174);
-            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
             this.txtSearchValue.Size = new System.Drawing.Size(671, 34);
@@ -77,7 +77,7 @@
             "Nrc Number",
             "Checkin No."});
             this.cbSearchType.Location = new System.Drawing.Point(1196, 174);
-            this.cbSearchType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSearchType.Margin = new System.Windows.Forms.Padding(4);
             this.cbSearchType.Name = "cbSearchType";
             this.cbSearchType.Size = new System.Drawing.Size(341, 36);
             this.cbSearchType.TabIndex = 110;
@@ -161,6 +161,8 @@
             // 
             this.dgvOldCheckIn.AllowUserToAddRows = false;
             this.dgvOldCheckIn.AllowUserToDeleteRows = false;
+            this.dgvOldCheckIn.AllowUserToResizeColumns = false;
+            this.dgvOldCheckIn.AllowUserToResizeRows = false;
             this.dgvOldCheckIn.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -187,7 +189,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOldCheckIn.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOldCheckIn.Location = new System.Drawing.Point(13, 220);
-            this.dgvOldCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvOldCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOldCheckIn.Name = "dgvOldCheckIn";
             this.dgvOldCheckIn.ReadOnly = true;
             this.dgvOldCheckIn.RowHeadersVisible = false;
@@ -278,7 +280,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 103;
@@ -325,7 +327,7 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvOldCheckIn);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCOldCheckinList";
             this.Size = new System.Drawing.Size(1467, 866);
             this.Load += new System.EventHandler(this.UCOldCheckinList_Load);

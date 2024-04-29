@@ -65,7 +65,7 @@
             this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 78;
@@ -161,6 +161,8 @@
             // 
             this.dgvPaymentHistory.AllowUserToAddRows = false;
             this.dgvPaymentHistory.AllowUserToDeleteRows = false;
+            this.dgvPaymentHistory.AllowUserToResizeColumns = false;
+            this.dgvPaymentHistory.AllowUserToResizeRows = false;
             this.dgvPaymentHistory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPaymentHistory.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -192,7 +194,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPaymentHistory.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPaymentHistory.Location = new System.Drawing.Point(13, 130);
-            this.dgvPaymentHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPaymentHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPaymentHistory.Name = "dgvPaymentHistory";
             this.dgvPaymentHistory.ReadOnly = true;
             this.dgvPaymentHistory.RowHeadersVisible = false;
@@ -313,7 +315,7 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvPaymentHistory);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCPaymentHistory";
             this.Size = new System.Drawing.Size(1467, 862);
             this.Load += new System.EventHandler(this.UCPaymentHistory_Load);
