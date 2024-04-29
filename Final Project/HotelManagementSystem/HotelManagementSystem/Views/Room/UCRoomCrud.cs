@@ -16,6 +16,7 @@ namespace HotelManagementSystem.Views.Room
     
     public partial class UCRoomCrud : UserControl
     {
+        private bool userHasSelected=false;
         UCRoomList uCRoomList = new UCRoomList();
         RoomService roomService = new RoomService();
         public string ID
@@ -25,23 +26,11 @@ namespace HotelManagementSystem.Views.Room
         public UCRoomCrud()
         {
             InitializeComponent();
+            cbType.Text = "Select Room Type";
         }
         private bool vaildInput()
         {
             string roomNumber = txtRoomNumber.Text, roomType = cbType.Text, Price = txtPrice.Text;
-            try
-            {
-                DataTable dt = roomService.SearchbyRoomNumber(roomNumber);
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Room Number already in use!");
-                    return false;
-                }
-            }
-            catch
-            {
-                return true;
-            }
             if (string.IsNullOrWhiteSpace(roomNumber))
             {
                 MessageBox.Show("Empty Room Number!");
@@ -52,7 +41,7 @@ namespace HotelManagementSystem.Views.Room
                 MessageBox.Show("Invalid Room Number!Eg. A-101");
                 return false ;
             }
-             if (string.IsNullOrWhiteSpace(roomType))
+             if (cbType.SelectedIndex<0||cbType.SelectedText==null)
             {
                 MessageBox.Show("Empty Room Type!");
                 return false;
@@ -64,7 +53,17 @@ namespace HotelManagementSystem.Views.Room
             }
               if (Price.Any(char.IsLetter))
             {
-                MessageBox.Show("Invalid input should be digits!");
+                MessageBox.Show("Invalid input! Price should be digits!");
+                return false;
+            }
+            if (!Price.Any(char.IsNumber))
+            {
+                MessageBox.Show("Price should only be whole numbers!");
+                return false;
+            }
+            if (Price.Length > 5)
+            {
+                MessageBox.Show("Invalid Price! Please Type correctly!");
                 return false;
             }
             return true;
@@ -89,17 +88,30 @@ namespace HotelManagementSystem.Views.Room
 
             if (String.IsNullOrEmpty(txtRoomID.Text))
             {
-                success = roomService.InsertRoom(roomEntity);
-                if (success)
+                try
                 {
-                    MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
-                    this.Controls.Clear();
-                    this.Controls.Add(uCRoomList);
+                    DataTable dt = roomService.SearchbyRoomNumber(txtRoomNumber.Text);
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Room Number already in use!");
+                        
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Something Wrong in Room Adding!");
+                    success = roomService.InsertRoom(roomEntity);
+                    if (success)
+                    {
+                        MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
+                        this.Controls.Clear();
+                        this.Controls.Add(uCRoomList);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something Wrong in Room Adding!");
+                    }
                 }
+                
             }
             else
             {
@@ -124,7 +136,7 @@ namespace HotelManagementSystem.Views.Room
                 roomEntity.room_id = Convert.ToInt32(txtRoomID.Text);
             }
             roomEntity.room_number = txtRoomNumber.Text;
-            roomEntity.room_type = cbType.SelectedItem.ToString();
+            roomEntity.room_type = cbType.Text;
             roomEntity.room_price = decimal.Parse(txtPrice.Text.ToString());
             roomEntity.is_occupied = 0;
             roomEntity.created_date = DateTime.Now;
@@ -158,6 +170,7 @@ namespace HotelManagementSystem.Views.Room
             if (!String.IsNullOrEmpty(txtRoomID.Text))
             {
                 btnAdd.Text = "UPDATE";
+                txtRoomNumber.Enabled=false;
                 btnDelete.Enabled = true;
             }
             else
@@ -199,9 +212,9 @@ namespace HotelManagementSystem.Views.Room
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            UCDashboard uCDashboard = new UCDashboard();
+            MainDashBoard mainDashBoard= new MainDashBoard();
             this.Controls.Clear();
-            this.Controls.Add(uCDashboard);
+            this.Controls.Add(mainDashBoard);
         }
 
         private void UCRoomCrud_Load(object sender, EventArgs e)
@@ -235,6 +248,35 @@ namespace HotelManagementSystem.Views.Room
                 case 6:
                     txtPrice.Text = "50000";
                     break;
+            }
+        }
+
+        private void cbType_TextUpdate(object sender, EventArgs e)
+        {
+            if (!userHasSelected)
+            {
+                cbType.Text = "Select room type";
+            }
+        }
+
+        private void cbType_TextChanged(object sender, EventArgs e)
+        {
+            if (cbType.SelectedIndex != -1)
+            {
+                userHasSelected = true;
+            }
+        }
+
+        private void cbType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

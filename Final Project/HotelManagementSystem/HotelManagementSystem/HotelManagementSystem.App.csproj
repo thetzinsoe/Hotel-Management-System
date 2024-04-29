@@ -225,12 +225,6 @@
     <Compile Include="Views\Menu\MainDashBoard.Designer.cs">
       <DependentUpon>MainDashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Menu\UCDashboard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Menu\UCDashboard.Designer.cs">
-      <DependentUpon>UCDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Payment\Report.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -324,9 +318,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Menu\MainDashBoard.resx">
       <DependentUpon>MainDashBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Menu\UCDashboard.resx">
-      <DependentUpon>UCDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Payment\PaymentReport.rdlc" />
     <EmbeddedResource Include="Views\Payment\UCPaymentHistory.resx">
