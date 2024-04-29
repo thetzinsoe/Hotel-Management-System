@@ -80,7 +80,7 @@ namespace HotelManagementSystem.DAO.Room
         }
         public DataTable SearchByRoomNumber(string roomNumber)
         {
-            strSql = "SELECT * FROM Room WHERE room_type LIKE '%" + roomNumber + "%' AND is_deleted = 0";
+            strSql = "SELECT * FROM Room WHERE room_type ='"+roomNumber+"' AND is_deleted = 0";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

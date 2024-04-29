@@ -43,6 +43,7 @@
             this.txtadminID = new System.Windows.Forms.Label();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnConfirmShow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.pnTitle.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +149,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnConfirmShow);
             this.groupBox1.Controls.Add(this.btnLogIn);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtadminID);
@@ -220,6 +222,19 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "USER REGISTRATION";
             // 
+            // btnConfirmShow
+            // 
+            this.btnConfirmShow.BackColor = System.Drawing.Color.White;
+            this.btnConfirmShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConfirmShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmShow.Location = new System.Drawing.Point(473, 296);
+            this.btnConfirmShow.Name = "btnConfirmShow";
+            this.btnConfirmShow.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmShow.TabIndex = 13;
+            this.btnConfirmShow.Text = "Show";
+            this.btnConfirmShow.UseVisualStyleBackColor = false;
+            this.btnConfirmShow.Click += new System.EventHandler(this.btnConfirmShow_Click);
+            // 
             // UCAdminSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,5 +269,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnConfirmShow;
     }
 }
