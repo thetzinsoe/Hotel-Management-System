@@ -41,6 +41,11 @@ namespace HotelManagementSystem.Views.Room
                 MessageBox.Show("Invalid Room Number!Eg. A-101");
                 return false ;
             }
+            if (roomNumber.Length > 6)
+            {
+                MessageBox.Show("Invalid Room Number!Eg. A-101");
+                return false;
+            }
              if (cbType.SelectedIndex<0||cbType.SelectedText==null)
             {
                 MessageBox.Show("Empty Room Type!");
@@ -61,7 +66,7 @@ namespace HotelManagementSystem.Views.Room
                 MessageBox.Show("Price should only be whole numbers!");
                 return false;
             }
-            if (Price.Length > 5)
+            if (Price.Length > 6)
             {
                 MessageBox.Show("Invalid Price! Please Type correctly!");
                 return false;
@@ -119,7 +124,7 @@ namespace HotelManagementSystem.Views.Room
                     this.Controls.Add(uCRoomList);
                 }
                 else
-                {
+                {                   
                     MessageBox.Show("Something Wrong in Updating Room!");
                 }
             }
