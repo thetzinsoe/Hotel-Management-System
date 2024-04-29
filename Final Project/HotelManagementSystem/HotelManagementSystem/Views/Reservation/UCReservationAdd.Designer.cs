@@ -62,7 +62,7 @@
             this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 1);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 77;
@@ -239,12 +239,13 @@
             this.cbRoomNo.DropDownWidth = 376;
             this.cbRoomNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomNo.Location = new System.Drawing.Point(501, 350);
-            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNo.Name = "cbRoomNo";
             this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
             this.cbRoomNo.TabIndex = 123;
             this.cbRoomNo.Text = "Choose Room";
             this.cbRoomNo.SelectedValueChanged += new System.EventHandler(this.cbRoomNo_SelectedValueChanged);
+            this.cbRoomNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbRoomNo_KeyPress);
             // 
             // label1
             // 
@@ -398,7 +399,7 @@
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCReservationAdd";
             this.Size = new System.Drawing.Size(1467, 862);
             this.Load += new System.EventHandler(this.UCReservationAdd_Load);

@@ -454,5 +454,19 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
+        private void cbRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestNrc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

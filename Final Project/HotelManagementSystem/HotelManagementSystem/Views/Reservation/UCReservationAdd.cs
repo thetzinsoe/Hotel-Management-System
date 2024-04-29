@@ -161,7 +161,7 @@ namespace HotelManagementSystem.Views.Reservation
         }
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
-        {      
+        {     
             BtnState();
             BindData();
             Load_room();
@@ -307,6 +307,11 @@ namespace HotelManagementSystem.Views.Reservation
         private bool IsBurmeseDigit(char c)
         {
             return (c >= '\u1040' && c <= '\u1049' || c==' ');
+        }
+
+        private void cbRoomNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
