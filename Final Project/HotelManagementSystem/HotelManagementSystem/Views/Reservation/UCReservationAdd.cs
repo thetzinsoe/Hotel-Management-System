@@ -20,6 +20,8 @@ namespace HotelManagementSystem.Views.Reservation
         bool validateInput = false;
         private string selectedRoomNo = string.Empty;
         private int selectedRoomId = 0;
+        DateTime checkin_date = DateTime.MinValue;
+        DateTime checkout_date  = DateTime.MinValue;
         public string ID
         { set { hdReservationId.Text = value; } }
         UCReservationList ucReservationList = new UCReservationList();
@@ -161,10 +163,10 @@ namespace HotelManagementSystem.Views.Reservation
         }
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
-        {     
+        {
+            Load_room();
             BtnState();
             BindData();
-            Load_room();
         }
 
         private void Load_room()
@@ -198,9 +200,12 @@ namespace HotelManagementSystem.Views.Reservation
                     {
                         txtFullName.Text = dt.Rows[0]["customer_name"].ToString();
                         txtPhoneNumber.Text = dt.Rows[0]["customer_phoneNo"].ToString();
-                        cbRoomNo.Text = dt.Rows[0]["room_number"].ToString();
+                        selectedRoomNo = dt.Rows[0]["room_number"].ToString();
+                        cbRoomNo.Text = selectedRoomNo;
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
+                        checkin_date = Convert.ToDateTime(dt.Rows[0]["checkin_date"].ToString());
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
+                        checkout_date = Convert.ToDateTime(dt.Rows[0]["checkout_date"].ToString());
                     }
                 }
             }catch (Exception e)
@@ -246,12 +251,19 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
-            Load_room();
+            if (checkin_date != dtpCheckInDate.Value && checkin_date != DateTime.MinValue)
+            {
+                Load_room();
+            }
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            Load_room();
+            if (checkout_date != dtpCheckOutDate.Value &&checkout_date != DateTime.MinValue)
+            {
+     
+                Load_room();
+            }
                 if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
                 {
                     validateInput = true;

@@ -247,6 +247,7 @@
             // 
             // cbPaymentType
             // 
+            this.cbPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbPaymentType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPaymentType.FormattingEnabled = true;
             this.cbPaymentType.Items.AddRange(new object[] {
@@ -258,7 +259,6 @@
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(665, 36);
             this.cbPaymentType.TabIndex = 128;
-            this.cbPaymentType.Text = "Choose Payment Type";
             this.cbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbPaymentType_KeyPress);
             // 
             // label1

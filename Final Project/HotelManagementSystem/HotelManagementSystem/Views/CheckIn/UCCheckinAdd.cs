@@ -289,7 +289,7 @@ namespace HotelManagementSystem.Views.CheckIn
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
-                        cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
+                        cbRoomNumber.Text = selectedRoomNo;
                         selectedPhone = dt.Rows[0]["phone_number"].ToString();
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
