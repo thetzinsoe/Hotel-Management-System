@@ -64,11 +64,10 @@ namespace HotelManagementSystem.Views.Admin
 
         private bool ValidInput()
         {
-
             string username = txtusername.Text, password = txtpassword.Text, validpass = txtvalidpass.Text;
             try
             {
-                DataTable dt = adminService.searchByUsername(username);
+                DataTable dt = adminService.GetAdminByUsername(username);
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Username already in use!");
@@ -88,12 +87,7 @@ namespace HotelManagementSystem.Views.Admin
             {
                 MessageBox.Show("Username Should be valid letter(up to 10 character!)");
                 return false;
-            }
-            if (!username.Any(char.IsDigit))
-            {
-                MessageBox.Show("username should include at least 1 digit!");
-                return false;
-            }
+            }          
             if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Enter a vaild password");
@@ -163,6 +157,20 @@ namespace HotelManagementSystem.Views.Admin
             UCAdmin uCAdmin = new UCAdmin();
             this.Controls.Clear();
             this.Controls.Add(uCAdmin);
+        }
+
+        private void btnConfirmShow_Click(object sender, EventArgs e)
+        {
+            if (txtpassword.PasswordChar == '*')
+            {
+                txtvalidpass.PasswordChar = '\0';
+                btnShow.Text = "Hide";
+            }
+            else
+            {
+                txtvalidpass.PasswordChar = '*';
+                btnShow.Text = "Show";
+            }
         }
     }
 }

@@ -61,6 +61,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(500, 34);
             this.txtPrice.TabIndex = 1;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // btnBack
             // 
@@ -152,6 +153,9 @@
             this.cbType.Size = new System.Drawing.Size(500, 36);
             this.cbType.TabIndex = 9;
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
+            this.cbType.TextUpdate += new System.EventHandler(this.cbType_TextUpdate);
+            this.cbType.TextChanged += new System.EventHandler(this.cbType_TextChanged);
+            this.cbType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbType_KeyPress);
             // 
             // txtRoomID
             // 

@@ -560,7 +560,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!gender.Value</Value>
+                              <Value>=Switch(
+Fields!gender.Value = 0,"Other",
+Fields!gender.Value = 1,"Male",
+Fields!gender.Value = 2,"Female",
+true, "Unknown"
+)</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -585,6 +590,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

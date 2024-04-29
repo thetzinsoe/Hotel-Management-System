@@ -26,10 +26,8 @@ namespace HotelManagementSystem.Views.Employee
 
         private void UCEmployee_Load(object sender, EventArgs e)
         {
-            dtpDob.MaxDate = DateTime.Now;
-            dtpJoinedDate.MaxDate = DateTime.Now;
-            dtpDob.Value = DateTime.Today;
-            dtpJoinedDate.Value = DateTime.Today;
+            dtpDob.MaxDate = DateTime.Now;            
+            dtpDob.Value = DateTime.Today;            
             BtnControl();
             BindData();
         }
@@ -75,7 +73,7 @@ namespace HotelManagementSystem.Views.Employee
             employeeEntity.nrcNumber = txtNRCNumber.Text;
             employeeEntity.dob = dtpDob.Value;
             employeeEntity.gender = gender;
-            employeeEntity.joinedDate = dtpJoinedDate.Value;
+            employeeEntity.joinedDate = DateTime.Now;
             employeeEntity.address = txtAddress.Text;
             employeeEntity.image = imagePath;
             employeeEntity.createdDateTime = DateTime.Now;
@@ -149,7 +147,6 @@ namespace HotelManagementSystem.Views.Employee
             txtAddress.Clear();
             cbPosition.SelectedIndex = -1;
             dtpDob.Value = DateTime.Today;
-            dtpJoinedDate.Value = DateTime.Today;
             rdbOther.Checked = false;
             rdbMale.Checked = false;
             rdbFemale.Checked = false;
@@ -223,7 +220,6 @@ namespace HotelManagementSystem.Views.Employee
                         MessageBox.Show("Error assigning gendervalue");
                         break;
                 }
-                dtpJoinedDate.Value = (DateTime)dt.Rows[0]["joined_date"];
                 txtAddress.Text = dt.Rows[0]["address"].ToString();
                 string imagePath = dt.Rows[0]["image"].ToString();
                 if (!string.IsNullOrEmpty(imagePath))
@@ -280,12 +276,7 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            DateTime minJoinedDate = dtpDob.Value.AddYears(18);
-            if (dtpJoinedDate.Value.Date < minJoinedDate)
-            {
-                MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            DateTime minJoinedDate = dtpDob.Value.AddYears(18);            
             if (string.IsNullOrEmpty(txtEmployeeId.Text))
             {
                 if (employeeService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))

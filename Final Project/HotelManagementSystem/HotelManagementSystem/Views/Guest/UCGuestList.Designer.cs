@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -68,7 +69,10 @@
             // dgvGuestList
             // 
             this.dgvGuestList.AllowUserToAddRows = false;
+            this.dgvGuestList.AllowUserToResizeColumns = false;
+            this.dgvGuestList.AllowUserToResizeRows = false;
             this.dgvGuestList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGuestList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
@@ -89,12 +93,21 @@
             this.Gender,
             this.Address,
             this.Delete});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGuestList.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvGuestList.Location = new System.Drawing.Point(29, 250);
             this.dgvGuestList.Name = "dgvGuestList";
             this.dgvGuestList.RowHeadersVisible = false;
             this.dgvGuestList.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvGuestList.RowTemplate.Height = 24;
             this.dgvGuestList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvGuestList.Size = new System.Drawing.Size(1417, 341);
@@ -301,6 +314,7 @@
             this.GuestId.MinimumWidth = 6;
             this.GuestId.Name = "GuestId";
             this.GuestId.ReadOnly = true;
+            this.GuestId.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // FullName
             // 
@@ -309,7 +323,7 @@
             this.FullName.MinimumWidth = 6;
             this.FullName.Name = "FullName";
             this.FullName.ReadOnly = true;
-            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // PhoneNumber
@@ -319,7 +333,7 @@
             this.PhoneNumber.MinimumWidth = 6;
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.ReadOnly = true;
-            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Nationality
@@ -331,6 +345,8 @@
             this.Nationality.MinimumWidth = 6;
             this.Nationality.Name = "Nationality";
             this.Nationality.ReadOnly = true;
+            this.Nationality.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nationality.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // NRCNumber
             // 
@@ -341,6 +357,8 @@
             this.NRCNumber.MinimumWidth = 6;
             this.NRCNumber.Name = "NRCNumber";
             this.NRCNumber.ReadOnly = true;
+            this.NRCNumber.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.NRCNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Dob
             // 
@@ -351,6 +369,7 @@
             this.Dob.MinimumWidth = 6;
             this.Dob.Name = "Dob";
             this.Dob.ReadOnly = true;
+            this.Dob.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Dob.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Gender
@@ -362,6 +381,8 @@
             this.Gender.MinimumWidth = 6;
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
+            this.Gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Gender.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Address
             // 
@@ -370,6 +391,8 @@
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
+            this.Address.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Address.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Delete
             // 
@@ -385,6 +408,7 @@
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Delete.Text = "Delete";
             // 
             // UCGuestList

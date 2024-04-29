@@ -278,9 +278,9 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.pnMain.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnMain.BackColor = System.Drawing.Color.LightGray;
-            this.pnMain.Location = new System.Drawing.Point(0, 50);
+            this.pnMain.Location = new System.Drawing.Point(2, 50);
             this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(1102, 698);
+            this.pnMain.Size = new System.Drawing.Size(1105, 698);
             this.pnMain.TabIndex = 16;
             // 
             // btnLogout
@@ -297,7 +297,7 @@ namespace HotelManagementSystem.Views.Menu
             // FrmMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1105, 749);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pnMain);

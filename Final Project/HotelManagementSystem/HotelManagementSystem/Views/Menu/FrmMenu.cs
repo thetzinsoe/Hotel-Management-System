@@ -120,7 +120,7 @@ namespace HotelManagementSystem.Views.Menu
             UCAdmin uCAdmin = new UCAdmin();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCAdmin);
-            mainMenu.Enabled = false;
+            mainMenu.Visible = false;
             btnLogout.Visible = false;
         }
         public void LoginSuccess()
@@ -128,7 +128,7 @@ namespace HotelManagementSystem.Views.Menu
             MainDashBoard mainDashBoard = new MainDashBoard();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(mainDashBoard);
-            mainMenu.Enabled = true;
+            mainMenu.Visible = true;
             btnLogout.Visible = true;
         }
 
@@ -147,7 +147,7 @@ namespace HotelManagementSystem.Views.Menu
                 UCAdmin uCAdmin = new UCAdmin();
                 pnMain.Controls.Clear();
                 pnMain.Controls.Add(uCAdmin);
-                mainMenu.Enabled = false;
+                mainMenu.Visible = false;
                 btnLogout.Visible = false;
             }
         }
