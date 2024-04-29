@@ -289,7 +289,7 @@ namespace HotelManagementSystem.Views.CheckIn
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
-                        cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
+                        cbRoomNumber.Text = selectedRoomNo;
                         selectedPhone = dt.Rows[0]["phone_number"].ToString();
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
@@ -454,5 +454,19 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
+        private void cbRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestNrc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

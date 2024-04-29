@@ -64,7 +64,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 78;
@@ -239,7 +239,7 @@
             // 
             this.rtxtDescription.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtxtDescription.Location = new System.Drawing.Point(479, 412);
-            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtxtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.rtxtDescription.Name = "rtxtDescription";
             this.rtxtDescription.Size = new System.Drawing.Size(665, 93);
             this.rtxtDescription.TabIndex = 129;
@@ -247,6 +247,7 @@
             // 
             // cbPaymentType
             // 
+            this.cbPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbPaymentType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPaymentType.FormattingEnabled = true;
             this.cbPaymentType.Items.AddRange(new object[] {
@@ -254,11 +255,11 @@
             "Bank",
             "Mobile Banking"});
             this.cbPaymentType.Location = new System.Drawing.Point(479, 604);
-            this.cbPaymentType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPaymentType.Margin = new System.Windows.Forms.Padding(4);
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(665, 36);
             this.cbPaymentType.TabIndex = 128;
-            this.cbPaymentType.Text = "Choose Payment Type";
+            this.cbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbPaymentType_KeyPress);
             // 
             // label1
             // 
@@ -381,7 +382,7 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtFullName);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCPayNow";
             this.Size = new System.Drawing.Size(1467, 866);
             this.Load += new System.EventHandler(this.UCPayNow_Load);
