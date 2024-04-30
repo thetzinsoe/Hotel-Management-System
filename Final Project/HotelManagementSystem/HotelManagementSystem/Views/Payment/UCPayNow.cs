@@ -228,20 +228,22 @@ namespace HotelManagementSystem.Views.Payment
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtExtraFees.Text.ToString()))
+                if (!string.IsNullOrEmpty(txtExtraFees.Text))
                 {
-                    bool isDigit = txtExtraFees.Text.Any(c => char.IsDigit(c));
-                    if (isDigit)
+                    bool containsOnlyDigits = txtExtraFees.Text.All(char.IsDigit);
+
+                    if (containsOnlyDigits)
                     {
                         checkInput = true;
-                        lbExtraFeesValidation.Text = string.Empty;
-                        extraFees = decimal.Parse(txtExtraFees.Text.ToString());
+                        extraFees = decimal.Parse(txtExtraFees.Text);
                         BindData();
                     }
                     else
                     {
                         checkInput = false;
-                        MessageBox.Show("Invalid input!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Invalid input! Only numeric characters are allowed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtExtraFees.Text = new string(txtExtraFees.Text.Where(char.IsDigit).ToArray());
+                        txtExtraFees.Select(txtExtraFees.Text.Length, 0);
                     }
                 }
                 else
@@ -250,11 +252,12 @@ namespace HotelManagementSystem.Views.Payment
                     BindData();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void txtDiscount_TextChanged_1(object sender, EventArgs e)
         {
@@ -262,24 +265,19 @@ namespace HotelManagementSystem.Views.Payment
             {
                 if (!string.IsNullOrEmpty(txtDiscount.Text))
                 {
-                    // Check if the input contains only digits
                     bool containsOnlyDigits = txtDiscount.Text.All(char.IsDigit);
 
                     if (containsOnlyDigits)
                     {
                         checkInput = true;
-                        lbDiscountValidation.Text = "";
                         discount = decimal.Parse(txtDiscount.Text);
                         BindData();
                     }
                     else
                     {
-                        // If the input contains non-digit characters
                         checkInput = false;
                         MessageBox.Show("Invalid input! Only numeric characters are allowed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        // Remove non-numeric characters from the input
                         txtDiscount.Text = new string(txtDiscount.Text.Where(char.IsDigit).ToArray());
-                        // Set the cursor to the end of the text
                         txtDiscount.Select(txtDiscount.Text.Length, 0);
                     }
                 }
