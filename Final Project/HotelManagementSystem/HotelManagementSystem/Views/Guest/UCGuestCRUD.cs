@@ -107,13 +107,13 @@ namespace HotelManagementSystem.Views.Guest
             {
                 guestEntity.guestId = Convert.ToInt32(txtGuestId.Text);
             }
-            guestEntity.fullName = txtFullName.Text;
+            guestEntity.fullName = txtFullName.Text.Trim();
             guestEntity.gender = genderValue;
             guestEntity.dob = dtpDob.Value;
-            guestEntity.nationality = txtNationality.Text;
-            guestEntity.nrcNumber = txtNRCNumber.Text;
-            guestEntity.address = txtAddress.Text;
-            guestEntity.phoneNumber = txtPhoneNumber.Text;
+            guestEntity.nationality = txtNationality.Text.Trim();
+            guestEntity.nrcNumber = txtNRCNumber.Text.Trim();
+            guestEntity.address = txtAddress.Text.Trim();
+            guestEntity.phoneNumber = txtPhoneNumber.Text.Trim();
 
             return guestEntity;
         }

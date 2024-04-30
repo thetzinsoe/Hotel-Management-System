@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Microsoft.Reporting.WinForms;
-using HotelManagementSystem.Entities.Guest;
 using HotelManagementSystem.Entities.Employee;
 using ExcelDataReader;
-using HotelManagementSystem.Services.Guest;
 using System.Text.RegularExpressions;
 namespace HotelManagementSystem.Views.Employee
 {
@@ -31,6 +29,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             BindGrid();
             BindReportViewer();
+            dgvEmployeeList.RowTemplate.MinimumHeight = 40;
         }
 
         private void BindGrid()
@@ -75,8 +74,20 @@ namespace HotelManagementSystem.Views.Employee
                         success = employeeService.Delete(employeeId);
                         if (success)
                         {
-                            MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
+                            DataTable dt1 = employeeService.GetAll();
+                            int rowCount = dt1.Rows.Count;
+                            totalPage = rowCount / pageSize;
+                            if (rowCount % pageSize > 0)
+                            {
+                                totalPage += 1;
+                            }
+                            MessageBox.Show("Delete success", "Success", MessageBoxButtons.OK);
                             DataTable dt = employeeService.GetRecord(currentPageIndex, pageSize);
+                            if (dt.Rows.Count == 0 && currentPageIndex > 1)
+                            {
+                                currentPageIndex--;
+                                dt = employeeService.GetRecord(currentPageIndex, pageSize);
+                            }
                             AddImage(dt, "image");
                             this.dgvEmployeeList.DataSource = dt;
                             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
@@ -109,7 +120,7 @@ namespace HotelManagementSystem.Views.Employee
                         gender = "Female";
                         break;
                     default:
-                        MessageBox.Show("Error assigning gender", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show("Error assigning gender.", "Error", MessageBoxButtons.OK);
                         break;
                 }
                 e.Value = gender;
@@ -146,16 +157,7 @@ namespace HotelManagementSystem.Views.Employee
         private void btn3xPrevious_Click(object sender, EventArgs e)
         {
             EmployeeService employeeService = new EmployeeService();
-
-            int prevPageIndex = this.currentPageIndex - 3;
-            if (prevPageIndex > 1)
-            {
-                this.currentPageIndex = prevPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = 1;
-            }
+            this.currentPageIndex = 1;
             DataTable dt = employeeService.GetRecord(currentPageIndex, pageSize);
             AddImage(dt, "image");
             this.dgvEmployeeList.DataSource = dt;
@@ -165,15 +167,8 @@ namespace HotelManagementSystem.Views.Employee
         private void btn3xNext_Click(object sender, EventArgs e)
         {
             EmployeeService employeeService = new EmployeeService();
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            int lastPage = totalPage;
+            this.currentPageIndex = lastPage;
             DataTable dt = employeeService.GetRecord(currentPageIndex, pageSize);
             AddImage(dt, "image");
             this.dgvEmployeeList.DataSource = dt;
@@ -279,15 +274,38 @@ namespace HotelManagementSystem.Views.Employee
                 {
                     return;
                 }
+                string gender = row["Gender"].ToString();
+                short genderValue = 0;
+                if (gender == "Other")
+                {
+                    genderValue = 0;
+                }
+                else if (gender == "Male")
+                {
+                    genderValue = 1;
+                }
+                else if (gender == "Female")
+                {
+                    genderValue = 2;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correctly in Gender column.(Other,Male,Female)","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                }
+                DateTime dob = DateTime.Now;
+                if (DateTime.TryParse(row["Date of Birth"].ToString(), out DateTime dobvalue))
+                {
+                    dob = dobvalue;
+                }
                 EmployeeEntity employeeEntity = new EmployeeEntity()
                 {
                     fullName = row["Full Name"].ToString(),
                     phoneNumber = row["Phone Number"].ToString(),
                     position = row["Position"].ToString(),
                     nrcNumber = row["NRC Number"].ToString(),
-                    dob = (DateTime)row["Dob"],
-                    gender = Convert.ToInt16(row["Gender"]),
-                    joinedDate = (DateTime)row["Joined Date"],
+                    dob = (DateTime)dob,
+                    gender = genderValue,
+                    joinedDate = DateTime.Now,
                     address = row["Address"].ToString(),
                     image = row["Image"].ToString(),
                     createdDateTime = DateTime.Now,
@@ -357,7 +375,7 @@ namespace HotelManagementSystem.Views.Employee
             }
             if (row["Position"] == null || string.IsNullOrEmpty(row["Position"].ToString()) || !IsValidPosition(row["Position"].ToString()))
             {
-                MessageBox.Show("Please select a valid Position for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid Position for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrEmpty(row["NRC Number"].ToString()))
@@ -370,8 +388,13 @@ namespace HotelManagementSystem.Views.Employee
             {
                 return false;
             }
-            int age = DateTime.Today.Year - ((DateTime)row["Dob"]).Year;
-            if (DateTime.Today.Date < ((DateTime)row["Dob"]).AddYears(age))
+            DateTime dob = DateTime.Now;
+            if (DateTime.TryParse(row["Date of Birth"].ToString(), out DateTime dobvalue))
+            {
+                dob = dobvalue;
+            }
+            int age = DateTime.Today.Year - (dob.Year);
+            if (DateTime.Today.Date < (dob).AddYears(age))
             {
                 age--;
             }
@@ -379,18 +402,8 @@ namespace HotelManagementSystem.Views.Employee
             {
                 MessageBox.Show("Employees must be between 18 and 60 years old.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }
-            if (!IsValidGender(row["Gender"]))
-            {
-                MessageBox.Show("Please enter a valid gender value for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            DateTime minJoinedDate = ((DateTime)row["Dob"]).AddYears(18);
-            if ((DateTime)row["Joined Date"] < minJoinedDate)
-            {
-                MessageBox.Show("Invalid Joined Date. Employees must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            }            
+            
             if (employeeService.IsGuestValid(row["Full Name"].ToString(),row["NRC Number"].ToString()))
             {
                 MessageBox.Show("The Guest who is already registered is included in excel data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -408,16 +421,7 @@ namespace HotelManagementSystem.Views.Employee
         {
             string[] validPositions = { "Manager", "Housekeeping", "Security", "Receptionist", "Food and Beverage Server" };
             return validPositions.Contains(position);
-        }
-        private bool IsValidGender(object gender)
-        {
-            int genderValue;
-            if (int.TryParse(gender.ToString(), out genderValue))
-            {
-                return genderValue == 0 || genderValue == 1 || genderValue == 2;
-            }
-            return false;
-        }
+        }        
         private bool ValidateNRCNumber(string nrcNumber)
         {
             string nrcPattern = @"^\d+\/[\p{IsBasicLatin}\p{IsMyanmar}]+\([\p{IsBasicLatin}\p{IsMyanmar}]+\)\d{6}$"; ;
@@ -427,7 +431,6 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Incorrect NRC format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
             return true;
         }
     }

@@ -96,7 +96,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnBack.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 35);
-            this.btnBack.TabIndex = 71;
+            this.btnBack.TabIndex = 13;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -168,7 +168,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtGuestId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGuestId.Name = "txtGuestId";
             this.txtGuestId.Size = new System.Drawing.Size(500, 34);
-            this.txtGuestId.TabIndex = 65;
+            this.txtGuestId.TabIndex = 20;
             this.txtGuestId.Visible = false;
             // 
             // lblDob
@@ -190,7 +190,7 @@ namespace HotelManagementSystem.Views.Guest
             this.dtpDob.MaxDate = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(500, 34);
-            this.dtpDob.TabIndex = 52;
+            this.dtpDob.TabIndex = 5;
             this.dtpDob.Value = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
             // rdbFemale
@@ -201,7 +201,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbFemale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(95, 32);
-            this.rdbFemale.TabIndex = 51;
+            this.rdbFemale.TabIndex = 15;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
             // 
@@ -213,7 +213,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbMale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(76, 32);
-            this.rdbMale.TabIndex = 63;
+            this.rdbMale.TabIndex = 14;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
             // 
@@ -225,7 +225,7 @@ namespace HotelManagementSystem.Views.Guest
             this.rdbOther.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(83, 32);
-            this.rdbOther.TabIndex = 48;
+            this.rdbOther.TabIndex = 16;
             this.rdbOther.Text = "Other";
             this.rdbOther.UseVisualStyleBackColor = true;
             // 
@@ -250,7 +250,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnClear.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 35);
-            this.btnClear.TabIndex = 61;
+            this.btnClear.TabIndex = 11;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -277,7 +277,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 35);
-            this.btnDelete.TabIndex = 60;
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -289,7 +289,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(500, 34);
-            this.txtFullName.TabIndex = 47;
+            this.txtFullName.TabIndex = 1;
             this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             // 
             // lblNRCNumber
@@ -314,7 +314,7 @@ namespace HotelManagementSystem.Views.Guest
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
-            this.btnAdd.TabIndex = 59;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -326,7 +326,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(500, 34);
-            this.txtAddress.TabIndex = 57;
+            this.txtAddress.TabIndex = 8;
             this.txtAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress_KeyPress);
             // 
             // lblNationality
@@ -347,7 +347,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtPhoneNumber.TabIndex = 58;
+            this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // txtNationality
@@ -357,7 +357,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(500, 34);
-            this.txtNationality.TabIndex = 54;
+            this.txtNationality.TabIndex = 6;
             this.txtNationality.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNationality_KeyPress);
             // 
             // lblAddress
@@ -389,7 +389,7 @@ namespace HotelManagementSystem.Views.Guest
             this.txtNRCNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNRCNumber.Name = "txtNRCNumber";
             this.txtNRCNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtNRCNumber.TabIndex = 55;
+            this.txtNRCNumber.TabIndex = 7;
             this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
             // 
             // pnTitle

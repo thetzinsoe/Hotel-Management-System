@@ -107,7 +107,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 35);
-            this.btnBack.TabIndex = 82;
+            this.btnBack.TabIndex = 11;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -182,7 +182,7 @@
             this.cbPosition.Location = new System.Drawing.Point(389, 319);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(500, 36);
-            this.cbPosition.TabIndex = 75;
+            this.cbPosition.TabIndex = 3;
             // 
             // pbImage
             // 
@@ -205,7 +205,7 @@
             this.btnChooseFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(100, 35);
-            this.btnChooseFile.TabIndex = 65;
+            this.btnChooseFile.TabIndex = 7;
             this.btnChooseFile.Text = "CHOOSE";
             this.btnChooseFile.UseVisualStyleBackColor = false;
             this.btnChooseFile.Click += new System.EventHandler(this.btnChooseFile_Click);
@@ -228,7 +228,7 @@
             this.txtEmployeeId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmployeeId.Name = "txtEmployeeId";
             this.txtEmployeeId.Size = new System.Drawing.Size(500, 34);
-            this.txtEmployeeId.TabIndex = 71;
+            this.txtEmployeeId.TabIndex = 52;
             this.txtEmployeeId.Visible = false;
             // 
             // lblDob
@@ -249,7 +249,7 @@
             this.dtpDob.MaxDate = new System.DateTime(2024, 12, 25, 23, 59, 59, 0);
             this.dtpDob.Name = "dtpDob";
             this.dtpDob.Size = new System.Drawing.Size(500, 34);
-            this.dtpDob.TabIndex = 57;
+            this.dtpDob.TabIndex = 5;
             this.dtpDob.Value = new System.DateTime(2024, 4, 15, 0, 0, 0, 0);
             // 
             // rdbFemale
@@ -306,7 +306,7 @@
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 35);
-            this.btnClear.TabIndex = 67;
+            this.btnClear.TabIndex = 9;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -333,7 +333,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 35);
-            this.btnDelete.TabIndex = 68;
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -345,7 +345,7 @@
             this.txtFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(500, 34);
-            this.txtFullName.TabIndex = 52;
+            this.txtFullName.TabIndex = 1;
             this.txtFullName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFullName_KeyPress);
             // 
             // lblNRCNumber
@@ -370,7 +370,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
-            this.btnAdd.TabIndex = 66;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -382,7 +382,7 @@
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(500, 34);
-            this.txtAddress.TabIndex = 64;
+            this.txtAddress.TabIndex = 6;
             this.txtAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddress_KeyPress);
             // 
             // lblPosition
@@ -403,7 +403,7 @@
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtPhoneNumber.TabIndex = 53;
+            this.txtPhoneNumber.TabIndex = 2;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblAddress
@@ -435,7 +435,7 @@
             this.txtNRCNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNRCNumber.Name = "txtNRCNumber";
             this.txtNRCNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtNRCNumber.TabIndex = 55;
+            this.txtNRCNumber.TabIndex = 4;
             this.txtNRCNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNRCNumber_KeyPress);
             // 
             // UCEmployee

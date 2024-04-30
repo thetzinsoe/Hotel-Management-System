@@ -67,14 +67,14 @@ namespace HotelManagementSystem.Views.Employee
             {
                 employeeEntity.employeeId = Convert.ToInt32(txtEmployeeId.Text);
             }
-            employeeEntity.fullName = txtFullName.Text;
-            employeeEntity.phoneNumber = txtPhoneNumber.Text;
+            employeeEntity.fullName = txtFullName.Text.Trim();
+            employeeEntity.phoneNumber = txtPhoneNumber.Text.Trim();
             employeeEntity.position = cbPosition.SelectedItem.ToString();
-            employeeEntity.nrcNumber = txtNRCNumber.Text;
+            employeeEntity.nrcNumber = txtNRCNumber.Text.Trim();
             employeeEntity.dob = dtpDob.Value;
             employeeEntity.gender = gender;
             employeeEntity.joinedDate = DateTime.Now;
-            employeeEntity.address = txtAddress.Text;
+            employeeEntity.address = txtAddress.Text.Trim();
             employeeEntity.image = imagePath;
             employeeEntity.createdDateTime = DateTime.Now;
             employeeEntity.updatedDateTime = DateTime.Now;            
@@ -222,15 +222,23 @@ namespace HotelManagementSystem.Views.Employee
                 }
                 txtAddress.Text = dt.Rows[0]["address"].ToString();
                 string imagePath = dt.Rows[0]["image"].ToString();
-                if (!string.IsNullOrEmpty(imagePath))
+                try
                 {
-                    pbImage.Image = System.Drawing.Image.FromFile(imagePath);
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        pbImage.Image = System.Drawing.Image.FromFile(imagePath);
+                    }
+                    else
+                    {
+                        pbImage.Image = null;
+                    }
+                    _openFileDialog.FileName = imagePath;
                 }
-                else
+                catch (Exception ex)
                 {
-                    pbImage.Image = null;
+                    MessageBox.Show("Error:"+ ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                _openFileDialog.FileName = imagePath;
+                  
             }
         }
         private bool InputValidation()
