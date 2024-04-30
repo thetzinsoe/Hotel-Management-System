@@ -262,6 +262,7 @@ namespace HotelManagementSystem.Views.Room
 
         private void cbType_TextChanged(object sender, EventArgs e)
         {
+            cbType.Text = "Select room type";
             if (cbType.SelectedIndex != -1)
             {
                 userHasSelected = true;

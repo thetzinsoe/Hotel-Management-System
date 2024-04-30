@@ -83,7 +83,7 @@ namespace HotelManagementSystem.Views.Admin
                 MessageBox.Show("Enter username to register");
                 return false;
             }
-            if (!username.Any(char.IsLetter))
+            if (!username.Any(char.IsLetter)||username.Length>10)
             {
                 MessageBox.Show("Username Should be valid letter(up to 10 character!)");
                 return false;
@@ -108,9 +108,9 @@ namespace HotelManagementSystem.Views.Admin
                 MessageBox.Show("Password should at least has 1 upper letter");
                 return false;
             }
-            if (password.Length < 8)
+            if (password.Length < 8||password.Length>18)
             {
-                MessageBox.Show("Password should at least be 8 characters long");
+                MessageBox.Show("Password should at least be 8 to 18 characters long");
                 return false;
             }
             if (string.IsNullOrWhiteSpace(validpass))
@@ -161,15 +161,15 @@ namespace HotelManagementSystem.Views.Admin
 
         private void btnConfirmShow_Click(object sender, EventArgs e)
         {
-            if (txtpassword.PasswordChar == '*')
+            if (txtvalidpass.PasswordChar == '*')
             {
                 txtvalidpass.PasswordChar = '\0';
-                btnShow.Text = "Hide";
+                btnConfirmShow.Text = "Hide";
             }
             else
             {
                 txtvalidpass.PasswordChar = '*';
-                btnShow.Text = "Show";
+                btnConfirmShow.Text = "Show";
             }
         }
     }
