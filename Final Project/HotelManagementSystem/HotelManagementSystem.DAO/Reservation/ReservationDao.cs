@@ -138,7 +138,7 @@ namespace HotelManagementSystem.DAO.Reservation
         public DataTable haveRoom(int id)
         {
             string strSql = "SELECT * FROM Reservation " +
-                "WHERE room_id ='"+id+"' AND is_deleted=0";
+                "WHERE room_id ='"+id+"' AND is_deleted!=1";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

@@ -292,8 +292,16 @@ namespace HotelManagementSystem.Views.Reservation
         {
             if (!String.IsNullOrEmpty(hdReservationId.Text))
             {
+                MessageBox.Show(selectedRoomId + "");
+                DataTable dt = reservationService.haveRoom(selectedRoomId);
+                bool upRoom = true;
+                if (dt.Rows.Count == 1)
+                {
+                    upRoom = reservationService.RoomUpdate(selectedRoomId, 0);
+                }
+                MessageBox.Show(dt.Rows.Count.ToString());
                 bool success = reservationService.Delete(int.Parse(hdReservationId.Text));
-                if (success)
+                if (success && upRoom)
                 {
                     MessageBox.Show("Reservation Delete Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Controls.Clear();
