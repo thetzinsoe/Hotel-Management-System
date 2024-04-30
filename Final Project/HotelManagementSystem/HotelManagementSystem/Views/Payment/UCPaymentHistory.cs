@@ -29,7 +29,13 @@ namespace HotelManagementSystem.Views.Payment
         private void UCPaymentHistory_Load(object sender, EventArgs e)
         {
             LoadPayment();
+            foreach (DataGridViewColumn column in dgvPaymentHistory.Columns)
+            {
+                column.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            }
+            dgvPaymentHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+
 
         private void LoadPayment()
         {

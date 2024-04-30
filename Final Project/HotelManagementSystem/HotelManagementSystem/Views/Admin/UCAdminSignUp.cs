@@ -64,11 +64,10 @@ namespace HotelManagementSystem.Views.Admin
 
         private bool ValidInput()
         {
-
             string username = txtusername.Text, password = txtpassword.Text, validpass = txtvalidpass.Text;
             try
             {
-                DataTable dt = adminService.searchByUsername(username);
+                DataTable dt = adminService.GetAdminByUsername(username);
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Username already in use!");
@@ -84,16 +83,11 @@ namespace HotelManagementSystem.Views.Admin
                 MessageBox.Show("Enter username to register");
                 return false;
             }
-            if (!username.Any(char.IsLetter))
+            if (!username.Any(char.IsLetter)||username.Length>10)
             {
                 MessageBox.Show("Username Should be valid letter(up to 10 character!)");
                 return false;
-            }
-            if (!username.Any(char.IsDigit))
-            {
-                MessageBox.Show("username should include at least 1 digit!");
-                return false;
-            }
+            }          
             if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Enter a vaild password");
@@ -114,9 +108,9 @@ namespace HotelManagementSystem.Views.Admin
                 MessageBox.Show("Password should at least has 1 upper letter");
                 return false;
             }
-            if (password.Length < 8)
+            if (password.Length < 8||password.Length>18)
             {
-                MessageBox.Show("Password should at least be 8 characters long");
+                MessageBox.Show("Password should at least be 8 to 18 characters long");
                 return false;
             }
             if (string.IsNullOrWhiteSpace(validpass))
@@ -163,6 +157,20 @@ namespace HotelManagementSystem.Views.Admin
             UCAdmin uCAdmin = new UCAdmin();
             this.Controls.Clear();
             this.Controls.Add(uCAdmin);
+        }
+
+        private void btnConfirmShow_Click(object sender, EventArgs e)
+        {
+            if (txtvalidpass.PasswordChar == '*')
+            {
+                txtvalidpass.PasswordChar = '\0';
+                btnConfirmShow.Text = "Hide";
+            }
+            else
+            {
+                txtvalidpass.PasswordChar = '*';
+                btnConfirmShow.Text = "Show";
+            }
         }
     }
 }

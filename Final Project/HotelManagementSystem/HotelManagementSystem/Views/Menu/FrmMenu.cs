@@ -120,16 +120,20 @@ namespace HotelManagementSystem.Views.Menu
             UCAdmin uCAdmin = new UCAdmin();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(uCAdmin);
-            mainMenu.Enabled = false;
+            pnMain.Controls.Remove(mainMenu);
+            mainMenu.Visible = false;
             btnLogout.Visible = false;
+            pnMain.Location = (new Point(0, 0));
+            
         }
         public void LoginSuccess()
         {
             MainDashBoard mainDashBoard = new MainDashBoard();
             pnMain.Controls.Clear();
             pnMain.Controls.Add(mainDashBoard);
-            mainMenu.Enabled = true;
+            mainMenu.Visible = true;
             btnLogout.Visible = true;
+            pnMain.Location = (new Point(0, 50));
         }
 
         private void pAYMENTLISTToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -147,8 +151,9 @@ namespace HotelManagementSystem.Views.Menu
                 UCAdmin uCAdmin = new UCAdmin();
                 pnMain.Controls.Clear();
                 pnMain.Controls.Add(uCAdmin);
-                mainMenu.Enabled = false;
+                mainMenu.Visible = false;
                 btnLogout.Visible = false;
+                pnMain.Location = (new Point(0, 0));
             }
         }
     }

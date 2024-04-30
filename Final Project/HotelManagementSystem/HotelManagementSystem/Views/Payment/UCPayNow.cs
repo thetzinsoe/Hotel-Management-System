@@ -77,7 +77,13 @@ namespace HotelManagementSystem.Views.Payment
             else
             {
                  checkInput=true;
-                //lbPaymentTypeValidation.Text = "";
+            }
+
+            if (decimal.Parse(txtDiscount.Text) > 100)
+            {
+                checkInput = false;
+                MessageBox.Show("The maximun amount of discount is 100%", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (checkInput)
@@ -226,42 +232,80 @@ namespace HotelManagementSystem.Views.Payment
 
         private void txtExtraFees_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtExtraFees.Text.ToString())){
-                bool isDigit = txtExtraFees.Text.Any(c => char.IsDigit(c));
-                if (isDigit)
+            try
+            {
+                if (!string.IsNullOrEmpty(txtExtraFees.Text))
                 {
-                    checkInput = true;
-                    lbExtraFeesValidation.Text = string.Empty;
-                    extraFees = decimal.Parse(txtExtraFees.Text.ToString());
-                    BindData();
+                    bool containsOnlyDigits = txtExtraFees.Text.Any(char.IsDigit);
+
+                    if (containsOnlyDigits)
+                    {
+                        checkInput = true;
+                        extraFees = decimal.Parse(txtExtraFees.Text);
+                        BindData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input! Only numeric characters are allowed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtExtraFees.Text = new string(txtExtraFees.Text.Where(char.IsDigit).ToArray());
+                        txtExtraFees.Select(txtExtraFees.Text.Length, 0);
+                    }
                 }
                 else
                 {
-                    checkInput = false;
-                    lbExtraFeesValidation.Text = "Invalid input!";
+                    extraFees = 0;
+                    BindData();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
         private void txtDiscount_TextChanged_1(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtDiscount.Text.ToString()))
+            try
             {
-                bool isDigit = txtDiscount.Text.Any(c => char.IsDigit(c));
-                if (isDigit)
+                if (!string.IsNullOrEmpty(txtDiscount.Text))
                 {
-                    checkInput = true;
-                    lbDiscountValidation.Text = "";
-                    discount = decimal.Parse(txtDiscount.Text.ToString());
-                    BindData();
+                    bool containsOnlyDigits = txtDiscount.Text.Any(char.IsDigit);
+
+                    if (containsOnlyDigits)
+                    {
+                        checkInput = true;
+                        discount = decimal.Parse(txtDiscount.Text);
+                        if (discount <= 100)
+                        {
+                            BindData();
+                        }
+                        else
+                        {
+                            checkInput = false;
+                            MessageBox.Show("Invalid Discount!","Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        checkInput = false;
+                        MessageBox.Show("Invalid input! Only numeric characters are allowed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtDiscount.Text = new string(txtDiscount.Text.Where(char.IsDigit).ToArray());
+                        txtDiscount.Select(txtDiscount.Text.Length, 0);
+                    }
                 }
                 else
                 {
-                    checkInput = false;
-                    lbDiscountValidation.Text = "Invalid input!";
+                    discount = 0;
+                    BindData();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void btnPrint_Click(object sender, EventArgs e)
         {

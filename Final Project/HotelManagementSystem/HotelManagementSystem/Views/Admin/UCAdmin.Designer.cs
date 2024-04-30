@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.lblpass = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblusername = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Label();
-            this.btnShow = new System.Windows.Forms.Button();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnShow = new System.Windows.Forms.Button();
             this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,22 +46,11 @@
             // 
             this.lblpass.AutoSize = true;
             this.lblpass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpass.Location = new System.Drawing.Point(361, 302);
+            this.lblpass.Location = new System.Drawing.Point(377, 395);
             this.lblpass.Name = "lblpass";
             this.lblpass.Size = new System.Drawing.Size(97, 28);
             this.lblpass.TabIndex = 0;
             this.lblpass.Text = "Password:";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(518, 296);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(436, 34);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnLogin
             // 
@@ -71,7 +60,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(854, 426);
+            this.btnLogin.Location = new System.Drawing.Point(870, 519);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 35);
             this.btnLogin.TabIndex = 2;
@@ -79,19 +68,11 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(518, 229);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(436, 34);
-            this.txtUsername.TabIndex = 4;
-            // 
             // lblusername
             // 
             this.lblusername.AutoSize = true;
             this.lblusername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusername.Location = new System.Drawing.Point(361, 235);
+            this.lblusername.Location = new System.Drawing.Point(377, 328);
             this.lblusername.Name = "lblusername";
             this.lblusername.Size = new System.Drawing.Size(103, 28);
             this.lblusername.TabIndex = 3;
@@ -105,7 +86,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(656, 426);
+            this.btnCancel.Location = new System.Drawing.Point(672, 519);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 35);
             this.btnCancel.TabIndex = 5;
@@ -117,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(679, 511);
+            this.label1.Location = new System.Drawing.Point(695, 604);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 6;
@@ -127,25 +108,12 @@
             // 
             this.btnSignUp.AutoSize = true;
             this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Location = new System.Drawing.Point(811, 503);
+            this.btnSignUp.Location = new System.Drawing.Point(827, 596);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(89, 28);
             this.btnSignUp.TabIndex = 7;
             this.btnSignUp.Text = "Sign up ";
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
-            // 
-            // btnShow
-            // 
-            this.btnShow.BackColor = System.Drawing.Color.White;
-            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(879, 336);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(75, 25);
-            this.btnShow.TabIndex = 9;
-            this.btnShow.Text = "Show";
-            this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // pnTitle
             // 
@@ -168,23 +136,54 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "SIGN IN";
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(534, 325);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(436, 34);
+            this.txtUsername.TabIndex = 1;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(534, 392);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(436, 34);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(895, 432);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(75, 30);
+            this.btnShow.TabIndex = 11;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click_1);
+            // 
             // UCAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.btnShow);
+            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lblusername);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblpass);
             this.Name = "UCAdmin";
-            this.Size = new System.Drawing.Size(1467, 861);
+            this.Size = new System.Drawing.Size(1467, 986);
             this.Load += new System.EventHandler(this.UCAdmin_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
@@ -196,15 +195,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblpass;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblusername;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label btnSignUp;
-        private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnShow;
     }
 }

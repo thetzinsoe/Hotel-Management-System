@@ -130,7 +130,7 @@ namespace HotelManagementSystem.DAO.Reservation
         /// <returns></returns>
         public DataTable Get(int id)
         {
-            string strSql = "SELECT t1.*, t2.room_no FROM Reservation t1 " +
+            string strSql = "SELECT t1.*, t2.room_no, t2.room_id FROM Reservation t1 " +
                 "JOIN Room t2 ON t1.room_id = t2.room_id WHERE reservation_id ="+id;
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
@@ -138,7 +138,7 @@ namespace HotelManagementSystem.DAO.Reservation
         public DataTable haveRoom(int id)
         {
             string strSql = "SELECT * FROM Reservation " +
-                "WHERE room_id ='"+id+"' AND is_deleted=0";
+                "WHERE room_id ='"+id+"' AND is_deleted!=1";
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 

@@ -38,6 +38,7 @@
             this.txtvalidpass = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnConfirmShow = new System.Windows.Forms.Button();
             this.btnLogIn = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtadminID = new System.Windows.Forms.Label();
@@ -135,9 +136,10 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.White;
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(473, 217);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 25);
@@ -148,6 +150,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnConfirmShow);
             this.groupBox1.Controls.Add(this.btnLogIn);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtadminID);
@@ -161,12 +164,26 @@
             this.groupBox1.Controls.Add(this.btnCancel);
             this.groupBox1.Controls.Add(this.lblPass);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(437, 131);
+            this.groupBox1.Location = new System.Drawing.Point(437, 188);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(600, 600);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Register";
+            // 
+            // btnConfirmShow
+            // 
+            this.btnConfirmShow.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnConfirmShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConfirmShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmShow.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmShow.Location = new System.Drawing.Point(473, 296);
+            this.btnConfirmShow.Name = "btnConfirmShow";
+            this.btnConfirmShow.Size = new System.Drawing.Size(75, 25);
+            this.btnConfirmShow.TabIndex = 13;
+            this.btnConfirmShow.Text = "Show";
+            this.btnConfirmShow.UseVisualStyleBackColor = false;
+            this.btnConfirmShow.Click += new System.EventHandler(this.btnConfirmShow_Click);
             // 
             // btnLogIn
             // 
@@ -228,7 +245,7 @@
             this.Controls.Add(this.pnTitle);
             this.Controls.Add(this.groupBox1);
             this.Name = "UCAdminSignUp";
-            this.Size = new System.Drawing.Size(1467, 861);
+            this.Size = new System.Drawing.Size(1467, 986);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnTitle.ResumeLayout(false);
@@ -254,5 +271,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnConfirmShow;
     }
 }

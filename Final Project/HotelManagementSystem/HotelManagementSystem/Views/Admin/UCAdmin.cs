@@ -16,9 +16,11 @@ namespace HotelManagementSystem.Views.Admin
 {
     public partial class UCAdmin : UserControl
     {
+        private bool isPasswordVisible = false;
         public UCAdmin()
         {
             InitializeComponent();
+            txtPassword.SelectAll();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -83,7 +85,21 @@ namespace HotelManagementSystem.Views.Admin
             txtPassword.Text = string.Empty;
         }
 
-        private void btnShow_Click(object sender, EventArgs e)
+        
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            UCAdminSignUp uCAdminSignUp = new UCAdminSignUp();
+            this.Controls.Clear();
+            this.Controls.Add(uCAdminSignUp);
+        }
+
+        private void UCAdmin_Load(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
+        }
+
+        private void btnShow_Click_1(object sender, EventArgs e)
         {
             if (txtPassword.PasswordChar == '*')
             {
@@ -97,26 +113,9 @@ namespace HotelManagementSystem.Views.Admin
             }
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-            UCAdminSignUp uCAdminSignUp = new UCAdminSignUp();
-            this.Controls.Clear();
-            this.Controls.Add(uCAdminSignUp);
-        }
-
-        private void UCAdmin_Load(object sender, EventArgs e)
-        {
-            btnShow.Visible=false;         
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             btnShow.Visible = true;
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            btnShow.Visible = false;
         }
     }
 }

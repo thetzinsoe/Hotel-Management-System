@@ -26,10 +26,8 @@ namespace HotelManagementSystem.Views.Employee
 
         private void UCEmployee_Load(object sender, EventArgs e)
         {
-            dtpDob.MaxDate = DateTime.Now;
-            dtpJoinedDate.MaxDate = DateTime.Now;
-            dtpDob.Value = DateTime.Today;
-            dtpJoinedDate.Value = DateTime.Today;
+            dtpDob.MaxDate = DateTime.Now;            
+            dtpDob.Value = DateTime.Today;            
             BtnControl();
             BindData();
         }
@@ -69,14 +67,14 @@ namespace HotelManagementSystem.Views.Employee
             {
                 employeeEntity.employeeId = Convert.ToInt32(txtEmployeeId.Text);
             }
-            employeeEntity.fullName = txtFullName.Text;
-            employeeEntity.phoneNumber = txtPhoneNumber.Text;
+            employeeEntity.fullName = txtFullName.Text.Trim();
+            employeeEntity.phoneNumber = txtPhoneNumber.Text.Trim();
             employeeEntity.position = cbPosition.SelectedItem.ToString();
-            employeeEntity.nrcNumber = txtNRCNumber.Text;
+            employeeEntity.nrcNumber = txtNRCNumber.Text.Trim();
             employeeEntity.dob = dtpDob.Value;
             employeeEntity.gender = gender;
-            employeeEntity.joinedDate = dtpJoinedDate.Value;
-            employeeEntity.address = txtAddress.Text;
+            employeeEntity.joinedDate = DateTime.Now;
+            employeeEntity.address = txtAddress.Text.Trim();
             employeeEntity.image = imagePath;
             employeeEntity.createdDateTime = DateTime.Now;
             employeeEntity.updatedDateTime = DateTime.Now;            
@@ -149,7 +147,6 @@ namespace HotelManagementSystem.Views.Employee
             txtAddress.Clear();
             cbPosition.SelectedIndex = -1;
             dtpDob.Value = DateTime.Today;
-            dtpJoinedDate.Value = DateTime.Today;
             rdbOther.Checked = false;
             rdbMale.Checked = false;
             rdbFemale.Checked = false;
@@ -223,18 +220,25 @@ namespace HotelManagementSystem.Views.Employee
                         MessageBox.Show("Error assigning gendervalue");
                         break;
                 }
-                dtpJoinedDate.Value = (DateTime)dt.Rows[0]["joined_date"];
                 txtAddress.Text = dt.Rows[0]["address"].ToString();
                 string imagePath = dt.Rows[0]["image"].ToString();
-                if (!string.IsNullOrEmpty(imagePath))
+                try
                 {
-                    pbImage.Image = System.Drawing.Image.FromFile(imagePath);
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        pbImage.Image = System.Drawing.Image.FromFile(imagePath);
+                    }
+                    else
+                    {
+                        pbImage.Image = null;
+                    }
+                    _openFileDialog.FileName = imagePath;
                 }
-                else
+                catch (Exception ex)
                 {
-                    pbImage.Image = null;
+                    MessageBox.Show("Error:"+ ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                _openFileDialog.FileName = imagePath;
+                  
             }
         }
         private bool InputValidation()
@@ -280,12 +284,7 @@ namespace HotelManagementSystem.Views.Employee
                 MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            DateTime minJoinedDate = dtpDob.Value.AddYears(18);
-            if (dtpJoinedDate.Value.Date < minJoinedDate)
-            {
-                MessageBox.Show("Invalid Joined Date.Employee must be at least 18 years old to join.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+            DateTime minJoinedDate = dtpDob.Value.AddYears(18);            
             if (string.IsNullOrEmpty(txtEmployeeId.Text))
             {
                 if (employeeService.IsGuestValid(txtFullName.Text, txtNRCNumber.Text))

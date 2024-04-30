@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchValue.Location = new System.Drawing.Point(1021, 112);
-            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
             this.txtSearchValue.Size = new System.Drawing.Size(433, 34);
@@ -180,18 +180,20 @@
             // 
             this.dgvReservation.AllowUserToAddRows = false;
             this.dgvReservation.AllowUserToDeleteRows = false;
+            this.dgvReservation.AllowUserToResizeColumns = false;
+            this.dgvReservation.AllowUserToResizeRows = false;
             this.dgvReservation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReservation.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvReservation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.reservation_id,
@@ -202,7 +204,7 @@
             this.checkout_date,
             this.checkin});
             this.dgvReservation.Location = new System.Drawing.Point(13, 161);
-            this.dgvReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvReservation.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.ReadOnly = true;
             this.dgvReservation.RowHeadersVisible = false;
@@ -215,8 +217,8 @@
             // reservation_id
             // 
             this.reservation_id.DataPropertyName = "reservation_id";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reservation_id.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.reservation_id.DefaultCellStyle = dataGridViewCellStyle2;
             this.reservation_id.HeaderText = "Reservation No.";
             this.reservation_id.MinimumWidth = 6;
             this.reservation_id.Name = "reservation_id";
@@ -229,8 +231,8 @@
             // 
             this.room_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.room_number.DataPropertyName = "room_number";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.room_number.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.room_number.DefaultCellStyle = dataGridViewCellStyle3;
             this.room_number.HeaderText = "Room Number";
             this.room_number.MinimumWidth = 6;
             this.room_number.Name = "room_number";
@@ -258,8 +260,8 @@
             // 
             this.checkin_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkin_date.DataPropertyName = "checkin_date";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkin_date.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkin_date.DefaultCellStyle = dataGridViewCellStyle4;
             this.checkin_date.HeaderText = "CheckIn Date";
             this.checkin_date.MinimumWidth = 6;
             this.checkin_date.Name = "checkin_date";
@@ -269,8 +271,8 @@
             // 
             this.checkout_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.checkout_date.DataPropertyName = "checkout_date";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.checkout_date.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.checkout_date.DefaultCellStyle = dataGridViewCellStyle5;
             this.checkout_date.HeaderText = "CheckOut Date";
             this.checkout_date.MinimumWidth = 6;
             this.checkout_date.Name = "checkout_date";
@@ -278,11 +280,11 @@
             // 
             // checkin
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.checkin.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.checkin.DefaultCellStyle = dataGridViewCellStyle6;
             this.checkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkin.HeaderText = "Check In";
             this.checkin.MinimumWidth = 6;
@@ -306,7 +308,7 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvReservation);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCReservationList";
             this.Size = new System.Drawing.Size(1467, 933);
             this.Load += new System.EventHandler(this.UCReservation_Load);

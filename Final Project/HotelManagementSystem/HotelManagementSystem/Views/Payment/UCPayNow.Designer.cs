@@ -55,6 +55,7 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -176,8 +177,10 @@
             // txtExtraFees
             // 
             this.txtExtraFees.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExtraFees.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtExtraFees.Location = new System.Drawing.Point(479, 298);
             this.txtExtraFees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtExtraFees.MaxLength = 6;
             this.txtExtraFees.Name = "txtExtraFees";
             this.txtExtraFees.Size = new System.Drawing.Size(665, 34);
             this.txtExtraFees.TabIndex = 135;
@@ -189,6 +192,7 @@
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.Location = new System.Drawing.Point(479, 533);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDiscount.MaxLength = 5;
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(665, 34);
             this.txtDiscount.TabIndex = 134;
@@ -219,7 +223,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(301, 546);
+            this.label2.Location = new System.Drawing.Point(314, 536);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 28);
             this.label2.TabIndex = 131;
@@ -247,7 +251,8 @@
             // 
             // cbPaymentType
             // 
-            this.cbPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPaymentType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbPaymentType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPaymentType.FormattingEnabled = true;
             this.cbPaymentType.Items.AddRange(new object[] {
@@ -352,11 +357,23 @@
             this.txtFullName.Size = new System.Drawing.Size(665, 34);
             this.txtFullName.TabIndex = 120;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1107, 535);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 31);
+            this.label7.TabIndex = 143;
+            this.label7.Text = "%";
+            // 
             // UCPayNow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.hdPaymentId);
             this.Controls.Add(this.lbDiscountValidation);
             this.Controls.Add(this.lbPaymentTypeValidation);
@@ -421,5 +438,6 @@
         private System.Windows.Forms.Label lblFullName;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.Label label7;
     }
 }

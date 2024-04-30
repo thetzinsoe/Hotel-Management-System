@@ -10,7 +10,6 @@ using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelManagementSystem.Services.Employee;
 using HotelManagementSystem.Services.Guest;
 using Microsoft.Reporting.WinForms;
 using HotelManagementSystem.Entities.Guest;
@@ -52,7 +51,7 @@ namespace HotelManagementSystem.Views.Guest
             {
                 SearchNameorNrc();
             }
-
+            dgvGuestList.RowTemplate.MinimumHeight = 40;
         }
 
         private void BindGrid()
@@ -66,7 +65,7 @@ namespace HotelManagementSystem.Views.Guest
             if (rowCount % pageSize > 0)
             {
                 totalPage += 1;
-            }
+            }           
             lblPageNo.Text = $"Page 1 of {totalPage}";
             dgvGuestList.AutoGenerateColumns = false;           
             dgvGuestList.DataSource = dt;
@@ -95,8 +94,21 @@ namespace HotelManagementSystem.Views.Guest
                         success = guestService.Delete(guestId);
                         if (success)
                         {
+                            DataTable dt1 = guestService.GetAll();
+                            int rowCount = dt1.Rows.Count;
+                            totalPage = rowCount / pageSize;
+                            if (rowCount % pageSize > 0)
+                            {
+                                totalPage += 1;
+                            }
                             MessageBox.Show("Delete Success", "Success", MessageBoxButtons.OK);
                             DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
+                            if(dt.Rows.Count == 0 && currentPageIndex > 1)
+                            {
+                                currentPageIndex--;
+                                dt = guestService.GetRecord(currentPageIndex, pageSize);
+                            }
+
                             this.dgvGuestList.DataSource = dt;
                             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
                         }
@@ -158,15 +170,7 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btn3xPrevious_Click(object sender, EventArgs e)
         {
-            int prevPageIndex = this.currentPageIndex - 3;
-            if (prevPageIndex > 1)
-            {
-                this.currentPageIndex = prevPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = 1;
-            }
+            this.currentPageIndex = 1;
             DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
             this.dgvGuestList.DataSource = dt;
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
@@ -174,15 +178,8 @@ namespace HotelManagementSystem.Views.Guest
 
         private void btn3xNext_Click(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            int lastPage = totalPage;
+            this.currentPageIndex = lastPage;           
             DataTable dt = guestService.GetRecord(currentPageIndex, pageSize);
             this.dgvGuestList.DataSource= dt;
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
@@ -266,12 +263,38 @@ namespace HotelManagementSystem.Views.Guest
                 {
                      return;
                 }
+
+                string gender = row["Gender"].ToString();
+                short genderValue = 0;
+                if (gender == "Other")
+                {
+                    genderValue = 0;
+                }
+                else if (gender == "Male")
+                {
+                    genderValue = 1;
+                }
+                else if (gender == "Female")
+                {
+                    genderValue = 2;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correctly in Gender column.(Other,Male,Female)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DateTime dob = DateTime.Now;
+                if (DateTime.TryParse(row["Date of Birth"].ToString(), out DateTime dobvalue))
+                {
+                    dob = dobvalue;
+                }
                 GuestEntity guestEntity = new GuestEntity()
                 {
 
                     fullName = row["Full Name"].ToString(),
-                    gender = Convert.ToInt16(row["Gender"]),
-                    dob = (DateTime)row["Dob"],
+                    gender = genderValue,
+                    dob = (DateTime)dob,
                     nationality = row["Nationality"].ToString(),
                     nrcNumber = row["NRC Number"].ToString(),
                     address = row["Address"].ToString(),
@@ -302,15 +325,9 @@ namespace HotelManagementSystem.Views.Guest
             {
                 MessageBox.Show("Please enter Full Name for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }
+            }          
 
-            if (!IsValidGender(row["Gender"]))
-            {
-                MessageBox.Show("Please enter a valid gender value for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (!IsValidDateOfBirth(row["Dob"]))
+            if (!IsValidDateOfBirth(row["Date of Birth"]))
             {
                 MessageBox.Show("Please enter a valid Date of Birth for all rows.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -357,17 +374,7 @@ namespace HotelManagementSystem.Views.Guest
             }
 
             return true;
-        }
-
-        private bool IsValidGender(object gender)
-        {           
-            int genderValue;
-            if (int.TryParse(gender.ToString(), out genderValue))
-            {
-                return genderValue == 0 || genderValue == 1 || genderValue ==2;
-            }
-            return false;
-        }
+        }       
         private bool IsValidDateOfBirth(object dob)
         {
             DateTime dobValue;
@@ -474,5 +481,6 @@ namespace HotelManagementSystem.Views.Guest
             }
 
         }
+     
     }
 }

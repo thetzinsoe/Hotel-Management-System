@@ -197,7 +197,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Dob</Value>
+                              <Value>Date of Birth</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -568,7 +568,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!dob.Value</Value>
+                              <Value>=Format(Cdate(Fields!dob.Value),"MM/dd/yyyy")</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -604,7 +604,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!gender.Value</Value>
+                              <Value>=Switch(
+Fields!gender.Value = 0,"Other",
+Fields!gender.Value = 1,"Male",
+Fields!gender.Value = 2,"Female",
+true, "Unknown"
+)</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -676,7 +681,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!joined_date.Value</Value>
+                              <Value>=Format(Cdate(Fields!joined_date.Value),"MM/dd/yyyy")</Value>
                               <Style>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>12pt</FontSize>
