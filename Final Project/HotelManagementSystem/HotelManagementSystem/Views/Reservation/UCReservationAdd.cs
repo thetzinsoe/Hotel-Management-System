@@ -22,6 +22,7 @@ namespace HotelManagementSystem.Views.Reservation
         private int selectedRoomId = 0;
         DateTime checkin_date = DateTime.MinValue;
         DateTime checkout_date  = DateTime.MinValue;
+        DateTime oldcheckout_date = DateTime.MinValue;
         public string ID
         { set { hdReservationId.Text = value; } }
         UCReservationList ucReservationList = new UCReservationList();
@@ -61,15 +62,19 @@ namespace HotelManagementSystem.Views.Reservation
                 validateInput = true;
             }
 
-            if (cbRoomNo.SelectedIndex>=0 && selectedRoomId >0 && selectedRoomNo==cbRoomNo.Text)
+
+            if (string.IsNullOrEmpty(hdReservationId.Text))
             {
-                validateInput = true;
-            }
-            else
-            {
-                validateInput = false;
-                MessageBox.Show("Please Select Room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                if (selectedRoomNo == cbRoomNo.Text && cbRoomNo.SelectedIndex >= 0)
+                {
+                    validateInput = true;
+                }
+                else
+                {
+                    validateInput = false;
+                    MessageBox.Show("Please select one room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
 
             if (dtpCheckInDate.Value.Date > dtpCheckOutDate.Value.Date || dtpCheckInDate.Value.Date<DateTime.Today)
@@ -90,6 +95,15 @@ namespace HotelManagementSystem.Views.Reservation
             }
         }
 
+        private void ClearData()
+        {
+            selectedRoomNo = string.Empty;
+            selectedRoomId = 0;
+            checkin_date = DateTime.MinValue;
+            checkout_date = DateTime.MinValue;
+            oldcheckout_date = DateTime.MinValue;
+        }
+
         private void AddorUpdate()
         {
             ReservationService reservationService = new ReservationService();
@@ -103,6 +117,7 @@ namespace HotelManagementSystem.Views.Reservation
                 if (success && roomUp)
                 {
                     MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ClearData();
                     this.Controls.Clear();
                     this.Controls.Add(ucReservationList);
                 }
@@ -117,6 +132,7 @@ namespace HotelManagementSystem.Views.Reservation
                 if (success)
                 {
                     MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    ClearData();
                     this.Controls.Clear();
                     this.Controls.Add(ucReservationList);
                 }
@@ -167,20 +183,37 @@ namespace HotelManagementSystem.Views.Reservation
             Load_room();
             BtnState();
             BindData();
+
         }
 
         private void Load_room()
         {
             try
             {
-                DataTable dt = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
-                if (dt == null)
+                if (string.IsNullOrEmpty(hdReservationId.Text))
                 {
-                    validateInput = false;
-                    MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DataTable dt = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
+                    if (dt == null)
+                    {
+                        validateInput = false;
+                        MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    cbRoomNo.DataSource = dt;
+                    cbRoomNo.DisplayMember = "room_no";
                 }
-                cbRoomNo.DataSource = dt;
-                cbRoomNo.DisplayMember = "room_no";
+                else
+                {
+                    DataTable dt = reservationService.GetRoomWithDate(oldcheckout_date.Date, dtpCheckOutDate.Value.Date);
+                    if (dt == null)
+                    {
+                        validateInput = false;
+                        MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    cbRoomNo.DataSource = dt;
+                    cbRoomNo.DisplayMember = "room_no";
+                }
+
+               
             }
             catch (Exception exc)
             {
@@ -200,12 +233,15 @@ namespace HotelManagementSystem.Views.Reservation
                     {
                         txtFullName.Text = dt.Rows[0]["customer_name"].ToString();
                         txtPhoneNumber.Text = dt.Rows[0]["customer_phoneNo"].ToString();
+                        selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_number"].ToString();
                         cbRoomNo.Text = selectedRoomNo;
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
                         checkin_date = Convert.ToDateTime(dt.Rows[0]["checkin_date"].ToString());
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                         checkout_date = Convert.ToDateTime(dt.Rows[0]["checkout_date"].ToString());
+                        DateTime tempCheckOutDate = Convert.ToDateTime(dt.Rows[0]["checkout_date"]);
+                        oldcheckout_date = tempCheckOutDate.AddDays(1);
                     }
                 }
             }catch (Exception e)
@@ -251,28 +287,54 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
-            if (checkin_date != dtpCheckInDate.Value && checkin_date != DateTime.MinValue)
+            if (!string.IsNullOrEmpty(hdReservationId.Text))
+            {
+                dtpCheckInDate.Enabled = false;
+            }
+
+            if (string.IsNullOrEmpty(hdReservationId.Text))
             {
                 Load_room();
+            }
+            else
+            {
+                if (checkin_date != dtpCheckInDate.Value && checkin_date != DateTime.MinValue)
+                {
+                    Load_room();
+                }
             }
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            if (checkout_date != dtpCheckOutDate.Value &&checkout_date != DateTime.MinValue)
+            if (string.IsNullOrEmpty(hdReservationId.Text))
             {
-     
                 Load_room();
             }
-                if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
+            else
+            {
+                if (checkout_date != dtpCheckOutDate.Value && checkout_date != DateTime.MinValue)
                 {
-                    validateInput = true;
+                    if(oldcheckout_date.Date > dtpCheckOutDate.Value.Date)
+                    {
+                        cbRoomNo.Text = selectedRoomNo;
+                    }
+                    else
+                    {
+                        Load_room();
+                    }
                 }
-                else
-                {
-                    validateInput = false;
-                    MessageBox.Show("Checkout date equal or later than checkin date!", "Wrong Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+
+            if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
+            {
+                validateInput = true;
+            }
+            else
+            {
+                validateInput = false;
+                MessageBox.Show("Checkout date equal or later than checkin date!", "Wrong Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtFullName_TextChanged(object sender, EventArgs e)

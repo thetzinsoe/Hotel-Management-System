@@ -111,7 +111,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            if(selectedGuestName != cbGuestName.Text || selectedGuestId == 0)
+            if (selectedGuestName != cbGuestName.Text || selectedGuestId == 0)
             {
                 validateInput = false;
                 MessageBox.Show("You must need to choose one Guest to checkin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,18 +119,18 @@ namespace HotelManagementSystem.Views.CheckIn
             }
             else
             {
-                validateInput=true;
+                validateInput = true;
             }
 
-            if (string.IsNullOrEmpty(cbRoomNumber.Text) || selectedRoomId==0 || selectedRoomNo != cbRoomNumber.Text)
+            if (string.IsNullOrEmpty(cbRoomNumber.Text) || selectedRoomId == 0 || selectedRoomNo != cbRoomNumber.Text)
             {
                 validateInput = false;
-                MessageBox.Show("You must need to choose one room to checkin","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You must need to choose one room to checkin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else
             {
-                validateInput=true;
+                validateInput = true;
             }
 
             if (selectedGuestNrc != cbGuestNrc.Text)
@@ -144,7 +144,21 @@ namespace HotelManagementSystem.Views.CheckIn
                 validateInput = true;
             }
 
-            if (dtpCheckInDate.Value.Date>=DateTime.Today && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
+            if (string.IsNullOrEmpty(hdCheckInId.Text))
+            {
+                if(dtpCheckInDate.Value.Date >= DateTime.Today)
+                {
+                    validateInput = true;
+                }
+                else
+                {
+                    validateInput = false;
+                    MessageBox.Show("Check in date must be equal or later than today date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
             {
                 validateInput = true;
             }
@@ -342,10 +356,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            if(checkout_date!=DateTime.MinValue && checkout_date != dtpCheckOutDate.Value)
-            {
-                Load_Room();
-            }
+            Load_Room();
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
                 if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
@@ -363,6 +374,10 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(hdCheckInId.Text))
+            {
+                dtpCheckInDate.Enabled = false;
+            }
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
                 if (dtpCheckInDate.Value.Date >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
@@ -372,8 +387,6 @@ namespace HotelManagementSystem.Views.CheckIn
                 else
                 {
                     validateInput = false;
-                    //MessageBox.Show("Wrong Date!Please Choose the Correct Date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
                 }
             }
         }
