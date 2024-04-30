@@ -136,9 +136,10 @@
             // 
             // btnShow
             // 
-            this.btnShow.BackColor = System.Drawing.Color.White;
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
             this.btnShow.Location = new System.Drawing.Point(473, 217);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(75, 25);
@@ -172,9 +173,10 @@
             // 
             // btnConfirmShow
             // 
-            this.btnConfirmShow.BackColor = System.Drawing.Color.White;
+            this.btnConfirmShow.BackColor = System.Drawing.Color.SteelBlue;
             this.btnConfirmShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmShow.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmShow.ForeColor = System.Drawing.Color.White;
             this.btnConfirmShow.Location = new System.Drawing.Point(473, 296);
             this.btnConfirmShow.Name = "btnConfirmShow";
             this.btnConfirmShow.Size = new System.Drawing.Size(75, 25);
