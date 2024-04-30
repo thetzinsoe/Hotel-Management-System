@@ -80,6 +80,13 @@ namespace HotelManagementSystem.Views.Payment
                 //lbPaymentTypeValidation.Text = "";
             }
 
+            if (decimal.Parse(txtDiscount.Text) > 100)
+            {
+                checkInput = false;
+                MessageBox.Show("The maximun amount of discount is 100%", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (checkInput)
             {
                 DialogResult result = MessageBox.Show("Are you sure to payment!", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -230,7 +237,7 @@ namespace HotelManagementSystem.Views.Payment
             {
                 if (!string.IsNullOrEmpty(txtExtraFees.Text))
                 {
-                    bool containsOnlyDigits = txtExtraFees.Text.All(char.IsDigit);
+                    bool containsOnlyDigits = txtExtraFees.Text.Any(char.IsDigit);
 
                     if (containsOnlyDigits)
                     {
@@ -240,7 +247,6 @@ namespace HotelManagementSystem.Views.Payment
                     }
                     else
                     {
-                        checkInput = false;
                         MessageBox.Show("Invalid input! Only numeric characters are allowed.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtExtraFees.Text = new string(txtExtraFees.Text.Where(char.IsDigit).ToArray());
                         txtExtraFees.Select(txtExtraFees.Text.Length, 0);
@@ -265,13 +271,21 @@ namespace HotelManagementSystem.Views.Payment
             {
                 if (!string.IsNullOrEmpty(txtDiscount.Text))
                 {
-                    bool containsOnlyDigits = txtDiscount.Text.All(char.IsDigit);
+                    bool containsOnlyDigits = txtDiscount.Text.Any(char.IsDigit);
 
                     if (containsOnlyDigits)
                     {
                         checkInput = true;
                         discount = decimal.Parse(txtDiscount.Text);
-                        BindData();
+                        if (discount <= 100)
+                        {
+                            BindData();
+                        }
+                        else
+                        {
+                            checkInput = false;
+                            MessageBox.Show("Invalid Discount!","Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
