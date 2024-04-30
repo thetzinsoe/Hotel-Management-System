@@ -77,7 +77,6 @@ namespace HotelManagementSystem.Views.Payment
             else
             {
                  checkInput=true;
-                //lbPaymentTypeValidation.Text = "";
             }
 
             if (decimal.Parse(txtDiscount.Text) > 100)
