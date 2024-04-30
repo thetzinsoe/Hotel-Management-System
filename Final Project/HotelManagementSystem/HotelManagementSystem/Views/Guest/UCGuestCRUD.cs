@@ -168,7 +168,6 @@ namespace HotelManagementSystem.Views.Guest
         {
             dtpDob.MaxDate = DateTime.Today;
             dtpDob.Value = DateTime.Today;
-
             BindData();
             BtnControl();
         }
@@ -315,7 +314,6 @@ namespace HotelManagementSystem.Views.Guest
                 return false;
             }
             return true;
-            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
