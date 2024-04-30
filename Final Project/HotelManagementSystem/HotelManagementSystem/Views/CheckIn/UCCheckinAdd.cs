@@ -25,6 +25,7 @@ namespace HotelManagementSystem.Views.CheckIn
         private string selectedGuestNrc = string.Empty;
         private int selectedGuestId = 0;
         private string selectedPhone = string.Empty;
+        DateTime checkout_date = DateTime.MinValue;
         private DateTime newCheckinDate = DateTime.MinValue;
         UCCheckInList uCCheckInList = new UCCheckInList();
         CheckInEntity checkInEntity = new CheckInEntity();
@@ -289,7 +290,7 @@ namespace HotelManagementSystem.Views.CheckIn
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
-                        cbRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
+                        cbRoomNumber.Text = selectedRoomNo;
                         selectedPhone = dt.Rows[0]["phone_number"].ToString();
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
@@ -325,6 +326,13 @@ namespace HotelManagementSystem.Views.CheckIn
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                     }
                 }
+                else if (string.IsNullOrEmpty(hdReservationId.Text))
+                {                   
+                    if (!string.IsNullOrEmpty(hdGuestNrc.Text))
+                    {
+                        cbGuestNrc.Text = hdGuestNrc.Text;
+                    }
+                }
             }
             catch (Exception err)
             {
@@ -334,7 +342,10 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            Load_Room();
+            if(checkout_date!=DateTime.MinValue && checkout_date != dtpCheckOutDate.Value)
+            {
+                Load_Room();
+            }
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
                 if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
@@ -447,5 +458,19 @@ namespace HotelManagementSystem.Views.CheckIn
             }
         }
 
+        private void cbRoomNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cbGuestNrc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

@@ -138,7 +138,7 @@
             this.btnViewRoom.ForeColor = System.Drawing.Color.White;
             this.btnViewRoom.Location = new System.Drawing.Point(85, 160);
             this.btnViewRoom.Name = "btnViewRoom";
-            this.btnViewRoom.Size = new System.Drawing.Size(75, 25);
+            this.btnViewRoom.Size = new System.Drawing.Size(75, 30);
             this.btnViewRoom.TabIndex = 40;
             this.btnViewRoom.Text = "View";
             this.btnViewRoom.UseVisualStyleBackColor = false;
@@ -154,7 +154,7 @@
             this.gbMain.Controls.Add(this.panel2);
             this.gbMain.Controls.Add(this.panel1);
             this.gbMain.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMain.Location = new System.Drawing.Point(0, 200);
+            this.gbMain.Location = new System.Drawing.Point(142, 209);
             this.gbMain.Name = "gbMain";
             this.gbMain.Size = new System.Drawing.Size(1200, 450);
             this.gbMain.TabIndex = 37;
@@ -206,7 +206,7 @@
             this.btnViewCheck.ForeColor = System.Drawing.Color.White;
             this.btnViewCheck.Location = new System.Drawing.Point(85, 160);
             this.btnViewCheck.Name = "btnViewCheck";
-            this.btnViewCheck.Size = new System.Drawing.Size(75, 25);
+            this.btnViewCheck.Size = new System.Drawing.Size(75, 30);
             this.btnViewCheck.TabIndex = 43;
             this.btnViewCheck.Text = "View";
             this.btnViewCheck.UseVisualStyleBackColor = false;
@@ -300,7 +300,7 @@
             this.btnViewEmp.ForeColor = System.Drawing.Color.White;
             this.btnViewEmp.Location = new System.Drawing.Point(85, 160);
             this.btnViewEmp.Name = "btnViewEmp";
-            this.btnViewEmp.Size = new System.Drawing.Size(75, 25);
+            this.btnViewEmp.Size = new System.Drawing.Size(75, 30);
             this.btnViewEmp.TabIndex = 41;
             this.btnViewEmp.Text = "View";
             this.btnViewEmp.UseVisualStyleBackColor = false;
@@ -355,7 +355,7 @@
             this.btnViewGuest.ForeColor = System.Drawing.Color.White;
             this.btnViewGuest.Location = new System.Drawing.Point(85, 160);
             this.btnViewGuest.Name = "btnViewGuest";
-            this.btnViewGuest.Size = new System.Drawing.Size(75, 25);
+            this.btnViewGuest.Size = new System.Drawing.Size(75, 30);
             this.btnViewGuest.TabIndex = 42;
             this.btnViewGuest.Text = "View";
             this.btnViewGuest.UseVisualStyleBackColor = false;
@@ -436,7 +436,7 @@
             this.btnViewReservation.ForeColor = System.Drawing.Color.White;
             this.btnViewReservation.Location = new System.Drawing.Point(85, 160);
             this.btnViewReservation.Name = "btnViewReservation";
-            this.btnViewReservation.Size = new System.Drawing.Size(75, 25);
+            this.btnViewReservation.Size = new System.Drawing.Size(75, 30);
             this.btnViewReservation.TabIndex = 39;
             this.btnViewReservation.Text = "View";
             this.btnViewReservation.UseVisualStyleBackColor = false;
@@ -465,7 +465,7 @@
             this.btnViewRoom1.ForeColor = System.Drawing.Color.White;
             this.btnViewRoom1.Location = new System.Drawing.Point(85, 160);
             this.btnViewRoom1.Name = "btnViewRoom1";
-            this.btnViewRoom1.Size = new System.Drawing.Size(75, 25);
+            this.btnViewRoom1.Size = new System.Drawing.Size(75, 30);
             this.btnViewRoom1.TabIndex = 44;
             this.btnViewRoom1.Text = "View";
             this.btnViewRoom1.UseVisualStyleBackColor = false;
@@ -517,7 +517,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.gbMain);
             this.Name = "MainDashBoard";
-            this.Size = new System.Drawing.Size(1200, 850);
+            this.Size = new System.Drawing.Size(1467, 861);
             this.Load += new System.EventHandler(this.MainDashBoard_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbRoom)).EndInit();

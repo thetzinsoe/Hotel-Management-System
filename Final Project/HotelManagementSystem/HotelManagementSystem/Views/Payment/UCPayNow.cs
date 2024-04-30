@@ -271,6 +271,11 @@ namespace HotelManagementSystem.Views.Payment
             this.Controls.Add(uCPaymentReport);
         }
 
+        private void cbPaymentType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
         private decimal calculateTotal()
         {
             decimal subTotal = (roomFees * totalDays) + extraFees;

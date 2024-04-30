@@ -37,7 +37,7 @@ namespace HotelManagementSystem.Views.Menu
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rOOMENTRYLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +59,7 @@ namespace HotelManagementSystem.Views.Menu
             this.pAYMENTLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnMain = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -98,13 +98,13 @@ namespace HotelManagementSystem.Views.Menu
             // 
             this.ContentPanel.Size = new System.Drawing.Size(1084, 668);
             // 
-            // menuStrip1
+            // mainMenu
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.SteelBlue;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainMenu.AutoSize = false;
+            this.mainMenu.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.mainMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashBoardToolStripMenuItem,
             this.rOOMENTRYLISTToolStripMenuItem,
             this.rESERVATIONToolStripMenuItem,
@@ -112,12 +112,12 @@ namespace HotelManagementSystem.Views.Menu
             this.toolStripMenuItem1,
             this.cHECKINLISTToolStripMenuItem,
             this.pAYMENTHISTORYToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1105, 50);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Name = "mainMenu";
+            this.mainMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mainMenu.Size = new System.Drawing.Size(1105, 50);
+            this.mainMenu.TabIndex = 15;
+            this.mainMenu.Text = "menuStrip1";
             // 
             // dashBoardToolStripMenuItem
             // 
@@ -142,14 +142,14 @@ namespace HotelManagementSystem.Views.Menu
             // addRoomToolStripMenuItem
             // 
             this.addRoomToolStripMenuItem.Name = "addRoomToolStripMenuItem";
-            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
             this.addRoomToolStripMenuItem.Text = "ROOM ADD";
             this.addRoomToolStripMenuItem.Click += new System.EventHandler(this.addRoomToolStripMenuItem_Click);
             // 
             // roomListToolStripMenuItem
             // 
             this.roomListToolStripMenuItem.Name = "roomListToolStripMenuItem";
-            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.roomListToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
             this.roomListToolStripMenuItem.Text = "ROOM LIST";
             this.roomListToolStripMenuItem.Click += new System.EventHandler(this.roomListToolStripMenuItem_Click);
             // 
@@ -290,7 +290,7 @@ namespace HotelManagementSystem.Views.Menu
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(100, 30);
             this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "Log out";
+            this.btnLogout.Text = "LOG OUT";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
@@ -301,7 +301,7 @@ namespace HotelManagementSystem.Views.Menu
             this.ClientSize = new System.Drawing.Size(1105, 749);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.pnMain);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mainMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -310,8 +310,8 @@ namespace HotelManagementSystem.Views.Menu
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hotel Management System";
             this.Load += new System.EventHandler(this.FrmMenu_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenu.ResumeLayout(false);
+            this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -323,7 +323,7 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripPanel RightToolStripPanel;
         private ToolStripPanel LeftToolStripPanel;
         private ToolStripContentPanel ContentPanel;
-        private MenuStrip menuStrip1;
+        private MenuStrip mainMenu;
         private ToolStripMenuItem dashBoardToolStripMenuItem;
         private ToolStripMenuItem rESERVATIONToolStripMenuItem;
         private ToolStripMenuItem gUESTINFOMATIONToolStripMenuItem;
@@ -336,7 +336,6 @@ namespace HotelManagementSystem.Views.Menu
         private ToolStripMenuItem cHECKADDToolStripMenuItem;
         private ToolStripMenuItem cHECKINLISTToolStripMenuItem1;
         private ToolStripMenuItem pAYMENTLISTToolStripMenuItem;
-        private ToolStripMenuItem pAYMENTADDToolStripMenuItem;
         private ToolStripMenuItem guestRegistrationToolStripMenuItem;
         private ToolStripMenuItem guestListToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;

@@ -34,6 +34,11 @@ namespace HotelManagementSystem.Views.Menu
 
         private void MainDashBoard_Load(object sender, EventArgs e)
         {
+            BindData();
+        }
+
+        private void BindData()
+        {
             DataTable guestData = guestService.GetAll();
             DataTable employeeData = employeeService.GetAll();
             DataTable roomData = roomService.GetAllRooms();

@@ -71,6 +71,15 @@ namespace HotelManagementSystem.Services.Room
         {
             return roomDao.SearchByType(roomType);
         }
+        /// <summary>
+        /// Search rooms by room type.
+        /// </summary>
+        /// <param name="roomNumber">Room type to search.</param>
+        /// <returns>Matching room information.</returns>
+        public DataTable SearchbyRoomNumber(string roomNumber)
+        {
+            return roomDao.SearchByType(roomNumber);
+        }
 
         /// <summary>
         /// Get paged room records.

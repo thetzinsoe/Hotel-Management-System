@@ -100,14 +100,63 @@ namespace HotelManagementSystem.DAO.Employee
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
 
+        public bool IsEmployeeValid(string name, string nrc)
+        {
+            strSql = "Select Count(*) from Employee where full_name = @FullName and nrc_number = @NRCNumber";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsEmployeeValidForUpdating(int id, string name, string nrc)
+        {
+            strSql = "Select Count(*) from Employee where full_name = @FullName and nrc_number = @NRCNumber and employee_id != @EmployeeId";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@EmployeeId", id),
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsNRCValid(string name, string nrc)
+        {
+            strSql = "SELECT COUNT(*) FROM Employee WHERE nrc_number = @NRCNumber AND full_name != @FullName";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
+
+        public bool IsNRCValidForUpdating(int id, string name, string nrc)
+        {
+            strSql = "SELECT COUNT(*) FROM Employee WHERE nrc_number = @NRCNumber AND full_name != @FullName AND employee_id != @EmployeeId";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@EmployeeId", id),
+                                        new SqlParameter("@FullName", name),
+                                        new SqlParameter("@NRCNumber", nrc)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
         /// <summary>
         /// Create Employee
         /// </summary>
         /// <param name="employeeEntity">.</param>
         public bool Insert(EmployeeEntity employeeEntity)
         {
-            strSql = "INSERT INTO Employee(full_name,phone_number,gender,position,nrc_number,dob,image,joined_date,address,created_date,updated_date,created_userId,updated_userId)" +
-                     "VALUES(@FullName, @PhoneNumber, @Gender, @Position, @NRCNumber, @Dob, @Image, @JoinedDate, @Address, @CreatedDate, @UpdatedDate, @CreatedUserId, @UpdatedUserId)";
+            strSql = "INSERT INTO Employee(full_name,phone_number,gender,position,nrc_number,dob,image,joined_date,address,created_date,updated_date)" +
+                     "VALUES(@FullName, @PhoneNumber, @Gender, @Position, @NRCNumber, @Dob, @Image, @JoinedDate, @Address, @CreatedDate, @UpdatedDate)";
 
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@FullName", employeeEntity.fullName),
@@ -133,7 +182,7 @@ namespace HotelManagementSystem.DAO.Employee
         /// <param name="employeeEntity">.</param>
         public bool Update(EmployeeEntity employeeEntity)
         {
-            strSql = "UPDATE Employee SET full_name = @FullName,phone_number = @PhoneNumber,gender = @Gender,position = @Position,nrc_number = @NRCNumber,dob = @Dob,image = @Image,joined_date = @JoinedDate,address = @Address,updated_date = @UpdatedDate,updated_userId = @UpdatedUserId WHERE employee_id = @EmployeeId";
+            strSql = "UPDATE Employee SET full_name = @FullName,phone_number = @PhoneNumber,gender = @Gender,position = @Position,nrc_number = @NRCNumber,dob = @Dob,image = @Image,joined_date = @JoinedDate,address = @Address,updated_date = @UpdatedDate WHERE employee_id = @EmployeeId";
 
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@EmployeeId", employeeEntity.employeeId),
@@ -157,13 +206,12 @@ namespace HotelManagementSystem.DAO.Employee
         /// Delete.
         /// </summary>
         /// <param name="employeeId">.</param>
-        public bool Delete(int employeeId, int userId)
+        public bool Delete(int employeeId)
         {
-            strSql = "UPDATE Employee SET is_deleted = @IsDeleted, deleted_userId = @DeletedUserId WHERE employee_id =@EmployeeId";
+            strSql = "UPDATE Employee SET is_deleted = @IsDeleted WHERE employee_id =@EmployeeId";
             SqlParameter[] sqlParam = {
                                         new SqlParameter("@EmployeeId", employeeId),
-                                        new SqlParameter("@IsDeleted", 1),
-                                        new SqlParameter("@DeletedUserId", userId)
+                                        new SqlParameter("@IsDeleted", 1)
                                       };
             bool success = connection.ExecuteNonQuery(CommandType.Text, strSql, sqlParam);
             return success;

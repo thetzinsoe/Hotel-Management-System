@@ -38,7 +38,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.pnTitle = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDownload = new System.Windows.Forms.Button();
@@ -63,12 +62,12 @@
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             this.pnTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEmployeeList
             // 
             this.dgvEmployeeList.AllowUserToAddRows = false;
+            this.dgvEmployeeList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployeeList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -98,39 +97,29 @@
             this.dgvEmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvEmployeeList.RowTemplate.Height = 24;
             this.dgvEmployeeList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvEmployeeList.Size = new System.Drawing.Size(1417, 341);
+            this.dgvEmployeeList.Size = new System.Drawing.Size(1417, 360);
             this.dgvEmployeeList.TabIndex = 1;
             this.dgvEmployeeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployeeList_CellContentClick);
             this.dgvEmployeeList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvEmployeeList_CellFormatting);
             // 
             // pnTitle
             // 
-            this.pnTitle.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.pnTitle.Controls.Add(this.pictureBox1);
+            this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lblTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 75);
             this.pnTitle.TabIndex = 5;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.ico_guestlist;
-            this.pictureBox1.Location = new System.Drawing.Point(251, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Black;
             this.lblTitle.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitle.Location = new System.Drawing.Point(31, 17);
+            this.lblTitle.Location = new System.Drawing.Point(638, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(214, 38);
+            this.lblTitle.Size = new System.Drawing.Size(219, 38);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "EMPLOYEE LIST";
             // 
@@ -287,7 +276,6 @@
             this.EmployeeId.MinimumWidth = 6;
             this.EmployeeId.Name = "EmployeeId";
             this.EmployeeId.ReadOnly = true;
-            this.EmployeeId.Width = 50;
             // 
             // FullName
             // 
@@ -298,7 +286,6 @@
             this.FullName.ReadOnly = true;
             this.FullName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.FullName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.FullName.Width = 125;
             // 
             // Image
             // 
@@ -318,7 +305,6 @@
             this.PhoneNumber.ReadOnly = true;
             this.PhoneNumber.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PhoneNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PhoneNumber.Width = 125;
             // 
             // Position
             // 
@@ -339,7 +325,6 @@
             this.NRCNumber.MinimumWidth = 6;
             this.NRCNumber.Name = "NRCNumber";
             this.NRCNumber.ReadOnly = true;
-            this.NRCNumber.Width = 150;
             // 
             // Dob
             // 
@@ -350,7 +335,6 @@
             this.Dob.MinimumWidth = 6;
             this.Dob.Name = "Dob";
             this.Dob.ReadOnly = true;
-            this.Dob.Width = 125;
             // 
             // Gender
             // 
@@ -369,15 +353,14 @@
             this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
-            this.Address.Width = 110;
             // 
             // Delete
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.NullValue = "Delete";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             this.Delete.DefaultCellStyle = dataGridViewCellStyle7;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Delete.HeaderText = "Delete";
@@ -385,7 +368,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Text = "Delete";
-            this.Delete.Width = 75;
             // 
             // UCEmployeeList
             // 
@@ -411,7 +393,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +402,6 @@
 
         private System.Windows.Forms.DataGridView dgvEmployeeList;
         private System.Windows.Forms.Panel pnTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnDownload;

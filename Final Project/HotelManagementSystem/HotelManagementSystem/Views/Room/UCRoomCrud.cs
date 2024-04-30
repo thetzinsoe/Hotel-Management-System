@@ -29,6 +29,19 @@ namespace HotelManagementSystem.Views.Room
         private bool vaildInput()
         {
             string roomNumber = txtRoomNumber.Text, roomType = cbType.Text, Price = txtPrice.Text;
+            try
+            {
+                DataTable dt = roomService.SearchbyRoomNumber(roomNumber);
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Room Number already in use!");
+                    return false;
+                }
+            }
+            catch
+            {
+                return true;
+            }
             if (string.IsNullOrWhiteSpace(roomNumber))
             {
                 MessageBox.Show("Empty Room Number!");
@@ -128,10 +141,10 @@ namespace HotelManagementSystem.Views.Room
 
                     if (dt.Rows.Count > 0)
                     {
-
-                        txtRoomNumber.Text = dt.Rows[0]["RoomNumber"].ToString();
-                        cbType.Text = dt.Rows[0]["Type"].ToString();
-                        txtPrice.Text = dt.Rows[0]["Price"].ToString();
+                        txtRoomID.Text = dt.Rows[0]["room_id"].ToString();
+                        txtRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
+                        cbType.Text = dt.Rows[0]["room_type"].ToString();
+                        txtPrice.Text = dt.Rows[0]["room_price"].ToString();
                     }
                 }
             }

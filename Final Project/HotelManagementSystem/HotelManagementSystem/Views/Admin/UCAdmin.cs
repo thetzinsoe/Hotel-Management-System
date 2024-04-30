@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagementSystem.Entities.Admin;
 using HotelManagementSystem.Services.Admin;
+using HotelManagementSystem.Views;
+using HotelManagementSystem.Views.Menu;
 
 namespace HotelManagementSystem.Views.Admin
 {
@@ -22,6 +24,7 @@ namespace HotelManagementSystem.Views.Admin
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login();
+            
         }
 
         private void Login()
@@ -39,23 +42,33 @@ namespace HotelManagementSystem.Views.Admin
             }
             else
             {
-                DataTable dt = adminService.GetAdminByUsername(txtUsername.Text);
-                if (dt.Rows.Count == 0)
+                try
                 {
-                    MessageBox.Show("Username Does not Exist!");
-                }
-                else
-                {
-                    string validpass = dt.Rows[0][2].ToString();
-                    if (password != validpass)
+                    DataTable dt = adminService.GetAdminByUsername(txtUsername.Text);
+                    if (dt.Rows.Count == 0)
                     {
-                        MessageBox.Show("Incorrect Password!");
+                        MessageBox.Show("Username Does not Exist!");
                     }
                     else
                     {
-                        MessageBox.Show("Login Successful!");
+                        string validpass = dt.Rows[0][2].ToString();
+                        if (password != validpass)
+                        {
+                            MessageBox.Show("Incorrect Password!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login Successful!");
+                            FrmMenu mainForm = this.ParentForm as FrmMenu;
+                            mainForm.LoginSuccess();
+                        }
                     }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Username does not exist!");
+                }
+                
             }
         }
 
@@ -89,6 +102,21 @@ namespace HotelManagementSystem.Views.Admin
             UCAdminSignUp uCAdminSignUp = new UCAdminSignUp();
             this.Controls.Clear();
             this.Controls.Add(uCAdminSignUp);
+        }
+
+        private void UCAdmin_Load(object sender, EventArgs e)
+        {
+            btnShow.Visible=false;         
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            btnShow.Visible = true;
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            btnShow.Visible = false;
         }
     }
 }
