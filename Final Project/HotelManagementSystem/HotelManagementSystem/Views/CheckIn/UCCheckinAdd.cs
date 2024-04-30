@@ -356,6 +356,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
+            if(checkout_date.Date!=dtpCheckOutDate.Value.Date && checkout_date.Date != DateTime.MinValue.Date)
             Load_Room();
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {

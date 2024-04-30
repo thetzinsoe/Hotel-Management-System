@@ -182,7 +182,7 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
         {
-            Load_room(dtpCheckInDate.Value,dtpCheckOutDate.Value);
+            Load_room(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
             BtnState();
             BindData();
 
@@ -191,14 +191,14 @@ namespace HotelManagementSystem.Views.Reservation
         {
             try
             {
-                    DataTable dt = reservationService.GetRoomWithDate(checkin.Date, checkout.Date);
-                    if (dt == null)
-                    {
-                        validateInput = false;
-                        MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    cbRoomNo.DataSource = dt;
-                    cbRoomNo.DisplayMember = "room_no";
+                DataTable dt = reservationService.GetRoomWithDate(checkin.Date, checkout.Date);
+                if (dt == null)
+                {
+                    validateInput = false;
+                    MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                cbRoomNo.DataSource = dt;
+                cbRoomNo.DisplayMember = "room_no";
             }
             catch (Exception exc)
             {
@@ -316,28 +316,27 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(hdReservationId.Text))
-            //{
-            //    dtpCheckInDate.Enabled = false;
-            //}
-
             if (string.IsNullOrEmpty(hdReservationId.Text))
             {
-                Load_room(dtpCheckInDate.Value,dtpCheckOutDate.Value);
+                Load_room(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
             }
             else
             {
                 if (checkin_date != dtpCheckInDate.Value && checkin_date != DateTime.MinValue)
                 {
-                    MessageBox.Show(oldcheckin_date.ToString() + "  " + dtpCheckInDate.Value.ToString());
+                    //MessageBox.Show(oldcheckin_date.ToString() + "  " + dtpCheckInDate.Value.ToString());
                     if (oldcheckin_date.Date < dtpCheckInDate.Value.Date)
                     {
                         cbRoomNo.Text = selectedRoomNo;
                     }
                     else
                     {
-                        Load_room(dtpCheckInDate.Value.Date,oldcheckin_date.Date);
+                        Load_room(oldcheckin_date.Date,dtpCheckInDate.Value.Date);
                     }
+                }
+                else if(oldcheckin_date.AddDays(1).Date==dtpCheckInDate.Value.Date)
+                {
+                    MessageBox.Show("Date equal");
                 }
             }
         }

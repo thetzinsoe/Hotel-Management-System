@@ -107,7 +107,7 @@ namespace HotelManagementSystem.DAO.Reservation
             strSql = "SELECT room_id, room_no FROM Room WHERE room_id NOT IN (" +
                 "SELECT DISTINCT reservation.room_id " +
                 "FROM Reservation WHERE '"+checkoutDate+"' >= reservation.checkin_date " +
-                "AND '"+checkinDate+ "' <= reservation.checkout_date AND (reservation.is_deleted = 0 OR reservation.is_deleted = 2)) AND Room.is_deleted = 0";
+                "AND '"+checkinDate+ "' <= reservation.checkout_date AND `      reservation.is_deleted != 1) AND Room.is_deleted = 0";
 
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
