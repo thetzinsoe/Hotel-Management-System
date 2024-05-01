@@ -60,9 +60,9 @@
             this.pnTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(150)))), ((int)(((byte)(180)))));
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(4);
             this.pnTitle.Name = "pnTitle";
-            this.pnTitle.Size = new System.Drawing.Size(1467, 76);
+            this.pnTitle.Size = new System.Drawing.Size(1100, 62);
             this.pnTitle.TabIndex = 0;
             // 
             // lbTitle
@@ -71,32 +71,29 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.Black;
-            this.lbTitle.Location = new System.Drawing.Point(609, 17);
-            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitle.Location = new System.Drawing.Point(457, 14);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(266, 38);
+            this.lbTitle.Size = new System.Drawing.Size(207, 30);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "RESERVATION LIST";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(823, 118);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(606, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 28);
+            this.label1.Size = new System.Drawing.Size(156, 21);
             this.label1.TabIndex = 104;
-            this.label1.Text = "Search With Name";
+            this.label1.Text = "Search With Name : ";
             // 
             // txtSearchValue
             // 
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchValue.Location = new System.Drawing.Point(1021, 112);
-            this.txtSearchValue.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchValue.Location = new System.Drawing.Point(766, 91);
             this.txtSearchValue.MaxLength = 20;
             this.txtSearchValue.Name = "txtSearchValue";
-            this.txtSearchValue.Size = new System.Drawing.Size(433, 34);
+            this.txtSearchValue.Size = new System.Drawing.Size(326, 29);
             this.txtSearchValue.TabIndex = 103;
             this.txtSearchValue.TextChanged += new System.EventHandler(this.txtSearchValue_TextChanged);
             // 
@@ -107,10 +104,10 @@
             this.btn3xNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xNext.ForeColor = System.Drawing.Color.White;
-            this.btn3xNext.Location = new System.Drawing.Point(989, 636);
-            this.btn3xNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn3xNext.Location = new System.Drawing.Point(742, 592);
+            this.btn3xNext.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xNext.Name = "btn3xNext";
-            this.btn3xNext.Size = new System.Drawing.Size(67, 36);
+            this.btn3xNext.Size = new System.Drawing.Size(50, 29);
             this.btn3xNext.TabIndex = 102;
             this.btn3xNext.Text = ">>";
             this.btn3xNext.UseVisualStyleBackColor = false;
@@ -123,10 +120,10 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(896, 636);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Location = new System.Drawing.Point(672, 592);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(67, 36);
+            this.btnNext.Size = new System.Drawing.Size(50, 29);
             this.btnNext.TabIndex = 101;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -138,9 +135,10 @@
             this.lblPageNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblPageNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPageNo.ForeColor = System.Drawing.Color.Black;
-            this.lblPageNo.Location = new System.Drawing.Point(703, 642);
+            this.lblPageNo.Location = new System.Drawing.Point(527, 597);
+            this.lblPageNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPageNo.Name = "lblPageNo";
-            this.lblPageNo.Size = new System.Drawing.Size(54, 28);
+            this.lblPageNo.Size = new System.Drawing.Size(43, 21);
             this.lblPageNo.TabIndex = 100;
             this.lblPageNo.Text = "label";
             // 
@@ -151,10 +149,10 @@
             this.btnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrev.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrev.ForeColor = System.Drawing.Color.White;
-            this.btnPrev.Location = new System.Drawing.Point(516, 636);
-            this.btnPrev.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrev.Location = new System.Drawing.Point(387, 592);
+            this.btnPrev.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(67, 36);
+            this.btnPrev.Size = new System.Drawing.Size(50, 29);
             this.btnPrev.TabIndex = 99;
             this.btnPrev.Text = "<";
             this.btnPrev.UseVisualStyleBackColor = false;
@@ -167,10 +165,10 @@
             this.btn3xPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3xPrevious.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3xPrevious.ForeColor = System.Drawing.Color.White;
-            this.btn3xPrevious.Location = new System.Drawing.Point(417, 636);
-            this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn3xPrevious.Location = new System.Drawing.Point(313, 592);
+            this.btn3xPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btn3xPrevious.Name = "btn3xPrevious";
-            this.btn3xPrevious.Size = new System.Drawing.Size(67, 36);
+            this.btn3xPrevious.Size = new System.Drawing.Size(50, 29);
             this.btn3xPrevious.TabIndex = 98;
             this.btn3xPrevious.Text = "<<";
             this.btn3xPrevious.UseVisualStyleBackColor = false;
@@ -203,14 +201,13 @@
             this.checkin_date,
             this.checkout_date,
             this.checkin});
-            this.dgvReservation.Location = new System.Drawing.Point(13, 161);
-            this.dgvReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvReservation.Location = new System.Drawing.Point(10, 131);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.ReadOnly = true;
             this.dgvReservation.RowHeadersVisible = false;
             this.dgvReservation.RowHeadersWidth = 51;
-            this.dgvReservation.RowTemplate.Height = 30;
-            this.dgvReservation.Size = new System.Drawing.Size(1441, 436);
+            this.dgvReservation.RowTemplate.Height = 40;
+            this.dgvReservation.Size = new System.Drawing.Size(1081, 435);
             this.dgvReservation.TabIndex = 95;
             this.dgvReservation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservation_CellContentClick);
             // 
@@ -224,7 +221,6 @@
             this.reservation_id.Name = "reservation_id";
             this.reservation_id.ReadOnly = true;
             this.reservation_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reservation_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.reservation_id.Width = 150;
             // 
             // room_number
@@ -237,6 +233,7 @@
             this.room_number.MinimumWidth = 6;
             this.room_number.Name = "room_number";
             this.room_number.ReadOnly = true;
+            this.room_number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // customer_name
             // 
@@ -246,6 +243,7 @@
             this.customer_name.MinimumWidth = 6;
             this.customer_name.Name = "customer_name";
             this.customer_name.ReadOnly = true;
+            this.customer_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // customer_phoneNo
             // 
@@ -255,6 +253,7 @@
             this.customer_phoneNo.MinimumWidth = 6;
             this.customer_phoneNo.Name = "customer_phoneNo";
             this.customer_phoneNo.ReadOnly = true;
+            this.customer_phoneNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // checkin_date
             // 
@@ -266,6 +265,7 @@
             this.checkin_date.MinimumWidth = 6;
             this.checkin_date.Name = "checkin_date";
             this.checkin_date.ReadOnly = true;
+            this.checkin_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // checkout_date
             // 
@@ -277,6 +277,7 @@
             this.checkout_date.MinimumWidth = 6;
             this.checkout_date.Name = "checkout_date";
             this.checkout_date.ReadOnly = true;
+            this.checkout_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // checkin
             // 
@@ -296,7 +297,7 @@
             // 
             // UCReservationList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.label1);
@@ -308,9 +309,9 @@
             this.Controls.Add(this.btn3xPrevious);
             this.Controls.Add(this.dgvReservation);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCReservationList";
-            this.Size = new System.Drawing.Size(1467, 933);
+            this.Size = new System.Drawing.Size(1100, 758);
             this.Load += new System.EventHandler(this.UCReservation_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();

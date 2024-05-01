@@ -97,7 +97,7 @@ namespace HotelManagementSystem.Views.CheckIn
                 }
                 else
                 {
-                    dtr = reservationService.GetRoomWithDate(newCheckinDate.Date, dtpCheckOutDate.Value.Date);
+                    dtr = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
                 }
                 cbRoomNumber.DataSource = dtr;
                 cbRoomNumber.DisplayMember = "room_no";
