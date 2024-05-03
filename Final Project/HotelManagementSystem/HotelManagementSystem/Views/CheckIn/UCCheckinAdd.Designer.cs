@@ -65,7 +65,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(7);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 80;
@@ -333,7 +333,7 @@
             this.cbGuestNrc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuestNrc.FormattingEnabled = true;
             this.cbGuestNrc.Location = new System.Drawing.Point(489, 331);
-            this.cbGuestNrc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGuestNrc.Margin = new System.Windows.Forms.Padding(4);
             this.cbGuestNrc.Name = "cbGuestNrc";
             this.cbGuestNrc.Size = new System.Drawing.Size(500, 36);
             this.cbGuestNrc.TabIndex = 157;
@@ -352,12 +352,11 @@
             // 
             // cbRoomNumber
             // 
-            this.cbRoomNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRoomNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomNumber.FormattingEnabled = true;
             this.cbRoomNumber.Location = new System.Drawing.Point(489, 191);
-            this.cbRoomNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRoomNumber.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNumber.Name = "cbRoomNumber";
             this.cbRoomNumber.Size = new System.Drawing.Size(500, 36);
             this.cbRoomNumber.TabIndex = 155;
@@ -371,7 +370,7 @@
             this.cbGuestName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuestName.FormattingEnabled = true;
             this.cbGuestName.Location = new System.Drawing.Point(489, 261);
-            this.cbGuestName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGuestName.Margin = new System.Windows.Forms.Padding(4);
             this.cbGuestName.Name = "cbGuestName";
             this.cbGuestName.Size = new System.Drawing.Size(500, 36);
             this.cbGuestName.TabIndex = 156;
@@ -430,7 +429,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.pnTitle);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "UCCheckinAdd";
             this.Size = new System.Drawing.Size(1467, 862);
             this.Load += new System.EventHandler(this.UCCheckinAdd_Load);
