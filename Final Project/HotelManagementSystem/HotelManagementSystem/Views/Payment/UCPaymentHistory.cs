@@ -24,6 +24,7 @@ namespace HotelManagementSystem.Views.Payment
         public UCPaymentHistory()
         {
             InitializeComponent();
+            dgvPaymentHistory.RowTemplate.MinimumHeight = 40;
         }
 
         private void UCPaymentHistory_Load(object sender, EventArgs e)
@@ -80,15 +81,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void btn3xPrevious_Click_1(object sender, EventArgs e)
         {
-            int prevPageIndex = this.currentPageIndex - 3;
-            if (prevPageIndex > 1)
-            {
-                this.currentPageIndex = prevPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = 1;
-            }
+            this.currentPageIndex = 1;
             LoadPayment();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
         }
@@ -115,15 +108,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void btn3xNext_Click_1(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            this.currentPageIndex = totalPage;
             LoadPayment();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
         }

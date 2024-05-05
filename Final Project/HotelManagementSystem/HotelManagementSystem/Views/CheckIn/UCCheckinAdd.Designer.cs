@@ -253,7 +253,7 @@
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(500, 34);
-            this.dtpCheckOutDate.TabIndex = 163;
+            this.dtpCheckOutDate.TabIndex = 159;
             this.dtpCheckOutDate.Value = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
@@ -291,7 +291,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 34);
-            this.btnBack.TabIndex = 161;
+            this.btnBack.TabIndex = 162;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
@@ -306,7 +306,7 @@
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(125, 34);
-            this.btnCheckOut.TabIndex = 160;
+            this.btnCheckOut.TabIndex = 161;
             this.btnCheckOut.Text = "CHECK OUT";
             this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click_1);
@@ -321,13 +321,15 @@
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(100, 34);
-            this.btnCheckIn.TabIndex = 159;
+            this.btnCheckIn.TabIndex = 160;
             this.btnCheckIn.Text = "CHECKIN";
             this.btnCheckIn.UseVisualStyleBackColor = false;
             this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
             // 
             // cbGuestNrc
             // 
+            this.cbGuestNrc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGuestNrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGuestNrc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuestNrc.FormattingEnabled = true;
             this.cbGuestNrc.Location = new System.Drawing.Point(489, 331);
@@ -350,6 +352,7 @@
             // 
             // cbRoomNumber
             // 
+            this.cbRoomNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomNumber.FormattingEnabled = true;
             this.cbRoomNumber.Location = new System.Drawing.Point(489, 191);
@@ -362,13 +365,15 @@
             // 
             // cbGuestName
             // 
+            this.cbGuestName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGuestName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGuestName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGuestName.FormattingEnabled = true;
             this.cbGuestName.Location = new System.Drawing.Point(489, 261);
             this.cbGuestName.Margin = new System.Windows.Forms.Padding(4);
             this.cbGuestName.Name = "cbGuestName";
             this.cbGuestName.Size = new System.Drawing.Size(500, 36);
-            this.cbGuestName.TabIndex = 154;
+            this.cbGuestName.TabIndex = 156;
             this.cbGuestName.SelectedValueChanged += new System.EventHandler(this.cbGuestName_SelectedValueChanged);
             this.cbGuestName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGuestName_KeyPress);
             // 
@@ -426,7 +431,7 @@
             this.Controls.Add(this.pnTitle);
             this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "UCCheckinAdd";
-            this.Size = new System.Drawing.Size(1467, 861);
+            this.Size = new System.Drawing.Size(1467, 862);
             this.Load += new System.EventHandler(this.UCCheckinAdd_Load);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
