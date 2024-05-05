@@ -42,6 +42,8 @@ namespace HotelManagementSystem.Views.Menu
             DataTable guestData = guestService.GetAll();
             DataTable employeeData = employeeService.GetAll();
             DataTable roomData = roomService.GetAllRooms();
+            ReservationService reservationService = new ReservationService();
+            DataTable avilableRoom = reservationService.GetRoomWithDate(DateTime.Now.Date, DateTime.Now.Date);
             DataTable resrvationData = reservationService.GetAll();
             DataTable checkinData = checkInService.GetAll();
             TtlRoom.Text = roomData.Rows.Count.ToString();
@@ -49,7 +51,7 @@ namespace HotelManagementSystem.Views.Menu
             TtlEmp.Text = employeeData.Rows.Count.ToString();
             TtlChecked.Text = checkinData.Rows.Count.ToString();
             TtlReservation.Text = resrvationData.Rows.Count.ToString();
-            TtlAvailableRoom.Text = (roomData.Rows.Count).ToString();
+            TtlAvailableRoom.Text = (avilableRoom.Rows.Count).ToString();
         }
 
         private void btnViewRoom_Click(object sender, EventArgs e)

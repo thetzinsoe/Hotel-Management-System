@@ -384,6 +384,7 @@ namespace HotelManagementSystem.Views.Reservation
             }
         }
 
+
         private void dtpCheckOutDate_CloseUp(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(hdReservationId.Text) && dtpCheckInDate.Value.Date >= checkin_date.Date && dtpCheckOutDate.Value.Date == checkout_date.Date)

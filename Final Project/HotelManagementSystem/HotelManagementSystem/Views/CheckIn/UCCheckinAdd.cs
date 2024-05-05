@@ -1,4 +1,5 @@
-﻿using HotelManagementSystem.Entities.CheckIn;
+﻿using DevExpress.CodeParser;
+using HotelManagementSystem.Entities.CheckIn;
 using HotelManagementSystem.Entities.Reservation;
 using HotelManagementSystem.Services.CheckIn;
 using HotelManagementSystem.Services.Reservation;
@@ -21,11 +22,14 @@ namespace HotelManagementSystem.Views.CheckIn
         private bool validateInput = false;
         private string selectedRoomNo = string.Empty;
         private int selectedRoomId = 0;
+        private int oldRoomId = 0;
+        private string oldRoomNumber = string.Empty;
         private string selectedGuestName = string.Empty;
         private string selectedGuestNrc = string.Empty;
         private int selectedGuestId = 0;
+        DateTime oldCheckinDate = DateTime.MinValue;
+        DateTime oldCheckoutDate = DateTime.MinValue;
         private string selectedPhone = string.Empty;
-        DateTime checkout_date = DateTime.MinValue;
         private DateTime newCheckinDate = DateTime.MinValue;
         UCCheckInList uCCheckInList = new UCCheckInList();
         CheckInEntity checkInEntity = new CheckInEntity();
@@ -81,25 +85,38 @@ namespace HotelManagementSystem.Views.CheckIn
             {
                 MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            Load_Room();
+            Load_Room(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
             BtnState();
             BindData();
         }
 
-        private void Load_Room()
+        private void ClearData()
+        {
+            selectedRoomNo = string.Empty;
+            selectedRoomId = 0;
+            oldRoomId = 0;
+            oldRoomNumber = string.Empty;
+            selectedGuestName = string.Empty;
+            selectedGuestNrc = string.Empty;
+            selectedGuestId = 0;
+            oldCheckinDate = DateTime.MinValue;
+            oldCheckoutDate = DateTime.MinValue;
+            selectedPhone = string.Empty;
+            newCheckinDate = DateTime.MinValue;
+        }
+
+        private void Load_Room(DateTime checkin, DateTime checkout)
         {
             try
             {
-                DataTable dtr = null;
-                if (string.IsNullOrEmpty(hdCheckInId.Text))
+                DataTable dt = null;
+                dt = reservationService.GetRoomWithDate(checkin.Date, checkout.Date);
+                if (dt == null)
                 {
-                    dtr = reservationService.GetAllRoom();
+                    validateInput = false;
+                    MessageBox.Show("Every rooms are not avilable!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else
-                {
-                    dtr = reservationService.GetRoomWithDate(dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
-                }
-                cbRoomNumber.DataSource = dtr;
+                cbRoomNumber.DataSource = dt;
                 cbRoomNumber.DisplayMember = "room_no";
             }
             catch (Exception exc)
@@ -210,6 +227,7 @@ namespace HotelManagementSystem.Views.CheckIn
                 bool roomOp = reservationService.RoomUpdate(selectedRoomId, 1);
                 if (success && roomOp)
                 {
+                    ClearData();
                     MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckInList);
@@ -234,6 +252,7 @@ namespace HotelManagementSystem.Views.CheckIn
                 success = checkInService.Update(checkInEntity);
                 if (success)
                 {
+                    ClearData();
                     MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Controls.Clear();
                     this.Controls.Add(uCCheckInList);
@@ -303,17 +322,21 @@ namespace HotelManagementSystem.Views.CheckIn
                     if (dt.Rows.Count > 0)
                     {
                         selectedRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
+                        oldRoomId = int.Parse(dt.Rows[0]["room_id"].ToString());
                         selectedRoomNo = dt.Rows[0]["room_no"].ToString();
+                        oldRoomNumber = dt.Rows[0]["room_no"].ToString();
                         cbRoomNumber.Text = selectedRoomNo;
                         selectedPhone = dt.Rows[0]["phone_number"].ToString();
                         cbGuestNrc.Text = dt.Rows[0]["nrc_number"].ToString();
+                        oldCheckinDate = Convert.ToDateTime(dt.Rows[0]["checkin_date"].ToString());
                         dtpCheckInDate.Text = dt.Rows[0]["checkin_date"].ToString();
+                        oldCheckoutDate = Convert.ToDateTime(dt.Rows[0]["checkout_date"].ToString());
                         dtpCheckOutDate.Text = dt.Rows[0]["checkout_date"].ToString();
                         DateTime oldCheckOutDate = Convert.ToDateTime(dt.Rows[0]["checkout_date"]);
                         newCheckinDate = oldCheckOutDate.AddDays(1);
                     }
 
-                    if (string.IsNullOrEmpty(hdReservationId.Text))
+                    if (!string.IsNullOrEmpty(hdReservationId.Text))
                     {
                         int id = reservationService.FindReservationId(selectedRoomId, dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
                         if (id <= 0)
@@ -356,29 +379,46 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-            if(checkout_date.Date!=dtpCheckOutDate.Value.Date && checkout_date.Date != DateTime.MinValue.Date)
-            Load_Room();
-            if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
+            if (!string.IsNullOrEmpty(hdCheckInId.Text))
             {
-                if (dtpCheckOutDate.Value.Date >= DateTime.Now.Date && dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
+                if (newCheckinDate.Date > dtpCheckOutDate.Value.Date && dtpCheckInDate.Value.Date <= dtpCheckOutDate.Value.Date)
                 {
-                    validateInput = true;
+                    cbRoomNumber.Text = oldRoomNumber;
+                    selectedRoomId = oldRoomId;
                 }
                 else
                 {
-                    validateInput = false;
-                    MessageBox.Show("Wrong Date! Please choose the correct date.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    Load_Room(newCheckinDate, dtpCheckOutDate.Value.Date);
                 }
+            }
+            else
+            {
+                Load_Room(dtpCheckInDate.Value.Date,dtpCheckOutDate.Value.Date);
+            }
+
+            if (dtpCheckOutDate.Value >= DateTime.Now.Date && dtpCheckOutDate.Value >= dtpCheckInDate.Value)
+            {
+                validateInput = true;
+            }
+            else
+            {
+                validateInput = false;
+                MessageBox.Show("Checkout date equal or later than checkin date!", "Wrong Date", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dtpCheckOutDate_CloseUp(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(hdCheckInId.Text) && dtpCheckOutDate.Value.Date == oldCheckoutDate.Date)
+            {
+                cbRoomNumber.Text = oldRoomNumber;
+                selectedRoomId = oldRoomId;
             }
         }
 
         private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(hdCheckInId.Text))
-            {
-                dtpCheckInDate.Enabled = false;
-            }
+            dtpCheckInDate.Enabled = false;
             if (dtpCheckInDate.Checked && String.IsNullOrEmpty(hdCheckInId.Text))
             {
                 if (dtpCheckInDate.Value.Date >= DateTime.Now.Date && dtpCheckInDate.Value.Date<=dtpCheckOutDate.Value.Date)
@@ -394,6 +434,11 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void cbRoomNumber_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(hdCheckInId.Text) && dtpCheckInDate.Value.Date == oldCheckinDate.Date && dtpCheckOutDate.Value.Date == oldCheckoutDate.Date)
+            {
+                cbRoomNumber.Text = oldRoomNumber;
+                selectedRoomId = oldRoomId;
+            }
             if (cbRoomNumber.SelectedItem != null)
             {
                 validateInput = true;

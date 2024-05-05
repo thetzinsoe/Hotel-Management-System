@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagementSystem.Entities.Room;
+using HotelManagementSystem.Services.Reservation;
 using HotelManagementSystem.Services.Room;
 using HotelManagementSystem.Views.Menu;
 
@@ -194,19 +195,34 @@ namespace HotelManagementSystem.Views.Room
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            RoomService roomService = new RoomService();
-
             int roomId = Convert.ToInt32(txtRoomID.Text);
-            bool success = false;
-            success = roomService.DeleteRoom(roomId);
-            if (success)
+            ReservationService reservationService = new ReservationService();
+            DataTable dt = reservationService.haveRoom(roomId);
+            bool res = false;
+            if (dt.Rows.Count >0)
             {
-                MessageBox.Show("Delete Room success", "Success", MessageBoxButtons.OK);
+                res = false;
+                MessageBox.Show("This room is already checkin or reservation!.","Notice",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error deleting Room", "Error", MessageBoxButtons.OK);
+                res = true;
             }
+            RoomService roomService = new RoomService();         
+            if (res)
+            {
+                bool success = false;
+                success = roomService.DeleteRoom(roomId);
+                if (success)
+                {
+                    MessageBox.Show("Delete Room success", "Success", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting Room", "Error", MessageBoxButtons.OK);
+                }
+            }
+           
             this.Controls.Clear();
             this.Controls.Add(uCRoomList);
         }
