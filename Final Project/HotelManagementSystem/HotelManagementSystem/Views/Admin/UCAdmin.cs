@@ -36,11 +36,11 @@ namespace HotelManagementSystem.Views.Admin
             AdminEntity adminEntity = new AdminEntity();
             if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Enter valid username!");
+                MessageBox.Show("Enter valid username!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Enter valid password!");
+                MessageBox.Show("Enter valid password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -49,18 +49,18 @@ namespace HotelManagementSystem.Views.Admin
                     DataTable dt = adminService.GetAdminByUsername(txtUsername.Text);
                     if (dt.Rows.Count == 0)
                     {
-                        MessageBox.Show("Username Does not Exist!");
+                        MessageBox.Show("Username Does not Exist!","Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         string validpass = dt.Rows[0][2].ToString();
                         if (password != validpass)
                         {
-                            MessageBox.Show("Incorrect Password!");
+                            MessageBox.Show("Incorrect Password!","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            MessageBox.Show("Login Successful!");
+                            MessageBox.Show("Login Successful!","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             FrmMenu mainForm = this.ParentForm as FrmMenu;
                             mainForm.LoginSuccess();
                         }
@@ -68,7 +68,7 @@ namespace HotelManagementSystem.Views.Admin
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Username does not exist!");
+                    MessageBox.Show("Username does not exist!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
             }

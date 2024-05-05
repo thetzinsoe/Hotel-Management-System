@@ -70,7 +70,7 @@ namespace HotelManagementSystem.Views.Admin
                 DataTable dt = adminService.GetAdminByUsername(username);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Username already in use!");
+                    MessageBox.Show("Username already in use!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             }
@@ -80,47 +80,47 @@ namespace HotelManagementSystem.Views.Admin
             }
             if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Enter username to register");
+                MessageBox.Show("Enter username to register", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!username.Any(char.IsLetter)||username.Length>10)
             {
-                MessageBox.Show("Username Should be valid letter(up to 10 character!)");
+                MessageBox.Show("Username Should be valid letter(up to 10 character!)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }          
             if (string.IsNullOrWhiteSpace(password))
             {
-                MessageBox.Show("Enter a vaild password");
+                MessageBox.Show("Enter a vaild password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!password.Any(char.IsLetter))
             {
-                MessageBox.Show("Password should at least contain 1 letter");
+                MessageBox.Show("Password should at least contain 1 letter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!password.Any(char.IsDigit))
             {
-                MessageBox.Show("Password should at least has 1 digit!");
+                MessageBox.Show("Password should at least has 1 digit!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!password.Any(char.IsUpper))
             {
-                MessageBox.Show("Password should at least has 1 upper letter");
+                MessageBox.Show("Password should at least has 1 upper letter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (password.Length < 8||password.Length>18)
             {
-                MessageBox.Show("Password should at least be 8 to 18 characters long");
+                MessageBox.Show("Password should at least be 8 to 18 characters long", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(validpass))
             {
-                MessageBox.Show("Enter to confirm password!");
+                MessageBox.Show("Enter to confirm password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (validpass != password)
             {
-                MessageBox.Show("Password not matching!");
+                MessageBox.Show("Password not matching!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;

@@ -30,6 +30,7 @@ namespace HotelManagementSystem.Views.Employee
             BindGrid();
             BindReportViewer();
             dgvEmployeeList.RowTemplate.MinimumHeight = 40;
+            cbSearch.SelectedIndex = 0;
         }
 
         private void BindGrid()

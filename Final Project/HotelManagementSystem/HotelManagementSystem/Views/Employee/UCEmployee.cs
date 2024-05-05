@@ -27,7 +27,8 @@ namespace HotelManagementSystem.Views.Employee
         private void UCEmployee_Load(object sender, EventArgs e)
         {
             dtpDob.MaxDate = DateTime.Now;            
-            dtpDob.Value = DateTime.Today;            
+            dtpDob.Value = DateTime.Today; 
+            txtFullName.Focus();
             BtnControl();
             BindData();
         }
@@ -152,6 +153,7 @@ namespace HotelManagementSystem.Views.Employee
             rdbFemale.Checked = false;
             pbImage.Image = null;
             _openFileDialog.FileName = "";
+            txtFullName.Focus();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

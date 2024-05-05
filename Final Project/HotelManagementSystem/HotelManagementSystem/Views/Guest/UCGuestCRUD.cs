@@ -170,7 +170,7 @@ namespace HotelManagementSystem.Views.Guest
         {
             dtpDob.MaxDate = DateTime.Today;
             dtpDob.Value = DateTime.Today;
-
+            txtFullName.Focus();
             BindData();
             BtnControl();
         }
@@ -348,6 +348,7 @@ namespace HotelManagementSystem.Views.Guest
             txtNRCNumber.Clear();
             txtAddress.Clear();
             txtPhoneNumber.Clear();
+            txtFullName.Focus();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

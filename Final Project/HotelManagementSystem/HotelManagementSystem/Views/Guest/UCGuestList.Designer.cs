@@ -72,7 +72,6 @@
             this.dgvGuestList.AllowUserToAddRows = false;
             this.dgvGuestList.AllowUserToResizeColumns = false;
             this.dgvGuestList.AllowUserToResizeRows = false;
-            this.dgvGuestList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvGuestList.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Turquoise;
@@ -99,16 +98,15 @@
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGuestList.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvGuestList.Location = new System.Drawing.Point(29, 231);
             this.dgvGuestList.Name = "dgvGuestList";
             this.dgvGuestList.RowHeadersVisible = false;
             this.dgvGuestList.RowHeadersWidth = 51;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvGuestList.RowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvGuestList.RowTemplate.Height = 24;
+            this.dgvGuestList.RowTemplate.Height = 40;
             this.dgvGuestList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvGuestList.Size = new System.Drawing.Size(1417, 535);
             this.dgvGuestList.TabIndex = 0;
@@ -376,6 +374,7 @@
             // 
             // cbSearch
             // 
+            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearch.FormattingEnabled = true;
             this.cbSearch.Items.AddRange(new object[] {
@@ -385,7 +384,6 @@
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(200, 31);
             this.cbSearch.TabIndex = 12;
-            this.cbSearch.Text = "Name";
             // 
             // btnCreateGuest
             // 
