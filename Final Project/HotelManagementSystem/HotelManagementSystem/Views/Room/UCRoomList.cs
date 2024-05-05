@@ -60,15 +60,8 @@ namespace HotelManagementSystem.Views.Room
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            int lastPage = totalPage;
+            this.currentPageIndex = lastPage;
             DataTable dt = roomService.GetPagedRooms(currentPageIndex, pageSize);
             this.dgvRoomList.DataSource = dt;
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
