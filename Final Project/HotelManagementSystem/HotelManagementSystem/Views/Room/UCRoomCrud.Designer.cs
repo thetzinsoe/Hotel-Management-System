@@ -60,7 +60,7 @@
             this.txtPrice.Location = new System.Drawing.Point(577, 392);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(500, 34);
-            this.txtPrice.TabIndex = 1;
+            this.txtPrice.TabIndex = 3;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // btnBack
@@ -73,7 +73,7 @@
             this.btnBack.Location = new System.Drawing.Point(977, 526);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 35);
-            this.btnBack.TabIndex = 2;
+            this.btnBack.TabIndex = 7;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -88,7 +88,7 @@
             this.btnDelete.Location = new System.Drawing.Point(783, 526);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 35);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -99,7 +99,7 @@
             this.txtRoomNumber.Location = new System.Drawing.Point(577, 251);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtRoomNumber.TabIndex = 4;
+            this.txtRoomNumber.TabIndex = 1;
             // 
             // lblType
             // 
@@ -121,7 +121,7 @@
             this.btnAdd.Location = new System.Drawing.Point(398, 526);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 35);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -151,7 +151,7 @@
             this.cbType.Location = new System.Drawing.Point(577, 320);
             this.cbType.Name = "cbType";
             this.cbType.Size = new System.Drawing.Size(500, 36);
-            this.cbType.TabIndex = 9;
+            this.cbType.TabIndex = 2;
             this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
             this.cbType.TextUpdate += new System.EventHandler(this.cbType_TextUpdate);
             this.cbType.TextChanged += new System.EventHandler(this.cbType_TextChanged);
@@ -177,7 +177,7 @@
             this.btnClear.Location = new System.Drawing.Point(591, 526);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 35);
-            this.btnClear.TabIndex = 11;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);

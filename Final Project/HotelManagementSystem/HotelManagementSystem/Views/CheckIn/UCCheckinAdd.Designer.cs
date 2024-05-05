@@ -253,7 +253,7 @@
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(500, 34);
-            this.dtpCheckOutDate.TabIndex = 159;
+            this.dtpCheckOutDate.TabIndex = 5;
             this.dtpCheckOutDate.Value = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckOutDate.CloseUp += new System.EventHandler(this.dtpCheckOutDate_CloseUp);
             this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
@@ -278,7 +278,7 @@
             this.dtpCheckInDate.MinDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(500, 34);
-            this.dtpCheckInDate.TabIndex = 158;
+            this.dtpCheckInDate.TabIndex = 4;
             this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
@@ -292,7 +292,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 34);
-            this.btnBack.TabIndex = 162;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
@@ -307,7 +307,7 @@
             this.btnCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(125, 34);
-            this.btnCheckOut.TabIndex = 161;
+            this.btnCheckOut.TabIndex = 7;
             this.btnCheckOut.Text = "CHECK OUT";
             this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click_1);
@@ -322,7 +322,7 @@
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(100, 34);
-            this.btnCheckIn.TabIndex = 160;
+            this.btnCheckIn.TabIndex = 6;
             this.btnCheckIn.Text = "CHECKIN";
             this.btnCheckIn.UseVisualStyleBackColor = false;
             this.btnCheckIn.Click += new System.EventHandler(this.btnCheckIn_Click);
@@ -337,7 +337,7 @@
             this.cbGuestNrc.Margin = new System.Windows.Forms.Padding(4);
             this.cbGuestNrc.Name = "cbGuestNrc";
             this.cbGuestNrc.Size = new System.Drawing.Size(500, 36);
-            this.cbGuestNrc.TabIndex = 157;
+            this.cbGuestNrc.TabIndex = 3;
             this.cbGuestNrc.SelectedValueChanged += new System.EventHandler(this.cbGuestNrc_SelectedValueChanged);
             this.cbGuestNrc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGuestNrc_KeyPress);
             // 
@@ -360,7 +360,7 @@
             this.cbRoomNumber.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNumber.Name = "cbRoomNumber";
             this.cbRoomNumber.Size = new System.Drawing.Size(500, 36);
-            this.cbRoomNumber.TabIndex = 155;
+            this.cbRoomNumber.TabIndex = 1;
             this.cbRoomNumber.SelectedValueChanged += new System.EventHandler(this.cbRoomNumber_SelectedValueChanged);
             this.cbRoomNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbRoomNumber_KeyPress);
             // 
@@ -374,7 +374,7 @@
             this.cbGuestName.Margin = new System.Windows.Forms.Padding(4);
             this.cbGuestName.Name = "cbGuestName";
             this.cbGuestName.Size = new System.Drawing.Size(500, 36);
-            this.cbGuestName.TabIndex = 156;
+            this.cbGuestName.TabIndex = 2;
             this.cbGuestName.SelectedValueChanged += new System.EventHandler(this.cbGuestName_SelectedValueChanged);
             this.cbGuestName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbGuestName_KeyPress);
             // 

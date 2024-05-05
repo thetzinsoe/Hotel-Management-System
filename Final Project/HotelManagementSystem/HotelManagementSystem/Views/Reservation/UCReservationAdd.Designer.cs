@@ -230,7 +230,7 @@
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(500, 34);
-            this.dtpCheckOutDate.TabIndex = 124;
+            this.dtpCheckOutDate.TabIndex = 5;
             this.dtpCheckOutDate.Value = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
@@ -243,7 +243,7 @@
             this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNo.Name = "cbRoomNo";
             this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
-            this.cbRoomNo.TabIndex = 123;
+            this.cbRoomNo.TabIndex = 3;
             this.cbRoomNo.SelectedValueChanged += new System.EventHandler(this.cbRoomNo_SelectedValueChanged);
             this.cbRoomNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbRoomNo_KeyPress);
             // 
@@ -265,7 +265,7 @@
             this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
-            this.txtPhoneNumber.TabIndex = 121;
+            this.txtPhoneNumber.TabIndex = 2;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // lblDob
@@ -288,7 +288,7 @@
             this.dtpCheckInDate.MinDate = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(500, 34);
-            this.dtpCheckInDate.TabIndex = 115;
+            this.dtpCheckInDate.TabIndex = 4;
             this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
@@ -312,7 +312,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(151, 43);
-            this.btnBack.TabIndex = 118;
+            this.btnBack.TabIndex = 8;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -338,7 +338,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 43);
-            this.btnDelete.TabIndex = 117;
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -351,7 +351,7 @@
             this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(500, 34);
-            this.txtFullName.TabIndex = 114;
+            this.txtFullName.TabIndex = 1;
             this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             // 
             // btnAdd
@@ -364,7 +364,7 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 43);
-            this.btnAdd.TabIndex = 116;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
