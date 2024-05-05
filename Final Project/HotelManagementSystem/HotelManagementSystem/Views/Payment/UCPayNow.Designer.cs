@@ -129,7 +129,7 @@
             // txtDuration
             // 
             this.txtDuration.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(479, 352);
+            this.txtDuration.Location = new System.Drawing.Point(481, 360);
             this.txtDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.ReadOnly = true;
@@ -149,7 +149,7 @@
             // txtTotalAmount
             // 
             this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalAmount.Location = new System.Drawing.Point(479, 662);
+            this.txtTotalAmount.Location = new System.Drawing.Point(479, 668);
             this.txtTotalAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalAmount.MaxLength = 50;
             this.txtTotalAmount.Name = "txtTotalAmount";
@@ -223,7 +223,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(314, 536);
+            this.label2.Location = new System.Drawing.Point(301, 536);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 28);
             this.label2.TabIndex = 131;
@@ -259,7 +259,7 @@
             "Cash",
             "Bank",
             "Mobile Banking"});
-            this.cbPaymentType.Location = new System.Drawing.Point(479, 604);
+            this.cbPaymentType.Location = new System.Drawing.Point(479, 601);
             this.cbPaymentType.Margin = new System.Windows.Forms.Padding(4);
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(665, 36);
@@ -279,7 +279,7 @@
             // txtRoomFees
             // 
             this.txtRoomFees.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRoomFees.Location = new System.Drawing.Point(479, 238);
+            this.txtRoomFees.Location = new System.Drawing.Point(479, 236);
             this.txtRoomFees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRoomFees.Name = "txtRoomFees";
             this.txtRoomFees.ReadOnly = true;

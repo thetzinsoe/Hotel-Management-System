@@ -92,6 +92,11 @@ namespace HotelManagementSystem.Views.Guest
                     DialogResult result = MessageBox.Show("Are you sure you want to delete this?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.OK)
                     {
+                        if (guestService.IsGuestInCheckInList(guestId))
+                        {
+                            MessageBox.Show("The guest is currently under check in and cannot be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                         success = guestService.Delete(guestId);
                         if (success)
                         {

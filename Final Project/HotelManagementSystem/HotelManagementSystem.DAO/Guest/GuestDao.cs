@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HotelManagementSystem.DAO.Guest
 {
@@ -100,7 +101,16 @@ namespace HotelManagementSystem.DAO.Guest
             }
             return connection.ExecuteDataTable(CommandType.Text, strSql);
         }
-
+        public bool IsGuestInCheckInList(int guestId)
+        {
+            strSql = "Select Count(*) from Checkin where guest_id = @guest_id and is_deleted = 0;";
+            SqlParameter[] sqlParam = {
+                                        new SqlParameter("@guest_id", guestId)
+                                      };
+            object result = connection.ExecuteScalar(CommandType.Text, strSql, sqlParam);
+            int count = Convert.ToInt32(result);
+            return count > 0;
+        }
         public bool IsGuestValid(string name, string nrc)
         {
             strSql = "Select Count(*) from Guest where full_name = @FullName and nrc_number = @NRCNumber and is_deleted = 0";
