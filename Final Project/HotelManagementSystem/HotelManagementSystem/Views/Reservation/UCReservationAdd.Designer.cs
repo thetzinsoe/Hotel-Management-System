@@ -224,7 +224,7 @@
             // dtpCheckOutDate
             // 
             this.dtpCheckOutDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(376, 414);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(501, 510);
             this.dtpCheckOutDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCheckOutDate.MaxDate = new System.DateTime(2024, 5, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
@@ -240,7 +240,7 @@
             this.cbRoomNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoomNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRoomNo.Location = new System.Drawing.Point(501, 350);
-            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNo.Name = "cbRoomNo";
             this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
             this.cbRoomNo.TabIndex = 123;
@@ -260,7 +260,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.Location = new System.Drawing.Point(376, 217);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(501, 266);
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -282,7 +282,7 @@
             // dtpCheckInDate
             // 
             this.dtpCheckInDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCheckInDate.Location = new System.Drawing.Point(376, 351);
+            this.dtpCheckInDate.Location = new System.Drawing.Point(501, 427);
             this.dtpCheckInDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCheckInDate.MaxDate = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckInDate.MinDate = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
@@ -308,7 +308,7 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(639, 503);
+            this.btnBack.Location = new System.Drawing.Point(870, 588);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(151, 43);
@@ -334,7 +334,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(511, 503);
+            this.btnDelete.Location = new System.Drawing.Point(591, 588);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 43);
@@ -346,7 +346,7 @@
             // txtFullName
             // 
             this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFullName.Location = new System.Drawing.Point(376, 150);
+            this.txtFullName.Location = new System.Drawing.Point(501, 188);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
@@ -360,7 +360,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(376, 503);
+            this.btnAdd.Location = new System.Drawing.Point(313, 588);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(151, 43);
