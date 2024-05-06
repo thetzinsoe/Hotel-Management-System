@@ -97,6 +97,7 @@
             // 
             this.txtRoomNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRoomNumber.Location = new System.Drawing.Point(577, 251);
+            this.txtRoomNumber.MaxLength = 50;
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(500, 34);
             this.txtRoomNumber.TabIndex = 1;
