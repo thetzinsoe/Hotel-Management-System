@@ -24,8 +24,16 @@ namespace HotelManagementSystem.Views.Room
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            DataTable dt = roomService.SearchRoomsByType(txtSearch.Text);
-            dgvRoomList.DataSource = dt;
+            if (txtSearch.Text == "Search by Room Type..." || string.IsNullOrEmpty(txtSearch.Text))
+            {
+                BindGrid();
+            }
+            if (!string.IsNullOrWhiteSpace(txtSearch.Text) && txtSearch.Text != "Search by Room Type...")
+            {
+                DataTable dt = roomService.SearchRoomsByType(txtSearch.Text);
+                dgvRoomList.DataSource = dt;
+            }
+            
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -60,15 +68,8 @@ namespace HotelManagementSystem.Views.Room
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            int lastPage = totalPage;
+            this.currentPageIndex = lastPage;
             DataTable dt = roomService.GetPagedRooms(currentPageIndex, pageSize);
             this.dgvRoomList.DataSource = dt;
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";

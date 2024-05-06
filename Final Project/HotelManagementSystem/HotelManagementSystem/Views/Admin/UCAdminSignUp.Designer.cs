@@ -52,6 +52,7 @@
             // 
             this.txtusername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtusername.Location = new System.Drawing.Point(248, 122);
+            this.txtusername.MaxLength = 100;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(300, 34);
             this.txtusername.TabIndex = 0;
@@ -110,6 +111,7 @@
             // 
             this.txtpassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpassword.Location = new System.Drawing.Point(248, 177);
+            this.txtpassword.MaxLength = 50;
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(300, 34);
@@ -129,6 +131,7 @@
             // 
             this.txtvalidpass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtvalidpass.Location = new System.Drawing.Point(248, 256);
+            this.txtvalidpass.MaxLength = 50;
             this.txtvalidpass.Name = "txtvalidpass";
             this.txtvalidpass.PasswordChar = '*';
             this.txtvalidpass.Size = new System.Drawing.Size(300, 34);

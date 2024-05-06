@@ -111,6 +111,11 @@ namespace HotelManagementSystem.Services.Guest
         {
             return guestDao.IsNRCValidForUpdating(id, name, nrc);
         }
+
+        public bool IsGuestInCheckInList(int guestId)
+        {
+            return guestDao.IsGuestInCheckInList(guestId);
+        }
         #endregion
     }
 }

@@ -149,7 +149,7 @@ namespace HotelManagementSystem.Views.Room
             {
                 roomEntity.room_id = Convert.ToInt32(txtRoomID.Text);
             }
-            roomEntity.room_number = txtRoomNumber.Text;
+            roomEntity.room_number = txtRoomNumber.Text.Trim();
             roomEntity.room_type = cbType.Text;
             roomEntity.room_price = decimal.Parse(txtPrice.Text.ToString());
             roomEntity.is_occupied = (short)isOccupied;
