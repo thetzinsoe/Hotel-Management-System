@@ -23,6 +23,7 @@ namespace HotelManagementSystem.Views.CheckIn
         public UCCheckInList()
         {
             InitializeComponent();
+            cbSearchType.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -95,18 +96,9 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void btn3xPrevious_Click(object sender, EventArgs e)
         {
-            int prevPageIndex = this.currentPageIndex - 3;
-            if (prevPageIndex > 1)
-            {
-                this.currentPageIndex = prevPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = 1;
-            }
+            this.currentPageIndex = 1;
             LoadCheckin();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -131,15 +123,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void btn3xNext_Click(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            this.currentPageIndex = totalPage;
             LoadCheckin();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
         }

@@ -24,11 +24,13 @@ namespace HotelManagementSystem.Views.Reservation
         public UCReservationList()
         {
             InitializeComponent();
+            
         }
 
         private void UCReservation_Load(object sender, EventArgs e)
         {
             LoadReservation();
+            
         }
 
         private void LoadReservation()
@@ -110,18 +112,9 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void btn3xPrevious_Click(object sender, EventArgs e)
         {
-            int prevPageIndex = this.currentPageIndex - 3;
-            if (prevPageIndex > 1)
-            {
-                this.currentPageIndex = prevPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = 1;
-            }
+            this.currentPageIndex = 1;
             LoadReservation();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
-
         }
 
         private void btnPrev_Click(object sender, EventArgs e)
@@ -146,15 +139,7 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void btn3xNext_Click(object sender, EventArgs e)
         {
-            int nextPageIndex = this.currentPageIndex + 3;
-            if (nextPageIndex < totalPage)
-            {
-                this.currentPageIndex = nextPageIndex;
-            }
-            else
-            {
-                this.currentPageIndex = totalPage;
-            }
+            this.currentPageIndex = totalPage;
             LoadReservation();
             lblPageNo.Text = $"Page {currentPageIndex} of {totalPage}";
         }
