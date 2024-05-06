@@ -37,6 +37,16 @@ namespace HotelManagementSystem.Entities.Room
         /// Gets or sets the created date of the room.
         /// </summary>
         public DateTime created_date { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the created date of the room.
+        /// </summary>
+        public int created_userId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the created date of the room.
+        /// </summary>
+        public int updated_userId { get; set; }
 
         /// <summary>
         /// Gets or sets the updated date of the room.
@@ -64,6 +74,8 @@ namespace HotelManagementSystem.Entities.Room
             this.room_type = string.Empty;
             this.room_price = 0;
             this.is_occupied = 0;
+            this.created_userId = 3;
+            this.updated_userId = 4;
             this.created_date = DateTime.Now;
             this.updated_date = DateTime.Now;
         }

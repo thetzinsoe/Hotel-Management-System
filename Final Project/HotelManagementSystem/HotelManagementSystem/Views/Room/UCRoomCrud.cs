@@ -20,6 +20,7 @@ namespace HotelManagementSystem.Views.Room
         private bool userHasSelected=false;
         UCRoomList uCRoomList = new UCRoomList();
         RoomService roomService = new RoomService();
+        private int isOccupied = 0;
         public string ID
         { set {  txtRoomID.Text= value; } }
         public string ROOMNumber 
@@ -117,17 +118,28 @@ namespace HotelManagementSystem.Views.Room
             }
             else
             {
-                success = roomService.UpdateRoom(roomEntity);
-                if (success)
+                ReservationService reservationService = new ReservationService();
+                DataTable dt = reservationService.haveRoom(Convert.ToInt32(txtRoomID.Text));
+                if(dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
-                    this.Controls.Clear();
-                    this.Controls.Add(uCRoomList);
+                    MessageBox.Show("This room is using in current time, Can't any changes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
                 }
                 else
-                {                   
-                    MessageBox.Show("Something Wrong in Updating Room!");
+                {
+                    success = roomService.UpdateRoom(roomEntity);
+                    if (success)
+                    {
+                        isOccupied = 0;
+                        MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
+                        this.Controls.Clear();
+                        this.Controls.Add(uCRoomList);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something Wrong in Updating Room!");
+                    }
                 }
+               
             }
         }
         private RoomEntity CreateData()
@@ -140,7 +152,7 @@ namespace HotelManagementSystem.Views.Room
             roomEntity.room_number = txtRoomNumber.Text;
             roomEntity.room_type = cbType.Text;
             roomEntity.room_price = decimal.Parse(txtPrice.Text.ToString());
-            roomEntity.is_occupied = 0;
+            roomEntity.is_occupied = (short)isOccupied;
             roomEntity.created_date = DateTime.Now;
             roomEntity.updated_date = DateTime.Now;
             return roomEntity;
@@ -159,6 +171,7 @@ namespace HotelManagementSystem.Views.Room
                         txtRoomNumber.Text = dt.Rows[0]["room_no"].ToString();
                         cbType.Text = dt.Rows[0]["room_type"].ToString();
                         txtPrice.Text = dt.Rows[0]["room_price"].ToString();
+                        isOccupied = int.Parse(dt.Rows[0]["is_occupied"].ToString());
                     }
                 }
             }
