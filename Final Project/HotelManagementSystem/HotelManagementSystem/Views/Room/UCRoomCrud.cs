@@ -14,7 +14,6 @@ using HotelManagementSystem.Views.Menu;
 
 namespace HotelManagementSystem.Views.Room
 {
-    
     public partial class UCRoomCrud : UserControl
     {
         private bool userHasSelected=false;

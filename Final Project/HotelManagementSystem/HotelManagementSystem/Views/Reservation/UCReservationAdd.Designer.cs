@@ -217,7 +217,7 @@
             this.dtpCheckOutDate.MaxDate = new System.DateTime(2024, 5, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.MinDate = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
-            this.dtpCheckOutDate.Size = new System.Drawing.Size(500, 34);
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(378, 29);
             this.dtpCheckOutDate.TabIndex = 124;
             this.dtpCheckOutDate.Value = new System.DateTime(2024, 4, 13, 0, 0, 0, 0);
             this.dtpCheckOutDate.CloseUp += new System.EventHandler(this.dtpCheckOutDate_CloseUp);
@@ -228,10 +228,10 @@
             this.cbRoomNo.DropDownWidth = 376;
             this.cbRoomNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbRoomNo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbRoomNo.Location = new System.Drawing.Point(501, 350);
-            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbRoomNo.Location = new System.Drawing.Point(376, 284);
+            this.cbRoomNo.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoomNo.Name = "cbRoomNo";
-            this.cbRoomNo.Size = new System.Drawing.Size(500, 36);
+            this.cbRoomNo.Size = new System.Drawing.Size(378, 29);
             this.cbRoomNo.TabIndex = 123;
             this.cbRoomNo.SelectedValueChanged += new System.EventHandler(this.cbRoomNo_SelectedValueChanged);
             this.cbRoomNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbRoomNo_KeyPress);
@@ -254,7 +254,7 @@
             this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber.MaxLength = 15;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(500, 34);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(378, 29);
             this.txtPhoneNumber.TabIndex = 121;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
@@ -278,7 +278,7 @@
             this.dtpCheckInDate.MaxDate = new System.DateTime(2024, 4, 24, 0, 0, 0, 0);
             this.dtpCheckInDate.MinDate = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
-            this.dtpCheckInDate.Size = new System.Drawing.Size(500, 34);
+            this.dtpCheckInDate.Size = new System.Drawing.Size(378, 29);
             this.dtpCheckInDate.TabIndex = 115;
             this.dtpCheckInDate.Value = new System.DateTime(2024, 4, 13, 22, 19, 19, 0);
             this.dtpCheckInDate.CloseUp += new System.EventHandler(this.dtpCheckInDate_CloseUp);
@@ -301,10 +301,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(639, 503);
+            this.btnBack.Location = new System.Drawing.Point(662, 475);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(151, 43);
+            this.btnBack.Size = new System.Drawing.Size(92, 28);
             this.btnBack.TabIndex = 118;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -328,10 +328,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(511, 503);
+            this.btnDelete.Location = new System.Drawing.Point(521, 475);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(151, 43);
+            this.btnDelete.Size = new System.Drawing.Size(92, 28);
             this.btnDelete.TabIndex = 117;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -344,7 +344,7 @@
             this.txtFullName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(500, 34);
+            this.txtFullName.Size = new System.Drawing.Size(378, 29);
             this.txtFullName.TabIndex = 114;
             this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             // 
@@ -354,10 +354,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(376, 503);
+            this.btnAdd.Location = new System.Drawing.Point(376, 475);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(151, 43);
+            this.btnAdd.Size = new System.Drawing.Size(92, 28);
             this.btnAdd.TabIndex = 116;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
