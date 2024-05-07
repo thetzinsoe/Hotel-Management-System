@@ -34,42 +34,42 @@ namespace HotelManagementSystem.Views.Room
             string roomNumber = txtRoomNumber.Text, roomType = cbType.Text, Price = txtPrice.Text;
             if (string.IsNullOrWhiteSpace(roomNumber))
             {
-                MessageBox.Show("Empty Room Number!");
+                MessageBox.Show("Empty Room Number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
              if (!roomNumber.Any(char.IsDigit) || !roomNumber.Any(char.IsLetter))
             {
-                MessageBox.Show("Invalid Room Number!Eg. A-101");
+                MessageBox.Show("Invalid Room Number!Eg. A-101","Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false ;
             }
             if (roomNumber.Length > 6)
             {
-                MessageBox.Show("Invalid Room Number!Eg. A-101");
+                MessageBox.Show("Invalid Room Number!Eg. A-101", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
              if (cbType.SelectedIndex<0||cbType.SelectedText==null)
             {
-                MessageBox.Show("Empty Room Type!");
+                MessageBox.Show("Empty Room Type!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
              if (string.IsNullOrWhiteSpace(Price))
             {
-                MessageBox.Show("Empty Room Price!");
+                MessageBox.Show("Empty Room Price!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
               if (Price.Any(char.IsLetter))
             {
-                MessageBox.Show("Invalid input! Price should be digits!");
+                MessageBox.Show("Invalid input! Price should be digits!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (!Price.Any(char.IsNumber))
             {
-                MessageBox.Show("Price should only be whole numbers!");
+                MessageBox.Show("Price should only be whole numbers!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             if (Price.Length > 6)
             {
-                MessageBox.Show("Invalid Price! Please Type correctly!");
+                MessageBox.Show("Invalid Price! Please Type correctly!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -97,7 +97,7 @@ namespace HotelManagementSystem.Views.Room
                 DataTable dt = roomService.SearchbyRoomNumber(txtRoomNumber.Text);
                 if (dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("Room Number already in use!");
+                    MessageBox.Show("Room Number already in use!","Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
                 else
@@ -105,13 +105,13 @@ namespace HotelManagementSystem.Views.Room
                     success = roomService.InsertRoom(roomEntity);
                     if (success)
                     {
-                        MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK);
+                        MessageBox.Show("Save Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Controls.Clear();
                         this.Controls.Add(uCRoomList);
                     }
                     else
                     {
-                        MessageBox.Show("Something Wrong in Room Adding!");
+                        MessageBox.Show("Something Wrong in Room Adding!","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }                                 
             }
@@ -121,7 +121,7 @@ namespace HotelManagementSystem.Views.Room
                 DataTable dt = reservationService.haveRoom(Convert.ToInt32(txtRoomID.Text));
                 if(dt.Rows.Count > 0)
                 {
-                    MessageBox.Show("This room is using in current time, Can't any changes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+                    MessageBox.Show("This room is using in current time, Can't any changes!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning) ;
                 }
                 else
                 {
@@ -129,13 +129,13 @@ namespace HotelManagementSystem.Views.Room
                     if (success)
                     {
                         isOccupied = 0;
-                        MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK);
+                        MessageBox.Show("Update Success.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                         this.Controls.Clear();
                         this.Controls.Add(uCRoomList);
                     }
                     else
                     {
-                        MessageBox.Show("Something Wrong in Updating Room!");
+                        MessageBox.Show("Something Wrong in Updating Room!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                

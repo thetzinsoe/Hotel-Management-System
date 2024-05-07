@@ -38,8 +38,9 @@
             // 
             // reportViewer1
             // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "HotelManagementSystem.Views.Payment.PaymentReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(5, 132);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1457, 716);
@@ -53,7 +54,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(5, 84);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 39);
             this.button1.TabIndex = 1;
@@ -77,7 +78,7 @@
             this.pnTitle.Controls.Add(this.lbTitle);
             this.pnTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnTitle.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pnTitle.Margin = new System.Windows.Forms.Padding(5);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Size = new System.Drawing.Size(1467, 76);
             this.pnTitle.TabIndex = 79;
@@ -104,7 +105,7 @@
             this.Controls.Add(this.hdPaymentId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCPaymentReport";
             this.Size = new System.Drawing.Size(1467, 852);
             this.pnTitle.ResumeLayout(false);
