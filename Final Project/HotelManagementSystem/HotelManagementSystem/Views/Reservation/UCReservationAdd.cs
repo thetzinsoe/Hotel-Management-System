@@ -204,6 +204,7 @@ namespace HotelManagementSystem.Views.Reservation
 
         private void UCReservationAdd_Load(object sender, EventArgs e)
         {
+            txtFullName.Focus();
             Load_room(dtpCheckInDate.Value.Date, dtpCheckOutDate.Value.Date);
             BtnState();
             BindData();

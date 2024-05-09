@@ -134,7 +134,7 @@
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.ReadOnly = true;
             this.txtDuration.Size = new System.Drawing.Size(665, 34);
-            this.txtDuration.TabIndex = 138;
+            this.txtDuration.TabIndex = 128;
             // 
             // label6
             // 
@@ -155,7 +155,7 @@
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.ReadOnly = true;
             this.txtTotalAmount.Size = new System.Drawing.Size(665, 34);
-            this.txtTotalAmount.TabIndex = 136;
+            this.txtTotalAmount.TabIndex = 133;
             // 
             // btnPrint
             // 
@@ -183,7 +183,7 @@
             this.txtExtraFees.MaxLength = 6;
             this.txtExtraFees.Name = "txtExtraFees";
             this.txtExtraFees.Size = new System.Drawing.Size(665, 34);
-            this.txtExtraFees.TabIndex = 135;
+            this.txtExtraFees.TabIndex = 127;
             this.txtExtraFees.Text = "0";
             this.txtExtraFees.TextChanged += new System.EventHandler(this.txtExtraFees_TextChanged);
             // 
@@ -195,7 +195,7 @@
             this.txtDiscount.MaxLength = 5;
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(665, 34);
-            this.txtDiscount.TabIndex = 134;
+            this.txtDiscount.TabIndex = 130;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged_1);
             // 
@@ -263,7 +263,7 @@
             this.cbPaymentType.Margin = new System.Windows.Forms.Padding(4);
             this.cbPaymentType.Name = "cbPaymentType";
             this.cbPaymentType.Size = new System.Drawing.Size(665, 36);
-            this.cbPaymentType.TabIndex = 128;
+            this.cbPaymentType.TabIndex = 132;
             this.cbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbPaymentType_KeyPress);
             // 
             // label1
@@ -317,7 +317,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(151, 39);
-            this.btnBack.TabIndex = 123;
+            this.btnBack.TabIndex = 135;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -343,7 +343,7 @@
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(151, 39);
-            this.btnConfirm.TabIndex = 122;
+            this.btnConfirm.TabIndex = 134;
             this.btnConfirm.Text = "CONFIRM";
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);

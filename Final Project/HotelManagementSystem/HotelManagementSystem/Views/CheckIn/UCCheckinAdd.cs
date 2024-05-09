@@ -61,6 +61,7 @@ namespace HotelManagementSystem.Views.CheckIn
 
         private void UCCheckinAdd_Load(object sender, EventArgs e)
         {
+            cbRoomNumber.Focus();
             if (dtpCheckOutDate.Value.Date >= dtpCheckInDate.Value.Date)
             {
                 validateInput = true;

@@ -139,6 +139,7 @@
             // 
             // cbType
             // 
+            this.cbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
             this.cbType.Items.AddRange(new object[] {

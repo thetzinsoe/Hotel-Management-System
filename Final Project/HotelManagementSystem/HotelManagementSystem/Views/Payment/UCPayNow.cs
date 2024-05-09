@@ -53,6 +53,7 @@ namespace HotelManagementSystem.Views.Payment
 
         private void UCPayNow_Load(object sender, EventArgs e)
         {
+            txtCheckInId.Focus();
             if (!string.IsNullOrEmpty(hdPaymentId.Text.ToString()))
             {
                 btnConfirm.Enabled = false;
